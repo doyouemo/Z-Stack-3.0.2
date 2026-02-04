@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //
-// IAR C/C++ Compiler V10.10.1.4655 for 8051              04/Feb/2026  00:32:04
+// IAR C/C++ Compiler V10.10.1.4655 for 8051              04/Feb/2026  18:19:26
 // Copyright 2004-2017 IAR Systems AB.
 // Standalone license - IAR Embedded Workbench for 8051
 //
@@ -12,11 +12,10 @@
 //    Dptr setup         =  1,16
 //                          
 //    Source file        =  
-//        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\Source\zcl_ZEM.c
 //    Command line       =  
-//        -f C:\Users\ASUS\AppData\Local\Temp\EWC5FA.tmp
-//        ("C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -f C:\Users\KLF\AppData\Local\Temp\EWC3CB.tmp ("D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\Source\zcl_ZEM.c" -D
 //        BDB_REPORTING -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE
 //        -D xZTOOL_P1 -D xMT_TASK -D xMT_APP_FUNC -D xMT_SYS_FUNC -D
@@ -24,25 +23,23 @@
 //        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
 //        ZCL_BASIC -D ZCL_IDENTIFY -D ZCL_TEMPERATURE_MEASUREMENT -D
 //        ZCL_GROUPS -D HAL_LED=TRUE -D HAL_UART=TRUE -D INT_HEAP_LEN=2048 -lC
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\CoordinatorEB\List"
-//        -lA "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -lA "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\CoordinatorEB\List"
-//        --diag_suppress Pe001,Pa010 -o
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        --diag_suppress Pe001,Pa010 -o "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\CoordinatorEB\Obj"
 //        -e --debug --core=plain --dptr=16,1 --data_model=large
 //        --code_model=banked --calling_convention=xdata_reentrant
 //        --place_constants=data_rom --nr_virtual_regs 16 -f
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg"
 //        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
 //        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
-//        -DZDO_COORDINATOR -DRTR_NWK) -f
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -DZDO_COORDINATOR -DRTR_NWK) -f "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
 //        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
-//        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0x1234
+//        -DDEFAULT_CHANLIST=0x00100000 -DZDAPP_CONFIG_PAN_ID=0x1234
 //        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
 //        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
 //        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
@@ -55,63 +52,62 @@
 //        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
 //        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
 //        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
-//        -DENABLE_LED4_DISABLE_S1) -f "C:\Users\ASUS\Desktop\work\graduration
-//        project\software\Z-Stack
+//        -DENABLE_LED4_DISABLE_S1) -f "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\" -I
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\Source\" -I
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\Source\" -I
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\ZMain\TI2530DB\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\include\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\include\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mt\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\osal\include\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\saddr\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\sdata\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\af\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\bdb\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\gp\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sec\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sys\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
 //        -Ohz --require_prototypes)
 //    Locale             =  Chinese (Simplified)_China.936
 //    List file          =  
-//        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\CoordinatorEB\List\zcl_ZEM.s51
 //
 ///////////////////////////////////////////////////////////////////////////////
@@ -181,7 +177,6 @@
         PUBWEAK P1DIR
         PUBWEAK P1SEL
         PUBWEAK PERCFG
-        PUBWEAK __Constant_1388
         PUBWEAK __Constant_2710
         PUBWEAK __Constant_3e8
         PUBWEAK __Constant_bb8
@@ -189,7 +184,7 @@
         FUNCTION zclSampleApp_BatteryWarningCB,0603H
         ARGFRAME XSTACK, 0, STACK
         FUNCTION zclZEM_AF_RxProc,0a1203H
-        ARGFRAME XSTACK, 141, STACK
+        ARGFRAME XSTACK, 38, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         LOCFRAME ISTACK, 1, STACK
@@ -202,17 +197,16 @@
         ARGFRAME XSTACK, 0, STACK
         LOCFRAME XSTACK, 45, STACK
         PUBLIC zclZEM_NwkState
-        FUNCTION zclZEM_ProcessCommissioningStatus,021603H
+        FUNCTION zclZEM_ProcessCommissioningStatus,0a1603H
         ARGFRAME XSTACK, 0, STACK
-        LOCFRAME ISTACK, 2, STACK
-        LOCFRAME XSTACK, 118, STACK
+        LOCFRAME XSTACK, 179, STACK
         FUNCTION zclZEM_ProcessInDiscCmdsRspCmd,0203H
         ARGFRAME XSTACK, 9, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         LOCFRAME ISTACK, 2, STACK
         FUNCTION zclZEM_ProcessIncomingMsg,021203H
-        ARGFRAME XSTACK, 141, STACK
+        ARGFRAME XSTACK, 38, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         LOCFRAME XSTACK, 9, STACK
@@ -229,7 +223,7 @@
         PUBLIC zclZEM_event_loop
         FUNCTION zclZEM_event_loop,0a1203H
         ARGFRAME XSTACK, 0, STACK
-        LOCFRAME XSTACK, 150, STACK
+        LOCFRAME XSTACK, 47, STACK
         
           CFI Names cfiNames0
           CFI StackFrame CFA_SP SP IDATA
@@ -432,6 +426,8 @@ zcl_registerAttrList SYMBOL "zcl_registerAttrList"
 `??zcl_registerAttrList::?relay` SYMBOL "?relay", zcl_registerAttrList
 zcl_registerForMsg  SYMBOL "zcl_registerForMsg"
 `??zcl_registerForMsg::?relay` SYMBOL "?relay", zcl_registerForMsg
+zgWriteStartupOptions SYMBOL "zgWriteStartupOptions"
+`??zgWriteStartupOptions::?relay` SYMBOL "?relay", zgWriteStartupOptions
 zclZEM_Init         SYMBOL "zclZEM_Init"
 `??zclZEM_Init::?relay` SYMBOL "?relay", zclZEM_Init
 zclZEM_event_loop   SYMBOL "zclZEM_event_loop"
@@ -483,18 +479,20 @@ zclZEM_event_loop   SYMBOL "zclZEM_event_loop"
         FUNCTION `??zcl_registerAttrList::?relay`,00H
         EXTERN `??zcl_registerForMsg::?relay`
         FUNCTION `??zcl_registerForMsg::?relay`,00H
+        EXTERN `??zgWriteStartupOptions::?relay`
+        FUNCTION `??zgWriteStartupOptions::?relay`,00H
         EXTERN AF_DataRequest
         FUNCTION AF_DataRequest,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 150, STACK
+        ARGFRAME XSTACK, 47, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         EXTERN HalLedBlink
         FUNCTION HalLedBlink,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 141, STACK
+        ARGFRAME XSTACK, 38, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         EXTERN HalUARTOpen
@@ -513,9 +511,9 @@ zclZEM_event_loop   SYMBOL "zclZEM_event_loop"
         ARGFRAME DOVERLAY, 0, STATIC
         EXTERN HalUARTWrite
         FUNCTION HalUARTWrite,0202H
-        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 141, STACK
+        ARGFRAME XSTACK, 176, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         EXTERN Hal_UART_RxBufLen
@@ -576,9 +574,9 @@ zclZEM_event_loop   SYMBOL "zclZEM_event_loop"
         ARGFRAME DOVERLAY, 0, STATIC
         EXTERN bdb_StartCommissioning
         FUNCTION bdb_StartCommissioning,0202H
-        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 114, STACK
+        ARGFRAME XSTACK, 176, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         EXTERN osal_mem_free
@@ -592,28 +590,28 @@ zclZEM_event_loop   SYMBOL "zclZEM_event_loop"
         FUNCTION osal_memcpy,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 86, STACK
+        ARGFRAME XSTACK, 179, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         EXTERN osal_msg_deallocate
         FUNCTION osal_msg_deallocate,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 141, STACK
+        ARGFRAME XSTACK, 38, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         EXTERN osal_msg_receive
         FUNCTION osal_msg_receive,0202H
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 141, STACK
+        ARGFRAME XSTACK, 38, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         EXTERN osal_start_timerEx
         FUNCTION osal_start_timerEx,0202H
-        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 145, STACK
+        ARGFRAME XSTACK, 43, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         EXTERN zclGeneral_RegisterCmdCallbacks
@@ -648,8 +646,15 @@ zclZEM_event_loop   SYMBOL "zclZEM_event_loop"
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         EXTERN zdpExternalStateTaskID
+        EXTERN zgWriteStartupOptions
+        FUNCTION zgWriteStartupOptions,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 39, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
 
-// C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\Source\zcl_ZEM.c
+// D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\Source\zcl_ZEM.c
 //    1 /*********************************************************************
 //    2  * INCLUDES
 //    3  */
@@ -973,6 +978,17 @@ zclZEM_Init:
         ARGFRAME XSTACK, 39, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclZEM_Init, zgWriteStartupOptions
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 39, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 39, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL zclZEM_Init, bdb_StartCommissioning
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
@@ -1147,19 +1163,31 @@ zclZEM_Init:
         LCALL     `??bdb_RegisterCommissioningStatusCB::?relay`; Banked call to: bdb_RegisterCommissioningStatusCB
 //  195 
 //  196 #ifdef ZDO_COORDINATOR
-//  197   bdb_StartCommissioning( BDB_COMMISSIONING_MODE_NWK_FORMATION |
-//  198                           BDB_COMMISSIONING_MODE_FINDING_BINDING );
+//  197   // 重置网络状态，强制每次都重新初始化网络
+//  198   // 设置ZCD_STARTOPT_DEFAULT_NETWORK_STATE位，使设备每次都重新组网
+//  199   extern uint8 zgWriteStartupOptions( uint8 action, uint8 bitOptions );
+//  200   
+//  201   // 设置默认网络状态选项
+//  202   zgWriteStartupOptions( 1, 0x01 );
+        ; Setup parameters for call to function zgWriteStartupOptions
+        MOV       R2,#0x1
+        MOV       R1,#0x1
+        LCALL     `??zgWriteStartupOptions::?relay`; Banked call to: zgWriteStartupOptions
+//  203   
+//  204   // 执行网络形成
+//  205   bdb_StartCommissioning( BDB_COMMISSIONING_MODE_NWK_FORMATION |
+//  206                           BDB_COMMISSIONING_MODE_FINDING_BINDING );
         ; Setup parameters for call to function bdb_StartCommissioning
         MOV       R1,#0xc
         LCALL     `??bdb_StartCommissioning::?relay`; Banked call to: bdb_StartCommissioning
-//  199   NLME_PermitJoiningRequest(255);
+//  207   NLME_PermitJoiningRequest(255);
         ; Setup parameters for call to function NLME_PermitJoiningRequest
         MOV       R1,#-0x1
         LCALL     `??NLME_PermitJoiningRequest::?relay`; Banked call to: NLME_PermitJoiningRequest
-//  200   // Broadcast
-//  201   osal_start_timerEx(zclZEM_TaskID,
-//  202                      ZEM_BROADCAST_EVT,
-//  203                      ZEM_BROADCAST_PERIOD);
+//  208   // Broadcast
+//  209   osal_start_timerEx(zclZEM_TaskID,
+//  210                      ZEM_BROADCAST_EVT,
+//  211                      ZEM_BROADCAST_PERIOD);
         ; Setup parameters for call to function osal_start_timerEx
         MOV       DPTR,#__Constant_3e8
         LCALL     ?PUSH_XSTACK8_X_FOUR
@@ -1173,10 +1201,10 @@ zclZEM_Init:
         MOV       A,#0x4
         LCALL     ?DEALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 39)
-//  204   // groupcast
-//  205   osal_start_timerEx(zclZEM_TaskID,
-//  206                      ZEM_GROUPCAST_EVT,
-//  207                      ZEM_GROUPCAST_PERIOD);
+//  212   // groupcast
+//  213   osal_start_timerEx(zclZEM_TaskID,
+//  214                      ZEM_GROUPCAST_EVT,
+//  215                      ZEM_GROUPCAST_PERIOD);
         ; Setup parameters for call to function osal_start_timerEx
         MOV       DPTR,#__Constant_3e8
         LCALL     ?PUSH_XSTACK8_X_FOUR
@@ -1190,23 +1218,23 @@ zclZEM_Init:
         MOV       A,#0x4
         LCALL     ?DEALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 39)
-//  208 #else
-//  209   bdb_StartCommissioning( BDB_COMMISSIONING_MODE_NWK_STEERING |
-//  210                           BDB_COMMISSIONING_MODE_FINDING_BINDING );
-//  211   // Add group
-//  212   aps_Group_t group = {
-//  213     .ID = GROUP_ID,
-//  214     .name = "",
-//  215   };
-//  216   aps_AddGroup(ZEM_ENDPOINT, &group);
-//  217   // P2P
-//  218   osal_start_timerEx(zclZEM_TaskID,
-//  219                      ZEM_P2P_EVT,
-//  220                      ZEM_P2P_PERIOD);
-//  221 #endif
-//  222 
-//  223   // Initialize UART communication
-//  224   zclZEM_InitUart();
+//  216 #else
+//  217   bdb_StartCommissioning( BDB_COMMISSIONING_MODE_NWK_STEERING |
+//  218                           BDB_COMMISSIONING_MODE_FINDING_BINDING );
+//  219   // Add group
+//  220   aps_Group_t group = {
+//  221     .ID = GROUP_ID,
+//  222     .name = "",
+//  223   };
+//  224   aps_AddGroup(ZEM_ENDPOINT, &group);
+//  225   // P2P
+//  226   osal_start_timerEx(zclZEM_TaskID,
+//  227                      ZEM_P2P_EVT,
+//  228                      ZEM_P2P_PERIOD);
+//  229 #endif
+//  230 
+//  231   // Initialize UART communication
+//  232   zclZEM_InitUart();
         ORL       0xf1,#0x1
         ORL       0xf4,#0x30
         ORL       0xfe,#0x10
@@ -1261,18 +1289,18 @@ zclZEM_Init:
         MOV       R3,?XSP + 1
         MOV       R1,#0x0
         LCALL     `??HalUARTOpen::?relay`; Banked call to: HalUARTOpen
-//  225   
-//  226   // Read and send MAC address
-//  227   zclZEM_ReadAndSendMAC();
+//  233   
+//  234   // Read and send MAC address
+//  235   zclZEM_ReadAndSendMAC();
         ; Setup parameters for call to function zclZEM_ReadAndSendMAC
         LCALL     `??zclZEM_ReadAndSendMAC::?relay`; Banked call to: zclZEM_ReadAndSendMAC
-//  228 
-//  229 #ifdef BDB_REPORTING
-//  230   //Adds the default configuration values for the temperature attribute of the ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT cluster, for endpoint ZEM_ENDPOINT
-//  231   //Default maxReportingInterval value is 10 seconds
-//  232   //Default minReportingInterval value is 3 seconds
-//  233   //Default reportChange value is 300 (3 degrees)
-//  234   bdb_RepAddAttrCfgRecordDefaultToList(ZEM_ENDPOINT, ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT, ATTRID_MS_TEMPERATURE_MEASURED_VALUE, 0, 10, reportableChange);
+//  236 
+//  237 #ifdef BDB_REPORTING
+//  238   //Adds the default configuration values for the temperature attribute of the ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT cluster, for endpoint ZEM_ENDPOINT
+//  239   //Default maxReportingInterval value is 10 seconds
+//  240   //Default minReportingInterval value is 3 seconds
+//  241   //Default reportChange value is 300 (3 degrees)
+//  242   bdb_RepAddAttrCfgRecordDefaultToList(ZEM_ENDPOINT, ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT, ATTRID_MS_TEMPERATURE_MEASURED_VALUE, 0, 10, reportableChange);
         ; Setup parameters for call to function bdb_RepAddAttrCfgRecordDefaultToList
         MOV       ?V0,#reportableChange & 0xff
         MOV       ?V1,#(reportableChange >> 8) & 0xff
@@ -1298,9 +1326,9 @@ zclZEM_Init:
         MOV       A,#0x6
         LCALL     ?DEALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 39)
-//  235 #endif
-//  236   
-//  237   zdpExternalStateTaskID = zclZEM_TaskID;
+//  243 #endif
+//  244   
+//  245   zdpExternalStateTaskID = zclZEM_TaskID;
         MOV       DPTR,#zclZEM_TaskID
         MOVX      A,@DPTR
         MOV       DPTR,#zdpExternalStateTaskID
@@ -1308,10 +1336,10 @@ zclZEM_Init:
         INC       DPTR
         CLR       A
         MOVX      @DPTR,A
-//  238    osal_start_timerEx(
-//  239       zclZEM_TaskID,
-//  240       ZEMAPP_EVT,
-//  241       3000);
+//  246    osal_start_timerEx(
+//  247       zclZEM_TaskID,
+//  248       ZEMAPP_EVT,
+//  249       3000);
         ; Setup parameters for call to function osal_start_timerEx
         MOV       DPTR,#__Constant_bb8
         LCALL     ?PUSH_XSTACK8_X_FOUR
@@ -1325,7 +1353,7 @@ zclZEM_Init:
         MOV       A,#0x4
         LCALL     ?DEALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 39)
-//  242 }
+//  250 }
         MOV       A,#0x1d
         LCALL     ?DEALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 10)
@@ -1335,154 +1363,132 @@ zclZEM_Init:
         REQUIRE PERCFG
         REQUIRE P1SEL
         REQUIRE P1DIR
-//  243 
-//  244 /*********************************************************************
-//  245  * @fn          zclSample_event_loop
-//  246  *
-//  247  * @brief       Event Loop Processor for zclGeneral.
-//  248  *
-//  249  * @param       none
-//  250  *
-//  251  * @return      none
-//  252  */
+//  251 
+//  252 /*********************************************************************
+//  253  * @fn          zclSample_event_loop
+//  254  *
+//  255  * @brief       Event Loop Processor for zclGeneral.
+//  256  *
+//  257  * @param       none
+//  258  *
+//  259  * @return      none
+//  260  */
 
         RSEG BANKED_CODE:HUGECODE:NOROOT(0)
-//  253 uint16 zclZEM_event_loop( uint8 task_id, uint16 events )
+//  261 uint16 zclZEM_event_loop( uint8 task_id, uint16 events )
 zclZEM_event_loop:
           CFI Block cfiBlock1 Using cfiCommon0
           CFI Function zclZEM_event_loop
         CODE
-//  254 {
-        FUNCALL zclZEM_event_loop, HalUARTWrite
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 141, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 141, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
+//  262 {
         FUNCALL zclZEM_event_loop, HalLedBlink
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 141, STACK
+        LOCFRAME XSTACK, 38, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 141, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL zclZEM_event_loop, HalUARTWrite
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 141, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 141, STACK
+        ARGFRAME XSTACK, 38, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL zclZEM_event_loop, osal_start_timerEx
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 145, STACK
+        LOCFRAME XSTACK, 42, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 145, STACK
+        ARGFRAME XSTACK, 42, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL zclZEM_event_loop, osal_msg_deallocate
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 141, STACK
+        LOCFRAME XSTACK, 38, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 141, STACK
+        ARGFRAME XSTACK, 38, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL zclZEM_event_loop, osal_msg_receive
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 141, STACK
+        LOCFRAME XSTACK, 38, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 141, STACK
+        ARGFRAME XSTACK, 38, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL zclZEM_event_loop, zclZEM_ProcessIncomingMsg
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 141, STACK
+        LOCFRAME XSTACK, 38, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 141, STACK
+        ARGFRAME XSTACK, 38, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL zclZEM_event_loop, zclZEM_AF_RxProc
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 141, STACK
+        LOCFRAME XSTACK, 38, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 141, STACK
+        ARGFRAME XSTACK, 38, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL zclZEM_event_loop, AF_DataRequest
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 150, STACK
+        LOCFRAME XSTACK, 47, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 150, STACK
+        ARGFRAME XSTACK, 47, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL zclZEM_event_loop, osal_start_timerEx
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 145, STACK
+        LOCFRAME XSTACK, 42, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 145, STACK
+        ARGFRAME XSTACK, 42, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL zclZEM_event_loop, AF_DataRequest
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 150, STACK
+        LOCFRAME XSTACK, 47, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 150, STACK
+        ARGFRAME XSTACK, 47, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL zclZEM_event_loop, osal_start_timerEx
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 145, STACK
+        LOCFRAME XSTACK, 42, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
         ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 145, STACK
+        ARGFRAME XSTACK, 42, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         REQUIRE ?V0
@@ -1506,113 +1512,97 @@ zclZEM_event_loop:
           CFI CFA_SP SP+0
           CFI CFA_XSP16 add(XSP16, 12)
         ; Saved register size: 12
-        ; Auto size: 129
-        MOV       A,#0x7f
+        ; Auto size: 26
+        MOV       A,#-0x1a
         LCALL     ?ALLOC_XSTACK8
-          CFI CFA_XSP16 add(XSP16, 141)
+          CFI CFA_XSP16 add(XSP16, 38)
         MOV       A,R2
         MOV       R6,A
         MOV       A,R3
         MOV       R7,A
-//  255   afIncomingMSGPacket_t *MSGpkt;
-//  256 
-//  257   (void)task_id;  // Intentionally unreferenced parameter
-//  258 
-//  259   if ( events & SYS_EVENT_MSG )
+//  263   afIncomingMSGPacket_t *MSGpkt;
+//  264 
+//  265   (void)task_id;  // Intentionally unreferenced parameter
+//  266 
+//  267   if ( events & SYS_EVENT_MSG )
         ANL       A,#0x80
         JNZ       ??zclZEM_event_loop_0
-//  260   {
-//  261     while ( (MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( zclZEM_TaskID )) )
-//  262     {
-//  263       switch ( MSGpkt->hdr.event )
-//  264       {
-//  265         case ZCL_INCOMING_MSG:
-//  266           // Incoming ZCL Foundation command/response messages
-//  267           zclZEM_ProcessIncomingMsg( (zclIncomingMsg_t *)MSGpkt );
-//  268           break;
-//  269 
-//  270         case AF_INCOMING_MSG_CMD:
-//  271           // Incoming AF data messages
-//  272           zclZEM_AF_RxProc( MSGpkt );
-//  273           break;
-//  274 
-//  275         case KEY_CHANGE:
-//  276           zclZEM_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
-//  277           break;
-//  278 
-//  279         case ZDO_STATE_CHANGE:
-//  280           // 处理网络状态变化
-//  281           {
-//  282             uint8 newState = ((uint8*)MSGpkt)[0];
-//  283             zclZEM_NwkState = newState; // 更新网络状态
-//  284             
-//  285             if (newState == 5) // DEV_END_DEVICE
-//  286             {
-//  287               // 终端设备已加入网络
-//  288               uint8 successMsg[] = "Network joined successfully!\r\n";
-//  289               HalUARTWrite(HAL_UART_PORT_0, successMsg, sizeof(successMsg)-1);
-//  290               
-//  291               // 联网成功后向协调器发送MAC地址
-//  292               #ifndef ZDO_COORDINATOR
-//  293               zclZEM_SendMACToCoordinator();
-//  294               #endif
-//  295             }
-//  296             else if (newState == 9) // DEV_NWK_ORPHAN
-//  297             {
-//  298               // 设备成为孤立设备
-//  299               #ifndef ZDO_COORDINATOR
-//  300               {
-//  301                 static uint8 retryCount = 0;
-//  302                 if (retryCount < 3)
-//  303                 {
-//  304                   retryCount++;
-//  305                   osal_start_timerEx(zclZEM_TaskID, ZEM_REJOIN_EVT, 2000);
-//  306                 }
-//  307               }
-//  308               #endif
-//  309             }
-//  310           }
-//  311           break;
-//  312 
-//  313         default:
-//  314           break;
-//  315       }
-//  316 
-//  317       // Release the memory
-//  318       osal_msg_deallocate( (uint8 *)MSGpkt );
-//  319     }
+//  268   {
+//  269     while ( (MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( zclZEM_TaskID )) )
+//  270     {
+//  271       switch ( MSGpkt->hdr.event )
+//  272       {
+//  273         case ZCL_INCOMING_MSG:
+//  274           // Incoming ZCL Foundation command/response messages
+//  275           zclZEM_ProcessIncomingMsg( (zclIncomingMsg_t *)MSGpkt );
+//  276           break;
+//  277 
+//  278         case AF_INCOMING_MSG_CMD:
+//  279           // Incoming AF data messages
+//  280           zclZEM_AF_RxProc( MSGpkt );
+//  281           break;
+//  282 
+//  283         case KEY_CHANGE:
+//  284           zclZEM_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+//  285           break;
+//  286 
+//  287         case ZDO_STATE_CHANGE:
+//  288           // 处理网络状态变化
+//  289           {
+//  290             uint8 newState = ((uint8*)MSGpkt)[0];
+//  291             zclZEM_NwkState = newState; // 更新网络状态
+//  292             
+//  293             if (newState == 5) // DEV_END_DEVICE
+//  294             {
+//  295               // 终端设备已加入网络
+//  296               uint8 successMsg[] = "Network joined successfully!\r\n";
+//  297               HalUARTWrite(HAL_UART_PORT_0, successMsg, sizeof(successMsg)-1);
+//  298               
+//  299               // 联网成功后向协调器发送MAC地址
+//  300               #ifndef ZDO_COORDINATOR
+//  301               zclZEM_SendMACToCoordinator();
+//  302               #endif
+//  303             }
+//  304             else if (newState == 9) // DEV_NWK_ORPHAN
+//  305             {
+//  306               // 设备成为孤立设备
+//  307               #ifndef ZDO_COORDINATOR
+//  308               {
+//  309                 static uint8 retryCount = 0;
+//  310                 if (retryCount < 3)
+//  311                 {
+//  312                   retryCount++;
+//  313                   osal_start_timerEx(zclZEM_TaskID, ZEM_REJOIN_EVT, 2000);
+//  314                 }
+//  315               }
+//  316               #endif
+//  317             }
+//  318           }
+//  319           break;
 //  320 
-//  321     // return unprocessed events
-//  322     return (events ^ SYS_EVENT_MSG);
-//  323   }
+//  321         default:
+//  322           break;
+//  323       }
 //  324 
-//  325   // 先处理LED闪烁事件，确保不会被SYS_EVENT_MSG阻塞
-//  326   if(events & ZEMAPP_EVT)
+//  325       // Release the memory
+//  326       osal_msg_deallocate( (uint8 *)MSGpkt );
+//  327     }
+//  328 
+//  329     // return unprocessed events
+//  330     return (events ^ SYS_EVENT_MSG);
+//  331   }
+//  332 
+//  333   // 先处理LED闪烁事件，确保不会被SYS_EVENT_MSG阻塞
+//  334   if(events & ZEMAPP_EVT)
         MOV       A,R6
         ANL       A,#0x80
-        JNZ       $+5
-        LJMP      ??zclZEM_event_loop_1 & 0xFFFF
-//  327   {
-//  328     uint8 debugMsg[] = "ZEMAPP_EVT事件触发，开始LED闪烁...\r\n";
-        MOV       DPTR,#`?<Constant "ZEMAPP_EVT\\344\\272\\213\\344\\273\\266`
-        MOV       A,#0x53
-        LCALL     ?XSTACK_DISP102_8
-        MOV       A,#0x2e
-        LCALL     ?MOVE_LONG8_XDATA_XDATA
-//  329     HalUARTWrite(HAL_UART_PORT_0, debugMsg, sizeof(debugMsg)-1);
-        ; Setup parameters for call to function HalUARTWrite
-        MOV       R4,#0x2d
-        MOV       R5,A
-        MOV       A,#0x53
-        LCALL     ?XSTACK_DISP101_8
-        MOV       R1,#0x0
-        LCALL     `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
-//  330     
-//  331     HalLedBlink(
-//  332         HAL_LED_1, // 指定使用LED1
-//  333         10, // 指定闪烁次数为10次
-//  334         50, // 指定50%的时间LED处于点亮状态
-//  335         1000); // 指定每次闪烁周期为1000ms
+        JZ        ??zclZEM_event_loop_1
+//  335   { 
+//  336     HalLedBlink(
+//  337         HAL_LED_1, // 指定使用LED1
+//  338         10, // 指定闪烁次数为10次
+//  339         50, // 指定50%的时间LED处于点亮状态
+//  340         1000); // 指定每次闪烁周期为1000ms
         ; Setup parameters for call to function HalLedBlink
         MOV       R4,#-0x18
         MOV       R5,#0x3
@@ -1620,28 +1610,13 @@ zclZEM_event_loop:
         MOV       R2,#0xa
         MOV       R1,#0x1
         LCALL     `??HalLedBlink::?relay`; Banked call to: HalLedBlink
-//  336         
-//  337     uint8 debugMsg2[] = "LED闪烁命令已发送，设置下一次定时器...\r\n";
-        MOV       DPTR,#`?<Constant "LED\\351\\227\\252\\347\\203\\201\\345\\22`
-        MOV       A,#0x1a
-        LCALL     ?XSTACK_DISP102_8
-        MOV       A,#0x39
-        LCALL     ?MOVE_LONG8_XDATA_XDATA
-//  338     HalUARTWrite(HAL_UART_PORT_0, debugMsg2, sizeof(debugMsg2)-1);
-        ; Setup parameters for call to function HalUARTWrite
-        MOV       R4,#0x38
-        MOV       R5,A
-        MOV       A,#0x1a
-        LCALL     ?XSTACK_DISP101_8
-        MOV       R1,#0x0
-        LCALL     `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
-//  339     
-//  340     // 设置下一次LED闪烁定时器
-//  341     osal_start_timerEx(zclZEM_TaskID, ZEMAPP_EVT, 10000);
+//  341     
+//  342     // 设置下一次LED闪烁定时器
+//  343     osal_start_timerEx(zclZEM_TaskID, ZEMAPP_EVT, 10000);
         ; Setup parameters for call to function osal_start_timerEx
         MOV       DPTR,#__Constant_2710
         LCALL     ?PUSH_XSTACK8_X_FOUR
-          CFI CFA_XSP16 add(XSP16, 145)
+          CFI CFA_XSP16 add(XSP16, 42)
         MOV       R2,#-0x80
         MOV       R3,#0x0
         MOV       DPTR,#zclZEM_TaskID
@@ -1650,15 +1625,15 @@ zclZEM_event_loop:
         LCALL     `??osal_start_timerEx::?relay`; Banked call to: osal_start_timerEx
         MOV       A,#0x4
         LCALL     ?DEALLOC_XSTACK8
-          CFI CFA_XSP16 add(XSP16, 141)
-//  342     
-//  343     return (events ^ ZEMAPP_EVT);
+          CFI CFA_XSP16 add(XSP16, 38)
+//  344     
+//  345     return (events ^ ZEMAPP_EVT);
         MOV       A,R6
         XRL       A,#0x80
         MOV       R2,A
         MOV       A,R7
         LJMP      ??zclZEM_event_loop_2 & 0xFFFF
-//  344   }
+//  346   }
 ??zclZEM_event_loop_3:
         MOV       DPTR,#zclZEM_NwkState
         MOV       A,#-0x2f
@@ -1703,72 +1678,72 @@ zclZEM_event_loop:
         MOV       A,R7
         XRL       A,#0x80
         LJMP      ??zclZEM_event_loop_2 & 0xFFFF
-//  345   
-//  346 #if ZG_BUILD_ENDDEVICE_TYPE    
-//  347   if ( events & ZEM_END_DEVICE_REJOIN_EVT )
-//  348   {
-//  349     bdb_ZedAttemptRecoverNwk();
-//  350     return ( events ^ ZEM_END_DEVICE_REJOIN_EVT );
-//  351   }
-//  352 #endif
-//  353 
-//  354   if ( events & ZEM_LCD_AUTO_UPDATE_EVT )
+//  347   
+//  348 #if ZG_BUILD_ENDDEVICE_TYPE    
+//  349   if ( events & ZEM_END_DEVICE_REJOIN_EVT )
+//  350   {
+//  351     bdb_ZedAttemptRecoverNwk();
+//  352     return ( events ^ ZEM_END_DEVICE_REJOIN_EVT );
+//  353   }
+//  354 #endif
+//  355 
+//  356   if ( events & ZEM_LCD_AUTO_UPDATE_EVT )
 ??zclZEM_event_loop_1:
         MOV       A,R6
         ANL       A,#0x10
         JZ        ??zclZEM_event_loop_8
-//  355   {
-//  356     return ( events ^ ZEM_LCD_AUTO_UPDATE_EVT );
+//  357   {
+//  358     return ( events ^ ZEM_LCD_AUTO_UPDATE_EVT );
         MOV       A,R6
         XRL       A,#0x10
         SJMP      ??zclZEM_event_loop_9
-//  357   }
-//  358 
-//  359   if ( events & ZEM_KEY_AUTO_REPEAT_EVT )
+//  359   }
+//  360 
+//  361   if ( events & ZEM_KEY_AUTO_REPEAT_EVT )
 ??zclZEM_event_loop_8:
         MOV       A,R6
         ANL       A,#0x20
         JZ        ??zclZEM_event_loop_10
-//  360   {
-//  361     return ( events ^ ZEM_KEY_AUTO_REPEAT_EVT );
+//  362   {
+//  363     return ( events ^ ZEM_KEY_AUTO_REPEAT_EVT );
         MOV       A,R6
         XRL       A,#0x20
 ??zclZEM_event_loop_9:
         MOV       R2,A
         LJMP      ??zclZEM_event_loop_11 & 0xFFFF
-//  362   }
-//  363   
-//  364   // Broadcast event
-//  365   if ( events & ZEM_BROADCAST_EVT )
-//  366   {
-//  367     uint8 broadcastData[] = "Broadcast";
-//  368     zclZEM_AF_Broadcast(CLUSTER_BROADCAST, 
-//  369                         sizeof(broadcastData)-1, 
-//  370                         broadcastData);
-//  371     osal_start_timerEx(zclZEM_TaskID,
-//  372                       ZEM_BROADCAST_EVT,
-//  373                       ZEM_BROADCAST_PERIOD);
-//  374     return ( events ^ ZEM_BROADCAST_EVT );
-//  375   }
-//  376   
-//  377   // Groupcast event
-//  378   if ( events & ZEM_GROUPCAST_EVT )
+//  364   }
+//  365   
+//  366   // Broadcast event
+//  367   if ( events & ZEM_BROADCAST_EVT )
+//  368   {
+//  369     uint8 broadcastData[] = "Broadcast";
+//  370     zclZEM_AF_Broadcast(CLUSTER_BROADCAST, 
+//  371                         sizeof(broadcastData)-1, 
+//  372                         broadcastData);
+//  373     osal_start_timerEx(zclZEM_TaskID,
+//  374                       ZEM_BROADCAST_EVT,
+//  375                       ZEM_BROADCAST_PERIOD);
+//  376     return ( events ^ ZEM_BROADCAST_EVT );
+//  377   }
+//  378   
+//  379   // Groupcast event
+//  380   if ( events & ZEM_GROUPCAST_EVT )
 ??zclZEM_event_loop_10:
         MOV       A,R7
         ANL       A,#0x1
         JNZ       $+5
         LJMP      ??zclZEM_event_loop_12 & 0xFFFF
-//  379   {
-//  380     uint8 groupcastData[] = "Groupcast";
+//  381   {
+//  382     uint8 groupcastData[] = "Groupcast";
         MOV       DPTR,#`?<Constant "Groupcast">`
         MOV       A,#0x10
         LCALL     ?XSTACK_DISP102_8
         MOV       A,#0xa
         LCALL     ?MOVE_LONG8_XDATA_XDATA
-//  381     zclZEM_AF_Groupcast(GROUP_ID,
-//  382                         CLUSTER_GROUPCAST,
-//  383                         sizeof(groupcastData)-1, 
-//  384                         groupcastData);
+//  383     zclZEM_AF_Groupcast(GROUP_ID,
+//  384                         CLUSTER_GROUPCAST,
+//  385                         sizeof(groupcastData)-1, 
+//  386                         groupcastData);
         MOV       A,#0x8
         LCALL     ?XSTACK_DISP0_8
         MOV       A,#0x1
@@ -1788,28 +1763,28 @@ zclZEM_event_loop:
         LCALL     ?Subroutine9 & 0xFFFF
 ??CrossCallReturnLabel_7:
         LCALL     ?PUSH_XSTACK_I_ONE
-          CFI CFA_XSP16 add(XSP16, 142)
+          CFI CFA_XSP16 add(XSP16, 39)
         MOV       ?V0,#??transferId_2 & 0xff
         MOV       ?V1,#(??transferId_2 >> 8) & 0xff
         MOV       R0,#?V0
         LCALL     ?PUSH_XSTACK_I_TWO
-          CFI CFA_XSP16 add(XSP16, 144)
+          CFI CFA_XSP16 add(XSP16, 41)
         MOV       A,#0x13
         LCALL     ?XSTACK_DISP100_8
         MOV       ?V0,R0
         MOV       ?V1,R1
         MOV       R0,#?V0
         LCALL     ?PUSH_XSTACK_I_TWO
-          CFI CFA_XSP16 add(XSP16, 146)
+          CFI CFA_XSP16 add(XSP16, 43)
         MOV       ?V0,#0x9
         MOV       ?V1,#0x0
         MOV       R0,#?V0
         LCALL     ?PUSH_XSTACK_I_TWO
-          CFI CFA_XSP16 add(XSP16, 148)
+          CFI CFA_XSP16 add(XSP16, 45)
         MOV       ?V0,#0x2
         MOV       R0,#?V0
         LCALL     ?PUSH_XSTACK_I_TWO
-          CFI CFA_XSP16 add(XSP16, 150)
+          CFI CFA_XSP16 add(XSP16, 47)
         MOV       R1,#0x0
         MOV       R4,#ZEM_AppEp & 0xff
         MOV       R5,#(ZEM_AppEp >> 8) & 0xff
@@ -1818,14 +1793,14 @@ zclZEM_event_loop:
         LCALL     `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
         MOV       A,#0x9
         LCALL     ?DEALLOC_XSTACK8
-          CFI CFA_XSP16 add(XSP16, 141)
-//  385     osal_start_timerEx(zclZEM_TaskID,
-//  386                       ZEM_GROUPCAST_EVT,
-//  387                       ZEM_GROUPCAST_PERIOD);
+          CFI CFA_XSP16 add(XSP16, 38)
+//  387     osal_start_timerEx(zclZEM_TaskID,
+//  388                       ZEM_GROUPCAST_EVT,
+//  389                       ZEM_GROUPCAST_PERIOD);
         ; Setup parameters for call to function osal_start_timerEx
         MOV       DPTR,#__Constant_3e8
         LCALL     ?PUSH_XSTACK8_X_FOUR
-          CFI CFA_XSP16 add(XSP16, 145)
+          CFI CFA_XSP16 add(XSP16, 42)
         MOV       R2,#0x0
         MOV       R3,#0x1
         MOV       DPTR,#zclZEM_TaskID
@@ -1834,33 +1809,33 @@ zclZEM_event_loop:
         LCALL     `??osal_start_timerEx::?relay`; Banked call to: osal_start_timerEx
         MOV       A,#0x4
         LCALL     ?DEALLOC_XSTACK8
-          CFI CFA_XSP16 add(XSP16, 141)
-//  388     return ( events ^ ZEM_GROUPCAST_EVT );
+          CFI CFA_XSP16 add(XSP16, 38)
+//  390     return ( events ^ ZEM_GROUPCAST_EVT );
         MOV       A,R6
         MOV       R2,A
         MOV       A,R7
         XRL       A,#0x1
         LJMP      ??zclZEM_event_loop_2 & 0xFFFF
-//  389   }
-//  390   
-//  391   // P2P event
-//  392   if ( events & ZEM_P2P_EVT )
+//  391   }
+//  392   
+//  393   // P2P event
+//  394   if ( events & ZEM_P2P_EVT )
 ??zclZEM_event_loop_12:
         MOV       A,R7
         ANL       A,#0x2
         JNZ       $+5
         LJMP      ??zclZEM_event_loop_13 & 0xFFFF
-//  393   {
-//  394     uint8 p2pData[] = "P2P";
+//  395   {
+//  396     uint8 p2pData[] = "P2P";
         MOV       DPTR,#`?<Constant "P2P">`
         MOV       A,#0xc
         LCALL     ?XSTACK_DISP102_8
         MOV       A,#0x4
         LCALL     ?MOVE_LONG8_XDATA_XDATA
-//  395     zclZEM_AF_P2P(0x0000, // 目标设备网络地址（这里使用0x0000作为示例）
-//  396                   CLUSTER_P2P,
-//  397                   sizeof(p2pData)-1, 
-//  398                   p2pData);
+//  397     zclZEM_AF_P2P(0x0000, // 目标设备网络地址（这里使用0x0000作为示例）
+//  398                   CLUSTER_P2P,
+//  399                   sizeof(p2pData)-1, 
+//  400                   p2pData);
         MOV       A,#0x8
         LCALL     ?XSTACK_DISP0_8
         MOV       A,#0x2
@@ -1879,29 +1854,29 @@ zclZEM_event_loop:
         LCALL     ?Subroutine9 & 0xFFFF
 ??CrossCallReturnLabel_8:
         LCALL     ?PUSH_XSTACK_I_ONE
-          CFI CFA_XSP16 add(XSP16, 142)
+          CFI CFA_XSP16 add(XSP16, 39)
         MOV       ?V0,#??transferId & 0xff
         MOV       ?V1,#(??transferId >> 8) & 0xff
         MOV       R0,#?V0
         LCALL     ?PUSH_XSTACK_I_TWO
-          CFI CFA_XSP16 add(XSP16, 144)
+          CFI CFA_XSP16 add(XSP16, 41)
         MOV       A,#0xf
         LCALL     ?XSTACK_DISP100_8
         MOV       ?V0,R0
         MOV       ?V1,R1
         MOV       R0,#?V0
         LCALL     ?PUSH_XSTACK_I_TWO
-          CFI CFA_XSP16 add(XSP16, 146)
+          CFI CFA_XSP16 add(XSP16, 43)
         MOV       ?V0,#0x3
         MOV       ?V1,#0x0
         MOV       R0,#?V0
         LCALL     ?PUSH_XSTACK_I_TWO
-          CFI CFA_XSP16 add(XSP16, 148)
+          CFI CFA_XSP16 add(XSP16, 45)
         CLR       A
         MOV       ?V0,A
         MOV       R0,#?V0
         LCALL     ?PUSH_XSTACK_I_TWO
-          CFI CFA_XSP16 add(XSP16, 150)
+          CFI CFA_XSP16 add(XSP16, 47)
         MOV       R1,#0x0
         MOV       R4,#ZEM_AppEp & 0xff
         MOV       R5,#(ZEM_AppEp >> 8) & 0xff
@@ -1910,14 +1885,14 @@ zclZEM_event_loop:
         LCALL     `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
         MOV       A,#0x9
         LCALL     ?DEALLOC_XSTACK8
-          CFI CFA_XSP16 add(XSP16, 141)
-//  399     osal_start_timerEx(zclZEM_TaskID,
-//  400                       ZEM_P2P_EVT,
-//  401                       ZEM_P2P_PERIOD);
+          CFI CFA_XSP16 add(XSP16, 38)
+//  401     osal_start_timerEx(zclZEM_TaskID,
+//  402                       ZEM_P2P_EVT,
+//  403                       ZEM_P2P_PERIOD);
         ; Setup parameters for call to function osal_start_timerEx
         MOV       DPTR,#__Constant_3e8
         LCALL     ?PUSH_XSTACK8_X_FOUR
-          CFI CFA_XSP16 add(XSP16, 145)
+          CFI CFA_XSP16 add(XSP16, 42)
         MOV       R2,#0x0
         MOV       R3,#0x2
         MOV       DPTR,#zclZEM_TaskID
@@ -1926,8 +1901,8 @@ zclZEM_event_loop:
         LCALL     `??osal_start_timerEx::?relay`; Banked call to: osal_start_timerEx
         MOV       A,#0x4
         LCALL     ?DEALLOC_XSTACK8
-          CFI CFA_XSP16 add(XSP16, 141)
-//  402     return ( events ^ ZEM_P2P_EVT );
+          CFI CFA_XSP16 add(XSP16, 38)
+//  404     return ( events ^ ZEM_P2P_EVT );
         MOV       A,R6
         MOV       R2,A
         MOV       A,R7
@@ -1935,53 +1910,37 @@ zclZEM_event_loop:
 ??zclZEM_event_loop_2:
         MOV       R3,A
         SJMP      ??zclZEM_event_loop_11
-//  403   }
-//  404   #ifdef ZDO_COORDINATOR
-//  405     if ( events & ZEM_RETRY_FORMATION_EVT )//如果事件类型为重试网络形成事件
-//  406     {
-//  407         // 重试网络形成，并打印失败信息
-//  408         uint8 failMsg[] = "Network formation failed! Retrying...\r\n";
-//  409         HalUARTWrite(HAL_UART_PORT_0, failMsg, sizeof(failMsg)-1);
+//  405   }
+//  406   #ifndef ZDO_COORDINATOR
+//  407     if ( events & ZEM_REJOIN_EVT )//如果事件类型为重新加入网络事件
+//  408     {
+//  409         // 重新加入网络
 //  410         
-//  411         /* 重试网络形成 */
-//  412         bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_FORMATION |
+//  411         /* 重新加入网络 */
+//  412         bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_STEERING |
 //  413                                     BDB_COMMISSIONING_MODE_FINDING_BINDING );
-//  414         
-//  415         // 无论成功与否，5秒后再次重试 - 实现真正的无限重试
-//  416         osal_start_timerEx(zclZEM_TaskID, ZEM_RETRY_FORMATION_EVT, 5000);
-//  417         
-//  418       return ( events ^ ZEM_RETRY_FORMATION_EVT );
-//  419     }
-//  420   #else
-//  421     if ( events & ZEM_REJOIN_EVT )//如果事件类型为重新加入网络事件
-//  422     {
-//  423         // 重新加入网络
-//  424         
-//  425         /* 重新加入网络 */
-//  426         bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_STEERING |
-//  427                                     BDB_COMMISSIONING_MODE_FINDING_BINDING );
-//  428       return ( events ^ ZEM_REJOIN_EVT );
-//  429     }
-//  430   #endif
-//  431 
-//  432   // Discard unknown events
-//  433   return 0;
+//  414       return ( events ^ ZEM_REJOIN_EVT );
+//  415     }
+//  416   #endif
+//  417 
+//  418   // Discard unknown events
+//  419   return 0;
 ??zclZEM_event_loop_13:
         MOV       R2,#0x0
         MOV       R3,#0x0
 ??zclZEM_event_loop_11:
-        MOV       A,#-0x7f
+        MOV       A,#0x1a
           CFI EndBlock cfiBlock1
         REQUIRE ?Subroutine0
         ; // Fall through to label ?Subroutine0
-//  434 }
+//  420 }
 
         RSEG BANKED_CODE:HUGECODE:NOROOT(0)
 ?Subroutine0:
           CFI Block cfiBlock2 Using cfiCommon0
           CFI NoFunction
           CFI CFA_SP SP+0
-          CFI CFA_XSP16 add(XSP16, 141)
+          CFI CFA_XSP16 add(XSP16, 38)
           CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
           CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
           CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
@@ -2020,7 +1979,7 @@ zclZEM_event_loop:
           CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
           CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
           CFI CFA_SP SP+-2
-          CFI CFA_XSP16 add(XSP16, 141)
+          CFI CFA_XSP16 add(XSP16, 38)
           CFI Block cfiCond4 Using cfiCommon0
           CFI (cfiCond4) Function zclZEM_event_loop
           CFI (cfiCond4) Conditional ??CrossCallReturnLabel_8
@@ -2037,7 +1996,7 @@ zclZEM_event_loop:
           CFI (cfiCond4) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
           CFI (cfiCond4) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
           CFI (cfiCond4) CFA_SP SP+-2
-          CFI (cfiCond4) CFA_XSP16 add(XSP16, 141)
+          CFI (cfiCond4) CFA_XSP16 add(XSP16, 38)
           CFI Block cfiPicker5 Using cfiCommon1
           CFI (cfiPicker5) NoFunction
           CFI (cfiPicker5) Picker
@@ -2052,85 +2011,85 @@ zclZEM_event_loop:
           CFI EndBlock cfiCond3
           CFI EndBlock cfiCond4
           CFI EndBlock cfiPicker5
-//  435 
-//  436 /*********************************************************************
-//  437  * @fn      zclZEM_InitUart
-//  438  *
-//  439  * @brief   Initialize UART for communication
-//  440  *
-//  441  * @param   none
-//  442  *
-//  443  * @return  none
-//  444  */
-//  445 static void zclZEM_InitUart(void)
-//  446 {
-//  447   // 统一使用协调器的UART引脚配置（P1.4/P1.5）
-//  448   /********** 1. 配置UART0的P1.4/P1.5和PERCFG寄存器 **********/
-//  449   // PERCFG的bit0(U0CFG)设置为1：UART0映射到Alternative 2位置(P1.4/P1.5)
-//  450   PERCFG |= (1 << 0);  // 配置PERCFG |= 0x01来设置相应的bit0
-//  451 
-//  452   /********** 2. 配置P1.4/P1.5为UART0功能和P1端口寄存器 **********/
-//  453   // P1SEL的bit4(P1.4)和bit5(P1.5)设置为1：配置为外设功能(UART)
-//  454   P1SEL |= (1 << 4) | (1 << 5);  // 配置P1SEL |= 0x30(00110000)
-//  455   // P1DIR的bit4(P1.4=TX)设置为1：输出；bit5(P1.5=RX)设置为0：输入
-//  456   P1DIR |= (1 << 4);   // P1.4(TX)作为输出
-//  457   P1DIR &= ~(1 << 5);  // P1.5(RX)作为输入
-//  458 
-//  459   halUARTCfg_t uartConfig;
-//  460   /* UART Configuration */
-//  461   uartConfig.configured          = TRUE;      // Enable configuration
-//  462   uartConfig.baudRate            = HAL_UART_BR_115200;  // Baud rate
-//  463   uartConfig.flowControl         = FALSE;     // Disable hardware flow control
-//  464   uartConfig.flowControlThreshold= 0;         // Flow control threshold
-//  465   uartConfig.rx.maxBufSize       = ZCLZEM_UART_BUF_LEN;  // Receive buffer size
-//  466   uartConfig.tx.maxBufSize       = 0;         // Transmit buffer size
-//  467   uartConfig.idleTimeout         = 6;         // Default timeout
-//  468   uartConfig.intEnable           = TRUE;      // Enable interrupt
-//  469   uartConfig.callBackFunc        = zclZEM_UartCB;  // Set callback function
-//  470   /* Start UART */
-//  471   // 统一使用UART0端口（协调器配置）
-//  472   HalUARTOpen(HAL_UART_PORT_0, &uartConfig);  // Open UART0 with configuration
-//  473 }
-//  474 
-//  475 
-//  476 void zclZEM_SendMACToCoordinator(void)
-//  477 {
-//  478   uint8* macAddr;
-//  479   uint8 macData[10]; // MAC地址数据包：1字节类型标识 + 8字节MAC地址 + 1字节结束符
+//  421 
+//  422 /*********************************************************************
+//  423  * @fn      zclZEM_InitUart
+//  424  *
+//  425  * @brief   Initialize UART for communication
+//  426  *
+//  427  * @param   none
+//  428  *
+//  429  * @return  none
+//  430  */
+//  431 static void zclZEM_InitUart(void)
+//  432 {
+//  433   // 统一使用协调器的UART引脚配置（P1.4/P1.5）
+//  434   /********** 1. 配置UART0的P1.4/P1.5和PERCFG寄存器 **********/
+//  435   // PERCFG的bit0(U0CFG)设置为1：UART0映射到Alternative 2位置(P1.4/P1.5)
+//  436   PERCFG |= (1 << 0);  // 配置PERCFG |= 0x01来设置相应的bit0
+//  437 
+//  438   /********** 2. 配置P1.4/P1.5为UART0功能和P1端口寄存器 **********/
+//  439   // P1SEL的bit4(P1.4)和bit5(P1.5)设置为1：配置为外设功能(UART)
+//  440   P1SEL |= (1 << 4) | (1 << 5);  // 配置P1SEL |= 0x30(00110000)
+//  441   // P1DIR的bit4(P1.4=TX)设置为1：输出；bit5(P1.5=RX)设置为0：输入
+//  442   P1DIR |= (1 << 4);   // P1.4(TX)作为输出
+//  443   P1DIR &= ~(1 << 5);  // P1.5(RX)作为输入
+//  444 
+//  445   halUARTCfg_t uartConfig;
+//  446   /* UART Configuration */
+//  447   uartConfig.configured          = TRUE;      // Enable configuration
+//  448   uartConfig.baudRate            = HAL_UART_BR_115200;  // Baud rate
+//  449   uartConfig.flowControl         = FALSE;     // Disable hardware flow control
+//  450   uartConfig.flowControlThreshold= 0;         // Flow control threshold
+//  451   uartConfig.rx.maxBufSize       = ZCLZEM_UART_BUF_LEN;  // Receive buffer size
+//  452   uartConfig.tx.maxBufSize       = 0;         // Transmit buffer size
+//  453   uartConfig.idleTimeout         = 6;         // Default timeout
+//  454   uartConfig.intEnable           = TRUE;      // Enable interrupt
+//  455   uartConfig.callBackFunc        = zclZEM_UartCB;  // Set callback function
+//  456   /* Start UART */
+//  457   // 统一使用UART0端口（协调器配置）
+//  458   HalUARTOpen(HAL_UART_PORT_0, &uartConfig);  // Open UART0 with configuration
+//  459 }
+//  460 
+//  461 
+//  462 void zclZEM_SendMACToCoordinator(void)
+//  463 {
+//  464   uint8* macAddr;
+//  465   uint8 macData[10]; // MAC地址数据包：1字节类型标识 + 8字节MAC地址 + 1字节结束符
+//  466   
+//  467   // 读取MAC地址
+//  468   macAddr = NLME_GetExtAddr();
+//  469   
+//  470   // 构建数据包
+//  471   macData[0] = 0x01; // 类型标识：MAC地址数据
+//  472   osal_memcpy(&macData[1], macAddr, 8); // 复制MAC地址
+//  473   macData[9] = 0x00; // 结束符
+//  474   
+//  475   // 向协调器发送数据（协调器网络地址通常为0x0000）
+//  476   zclZEM_AF_P2P(0x0000, // 协调器网络地址
+//  477                 CLUSTER_P2P, // 使用点对点集群
+//  478                 10, // 数据长度
+//  479                 macData); // 数据内容
 //  480   
-//  481   // 读取MAC地址
-//  482   macAddr = NLME_GetExtAddr();
-//  483   
-//  484   // 构建数据包
-//  485   macData[0] = 0x01; // 类型标识：MAC地址数据
-//  486   osal_memcpy(&macData[1], macAddr, 8); // 复制MAC地址
-//  487   macData[9] = 0x00; // 结束符
-//  488   
-//  489   // 向协调器发送数据（协调器网络地址通常为0x0000）
-//  490   zclZEM_AF_P2P(0x0000, // 协调器网络地址
-//  491                 CLUSTER_P2P, // 使用点对点集群
-//  492                 10, // 数据长度
-//  493                 macData); // 数据内容
-//  494   
-//  495   // 同时通过串口显示发送信息
-//  496   uint8 sendMsg[] = "MAC address sent to coordinator!\r\n";
-//  497   HalUARTWrite(HAL_UART_PORT_0, sendMsg, sizeof(sendMsg)-1);
-//  498 }
-//  499 
-//  500 /*********************************************************************
-//  501  * @fn      zclZEM_ReadAndSendMAC
-//  502  *
-//  503  * @brief   Read MAC address and send it via UART
-//  504  *
-//  505  */
+//  481   // 同时通过串口显示发送信息
+//  482   uint8 sendMsg[] = "MAC address sent to coordinator!\r\n";
+//  483   HalUARTWrite(HAL_UART_PORT_0, sendMsg, sizeof(sendMsg)-1);
+//  484 }
+//  485 
+//  486 /*********************************************************************
+//  487  * @fn      zclZEM_ReadAndSendMAC
+//  488  *
+//  489  * @brief   Read MAC address and send it via UART
+//  490  *
+//  491  */
 
         RSEG BANKED_CODE:HUGECODE:NOROOT(0)
-//  506 void zclZEM_ReadAndSendMAC(void)
+//  492 void zclZEM_ReadAndSendMAC(void)
 zclZEM_ReadAndSendMAC:
           CFI Block cfiBlock6 Using cfiCommon0
           CFI Function zclZEM_ReadAndSendMAC
         CODE
-//  507 {
+//  493 {
         FUNCALL zclZEM_ReadAndSendMAC, NLME_GetExtAddr
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
@@ -2189,27 +2148,27 @@ zclZEM_ReadAndSendMAC:
         MOV       A,#-0x38
         LCALL     ?ALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 68)
-//  508   uint8* macAddr;
-//  509   uint8 macStr[50]; // 足够存储MAC地址字符串
-//  510   uint8 i, pos = 0;
-//  511   
-//  512   // Read MAC address from system
-//  513   macAddr = NLME_GetExtAddr();
+//  494   uint8* macAddr;
+//  495   uint8 macStr[50]; // 足够存储MAC地址字符串
+//  496   uint8 i, pos = 0;
+//  497   
+//  498   // Read MAC address from system
+//  499   macAddr = NLME_GetExtAddr();
         ; Setup parameters for call to function NLME_GetExtAddr
         LCALL     `??NLME_GetExtAddr::?relay`; Banked call to: NLME_GetExtAddr
         MOV       ?V0,R2
         MOV       ?V1,R3
         MOV       R6,?V0
         MOV       R7,?V1
-//  514   
-//  515   // 手动构建MAC地址字符串
-//  516   const uint8 header[] = "MAC: ";
+//  500   
+//  501   // 手动构建MAC地址字符串
+//  502   const uint8 header[] = "MAC: ";
         MOV       DPTR,#`?<Constant "MAC: ">`
         MOV       R4,?XSP + 0
         MOV       R5,?XSP + 1
         MOV       A,#0x6
         LCALL     ?MOVE_LONG8_XDATA_XDATA
-//  517   osal_memcpy(macStr, header, 4);
+//  503   osal_memcpy(macStr, header, 4);
         ; Setup parameters for call to function osal_memcpy
         MOV       R0,?XSP + 0
         MOV       R1,?XSP + 1
@@ -2227,14 +2186,14 @@ zclZEM_ReadAndSendMAC:
         MOV       A,#0x3
         LCALL     ?DEALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 68)
-//  518   pos = 4;
+//  504   pos = 4;
         MOV       R0,#0x4
-//  519   
-//  520   // 添加MAC地址字节，格式化为十六进制
-//  521   for (i = 0; i < 8; i++) {
+//  505   
+//  506   // 添加MAC地址字节，格式化为十六进制
+//  507   for (i = 0; i < 8; i++) {
         MOV       R4,#0x0
-//  522     // 转换高4位
-//  523     uint8 highNibble = (macAddr[i] >> 4) & 0x0F;
+//  508     // 转换高4位
+//  509     uint8 highNibble = (macAddr[i] >> 4) & 0x0F;
 ??zclZEM_ReadAndSendMAC_0:
         MOV       A,R4
         MOV       R2,A
@@ -2250,7 +2209,7 @@ zclZEM_ReadAndSendMAC:
         SWAP      A
         ANL       A,#0xf
         MOV       R1,A
-//  524     macStr[pos++] = (highNibble < 10) ? ('0' + highNibble) : ('A' + highNibble - 10);
+//  510     macStr[pos++] = (highNibble < 10) ? ('0' + highNibble) : ('A' + highNibble - 10);
         MOV       ?V0,R0
         MOV       A,#0x1
         ADD       A,R0
@@ -2280,15 +2239,15 @@ zclZEM_ReadAndSendMAC:
         POP       A
           CFI CFA_SP SP+0
         MOVX      @DPTR,A
-//  525     
-//  526     // 转换低4位
-//  527     uint8 lowNibble = macAddr[i] & 0x0F;
+//  511     
+//  512     // 转换低4位
+//  513     uint8 lowNibble = macAddr[i] & 0x0F;
         MOV       DPL,R2
         MOV       DPH,R3
         MOVX      A,@DPTR
         ANL       A,#0xf
         MOV       R1,A
-//  528     macStr[pos++] = (lowNibble < 10) ? ('0' + lowNibble) : ('A' + lowNibble - 10);
+//  514     macStr[pos++] = (lowNibble < 10) ? ('0' + lowNibble) : ('A' + lowNibble - 10);
         MOV       ?V1,R0
         MOV       A,#0x1
         ADD       A,R0
@@ -2311,19 +2270,19 @@ zclZEM_ReadAndSendMAC:
 ??CrossCallReturnLabel_9:
         MOV       A,R1
         MOVX      @DPTR,A
-//  529     
-//  530     // 添加冒号分隔符（最后一个字节后不加）
-//  531     if (i < 7) {
+//  515     
+//  516     // 添加冒号分隔符（最后一个字节后不加）
+//  517     if (i < 7) {
         MOV       A,R4
         CLR       C
         SUBB      A,#0x7
         JNC       ??zclZEM_ReadAndSendMAC_5
-//  532       macStr[pos++] = ':';
+//  518       macStr[pos++] = ':';
         MOV       A,#0x6
         LCALL     ?XSTACK_DISP0_8
         LCALL     ?Subroutine11 & 0xFFFF
-//  533     }
-//  534   }
+//  519     }
+//  520   }
 ??CrossCallReturnLabel_11:
         MOV       A,#0x3a
         MOVX      @DPTR,A
@@ -2334,9 +2293,9 @@ zclZEM_ReadAndSendMAC:
         CLR       C
         SUBB      A,#0x8
         JC        ??zclZEM_ReadAndSendMAC_0
-//  535   
-//  536   // 添加换行符
-//  537   macStr[pos++] = '\r';
+//  521   
+//  522   // 添加换行符
+//  523   macStr[pos++] = '\r';
         MOV       A,R0
         MOV       R2,A
         MOV       A,#0x6
@@ -2346,17 +2305,17 @@ zclZEM_ReadAndSendMAC:
         MOV       A,#0xd
         MOVX      @DPTR,A
         INC       R0
-//  538   macStr[pos++] = '\n';
+//  524   macStr[pos++] = '\n';
         MOV       A,#0x6
         LCALL     ?XSTACK_DISP0_8
         LCALL     ?Subroutine11 & 0xFFFF
 ??CrossCallReturnLabel_12:
         MOV       A,#0xa
         MOVX      @DPTR,A
-//  539   
-//  540   // Send MAC address via UART
-//  541   // 统一使用UART0端口（协调器配置）
-//  542   HalUARTWrite(HAL_UART_PORT_0, macStr, pos);
+//  525   
+//  526   // Send MAC address via UART
+//  527   // 统一使用UART0端口（协调器配置）
+//  528   HalUARTWrite(HAL_UART_PORT_0, macStr, pos);
         ; Setup parameters for call to function HalUARTWrite
         MOV       A,#0x1
         ADD       A,R0
@@ -2366,7 +2325,7 @@ zclZEM_ReadAndSendMAC:
         LCALL     ?XSTACK_DISP101_8
         MOV       R1,#0x0
         LCALL     `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
-//  543 }
+//  529 }
         MOV       A,#0x38
         LJMP      ?Subroutine0 & 0xFFFF
           CFI EndBlock cfiBlock6
@@ -2470,25 +2429,25 @@ zclZEM_ReadAndSendMAC:
           CFI EndBlock cfiCond10
           CFI EndBlock cfiCond11
           CFI EndBlock cfiPicker12
-//  544 
-//  545 /*********************************************************************
-//  546  * @fn      zclZEM_UartCB
-//  547  *
-//  548  * @brief   UART callback function
-//  549  *
-//  550  * @param   port - UART port
-//  551  * @param   event - UART event
-//  552  *
-//  553  * @return  none
-//  554  */
+//  530 
+//  531 /*********************************************************************
+//  532  * @fn      zclZEM_UartCB
+//  533  *
+//  534  * @brief   UART callback function
+//  535  *
+//  536  * @param   port - UART port
+//  537  * @param   event - UART event
+//  538  *
+//  539  * @return  none
+//  540  */
 
         RSEG BANKED_CODE:HUGECODE:NOROOT(0)
-//  555 static void zclZEM_UartCB(uint8 port, uint8 event)
+//  541 static void zclZEM_UartCB(uint8 port, uint8 event)
 zclZEM_UartCB:
           CFI Block cfiBlock13 Using cfiCommon0
           CFI Function zclZEM_UartCB
         CODE
-//  556 {
+//  542 {
         FUNCALL zclZEM_UartCB, Hal_UART_RxBufLen
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
@@ -2537,17 +2496,17 @@ zclZEM_UartCB:
           CFI CFA_XSP16 add(XSP16, 9)
         ; Saved register size: 9
         ; Auto size: 0
-//  557   // 获取当前串口接收缓冲区有多少字节的数据
-//  558   uint8 rxLen = Hal_UART_RxBufLen(HAL_UART_PORT_0); 
+//  543   // 获取当前串口接收缓冲区有多少字节的数据
+//  544   uint8 rxLen = Hal_UART_RxBufLen(HAL_UART_PORT_0); 
         ; Setup parameters for call to function Hal_UART_RxBufLen
         MOV       R1,#0x0
         LCALL     `??Hal_UART_RxBufLen::?relay`; Banked call to: Hal_UART_RxBufLen
         MOV       A,R2
-//  559   if(rxLen != 0) // 如果字节数数量不等于0 
+//  545   if(rxLen != 0) // 如果字节数数量不等于0 
         JZ        ??zclZEM_UartCB_0
-//  560   {
-//  561     // 从串口缓冲区中读取数据
-//  562     HalUARTRead(HAL_UART_PORT_0, zclZEM_UartBuf, rxLen);
+//  546   {
+//  547     // 从串口缓冲区中读取数据
+//  548     HalUARTRead(HAL_UART_PORT_0, zclZEM_UartBuf, rxLen);
         MOV       R6,A
         ; Setup parameters for call to function HalUARTRead
         MOV       R4,A
@@ -2556,8 +2515,8 @@ zclZEM_UartCB:
         MOV       R3,#(zclZEM_UartBuf >> 8) & 0xff
         MOV       R1,#0x0
         LCALL     `??HalUARTRead::?relay`; Banked call to: HalUARTRead
-//  563     // 通过串口发送数据，例如把数据发送到串口助手
-//  564     HalUARTWrite(HAL_UART_PORT_0, zclZEM_UartBuf, rxLen);  
+//  549     // 通过串口发送数据，例如把数据发送到串口助手
+//  550     HalUARTWrite(HAL_UART_PORT_0, zclZEM_UartBuf, rxLen);  
         ; Setup parameters for call to function HalUARTWrite
         MOV       A,R6
         MOV       R4,A
@@ -2566,8 +2525,8 @@ zclZEM_UartCB:
         MOV       R3,#(zclZEM_UartBuf >> 8) & 0xff
         MOV       R1,#0x0
         LCALL     `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
-//  565   }
-//  566 }
+//  551   }
+//  552 }
 ??zclZEM_UartCB_0:
           CFI EndBlock cfiBlock13
         REQUIRE ?Subroutine1
@@ -2591,128 +2550,234 @@ zclZEM_UartCB:
         MOV       R7,#0x1
         LJMP      ?BANKED_LEAVE_XDATA
           CFI EndBlock cfiBlock14
-//  567 
-//  568 /*********************************************************************
-//  569  * @fn      zclZEM_HandleKeys
-//  570  *
-//  571  * @brief   Handles all key events for this device.
-//  572  *
-//  573  * @param   shift - true if in shift/alt.
-//  574  * @param   keys - bit field for key events. Valid entries:
-//  575  *                 HAL_KEY_SW_5
-//  576  *                 HAL_KEY_SW_4
-//  577  *                 HAL_KEY_SW_3
-//  578  *                 HAL_KEY_SW_2
-//  579  *                 HAL_KEY_SW_1
-//  580  *
-//  581  * @return  none
-//  582  */
-//  583 static void zclZEM_HandleKeys( byte shift, byte keys )
-//  584 {
-//  585 }
-//  586 
-//  587 /*********************************************************************
-//  588  * @fn      zclZEM_LcdDisplayMainMode
-//  589  *
-//  590  * @brief   Called to display the main screen on the LCD.
-//  591  *
-//  592  * @param   none
-//  593  *
-//  594  * @return  none
-//  595  */
+//  553 
+//  554 /*********************************************************************
+//  555  * @fn      zclZEM_HandleKeys
+//  556  *
+//  557  * @brief   Handles all key events for this device.
+//  558  *
+//  559  * @param   shift - true if in shift/alt.
+//  560  * @param   keys - bit field for key events. Valid entries:
+//  561  *                 HAL_KEY_SW_5
+//  562  *                 HAL_KEY_SW_4
+//  563  *                 HAL_KEY_SW_3
+//  564  *                 HAL_KEY_SW_2
+//  565  *                 HAL_KEY_SW_1
+//  566  *
+//  567  * @return  none
+//  568  */
+//  569 static void zclZEM_HandleKeys( byte shift, byte keys )
+//  570 {
+//  571 }
+//  572 
+//  573 /*********************************************************************
+//  574  * @fn      zclZEM_LcdDisplayMainMode
+//  575  *
+//  576  * @brief   Called to display the main screen on the LCD.
+//  577  *
+//  578  * @param   none
+//  579  *
+//  580  * @return  none
+//  581  */
 
         RSEG BANKED_CODE:HUGECODE:NOROOT(0)
-//  596 static void zclZEM_ProcessCommissioningStatus(bdbCommissioningModeMsg_t* bdbCommissioningModeMsg)
+//  582 static void zclZEM_ProcessCommissioningStatus(bdbCommissioningModeMsg_t* bdbCommissioningModeMsg)
 zclZEM_ProcessCommissioningStatus:
           CFI Block cfiBlock15 Using cfiCommon0
           CFI Function zclZEM_ProcessCommissioningStatus
         CODE
-//  597 {
+//  583 {
         FUNCALL zclZEM_ProcessCommissioningStatus, bdb_StartCommissioning
-        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 114, STACK
+        LOCFRAME XSTACK, 176, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 114, STACK
+        ARGFRAME XSTACK, 176, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL zclZEM_ProcessCommissioningStatus, HalUARTWrite
-        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 114, STACK
+        LOCFRAME XSTACK, 176, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 114, STACK
+        ARGFRAME XSTACK, 176, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL zclZEM_ProcessCommissioningStatus, HalUARTWrite
-        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 114, STACK
+        LOCFRAME XSTACK, 176, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 114, STACK
+        ARGFRAME XSTACK, 176, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL zclZEM_ProcessCommissioningStatus, osal_start_timerEx
-        LOCFRAME ISTACK, 2, STACK
+        FUNCALL zclZEM_ProcessCommissioningStatus, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 118, STACK
+        LOCFRAME XSTACK, 179, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 118, STACK
+        ARGFRAME XSTACK, 179, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclZEM_ProcessCommissioningStatus, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 179, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 179, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclZEM_ProcessCommissioningStatus, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 179, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 179, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclZEM_ProcessCommissioningStatus, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 179, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 179, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclZEM_ProcessCommissioningStatus, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 179, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 179, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclZEM_ProcessCommissioningStatus, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 179, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 179, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclZEM_ProcessCommissioningStatus, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 179, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 179, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL zclZEM_ProcessCommissioningStatus, HalUARTWrite
-        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 114, STACK
+        LOCFRAME XSTACK, 176, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME ISTACK, 0, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 114, STACK
+        ARGFRAME XSTACK, 176, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        PUSH      DPL
-          CFI DPL0 Frame(CFA_SP, 4)
-          CFI CFA_SP SP+-4
-        PUSH      DPH
-          CFI DPH0 Frame(CFA_SP, 5)
-          CFI CFA_SP SP+-5
-        ; Saved register size: 2
-        ; Auto size: 114
-        MOV       A,#-0x72
+        FUNCALL zclZEM_ProcessCommissioningStatus, bdb_StartCommissioning
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 176, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 176, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclZEM_ProcessCommissioningStatus, HalUARTWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 176, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 176, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        MOV       A,#-0xb
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 11)
+        ; Saved register size: 11
+        ; Auto size: 165
+        MOV       A,#0x5b
         LCALL     ?ALLOC_XSTACK8
-          CFI CFA_XSP16 add(XSP16, 114)
-//  598     switch(bdbCommissioningModeMsg->bdbCommissioningMode)
-        MOV       DPL,R2
-        MOV       DPH,R3
+          CFI CFA_XSP16 add(XSP16, 176)
+        MOV       A,R2
+        MOV       R6,A
+        MOV       A,R3
+        MOV       R7,A
+//  584     switch(bdbCommissioningModeMsg->bdbCommissioningMode)
+        MOV       DPL,R6
+        MOV       DPH,R7
         INC       DPTR
         MOVX      A,@DPTR
         DEC       A
-        JZ        ??zclZEM_ProcessCommissioningStatus_0
+        JNZ       $+5
+        LJMP      ??zclZEM_ProcessCommissioningStatus_0 & 0xFFFF
         DEC       A
-        JNZ       ??zclZEM_ProcessCommissioningStatus_1
-//  599     {
-//  600       case BDB_COMMISSIONING_FORMATION:
-//  601         if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_SUCCESS)
-        MOV       DPL,R2
-        MOV       DPH,R3
+        JZ        $+5
+        LJMP      ??zclZEM_ProcessCommissioningStatus_1 & 0xFFFF
+//  585     {
+//  586       case BDB_COMMISSIONING_FORMATION:
+//  587         if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_SUCCESS)
+        MOV       DPL,R6
+        MOV       DPH,R7
         MOVX      A,@DPTR
         JNZ       ??zclZEM_ProcessCommissioningStatus_2
-//  602         {
-//  603           //After formation, perform nwk steering again plus the remaining commissioning modes that has not been process yet
-//  604           bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_STEERING | bdbCommissioningModeMsg->bdbRemainingCommissioningModes);
+//  588         {
+//  589           //After formation, perform nwk steering again plus the remaining commissioning modes that has not been process yet
+//  590           bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_STEERING | bdbCommissioningModeMsg->bdbRemainingCommissioningModes);
         ; Setup parameters for call to function bdb_StartCommissioning
         INC       DPTR
         INC       DPTR
@@ -2720,197 +2785,303 @@ zclZEM_ProcessCommissioningStatus:
         ORL       A,#0x2
         MOV       R1,A
         LCALL     `??bdb_StartCommissioning::?relay`; Banked call to: bdb_StartCommissioning
-//  605           // 网络形成成功
-//  606           #ifdef ZDO_COORDINATOR
-//  607           uint8 successMsg[] = "Network formation successful!\r\n";
+//  591           // 网络形成成功
+//  592           #ifdef ZDO_COORDINATOR
+//  593           uint8 successMsg[] = "Network formation successful!\r\n";
         MOV       DPTR,#`?<Constant "Network formation suc...">`
-        MOV       A,#0x52
+        MOV       A,#-0x7b
         LCALL     ?XSTACK_DISP102_8
         MOV       A,#0x20
         LCALL     ?MOVE_LONG8_XDATA_XDATA
-//  608           HalUARTWrite(HAL_UART_PORT_0, successMsg, sizeof(successMsg)-1);
+//  594           HalUARTWrite(HAL_UART_PORT_0, successMsg, sizeof(successMsg)-1);
         ; Setup parameters for call to function HalUARTWrite
         MOV       R4,#0x1f
         MOV       R5,A
-        MOV       A,#0x52
-        LCALL     ?XSTACK_DISP101_8
-        MOV       R1,#0x0
-        SJMP      ??zclZEM_ProcessCommissioningStatus_3
-//  609           #endif
-//  610         }
-//  611         else
-//  612         {
-//  613           //Want to try other channels?
-//  614           //try with bdb_setChannelAttribute
-//  615           // 网络形成失败
-//  616           #ifdef ZDO_COORDINATOR
-//  617           uint8 failMsg[] = "Network formation failed! Retrying in 5 seconds...\r\n";
+        MOV       A,#-0x7b
+        LJMP      ??zclZEM_ProcessCommissioningStatus_3 & 0xFFFF
+//  595           #endif
+//  596         }
+//  597         else
+//  598         {
+//  599           //Want to try other channels?
+//  600           //try with bdb_setChannelAttribute
+//  601           // 网络形成失败
+//  602           #ifdef ZDO_COORDINATOR
+//  603           uint8 failMsg[] = "Network formation failed! Retrying...\r\n";
 ??zclZEM_ProcessCommissioningStatus_2:
-        MOV       DPTR,#`?<Constant "Network formation fai...">_1`
-        MOV       A,#0x1d
+        MOV       DPTR,#`?<Constant "Network formation fai...">`
+        MOV       A,#0x5d
         LCALL     ?XSTACK_DISP102_8
-        MOV       A,#0x35
+        MOV       A,#0x28
         LCALL     ?MOVE_LONG8_XDATA_XDATA
-//  618           HalUARTWrite(HAL_UART_PORT_0, failMsg, sizeof(failMsg)-1);
+//  604           HalUARTWrite(HAL_UART_PORT_0, failMsg, sizeof(failMsg)-1);
         ; Setup parameters for call to function HalUARTWrite
-        MOV       R4,#0x34
+        MOV       R4,#0x27
         MOV       R5,A
-        MOV       A,#0x1d
+        MOV       A,#0x5d
         LCALL     ?XSTACK_DISP101_8
         MOV       R1,#0x0
         LCALL     `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
-//  619           
-//  620           // 无限重试网络形成 - 确保每次失败后都重新设置定时器
-//  621           osal_start_timerEx(zclZEM_TaskID, ZEM_RETRY_FORMATION_EVT, 5000);
-        ; Setup parameters for call to function osal_start_timerEx
-        MOV       DPTR,#__Constant_1388
-        LCALL     ?PUSH_XSTACK8_X_FOUR
-          CFI CFA_XSP16 add(XSP16, 118)
-        MOV       R2,#0x0
-        MOV       R3,#0x2
-        MOV       DPTR,#zclZEM_TaskID
-        MOVX      A,@DPTR
-        MOV       R1,A
-        LCALL     `??osal_start_timerEx::?relay`; Banked call to: osal_start_timerEx
-        MOV       A,#0x4
+//  605           
+//  606           // 打印具体的失败原因
+//  607           uint8 statusMsg[64];
+//  608           osal_memcpy(statusMsg, "Failure reason: ", 15);
+        ; Setup parameters for call to function osal_memcpy
+        MOV       ?V0,#`?<Constant "Failure reason: ">` & 0xff
+        MOV       ?V1,#(`?<Constant "Failure reason: ">` >> 8) & 0xff
+        MOV       ?V2,#0x0
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 179)
+        MOV       R4,#0xf
+        MOV       R5,#0x0
+        MOV       A,#0x3
+        LCALL     ?XSTACK_DISP101_8
+        LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV       A,#0x3
         LCALL     ?DEALLOC_XSTACK8
-          CFI CFA_XSP16 add(XSP16, 114)
+          CFI CFA_XSP16 add(XSP16, 176)
+//  609           
+//  610           switch(bdbCommissioningModeMsg->bdbCommissioningStatus) {
+        MOV       DPL,R6
+        MOV       DPH,R7
+        MOVX      A,@DPTR
+        ADD       A,#-0x2
+        JZ        ??zclZEM_ProcessCommissioningStatus_4
+        ADD       A,#-0x5
+        JZ        ??zclZEM_ProcessCommissioningStatus_5
+        DEC       A
+        JZ        ??zclZEM_ProcessCommissioningStatus_6
+        ADD       A,#-0x6
+        JZ        ??zclZEM_ProcessCommissioningStatus_7
+        SJMP      ??zclZEM_ProcessCommissioningStatus_8
+//  611             case BDB_COMMISSIONING_NO_NETWORK:
+//  612               osal_memcpy(&statusMsg[15], "No network found", 15);
+??zclZEM_ProcessCommissioningStatus_4:
+        ; Setup parameters for call to function osal_memcpy
+        MOV       ?V0,#`?<Constant "No network found">` & 0xff
+        MOV       ?V1,#(`?<Constant "No network found">` >> 8) & 0xff
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 179)
+        MOV       R4,#0xf
+        SJMP      ??zclZEM_ProcessCommissioningStatus_9
+          CFI CFA_XSP16 add(XSP16, 176)
+//  613               break;
+//  614             case BDB_COMMISSIONING_FORMATION_FAILURE:
+//  615               osal_memcpy(&statusMsg[15], "Formation failure", 17);
+??zclZEM_ProcessCommissioningStatus_6:
+        ; Setup parameters for call to function osal_memcpy
+        MOV       ?V0,#`?<Constant "Formation failure">` & 0xff
+        MOV       ?V1,#(`?<Constant "Formation failure">` >> 8) & 0xff
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 179)
+        MOV       R4,#0x11
+        SJMP      ??zclZEM_ProcessCommissioningStatus_9
+          CFI CFA_XSP16 add(XSP16, 176)
+//  616               break;
+//  617             case BDB_COMMISSIONING_TCLK_EX_FAILURE:
+//  618               osal_memcpy(&statusMsg[15], "TCLK exchange failure", 20);
+??zclZEM_ProcessCommissioningStatus_5:
+        ; Setup parameters for call to function osal_memcpy
+        MOV       ?V0,#`?<Constant "TCLK exchange failure">` & 0xff
+        MOV       ?V1,#(`?<Constant "TCLK exchange failure">` >> 8) & 0xff
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 179)
+        MOV       R4,#0x14
+        SJMP      ??zclZEM_ProcessCommissioningStatus_9
+          CFI CFA_XSP16 add(XSP16, 176)
+//  619               break;
+//  620             case BDB_COMMISSIONING_FAILURE:
+//  621               osal_memcpy(&statusMsg[15], "General failure", 14);
+??zclZEM_ProcessCommissioningStatus_7:
+        ; Setup parameters for call to function osal_memcpy
+        MOV       ?V0,#`?<Constant "General failure">` & 0xff
+        MOV       ?V1,#(`?<Constant "General failure">` >> 8) & 0xff
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 179)
+        MOV       R4,#0xe
+        SJMP      ??zclZEM_ProcessCommissioningStatus_9
+          CFI CFA_XSP16 add(XSP16, 176)
+//  622               break;
+//  623             default:
+//  624               osal_memcpy(&statusMsg[15], "Unknown error", 13);
+??zclZEM_ProcessCommissioningStatus_8:
+        ; Setup parameters for call to function osal_memcpy
+        MOV       ?V0,#`?<Constant "Unknown error">` & 0xff
+        MOV       ?V1,#(`?<Constant "Unknown error">` >> 8) & 0xff
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 179)
+        MOV       R4,#0xd
+??zclZEM_ProcessCommissioningStatus_9:
+        MOV       R5,#0x0
+        MOV       A,#0x12
+        LCALL     ?XSTACK_DISP0_8
+        MOV       R2,DPL
+        MOV       R3,DPH
+        LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV       A,#0x3
+        LCALL     ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 176)
+//  625               break;
+//  626           }
+//  627           osal_memcpy(&statusMsg[30], "\r\n", 2);
+        ; Setup parameters for call to function osal_memcpy
+        MOV       ?V0,#`?<Constant "\\r\\n">` & 0xff
+        MOV       ?V1,#(`?<Constant "\\r\\n">` >> 8) & 0xff
+        MOV       R0,#?V0
+        LCALL     ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 179)
+        MOV       R4,#0x2
+        MOV       R5,#0x0
+        MOV       A,#0x21
+        LCALL     ?XSTACK_DISP0_8
+        MOV       R2,DPL
+        MOV       R3,DPH
+        LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV       A,#0x3
+        LCALL     ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 176)
+//  628           HalUARTWrite(HAL_UART_PORT_0, statusMsg, 32);
+        ; Setup parameters for call to function HalUARTWrite
+        MOV       R4,#0x20
+        MOV       R5,#0x0
+        MOV       R2,?XSP + 0
+        MOV       R3,?XSP + 1
+        MOV       R1,#0x0
+        LCALL     `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+//  629           
+//  630           // 直接重新调用组网函数，不需要通过定时器
+//  631           bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_FORMATION |
+//  632                                       BDB_COMMISSIONING_MODE_FINDING_BINDING );
+        ; Setup parameters for call to function bdb_StartCommissioning
+        MOV       R1,#0xc
+        LCALL     `??bdb_StartCommissioning::?relay`; Banked call to: bdb_StartCommissioning
         SJMP      ??zclZEM_ProcessCommissioningStatus_1
-//  622           #endif
-//  623         }
-//  624       break;
-//  625       case BDB_COMMISSIONING_NWK_STEERING:
-//  626         if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_SUCCESS)
+//  633           #endif
+//  634         }
+//  635       break;
+//  636       case BDB_COMMISSIONING_NWK_STEERING:
+//  637         if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_SUCCESS)
 ??zclZEM_ProcessCommissioningStatus_0:
-        MOV       DPL,R2
-        MOV       DPH,R3
+        MOV       DPL,R6
+        MOV       DPH,R7
         MOVX      A,@DPTR
         JNZ       ??zclZEM_ProcessCommissioningStatus_1
-//  627         {
-//  628           //YOUR JOB:
-//  629           //We are on the nwk, what now?
-//  630           // 网络引导成功
-//  631           #ifdef ZDO_COORDINATOR
-//  632           uint8 deviceJoinedMsg[] = "Device joined the network!\r\n";
+//  638         {
+//  639           //YOUR JOB:
+//  640           //We are on the nwk, what now?
+//  641           // 网络引导成功
+//  642           #ifdef ZDO_COORDINATOR
+//  643           uint8 deviceJoinedMsg[] = "Device joined the network!\r\n";
         MOV       DPTR,#`?<Constant "Device joined the net...">`
-        MOV       R4,?XSP + 0
-        MOV       R5,?XSP + 1
+        MOV       A,#0x40
+        LCALL     ?XSTACK_DISP102_8
         MOV       A,#0x1d
         LCALL     ?MOVE_LONG8_XDATA_XDATA
-//  633           HalUARTWrite(HAL_UART_PORT_0, deviceJoinedMsg, sizeof(deviceJoinedMsg)-1);
+//  644           HalUARTWrite(HAL_UART_PORT_0, deviceJoinedMsg, sizeof(deviceJoinedMsg)-1);
         ; Setup parameters for call to function HalUARTWrite
         MOV       R4,#0x1c
         MOV       R5,A
-        MOV       R2,?XSP + 0
-        MOV       R3,?XSP + 1
-        MOV       R1,A
+        MOV       A,#0x40
 ??zclZEM_ProcessCommissioningStatus_3:
+        LCALL     ?XSTACK_DISP101_8
+        MOV       R1,#0x0
         LCALL     `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
-//  634           #endif
-//  635         }
-//  636         else
-//  637         {
-//  638           // 网络引导失败
-//  639           #ifdef ZDO_COORDINATOR
-//  640           /* 协调器 */
-//  641           #else
-//  642           /* 路由器或者终端 */
-//  643           uint8 failMsg[] = "Network steering failed! Retrying in 1 second...\r\n";
-//  644           HalUARTWrite(HAL_UART_PORT_0, failMsg, sizeof(failMsg)-1);
-//  645           
-//  646           /* 无限重试网络引导 */
-//  647           osal_start_timerEx(zclZEM_TaskID, 
-//  648                                     ZEM_REJOIN_EVT, 
-//  649                                     ZEM_REJOIN_PERIOD);
-//  650           #endif
-//  651         }
-//  652         break;
-//  653       case BDB_COMMISSIONING_FINDING_BINDING:
-//  654         if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_SUCCESS)
-//  655         {
-//  656           //YOUR JOB:
-//  657         }
-//  658         else
-//  659         {
-//  660           //YOUR JOB:
-//  661           //retry?, wait for user interaction?
+//  645           #endif
+//  646         }
+//  647         else
+//  648         {
+//  649           // 网络引导失败
+//  650           #ifdef ZDO_COORDINATOR
+//  651           /* 协调器 */
+//  652           #else
+//  653           /* 路由器或者终端 */
+//  654           uint8 failMsg[] = "Network steering failed! Retrying in 1 second...\r\n";
+//  655           HalUARTWrite(HAL_UART_PORT_0, failMsg, sizeof(failMsg)-1);
+//  656           
+//  657           /* 无限重试网络引导 */
+//  658           osal_start_timerEx(zclZEM_TaskID, 
+//  659                                     ZEM_REJOIN_EVT, 
+//  660                                     ZEM_REJOIN_PERIOD);
+//  661           #endif
 //  662         }
-//  663       break;
-//  664       case BDB_COMMISSIONING_INITIALIZATION:
-//  665         //Initialization notification can only be successful. Failure on initialization 
-//  666         //only happens for ZED and is notified as BDB_COMMISSIONING_PARENT_LOST notification
-//  667         
-//  668         //YOUR JOB:
-//  669         //We are on a network, what now?
-//  670         
-//  671       break;
-//  672 #if ZG_BUILD_ENDDEVICE_TYPE    
-//  673     case BDB_COMMISSIONING_PARENT_LOST:
-//  674       if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_NETWORK_RESTORED)
-//  675       {
-//  676         //We did recover from losing parent
-//  677       }
-//  678       else
-//  679       {
-//  680         //Parent not found, attempt to rejoin again after a fixed delay
-//  681         //osal_start_timerEx(zclZEM_TaskID, SAMPLEAPP_END_DEVICE_REJOIN_EVT, SAMPLEAPP_END_DEVICE_REJOIN_DELAY);
-//  682         
-//  683         /* 协调器 */
-//  684 #ifdef ZDO_COORDINATOR
-//  685         /* 路由器或者终端 */
-//  686 #else
-//  687       /* 启动重新加入事件 */
-//  688       osal_start_timerEx(zclZEM_TaskID, 
-//  689                         ZEM_REJOIN_EVT, 
-//  690                         ZEM_REJOIN_PERIOD);
-//  691 #endif
-//  692       }
-//  693     break;
-//  694 #endif 
-//  695     }
-//  696 
-//  697 }
+//  663         break;
+//  664       case BDB_COMMISSIONING_FINDING_BINDING:
+//  665         if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_SUCCESS)
+//  666         {
+//  667           //YOUR JOB:
+//  668         }
+//  669         else
+//  670         {
+//  671           //YOUR JOB:
+//  672           //retry?, wait for user interaction?
+//  673         }
+//  674       break;
+//  675       case BDB_COMMISSIONING_INITIALIZATION:
+//  676         //Initialization notification can only be successful. Failure on initialization 
+//  677         //only happens for ZED and is notified as BDB_COMMISSIONING_PARENT_LOST notification
+//  678         
+//  679         //YOUR JOB:
+//  680         //We are on a network, what now?
+//  681         
+//  682       break;
+//  683 #if ZG_BUILD_ENDDEVICE_TYPE    
+//  684     case BDB_COMMISSIONING_PARENT_LOST:
+//  685       if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_NETWORK_RESTORED)
+//  686       {
+//  687         //We did recover from losing parent
+//  688       }
+//  689       else
+//  690       {
+//  691         //Parent not found, attempt to rejoin again after a fixed delay
+//  692         //osal_start_timerEx(zclZEM_TaskID, SAMPLEAPP_END_DEVICE_REJOIN_EVT, SAMPLEAPP_END_DEVICE_REJOIN_DELAY);
+//  693         
+//  694         /* 协调器 */
+//  695 #ifdef ZDO_COORDINATOR
+//  696         /* 路由器或者终端 */
+//  697 #else
+//  698       /* 启动重新加入事件 */
+//  699       osal_start_timerEx(zclZEM_TaskID, 
+//  700                         ZEM_REJOIN_EVT, 
+//  701                         ZEM_REJOIN_PERIOD);
+//  702 #endif
+//  703       }
+//  704     break;
+//  705 #endif 
+//  706     }
+//  707 
+//  708 }
 ??zclZEM_ProcessCommissioningStatus_1:
-        MOV       A,#0x72
+        MOV       A,#-0x5b
         LCALL     ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 11)
+        MOV       R7,#0x3
+        LJMP      ?BANKED_LEAVE_XDATA
           CFI EndBlock cfiBlock15
-        REQUIRE ?Subroutine2
-        ; // Fall through to label ?Subroutine2
+//  709 
+//  710 /*********************************************************************
+//  711  * @fn      zclZEM_BasicResetCB
+//  712  *
+//  713  * @brief   Callback from the ZCL General Cluster Library
+//  714  *          to set all the Basic Cluster attributes to default values.
+//  715  *
+//  716  * @param   none
+//  717  *
+//  718  * @return  none
+//  719  */
 
         RSEG BANKED_CODE:HUGECODE:NOROOT(0)
-?Subroutine2:
-          CFI Block cfiBlock16 Using cfiCommon0
-          CFI NoFunction
-          CFI CFA_SP SP+-5
-          CFI DPL0 Frame(CFA_SP, 4)
-          CFI DPH0 Frame(CFA_SP, 5)
-        POP       DPH
-          CFI CFA_SP SP+-4
-          CFI DPH0 SameValue
-        POP       DPL
-          CFI CFA_SP SP+-3
-          CFI DPL0 SameValue
-        LJMP      ?BRET
-          CFI EndBlock cfiBlock16
-//  698 
-//  699 /*********************************************************************
-//  700  * @fn      zclZEM_BasicResetCB
-//  701  *
-//  702  * @brief   Callback from the ZCL General Cluster Library
-//  703  *          to set all the Basic Cluster attributes to default values.
-//  704  *
-//  705  * @param   none
-//  706  *
-//  707  * @return  none
-//  708  */
-
-        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
-//  709 static void zclZEM_BasicResetCB( void )
+//  720 static void zclZEM_BasicResetCB( void )
 zclZEM_BasicResetCB:
-          CFI Block cfiBlock17 Using cfiCommon0
+          CFI Block cfiBlock16 Using cfiCommon0
           CFI Function zclZEM_BasicResetCB
         CODE
-//  710 {
+//  721 {
         FUNCALL zclZEM_BasicResetCB, zclZEM_ResetAttributesToDefaultValues
         LOCFRAME ISTACK, 2, STACK
         LOCFRAME PSTACK, 0, STACK
@@ -2930,68 +3101,85 @@ zclZEM_BasicResetCB:
           CFI CFA_SP SP+-5
         ; Saved register size: 2
         ; Auto size: 0
-//  711   zclZEM_ResetAttributesToDefaultValues();
+//  722   zclZEM_ResetAttributesToDefaultValues();
         ; Setup parameters for call to function zclZEM_ResetAttributesToDefaultValues
         LCALL     `??zclZEM_ResetAttributesToDefaultValues::?relay`; Banked call to: zclZEM_ResetAttributesToDefaultValues
-//  712   
-//  713 }
-        SJMP      ?Subroutine2
-          CFI EndBlock cfiBlock17
-//  714 
-//  715 /*********************************************************************
-//  716  * @fn      zclSampleApp_BatteryWarningCB
-//  717  *
-//  718  * @brief   Called to handle battery-low situation.
-//  719  *
-//  720  * @param   voltLevel - level of severity
-//  721  *
-//  722  * @return  none
-//  723  */
+//  723   
+//  724 }
+          CFI EndBlock cfiBlock16
+        REQUIRE ?Subroutine2
+        ; // Fall through to label ?Subroutine2
 
         RSEG BANKED_CODE:HUGECODE:NOROOT(0)
-//  724 void zclSampleApp_BatteryWarningCB( uint8 voltLevel )
+?Subroutine2:
+          CFI Block cfiBlock17 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+-5
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI DPH0 Frame(CFA_SP, 5)
+        POP       DPH
+          CFI CFA_SP SP+-4
+          CFI DPH0 SameValue
+        POP       DPL
+          CFI CFA_SP SP+-3
+          CFI DPL0 SameValue
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock17
+//  725 
+//  726 /*********************************************************************
+//  727  * @fn      zclSampleApp_BatteryWarningCB
+//  728  *
+//  729  * @brief   Called to handle battery-low situation.
+//  730  *
+//  731  * @param   voltLevel - level of severity
+//  732  *
+//  733  * @return  none
+//  734  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  735 void zclSampleApp_BatteryWarningCB( uint8 voltLevel )
 zclSampleApp_BatteryWarningCB:
           CFI Block cfiBlock18 Using cfiCommon0
           CFI Function zclSampleApp_BatteryWarningCB
         CODE
-//  725 {
+//  736 {
         ; Saved register size: 0
         ; Auto size: 0
-//  726   if ( voltLevel == VOLT_LEVEL_CAUTIOUS )
-//  727   {
-//  728     // Send warning message to the gateway and blink LED
-//  729   }
-//  730   else if ( voltLevel == VOLT_LEVEL_BAD )
-//  731   {
-//  732     // Shut down the system
-//  733   }
-//  734 }
+//  737   if ( voltLevel == VOLT_LEVEL_CAUTIOUS )
+//  738   {
+//  739     // Send warning message to the gateway and blink LED
+//  740   }
+//  741   else if ( voltLevel == VOLT_LEVEL_BAD )
+//  742   {
+//  743     // Shut down the system
+//  744   }
+//  745 }
         LJMP      ?BRET
           CFI EndBlock cfiBlock18
-//  735 
-//  736 /******************************************************************************
-//  737  *
-//  738  *  Functions for processing ZCL Foundation incoming Command/Response messages
-//  739  *
-//  740  *****************************************************************************/
-//  741 
-//  742 /*********************************************************************
-//  743  * @fn      zclZEM_ProcessIncomingMsg
-//  744  *
-//  745  * @brief   Process ZCL Foundation incoming message
-//  746  *
-//  747  * @param   pInMsg - pointer to the received message
+//  746 
+//  747 /******************************************************************************
 //  748  *
-//  749  * @return  none
-//  750  */
+//  749  *  Functions for processing ZCL Foundation incoming Command/Response messages
+//  750  *
+//  751  *****************************************************************************/
+//  752 
+//  753 /*********************************************************************
+//  754  * @fn      zclZEM_ProcessIncomingMsg
+//  755  *
+//  756  * @brief   Process ZCL Foundation incoming message
+//  757  *
+//  758  * @param   pInMsg - pointer to the received message
+//  759  *
+//  760  * @return  none
+//  761  */
 
         RSEG BANKED_CODE:HUGECODE:NOROOT(0)
-//  751 static void zclZEM_ProcessIncomingMsg( zclIncomingMsg_t *pInMsg)
+//  762 static void zclZEM_ProcessIncomingMsg( zclIncomingMsg_t *pInMsg)
 zclZEM_ProcessIncomingMsg:
           CFI Block cfiBlock19 Using cfiCommon0
           CFI Function zclZEM_ProcessIncomingMsg
         CODE
-//  752 {
+//  763 {
         FUNCALL zclZEM_ProcessIncomingMsg, zclZEM_ProcessInDiscCmdsRspCmd
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
@@ -3040,7 +3228,7 @@ zclZEM_ProcessIncomingMsg:
           CFI CFA_XSP16 add(XSP16, 9)
         ; Saved register size: 9
         ; Auto size: 0
-//  753   switch ( pInMsg->zclHdr.commandID )
+//  764   switch ( pInMsg->zclHdr.commandID )
         MOV       A,R2
         ADD       A,#0x17
         LCALL     ?Subroutine12 & 0xFFFF
@@ -3062,10 +3250,10 @@ zclZEM_ProcessIncomingMsg:
         ADD       A,#-0x2
         JZ        ??zclZEM_ProcessIncomingMsg_4
         SJMP      ??zclZEM_ProcessIncomingMsg_5
-//  754   {
-//  755 #ifdef ZCL_READ
-//  756     case ZCL_CMD_READ_RSP:
-//  757       zclZEM_ProcessInReadRspCmd( pInMsg );
+//  765   {
+//  766 #ifdef ZCL_READ
+//  767     case ZCL_CMD_READ_RSP:
+//  768       zclZEM_ProcessInReadRspCmd( pInMsg );
 ??zclZEM_ProcessIncomingMsg_0:
         LCALL     ?Subroutine7 & 0xFFFF
 ??CrossCallReturnLabel_5:
@@ -3077,11 +3265,11 @@ zclZEM_ProcessIncomingMsg:
         JNC       ??zclZEM_ProcessIncomingMsg_5
         INC       R0
         SJMP      ??CrossCallReturnLabel_5
-//  758       break;
-//  759 #endif
-//  760 #ifdef ZCL_WRITE
-//  761     case ZCL_CMD_WRITE_RSP:
-//  762       zclZEM_ProcessInWriteRspCmd( pInMsg );
+//  769       break;
+//  770 #endif
+//  771 #ifdef ZCL_WRITE
+//  772     case ZCL_CMD_WRITE_RSP:
+//  773       zclZEM_ProcessInWriteRspCmd( pInMsg );
 ??zclZEM_ProcessIncomingMsg_1:
         LCALL     ?Subroutine7 & 0xFFFF
 ??CrossCallReturnLabel_6:
@@ -3093,46 +3281,46 @@ zclZEM_ProcessIncomingMsg:
         JNC       ??zclZEM_ProcessIncomingMsg_5
         INC       R0
         SJMP      ??CrossCallReturnLabel_6
-//  763       break;
-//  764 #endif
-//  765 #ifdef ZCL_REPORT
-//  766     // See ZCL Test Applicaiton (zcl_testapp.c) for sample code on Attribute Reporting
-//  767     case ZCL_CMD_CONFIG_REPORT:
-//  768       //zclZEM_ProcessInConfigReportCmd( pInMsg );
-//  769       break;
-//  770       case ZCL_CMD_READ_REPORT_CFG:
-//  771       //zclZEM_ProcessInReadReportCfgCmd( pInMsg );
-//  772       break;
-//  773     case ZCL_CMD_CONFIG_REPORT_RSP:
-//  774       //zclZEM_ProcessInConfigReportRspCmd( pInMsg );
-//  775       break;
-//  776     case ZCL_CMD_READ_REPORT_CFG_RSP:
-//  777       //zclZEM_ProcessInReadReportCfgRspCmd( pInMsg );
-//  778       break;
-//  779 
-//  780     case ZCL_CMD_REPORT:
-//  781       //zclZEM_ProcessInReportCmd( pInMsg );
-//  782       break;
-//  783 #endif
-//  784     case ZCL_CMD_DEFAULT_RSP:
-//  785       zclZEM_ProcessInDefaultRspCmd( pInMsg );
+//  774       break;
+//  775 #endif
+//  776 #ifdef ZCL_REPORT
+//  777     // See ZCL Test Applicaiton (zcl_testapp.c) for sample code on Attribute Reporting
+//  778     case ZCL_CMD_CONFIG_REPORT:
+//  779       //zclZEM_ProcessInConfigReportCmd( pInMsg );
+//  780       break;
+//  781       case ZCL_CMD_READ_REPORT_CFG:
+//  782       //zclZEM_ProcessInReadReportCfgCmd( pInMsg );
+//  783       break;
+//  784     case ZCL_CMD_CONFIG_REPORT_RSP:
+//  785       //zclZEM_ProcessInConfigReportRspCmd( pInMsg );
 //  786       break;
-//  787 #ifdef ZCL_DISCOVER
-//  788     case ZCL_CMD_DISCOVER_CMDS_RECEIVED_RSP:
-//  789       zclZEM_ProcessInDiscCmdsRspCmd( pInMsg );
+//  787     case ZCL_CMD_READ_REPORT_CFG_RSP:
+//  788       //zclZEM_ProcessInReadReportCfgRspCmd( pInMsg );
+//  789       break;
+//  790 
+//  791     case ZCL_CMD_REPORT:
+//  792       //zclZEM_ProcessInReportCmd( pInMsg );
+//  793       break;
+//  794 #endif
+//  795     case ZCL_CMD_DEFAULT_RSP:
+//  796       zclZEM_ProcessInDefaultRspCmd( pInMsg );
+//  797       break;
+//  798 #ifdef ZCL_DISCOVER
+//  799     case ZCL_CMD_DISCOVER_CMDS_RECEIVED_RSP:
+//  800       zclZEM_ProcessInDiscCmdsRspCmd( pInMsg );
 ??zclZEM_ProcessIncomingMsg_3:
         ; Setup parameters for call to function zclZEM_ProcessInDiscCmdsRspCmd
-//  790       break;
-//  791 
-//  792     case ZCL_CMD_DISCOVER_CMDS_GEN_RSP:
-//  793       zclZEM_ProcessInDiscCmdsRspCmd( pInMsg );
+//  801       break;
+//  802 
+//  803     case ZCL_CMD_DISCOVER_CMDS_GEN_RSP:
+//  804       zclZEM_ProcessInDiscCmdsRspCmd( pInMsg );
         ; Setup parameters for call to function zclZEM_ProcessInDiscCmdsRspCmd
         LCALL     `??zclZEM_ProcessInDiscCmdsRspCmd::?relay`; Banked call to: zclZEM_ProcessInDiscCmdsRspCmd
-//  794       break;
+//  805       break;
         SJMP      ??zclZEM_ProcessIncomingMsg_5
-//  795 
-//  796     case ZCL_CMD_DISCOVER_ATTRS_RSP:
-//  797       zclZEM_ProcessInDiscAttrsRspCmd( pInMsg );
+//  806 
+//  807     case ZCL_CMD_DISCOVER_ATTRS_RSP:
+//  808       zclZEM_ProcessInDiscAttrsRspCmd( pInMsg );
 ??zclZEM_ProcessIncomingMsg_2:
         LCALL     ?Subroutine8 & 0xFFFF
 ??CrossCallReturnLabel_18:
@@ -3147,17 +3335,17 @@ zclZEM_ProcessIncomingMsg:
         JNC       ??zclZEM_ProcessIncomingMsg_5
         INC       R2
         SJMP      ??CrossCallReturnLabel_18
-//  798       break;
-//  799 
-//  800     case ZCL_CMD_DISCOVER_ATTRS_EXT_RSP:
-//  801       zclZEM_ProcessInDiscAttrsExtRspCmd( pInMsg );
+//  809       break;
+//  810 
+//  811     case ZCL_CMD_DISCOVER_ATTRS_EXT_RSP:
+//  812       zclZEM_ProcessInDiscAttrsExtRspCmd( pInMsg );
 ??zclZEM_ProcessIncomingMsg_4:
         LCALL     ?Subroutine8 & 0xFFFF
-//  802       break;
-//  803 #endif
-//  804     default:
-//  805       break;
-//  806   }
+//  813       break;
+//  814 #endif
+//  815     default:
+//  816       break;
+//  817   }
 ??CrossCallReturnLabel_19:
         SJMP      ??zclZEM_ProcessIncomingMsg_6
 ??zclZEM_ProcessIncomingMsg_7:
@@ -3172,8 +3360,8 @@ zclZEM_ProcessIncomingMsg:
         CLR       C
         SUBB      A,R3
         JC        ??zclZEM_ProcessIncomingMsg_7
-//  807 
-//  808   if ( pInMsg->attrCmd )
+//  818 
+//  819   if ( pInMsg->attrCmd )
 ??zclZEM_ProcessIncomingMsg_5:
         MOV       DPL,R6
         MOV       DPH,R7
@@ -3185,12 +3373,12 @@ zclZEM_ProcessIncomingMsg:
         MOV       A,R2
         ORL       A,R3
         JZ        ??zclZEM_ProcessIncomingMsg_8
-//  809   {
-//  810     osal_mem_free( pInMsg->attrCmd );
+//  820   {
+//  821     osal_mem_free( pInMsg->attrCmd );
         ; Setup parameters for call to function osal_mem_free
         LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
-//  811   }
-//  812 }
+//  822   }
+//  823 }
 ??zclZEM_ProcessIncomingMsg_8:
         LJMP      ?Subroutine1 & 0xFFFF
           CFI EndBlock cfiBlock19
@@ -3334,97 +3522,97 @@ zclZEM_ProcessIncomingMsg:
           CFI EndBlock cfiCond27
           CFI EndBlock cfiCond28
           CFI EndBlock cfiPicker29
-//  813 
-//  814 #ifdef ZCL_READ
-//  815 /*********************************************************************
-//  816  * @fn      zclZEM_ProcessInReadRspCmd
-//  817  *
-//  818  * @brief   Process the "Profile" Read Response Command
-//  819  *
-//  820  * @param   pInMsg - incoming message to process
-//  821  *
-//  822  * @return  none
-//  823  */
-//  824 static uint8 zclZEM_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg )
-//  825 {
-//  826   zclReadRspCmd_t *readRspCmd;
-//  827   uint8 i;
-//  828 
-//  829   readRspCmd = (zclReadRspCmd_t *)pInMsg->attrCmd;
-//  830   for ( i = 0; i < readRspCmd->numAttr; i++ )
-//  831   {
-//  832     // Notify the originator of the results of the original read attributes
-//  833     // attempt and, for each successfull request, the value of the requested
-//  834     // attribute
-//  835   }
-//  836 
-//  837   return ( TRUE );
-//  838 }
-//  839 #endif // ZCL_READ
-//  840 
-//  841 #ifdef ZCL_WRITE
-//  842 /*********************************************************************
-//  843  * @fn      zclZEM_ProcessInWriteRspCmd
-//  844  *
-//  845  * @brief   Process the "Profile" Write Response Command
-//  846  *
-//  847  * @param   pInMsg - incoming message to process
-//  848  *
-//  849  * @return  none
-//  850  */
-//  851 static uint8 zclZEM_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg )
-//  852 {
-//  853   zclWriteRspCmd_t *writeRspCmd;
-//  854   uint8 i;
-//  855 
-//  856   writeRspCmd = (zclWriteRspCmd_t *)pInMsg->attrCmd;
-//  857   for ( i = 0; i < writeRspCmd->numAttr; i++ )
-//  858   {
-//  859     // Notify the device of the results of the its original write attributes
-//  860     // command.
-//  861   }
-//  862 
-//  863   return ( TRUE );
-//  864 }
-//  865 #endif // ZCL_WRITE
+//  824 
+//  825 #ifdef ZCL_READ
+//  826 /*********************************************************************
+//  827  * @fn      zclZEM_ProcessInReadRspCmd
+//  828  *
+//  829  * @brief   Process the "Profile" Read Response Command
+//  830  *
+//  831  * @param   pInMsg - incoming message to process
+//  832  *
+//  833  * @return  none
+//  834  */
+//  835 static uint8 zclZEM_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg )
+//  836 {
+//  837   zclReadRspCmd_t *readRspCmd;
+//  838   uint8 i;
+//  839 
+//  840   readRspCmd = (zclReadRspCmd_t *)pInMsg->attrCmd;
+//  841   for ( i = 0; i < readRspCmd->numAttr; i++ )
+//  842   {
+//  843     // Notify the originator of the results of the original read attributes
+//  844     // attempt and, for each successfull request, the value of the requested
+//  845     // attribute
+//  846   }
+//  847 
+//  848   return ( TRUE );
+//  849 }
+//  850 #endif // ZCL_READ
+//  851 
+//  852 #ifdef ZCL_WRITE
+//  853 /*********************************************************************
+//  854  * @fn      zclZEM_ProcessInWriteRspCmd
+//  855  *
+//  856  * @brief   Process the "Profile" Write Response Command
+//  857  *
+//  858  * @param   pInMsg - incoming message to process
+//  859  *
+//  860  * @return  none
+//  861  */
+//  862 static uint8 zclZEM_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg )
+//  863 {
+//  864   zclWriteRspCmd_t *writeRspCmd;
+//  865   uint8 i;
 //  866 
-//  867 /*********************************************************************
-//  868  * @fn      zclZEM_ProcessInDefaultRspCmd
-//  869  *
-//  870  * @brief   Process the "Profile" Default Response Command
-//  871  *
-//  872  * @param   pInMsg - incoming message to process
-//  873  *
-//  874  * @return  none
-//  875  */
-//  876 static uint8 zclZEM_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg )
-//  877 {
-//  878   // zclDefaultRspCmd_t *defaultRspCmd = (zclDefaultRspCmd_t *)pInMsg->attrCmd;
-//  879 
-//  880   // Device is notified of the Default Response command.
-//  881   (void)pInMsg;
-//  882 
-//  883   return ( TRUE );
-//  884 }
-//  885 
-//  886 #ifdef ZCL_DISCOVER
-//  887 /*********************************************************************
-//  888  * @fn      zclZEM_ProcessInDiscCmdsRspCmd
-//  889  *
-//  890  * @brief   Process the Discover Commands Response Command
-//  891  *
-//  892  * @param   pInMsg - incoming message to process
-//  893  *
-//  894  * @return  none
-//  895  */
+//  867   writeRspCmd = (zclWriteRspCmd_t *)pInMsg->attrCmd;
+//  868   for ( i = 0; i < writeRspCmd->numAttr; i++ )
+//  869   {
+//  870     // Notify the device of the results of the its original write attributes
+//  871     // command.
+//  872   }
+//  873 
+//  874   return ( TRUE );
+//  875 }
+//  876 #endif // ZCL_WRITE
+//  877 
+//  878 /*********************************************************************
+//  879  * @fn      zclZEM_ProcessInDefaultRspCmd
+//  880  *
+//  881  * @brief   Process the "Profile" Default Response Command
+//  882  *
+//  883  * @param   pInMsg - incoming message to process
+//  884  *
+//  885  * @return  none
+//  886  */
+//  887 static uint8 zclZEM_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg )
+//  888 {
+//  889   // zclDefaultRspCmd_t *defaultRspCmd = (zclDefaultRspCmd_t *)pInMsg->attrCmd;
+//  890 
+//  891   // Device is notified of the Default Response command.
+//  892   (void)pInMsg;
+//  893 
+//  894   return ( TRUE );
+//  895 }
+//  896 
+//  897 #ifdef ZCL_DISCOVER
+//  898 /*********************************************************************
+//  899  * @fn      zclZEM_ProcessInDiscCmdsRspCmd
+//  900  *
+//  901  * @brief   Process the Discover Commands Response Command
+//  902  *
+//  903  * @param   pInMsg - incoming message to process
+//  904  *
+//  905  * @return  none
+//  906  */
 
         RSEG BANKED_CODE:HUGECODE:NOROOT(0)
-//  896 static uint8 zclZEM_ProcessInDiscCmdsRspCmd( zclIncomingMsg_t *pInMsg )
+//  907 static uint8 zclZEM_ProcessInDiscCmdsRspCmd( zclIncomingMsg_t *pInMsg )
 zclZEM_ProcessInDiscCmdsRspCmd:
           CFI Block cfiBlock30 Using cfiCommon0
           CFI Function zclZEM_ProcessInDiscCmdsRspCmd
         CODE
-//  897 {
+//  908 {
         PUSH      DPL
           CFI DPL0 Frame(CFA_SP, 4)
           CFI CFA_SP SP+-4
@@ -3433,10 +3621,10 @@ zclZEM_ProcessInDiscCmdsRspCmd:
           CFI CFA_SP SP+-5
         ; Saved register size: 2
         ; Auto size: 0
-//  898   zclDiscoverCmdsCmdRsp_t *discoverRspCmd;
-//  899   uint8 i;
-//  900 
-//  901   discoverRspCmd = (zclDiscoverCmdsCmdRsp_t *)pInMsg->attrCmd;
+//  909   zclDiscoverCmdsCmdRsp_t *discoverRspCmd;
+//  910   uint8 i;
+//  911 
+//  912   discoverRspCmd = (zclDiscoverCmdsCmdRsp_t *)pInMsg->attrCmd;
         MOV       A,R2
         ADD       A,#0x17
         MOV       DPL,A
@@ -3444,7 +3632,7 @@ zclZEM_ProcessInDiscCmdsRspCmd:
         ADDC      A,R3
         MOV       DPH,A
         LCALL     ??Subroutine15_0 & 0xFFFF
-//  902   for ( i = 0; i < discoverRspCmd->numCmd; i++ )
+//  913   for ( i = 0; i < discoverRspCmd->numCmd; i++ )
 ??CrossCallReturnLabel_17:
         SJMP      ??zclZEM_ProcessInDiscCmdsRspCmd_0
 ??zclZEM_ProcessInDiscCmdsRspCmd_1:
@@ -3460,216 +3648,216 @@ zclZEM_ProcessInDiscCmdsRspCmd:
         CLR       C
         SUBB      A,R3
         JC        ??zclZEM_ProcessInDiscCmdsRspCmd_1
-//  903   {
-//  904     // Device is notified of the result of its attribute discovery command.
-//  905   }
-//  906 
-//  907   return ( TRUE );
+//  914   {
+//  915     // Device is notified of the result of its attribute discovery command.
+//  916   }
+//  917 
+//  918   return ( TRUE );
         MOV       R1,#0x1
         LJMP      ?Subroutine2 & 0xFFFF
-//  908 }
+//  919 }
           CFI EndBlock cfiBlock30
-//  909 
-//  910 /*********************************************************************
-//  911  * @fn      zclZEM_ProcessInDiscAttrsRspCmd
-//  912  *
-//  913  * @brief   Process the "Profile" Discover Attributes Response Command
-//  914  *
-//  915  * @param   pInMsg - incoming message to process
-//  916  *
-//  917  * @return  none
-//  918  */
-//  919 static uint8 zclZEM_ProcessInDiscAttrsRspCmd( zclIncomingMsg_t *pInMsg )
-//  920 {
-//  921   zclDiscoverAttrsRspCmd_t *discoverRspCmd;
-//  922   uint8 i;
-//  923 
-//  924   discoverRspCmd = (zclDiscoverAttrsRspCmd_t *)pInMsg->attrCmd;
-//  925   for ( i = 0; i < discoverRspCmd->numAttr; i++ )
-//  926   {
-//  927     // Device is notified of the result of its attribute discovery command.
-//  928   }
-//  929 
-//  930   return ( TRUE );
-//  931 }
-//  932 
-//  933 /*********************************************************************
-//  934  * @fn      zclZEM_ProcessInDiscAttrsExtRspCmd
-//  935  *
-//  936  * @brief   Process the "Profile" Discover Attributes Extended Response Command
-//  937  *
-//  938  * @param   pInMsg - incoming message to process
-//  939  *
-//  940  * @return  none
-//  941  */
-//  942 static uint8 zclZEM_ProcessInDiscAttrsExtRspCmd( zclIncomingMsg_t *pInMsg )
-//  943 {
-//  944   zclDiscoverAttrsExtRsp_t *discoverRspCmd;
-//  945   uint8 i;
-//  946 
-//  947   discoverRspCmd = (zclDiscoverAttrsExtRsp_t *)pInMsg->attrCmd;
-//  948   for ( i = 0; i < discoverRspCmd->numAttr; i++ )
-//  949   {
-//  950     // Device is notified of the result of its attribute discovery command.
-//  951   }
-//  952 
-//  953   return ( TRUE );
-//  954 }
-//  955 #endif // ZCL_DISCOVER
-//  956 
+//  920 
+//  921 /*********************************************************************
+//  922  * @fn      zclZEM_ProcessInDiscAttrsRspCmd
+//  923  *
+//  924  * @brief   Process the "Profile" Discover Attributes Response Command
+//  925  *
+//  926  * @param   pInMsg - incoming message to process
+//  927  *
+//  928  * @return  none
+//  929  */
+//  930 static uint8 zclZEM_ProcessInDiscAttrsRspCmd( zclIncomingMsg_t *pInMsg )
+//  931 {
+//  932   zclDiscoverAttrsRspCmd_t *discoverRspCmd;
+//  933   uint8 i;
+//  934 
+//  935   discoverRspCmd = (zclDiscoverAttrsRspCmd_t *)pInMsg->attrCmd;
+//  936   for ( i = 0; i < discoverRspCmd->numAttr; i++ )
+//  937   {
+//  938     // Device is notified of the result of its attribute discovery command.
+//  939   }
+//  940 
+//  941   return ( TRUE );
+//  942 }
+//  943 
+//  944 /*********************************************************************
+//  945  * @fn      zclZEM_ProcessInDiscAttrsExtRspCmd
+//  946  *
+//  947  * @brief   Process the "Profile" Discover Attributes Extended Response Command
+//  948  *
+//  949  * @param   pInMsg - incoming message to process
+//  950  *
+//  951  * @return  none
+//  952  */
+//  953 static uint8 zclZEM_ProcessInDiscAttrsExtRspCmd( zclIncomingMsg_t *pInMsg )
+//  954 {
+//  955   zclDiscoverAttrsExtRsp_t *discoverRspCmd;
+//  956   uint8 i;
 //  957 
-//  958 
-//  959 
-//  960 /*********************************************************************
-//  961  * @fn      zclZEM_AF_P2P
-//  962  *
-//  963  * @brief   点对点发送函数
-//  964  *
-//  965  * @param   destNwkAddr - 目标设备的网络地址
-//  966  * @param   cid - Cluster ID，后续课程将会详细讲解
-//  967  * @param   len - 数据长度
-//  968  * @param   data - 数据内容
-//  969  *
-//  970  * @return  none
-//  971  */
-//  972 static void zclZEM_AF_P2P(
-//  973     uint16 destNwkAddr,
-//  974     uint16 cid,
-//  975     uint8 len,
-//  976     uint8 *data)
-//  977 {
-//  978     afAddrType_t dstAddr; //寻址信息配置
+//  958   discoverRspCmd = (zclDiscoverAttrsExtRsp_t *)pInMsg->attrCmd;
+//  959   for ( i = 0; i < discoverRspCmd->numAttr; i++ )
+//  960   {
+//  961     // Device is notified of the result of its attribute discovery command.
+//  962   }
+//  963 
+//  964   return ( TRUE );
+//  965 }
+//  966 #endif // ZCL_DISCOVER
+//  967 
+//  968 
+//  969 
+//  970 
+//  971 /*********************************************************************
+//  972  * @fn      zclZEM_AF_P2P
+//  973  *
+//  974  * @brief   点对点发送函数
+//  975  *
+//  976  * @param   destNwkAddr - 目标设备的网络地址
+//  977  * @param   cid - Cluster ID，后续课程将会详细讲解
+//  978  * @param   len - 数据长度
+//  979  * @param   data - 数据内容
+//  980  *
+//  981  * @return  none
+//  982  */
+//  983 static void zclZEM_AF_P2P(
+//  984     uint16 destNwkAddr,
+//  985     uint16 cid,
+//  986     uint8 len,
+//  987     uint8 *data)
+//  988 {
+//  989     afAddrType_t dstAddr; //寻址信息配置
 
         RSEG XDATA_Z:XDATA:NOROOT(0)
         DATA8
-//  979     static uint8 transferId = 0;//传输ID，是数据包的标识符
+//  990     static uint8 transferId = 0;//传输ID，是数据包的标识符
 ??transferId:
         DS 1
         REQUIRE __INIT_XDATA_Z
-//  980     
-//  981     /* Destination */
-//  982     dstAddr.addrMode = afAddr16Bit;// 设置目标地址模式为16位网络地址，表示使用P2P的通信方式
-//  983     dstAddr.addr.shortAddr = destNwkAddr;//目标设备的网络地址
-//  984     dstAddr.endPoint = ZEM_ENDPOINT;//目标设备的端点号
-//  985     
-//  986     transferId++;
-//  987     
-//  988     AF_DataRequest(&dstAddr,
-//  989         &ZEM_AppEp,//应用程序端点描述符
-//  990         cid,
-//  991         len,
-//  992         data,
-//  993         &transferId,
-//  994         AF_DISCV_ROUTE,//进行路由扫描操作，用于建立发送数据报文的通信路径。关于这个参数，暂时保持例程默认的代码就可以了
-//  995         AF_DEFAULT_RADIUS);//指定最大的路由跳转级数
-//  996 }
-//  997 
-//  998 /*********************************************************************
-//  999  * @fn      zclZEM_AF_Broadcast
-// 1000  *
-// 1001  * @brief   广播发送函数
-// 1002  *
-// 1003  * @param   cid - Cluster ID
-// 1004  * @param   len - 待发送数据的长度
-// 1005  * @param   data - 待发送数据的内容
-// 1006  *
-// 1007  * @return  none
-// 1008  */
-// 1009 static void zclZEM_AF_Broadcast(
-// 1010     uint16 cid,
-// 1011     uint8 len,
-// 1012     uint8 *data)
-// 1013 {
-// 1014     afAddrType_t dstAddr;
+//  991     
+//  992     /* Destination */
+//  993     dstAddr.addrMode = afAddr16Bit;// 设置目标地址模式为16位网络地址，表示使用P2P的通信方式
+//  994     dstAddr.addr.shortAddr = destNwkAddr;//目标设备的网络地址
+//  995     dstAddr.endPoint = ZEM_ENDPOINT;//目标设备的端点号
+//  996     
+//  997     transferId++;
+//  998     
+//  999     AF_DataRequest(&dstAddr,
+// 1000         &ZEM_AppEp,//应用程序端点描述符
+// 1001         cid,
+// 1002         len,
+// 1003         data,
+// 1004         &transferId,
+// 1005         AF_DISCV_ROUTE,//进行路由扫描操作，用于建立发送数据报文的通信路径。关于这个参数，暂时保持例程默认的代码就可以了
+// 1006         AF_DEFAULT_RADIUS);//指定最大的路由跳转级数
+// 1007 }
+// 1008 
+// 1009 /*********************************************************************
+// 1010  * @fn      zclZEM_AF_Broadcast
+// 1011  *
+// 1012  * @brief   广播发送函数
+// 1013  *
+// 1014  * @param   cid - Cluster ID
+// 1015  * @param   len - 待发送数据的长度
+// 1016  * @param   data - 待发送数据的内容
+// 1017  *
+// 1018  * @return  none
+// 1019  */
+// 1020 static void zclZEM_AF_Broadcast(
+// 1021     uint16 cid,
+// 1022     uint8 len,
+// 1023     uint8 *data)
+// 1024 {
+// 1025     afAddrType_t dstAddr;
 
         RSEG XDATA_Z:XDATA:NOROOT(0)
         DATA8
         DS 1
         REQUIRE __INIT_XDATA_Z
-// 1015     static uint8 transferId = 0;
-// 1016     
-// 1017     /* Destination */
-// 1018     dstAddr.addrMode = afAddrBroadcast;   // 使用广播模式
-// 1019     dstAddr.addr.shortAddr = 0xFFFF; // 广播地址
-// 1020     dstAddr.endPoint = ZEM_ENDPOINT; // 目标设备的端点号
-// 1021     
-// 1022     /* Transfer id */
-// 1023     transferId++;
-// 1024     
-// 1025     /* Send */
-// 1026     AF_DataRequest(&dstAddr,
-// 1027         &ZEM_AppEp,//应用程序端点描述符
-// 1028         cid,
-// 1029         len,
-// 1030         data,
-// 1031         &transferId,
-// 1032         AF_TX_OPTIONS_NONE,
-// 1033         AF_DEFAULT_RADIUS );//指定了最大的路由跳转级数
-// 1034 }
-// 1035 
-// 1036 /*********************************************************************
-// 1037  * @fn      zclZEM_AF_Groupcast
-// 1038  *
-// 1039  * @brief   组播发送函数
-// 1040  *
-// 1041  * @param   groupId - 组ID
-// 1042  * @param   cid - ClusterID，后续章节将会详细讲解
-// 1043  * @param   len - 待发送数据的长度
-// 1044  * @param   data - 待发送数据的内容
-// 1045  *
-// 1046  * @return  none
-// 1047  */
-// 1048 static void zclZEM_AF_Groupcast(
-// 1049     uint16 groupId,
-// 1050     uint16 cid,
-// 1051     uint8 len,
-// 1052     uint8 *data)
-// 1053 {
-// 1054     afAddrType_t dstAddr;
+// 1026     static uint8 transferId = 0;
+// 1027     
+// 1028     /* Destination */
+// 1029     dstAddr.addrMode = afAddrBroadcast;   // 使用广播模式
+// 1030     dstAddr.addr.shortAddr = 0xFFFF; // 广播地址
+// 1031     dstAddr.endPoint = ZEM_ENDPOINT; // 目标设备的端点号
+// 1032     
+// 1033     /* Transfer id */
+// 1034     transferId++;
+// 1035     
+// 1036     /* Send */
+// 1037     AF_DataRequest(&dstAddr,
+// 1038         &ZEM_AppEp,//应用程序端点描述符
+// 1039         cid,
+// 1040         len,
+// 1041         data,
+// 1042         &transferId,
+// 1043         AF_TX_OPTIONS_NONE,
+// 1044         AF_DEFAULT_RADIUS );//指定了最大的路由跳转级数
+// 1045 }
+// 1046 
+// 1047 /*********************************************************************
+// 1048  * @fn      zclZEM_AF_Groupcast
+// 1049  *
+// 1050  * @brief   组播发送函数
+// 1051  *
+// 1052  * @param   groupId - 组ID
+// 1053  * @param   cid - ClusterID，后续章节将会详细讲解
+// 1054  * @param   len - 待发送数据的长度
+// 1055  * @param   data - 待发送数据的内容
+// 1056  *
+// 1057  * @return  none
+// 1058  */
+// 1059 static void zclZEM_AF_Groupcast(
+// 1060     uint16 groupId,
+// 1061     uint16 cid,
+// 1062     uint8 len,
+// 1063     uint8 *data)
+// 1064 {
+// 1065     afAddrType_t dstAddr;
 
         RSEG XDATA_Z:XDATA:NOROOT(0)
         DATA8
-// 1055     static uint8 transferId = 0;
+// 1066     static uint8 transferId = 0;
 ??transferId_2:
         DS 1
         REQUIRE __INIT_XDATA_Z
-// 1056     
-// 1057     /* Destination */
-// 1058     dstAddr.addrMode = afAddrGroup;//使用组播通信模式
-// 1059     dstAddr.addr.shortAddr = groupId;
-// 1060     dstAddr.endPoint = ZEM_ENDPOINT;//组中的设备的端点号
-// 1061     
-// 1062     /* Transfer id */
-// 1063     transferId++;
-// 1064     
-// 1065     /* Send */
-// 1066     AF_DataRequest(&dstAddr,
-// 1067         &ZEM_AppEp,//应用程序端点描述符
-// 1068         cid,
-// 1069         len,
-// 1070         data,
-// 1071         &transferId,
-// 1072         AF_TX_OPTIONS_NONE,
-// 1073         AF_DEFAULT_RADIUS );//指定最大的路由跳转级数，暂时可忽略
-// 1074 }
-// 1075 
-// 1076 /*********************************************************************
-// 1077  * @fn      zclZEM_AF_RxProc
-// 1078  *
-// 1079  * @brief   接收数据处理函数
-// 1080  *
-// 1081  * @param   MSGpkt - 接收到数据
-// 1082  *
-// 1083  * @return  none
-// 1084  */
+// 1067     
+// 1068     /* Destination */
+// 1069     dstAddr.addrMode = afAddrGroup;//使用组播通信模式
+// 1070     dstAddr.addr.shortAddr = groupId;
+// 1071     dstAddr.endPoint = ZEM_ENDPOINT;//组中的设备的端点号
+// 1072     
+// 1073     /* Transfer id */
+// 1074     transferId++;
+// 1075     
+// 1076     /* Send */
+// 1077     AF_DataRequest(&dstAddr,
+// 1078         &ZEM_AppEp,//应用程序端点描述符
+// 1079         cid,
+// 1080         len,
+// 1081         data,
+// 1082         &transferId,
+// 1083         AF_TX_OPTIONS_NONE,
+// 1084         AF_DEFAULT_RADIUS );//指定最大的路由跳转级数，暂时可忽略
+// 1085 }
+// 1086 
+// 1087 /*********************************************************************
+// 1088  * @fn      zclZEM_AF_RxProc
+// 1089  *
+// 1090  * @brief   接收数据处理函数
+// 1091  *
+// 1092  * @param   MSGpkt - 接收到数据
+// 1093  *
+// 1094  * @return  none
+// 1095  */
 
         RSEG BANKED_CODE:HUGECODE:NOROOT(0)
-// 1085 static void zclZEM_AF_RxProc(afIncomingMSGPacket_t *MSGpkt)
+// 1096 static void zclZEM_AF_RxProc(afIncomingMSGPacket_t *MSGpkt)
 zclZEM_AF_RxProc:
           CFI Block cfiBlock31 Using cfiCommon0
           CFI Function zclZEM_AF_RxProc
         CODE
-// 1086 {
+// 1097 {
         FUNCALL zclZEM_AF_RxProc, osal_memcpy
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
@@ -3840,14 +4028,14 @@ zclZEM_AF_RxProc:
         MOV       A,#-0x40
         LCALL     ?ALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 83)
-// 1087     /*计数器，记录接收到的点对点通信数据包个数*/
-// 1088     static uint8 p2pCnt = 0;
-// 1089     /*计数器，记录接收到的广播通信数据包个数*/
-// 1090     static uint8 bcCnt = 0;
-// 1091     /*计数器，记录接收到的组播通信数据包个数*/
-// 1092     static uint8 gcCnt = 0;
-// 1093     
-// 1094     switch( MSGpkt->clusterId )  // 判断接收到的数据包的Cluster ID
+// 1098     /*计数器，记录接收到的点对点通信数据包个数*/
+// 1099     static uint8 p2pCnt = 0;
+// 1100     /*计数器，记录接收到的广播通信数据包个数*/
+// 1101     static uint8 bcCnt = 0;
+// 1102     /*计数器，记录接收到的组播通信数据包个数*/
+// 1103     static uint8 gcCnt = 0;
+// 1104     
+// 1105     switch( MSGpkt->clusterId )  // 判断接收到的数据包的Cluster ID
         MOV       ?V4,#`?<Constant " Count: ">` & 0xff
         MOV       ?V5,#(`?<Constant " Count: ">` >> 8) & 0xff
         MOV       ?V6,#0x0
@@ -3900,18 +4088,18 @@ zclZEM_AF_RxProc:
         DATA16
         DW        ??zclZEM_AF_RxProc_3
         CODE
-// 1095     {
-// 1096         case CLUSTER_P2P:
-// 1097             p2pCnt++;  // 接收到P2P数据包，进行计数
+// 1106     {
+// 1107         case CLUSTER_P2P:
+// 1108             p2pCnt++;  // 接收到P2P数据包，进行计数
 ??zclZEM_AF_RxProc_1:
         MOV       DPTR,#??p2pCnt
         MOVX      A,@DPTR
         INC       A
         MOVX      @DPTR,A
-// 1098             // 通过串口输出接收到的数据和计数器值
-// 1099             {
-// 1100                 uint8 p2pMsg[64];
-// 1101                 osal_memcpy(p2pMsg, "P2P Data: ", 10);
+// 1109             // 通过串口输出接收到的数据和计数器值
+// 1110             {
+// 1111                 uint8 p2pMsg[64];
+// 1112                 osal_memcpy(p2pMsg, "P2P Data: ", 10);
         ; Setup parameters for call to function osal_memcpy
         MOV       ?V8,#`?<Constant "P2P Data: ">` & 0xff
         MOV       ?V9,#(`?<Constant "P2P Data: ">` >> 8) & 0xff
@@ -3927,7 +4115,7 @@ zclZEM_AF_RxProc:
         MOV       A,#0x3
         LCALL     ?DEALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 83)
-// 1102                 osal_memcpy(p2pMsg + 10, MSGpkt->cmd.Data, MSGpkt->cmd.DataLength);
+// 1113                 osal_memcpy(p2pMsg + 10, MSGpkt->cmd.Data, MSGpkt->cmd.DataLength);
         ; Setup parameters for call to function osal_memcpy
         LCALL     ?Subroutine4 & 0xFFFF
 ??CrossCallReturnLabel_0:
@@ -3948,7 +4136,7 @@ zclZEM_AF_RxProc:
         MOV       A,#0x3
         LCALL     ?DEALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 83)
-// 1103                 osal_memcpy(p2pMsg + 10 + MSGpkt->cmd.DataLength, " Count: ", 8);
+// 1114                 osal_memcpy(p2pMsg + 10 + MSGpkt->cmd.DataLength, " Count: ", 8);
         ; Setup parameters for call to function osal_memcpy
         MOV       R0,#?V4
         LCALL     ?PUSH_XSTACK_I_THREE
@@ -3971,17 +4159,17 @@ zclZEM_AF_RxProc:
         MOV       A,#0x3
         LCALL     ?DEALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 83)
-// 1104                 p2pMsg[18 + MSGpkt->cmd.DataLength] = '0' + p2pCnt;
+// 1115                 p2pMsg[18 + MSGpkt->cmd.DataLength] = '0' + p2pCnt;
         MOV       DPTR,#??p2pCnt
         MOVX      A,@DPTR
         ADD       A,#0x30
         PUSH      A
           CFI CFA_SP SP+-1
         LCALL     ?Subroutine6 & 0xFFFF
-// 1105                 p2pMsg[19 + MSGpkt->cmd.DataLength] = '\r';
-// 1106                 p2pMsg[20 + MSGpkt->cmd.DataLength] = '\n';
-// 1107                 HalUARTWrite(HAL_UART_PORT_0, p2pMsg, 21 + MSGpkt->cmd.DataLength);
-// 1108             }
+// 1116                 p2pMsg[19 + MSGpkt->cmd.DataLength] = '\r';
+// 1117                 p2pMsg[20 + MSGpkt->cmd.DataLength] = '\n';
+// 1118                 HalUARTWrite(HAL_UART_PORT_0, p2pMsg, 21 + MSGpkt->cmd.DataLength);
+// 1119             }
 ??CrossCallReturnLabel_21:
         ADD       A,#0x12
         MOV       DPL,A
@@ -4000,18 +4188,18 @@ zclZEM_AF_RxProc:
 ??CrossCallReturnLabel_15:
         ADD       A,#0x15
         LJMP      ??zclZEM_AF_RxProc_4 & 0xFFFF
-// 1109             break;
-// 1110         case CLUSTER_BROADCAST:
-// 1111             bcCnt++;  // 接收到广播数据包，进行计数
+// 1120             break;
+// 1121         case CLUSTER_BROADCAST:
+// 1122             bcCnt++;  // 接收到广播数据包，进行计数
 ??zclZEM_AF_RxProc_2:
         MOV       DPTR,#??bcCnt
         MOVX      A,@DPTR
         INC       A
         MOVX      @DPTR,A
-// 1112             // 通过串口输出接收到的数据和计数器值
-// 1113             {
-// 1114                 uint8 bcMsg[64];
-// 1115                 osal_memcpy(bcMsg, "Broadcast Data: ", 16);
+// 1123             // 通过串口输出接收到的数据和计数器值
+// 1124             {
+// 1125                 uint8 bcMsg[64];
+// 1126                 osal_memcpy(bcMsg, "Broadcast Data: ", 16);
         ; Setup parameters for call to function osal_memcpy
         MOV       ?V8,#`?<Constant "Broadcast Data: ">` & 0xff
         MOV       ?V9,#(`?<Constant "Broadcast Data: ">` >> 8) & 0xff
@@ -4027,7 +4215,7 @@ zclZEM_AF_RxProc:
         MOV       A,#0x3
         LCALL     ?DEALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 83)
-// 1116                 osal_memcpy(bcMsg + 16, MSGpkt->cmd.Data, MSGpkt->cmd.DataLength);
+// 1127                 osal_memcpy(bcMsg + 16, MSGpkt->cmd.Data, MSGpkt->cmd.DataLength);
         ; Setup parameters for call to function osal_memcpy
         LCALL     ?Subroutine4 & 0xFFFF
 ??CrossCallReturnLabel_1:
@@ -4048,7 +4236,7 @@ zclZEM_AF_RxProc:
         MOV       A,#0x3
         LCALL     ?DEALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 83)
-// 1117                 osal_memcpy(bcMsg + 16 + MSGpkt->cmd.DataLength, " Count: ", 8);
+// 1128                 osal_memcpy(bcMsg + 16 + MSGpkt->cmd.DataLength, " Count: ", 8);
         ; Setup parameters for call to function osal_memcpy
         MOV       R0,#?V4
         LCALL     ?PUSH_XSTACK_I_THREE
@@ -4065,25 +4253,25 @@ zclZEM_AF_RxProc:
         MOV       A,#0x3
         LCALL     ?DEALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 83)
-// 1118                 bcMsg[24 + MSGpkt->cmd.DataLength] = '0' + bcCnt;
+// 1129                 bcMsg[24 + MSGpkt->cmd.DataLength] = '0' + bcCnt;
         MOV       DPTR,#??bcCnt
         SJMP      ??zclZEM_AF_RxProc_5
-// 1119                 bcMsg[25 + MSGpkt->cmd.DataLength] = '\r';
-// 1120                 bcMsg[26 + MSGpkt->cmd.DataLength] = '\n';
-// 1121                 HalUARTWrite(HAL_UART_PORT_0, bcMsg, 27 + MSGpkt->cmd.DataLength);
-// 1122             }
-// 1123             break;
-// 1124         case CLUSTER_GROUPCAST:
-// 1125             gcCnt++;  // 接收到组播数据包，进行计数
+// 1130                 bcMsg[25 + MSGpkt->cmd.DataLength] = '\r';
+// 1131                 bcMsg[26 + MSGpkt->cmd.DataLength] = '\n';
+// 1132                 HalUARTWrite(HAL_UART_PORT_0, bcMsg, 27 + MSGpkt->cmd.DataLength);
+// 1133             }
+// 1134             break;
+// 1135         case CLUSTER_GROUPCAST:
+// 1136             gcCnt++;  // 接收到组播数据包，进行计数
 ??zclZEM_AF_RxProc_3:
         MOV       DPTR,#??gcCnt
         MOVX      A,@DPTR
         INC       A
         MOVX      @DPTR,A
-// 1126             // 通过串口输出接收到的数据和计数器值
-// 1127             {
-// 1128                 uint8 gcMsg[64];
-// 1129                 osal_memcpy(gcMsg, "Groupcast Data: ", 16);
+// 1137             // 通过串口输出接收到的数据和计数器值
+// 1138             {
+// 1139                 uint8 gcMsg[64];
+// 1140                 osal_memcpy(gcMsg, "Groupcast Data: ", 16);
         ; Setup parameters for call to function osal_memcpy
         MOV       ?V8,#`?<Constant "Groupcast Data: ">` & 0xff
         MOV       ?V9,#(`?<Constant "Groupcast Data: ">` >> 8) & 0xff
@@ -4099,7 +4287,7 @@ zclZEM_AF_RxProc:
         MOV       A,#0x3
         LCALL     ?DEALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 83)
-// 1130                 osal_memcpy(gcMsg + 16, MSGpkt->cmd.Data, MSGpkt->cmd.DataLength);
+// 1141                 osal_memcpy(gcMsg + 16, MSGpkt->cmd.Data, MSGpkt->cmd.DataLength);
         ; Setup parameters for call to function osal_memcpy
         LCALL     ?Subroutine4 & 0xFFFF
 ??CrossCallReturnLabel_2:
@@ -4120,7 +4308,7 @@ zclZEM_AF_RxProc:
         MOV       A,#0x3
         LCALL     ?DEALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 83)
-// 1131                 osal_memcpy(gcMsg + 16 + MSGpkt->cmd.DataLength, " Count: ", 8);
+// 1142                 osal_memcpy(gcMsg + 16 + MSGpkt->cmd.DataLength, " Count: ", 8);
         ; Setup parameters for call to function osal_memcpy
         MOV       R0,#?V4
         LCALL     ?PUSH_XSTACK_I_THREE
@@ -4137,17 +4325,17 @@ zclZEM_AF_RxProc:
         MOV       A,#0x3
         LCALL     ?DEALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 83)
-// 1132                 gcMsg[24 + MSGpkt->cmd.DataLength] = '0' + gcCnt;
+// 1143                 gcMsg[24 + MSGpkt->cmd.DataLength] = '0' + gcCnt;
         MOV       DPTR,#??gcCnt
 ??zclZEM_AF_RxProc_5:
         MOVX      A,@DPTR
         ADD       A,#0x30
         PUSH      A
           CFI CFA_SP SP+-1
-// 1133                 gcMsg[25 + MSGpkt->cmd.DataLength] = '\r';
-// 1134                 gcMsg[26 + MSGpkt->cmd.DataLength] = '\n';
-// 1135                 HalUARTWrite(HAL_UART_PORT_0, gcMsg, 27 + MSGpkt->cmd.DataLength);
-// 1136             }
+// 1144                 gcMsg[25 + MSGpkt->cmd.DataLength] = '\r';
+// 1145                 gcMsg[26 + MSGpkt->cmd.DataLength] = '\n';
+// 1146                 HalUARTWrite(HAL_UART_PORT_0, gcMsg, 27 + MSGpkt->cmd.DataLength);
+// 1147             }
         LCALL     ?Subroutine6 & 0xFFFF
 ??CrossCallReturnLabel_22:
         ADD       A,#0x18
@@ -4176,11 +4364,11 @@ zclZEM_AF_RxProc:
         MOV       R3,?XSP + 1
         MOV       R1,#0x0
         LCALL     `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
-// 1137             break;
-// 1138         default:
-// 1139             break;
-// 1140     }
-// 1141 }
+// 1148             break;
+// 1149         default:
+// 1150             break;
+// 1151     }
+// 1152 }
 ??zclZEM_AF_RxProc_0:
         MOV       A,#0x40
         LCALL     ?DEALLOC_XSTACK8
@@ -5068,23 +5256,6 @@ zclZEM_AF_RxProc:
 
         RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
         DATA8
-`?<Constant "ZEMAPP_EVT\\344\\272\\213\\344\\273\\266`:
-        DB "ZEMAPP_EVT\344\272\213\344\273\266\350\247\246\345\217\221\357\274\214\345\274\200\345\247\213LED\351\227\252\347\203\201...\015\012"
-
-        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
-        DATA8
-`?<Constant "LED\\351\\227\\252\\347\\203\\201\\345\\22`:
-        DB 4CH, 45H, 44H, 0E9H, 97H, 0AAH, 0E7H, 83H
-        DB 81H, 0E5H, 91H, 0BDH, 0E4H, 0BBH, 0A4H, 0E5H
-        DB 0B7H, 0B2H, 0E5H, 8FH, 91H, 0E9H, 80H, 81H
-        DB 0EFH, 0BCH, 8CH, 0E8H, 0AEH, 0BEH, 0E7H, 0BDH
-        DB 0AEH, 0E4H, 0B8H, 8BH, 0E4H, 0B8H, 80H, 0E6H
-        DB 0ACH, 0A1H, 0E5H, 0AEH, 9AH, 0E6H, 97H, 0B6H
-        DB 0E5H, 99H, 0A8H, 2EH, 2EH, 2EH, 0DH, 0AH
-        DB 0
-
-        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
-        DATA8
         DB "Broadcast"
 
         RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
@@ -5099,10 +5270,6 @@ zclZEM_AF_RxProc:
 
         RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
         DATA8
-        DB "Network formation failed! Retrying...\015\012"
-
-        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
-        DATA8
 `?<Constant "MAC: ">`:
         DB "MAC: "
 
@@ -5113,14 +5280,43 @@ zclZEM_AF_RxProc:
 
         RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
         DATA8
-`?<Constant "Network formation fai...">_1`:
-        DB 4EH, 65H, 74H, 77H, 6FH, 72H, 6BH, 20H
-        DB 66H, 6FH, 72H, 6DH, 61H, 74H, 69H, 6FH
-        DB 6EH, 20H, 66H, 61H, 69H, 6CH, 65H, 64H
-        DB 21H, 20H, 52H, 65H, 74H, 72H, 79H, 69H
-        DB 6EH, 67H, 20H, 69H, 6EH, 20H, 35H, 20H
-        DB 73H, 65H, 63H, 6FH, 6EH, 64H, 73H, 2EH
-        DB 2EH, 2EH, 0DH, 0AH, 0
+`?<Constant "Network formation fai...">`:
+        DB "Network formation failed! Retrying...\015\012"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "Failure reason: ">`:
+        DB "Failure reason: "
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "No network found">`:
+        DB "No network found"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "Formation failure">`:
+        DB "Formation failure"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "TCLK exchange failure">`:
+        DB "TCLK exchange failure"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "General failure">`:
+        DB "General failure"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "Unknown error">`:
+        DB "Unknown error"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "\\r\\n">`:
+        DB "\015\012"
 
         RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
         DATA8
@@ -5162,30 +5358,25 @@ __Constant_bb8:
 __Constant_2710:
         DD 10000
 
-        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
-        DATA32
-__Constant_1388:
-        DD 5000
-
         END
-// 1142 
-// 1143 /****************************************************************************
-// 1144 ****************************************************************************/
-// 1145 
-// 1146 
+// 1153 
+// 1154 /****************************************************************************
+// 1155 ****************************************************************************/
+// 1156 
+// 1157 
 // 
-// 2 104 bytes in segment BANKED_CODE
+// 2 241 bytes in segment BANKED_CODE
 //    60 bytes in segment BANK_RELAYS
 //     3 bytes in segment SFR_AN
 //    29 bytes in segment XDATA_I
 //    29 bytes in segment XDATA_ID
-//   357 bytes in segment XDATA_ROM_C
+//   304 bytes in segment XDATA_ROM_C
 //    72 bytes in segment XDATA_Z
 // 
 //    89 bytes of CODE     memory
-//   341 bytes of CONST    memory (+ 16 bytes shared)
+//   292 bytes of CONST    memory (+ 12 bytes shared)
 //     0 bytes of DATA     memory (+  3 bytes shared)
-// 2 104 bytes of HUGECODE memory
+// 2 241 bytes of HUGECODE memory
 //   101 bytes of XDATA    memory
 //
 //Errors: none

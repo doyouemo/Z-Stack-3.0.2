@@ -194,6 +194,14 @@ void zclZEM_Init( byte task_id )
   bdb_RegisterCommissioningStatusCB( zclZEM_ProcessCommissioningStatus );
 
 #ifdef ZDO_COORDINATOR
+  // 重置网络状态，强制每次都重新初始化网络
+  // 设置ZCD_STARTOPT_DEFAULT_NETWORK_STATE位，使设备每次都重新组网
+  extern uint8 zgWriteStartupOptions( uint8 action, uint8 bitOptions );
+  
+  // 设置默认网络状态选项
+  zgWriteStartupOptions( 1, 0x01 );
+  
+  // 执行网络形成
   bdb_StartCommissioning( BDB_COMMISSIONING_MODE_NWK_FORMATION |
                           BDB_COMMISSIONING_MODE_FINDING_BINDING );
   NLME_PermitJoiningRequest(255);
@@ -324,18 +332,12 @@ uint16 zclZEM_event_loop( uint8 task_id, uint16 events )
 
   // 先处理LED闪烁事件，确保不会被SYS_EVENT_MSG阻塞
   if(events & ZEMAPP_EVT)
-  {
-    uint8 debugMsg[] = "ZEMAPP_EVT事件触发，开始LED闪烁...\r\n";
-    HalUARTWrite(HAL_UART_PORT_0, debugMsg, sizeof(debugMsg)-1);
-    
+  { 
     HalLedBlink(
         HAL_LED_1, // 指定使用LED1
         10, // 指定闪烁次数为10次
         50, // 指定50%的时间LED处于点亮状态
         1000); // 指定每次闪烁周期为1000ms
-        
-    uint8 debugMsg2[] = "LED闪烁命令已发送，设置下一次定时器...\r\n";
-    HalUARTWrite(HAL_UART_PORT_0, debugMsg2, sizeof(debugMsg2)-1);
     
     // 设置下一次LED闪烁定时器
     osal_start_timerEx(zclZEM_TaskID, ZEMAPP_EVT, 10000);
@@ -401,23 +403,7 @@ uint16 zclZEM_event_loop( uint8 task_id, uint16 events )
                       ZEM_P2P_PERIOD);
     return ( events ^ ZEM_P2P_EVT );
   }
-  #ifdef ZDO_COORDINATOR
-    if ( events & ZEM_RETRY_FORMATION_EVT )//如果事件类型为重试网络形成事件
-    {
-        // 重试网络形成，并打印失败信息
-        uint8 failMsg[] = "Network formation failed! Retrying...\r\n";
-        HalUARTWrite(HAL_UART_PORT_0, failMsg, sizeof(failMsg)-1);
-        
-        /* 重试网络形成 */
-        bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_FORMATION |
-                                    BDB_COMMISSIONING_MODE_FINDING_BINDING );
-        
-        // 无论成功与否，5秒后再次重试 - 实现真正的无限重试
-        osal_start_timerEx(zclZEM_TaskID, ZEM_RETRY_FORMATION_EVT, 5000);
-        
-      return ( events ^ ZEM_RETRY_FORMATION_EVT );
-    }
-  #else
+  #ifndef ZDO_COORDINATOR
     if ( events & ZEM_REJOIN_EVT )//如果事件类型为重新加入网络事件
     {
         // 重新加入网络
@@ -614,11 +600,36 @@ static void zclZEM_ProcessCommissioningStatus(bdbCommissioningModeMsg_t* bdbComm
           //try with bdb_setChannelAttribute
           // 网络形成失败
           #ifdef ZDO_COORDINATOR
-          uint8 failMsg[] = "Network formation failed! Retrying in 5 seconds...\r\n";
+          uint8 failMsg[] = "Network formation failed! Retrying...\r\n";
           HalUARTWrite(HAL_UART_PORT_0, failMsg, sizeof(failMsg)-1);
           
-          // 无限重试网络形成 - 确保每次失败后都重新设置定时器
-          osal_start_timerEx(zclZEM_TaskID, ZEM_RETRY_FORMATION_EVT, 5000);
+          // 打印具体的失败原因
+          uint8 statusMsg[64];
+          osal_memcpy(statusMsg, "Failure reason: ", 15);
+          
+          switch(bdbCommissioningModeMsg->bdbCommissioningStatus) {
+            case BDB_COMMISSIONING_NO_NETWORK:
+              osal_memcpy(&statusMsg[15], "No network found", 15);
+              break;
+            case BDB_COMMISSIONING_FORMATION_FAILURE:
+              osal_memcpy(&statusMsg[15], "Formation failure", 17);
+              break;
+            case BDB_COMMISSIONING_TCLK_EX_FAILURE:
+              osal_memcpy(&statusMsg[15], "TCLK exchange failure", 20);
+              break;
+            case BDB_COMMISSIONING_FAILURE:
+              osal_memcpy(&statusMsg[15], "General failure", 14);
+              break;
+            default:
+              osal_memcpy(&statusMsg[15], "Unknown error", 13);
+              break;
+          }
+          osal_memcpy(&statusMsg[30], "\r\n", 2);
+          HalUARTWrite(HAL_UART_PORT_0, statusMsg, 32);
+          
+          // 直接重新调用组网函数，不需要通过定时器
+          bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_FORMATION |
+                                      BDB_COMMISSIONING_MODE_FINDING_BINDING );
           #endif
         }
       break;

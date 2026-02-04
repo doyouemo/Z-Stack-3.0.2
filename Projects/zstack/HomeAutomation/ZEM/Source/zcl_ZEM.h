@@ -32,7 +32,7 @@ extern "C"
 /* 协调器 */
 #ifdef ZDO_COORDINATOR
   // 重试网络形成事件
-  #define ZEM_RETRY_FORMATION_EVT     0x0200
+  #define ZEM_RETRY_FORMATION_EVT     0x0400
   // 重试间隔：5000ms(5秒)
   #define ZEM_RETRY_FORMATION_PERIOD  5000
 /* 路由器或者终端 */
