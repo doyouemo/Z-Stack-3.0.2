@@ -1,0 +1,19 @@
+{
+    "files.associations": {
+        "hal_led.h": "c",
+        "zmac.h": "c",
+        "hal_drivers.h": "c",
+        "bdb_interface.h": "c",
+        "stub_aps.h": "c",
+        "osal.h": "c",
+        "hal_board.h": "c",
+        "hal_board_cfg.h": "c",
+        "hal_mcu.h": "c",
+        "zcl_samplesw.h": "c",
+        "zcl_diagnostic.h": "c",
+        "zcl.h": "c",
+        "zcl_general.h": "c",
+        "nlmede.h": "c",
+        "mt_nwk.h": "c"
+    }
+}

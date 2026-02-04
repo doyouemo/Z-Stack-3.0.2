@@ -1,0 +1,24 @@
+{
+  "workspace": {
+    "path": "${workspaceFolder}\\Projects\\zstack\\HomeAutomation\\SampleSwitch\\CC2530DB\\SampleSwitch.eww"
+  },
+  "workspaces": {
+    "${workspaceFolder}\\Projects\\zstack\\OTA\\Boot\\CC2530DB\\Boot.eww": {
+      "configs": {},
+      "selected": {
+        "path": "${workspaceFolder}\\Projects\\zstack\\OTA\\Boot\\CC2530DB\\Boot.ewp"
+      }
+    },
+    "${workspaceFolder}\\Projects\\zstack\\HomeAutomation\\SampleSwitch\\CC2530DB\\SampleSwitch.eww": {
+      "configs": {
+        "${workspaceFolder}\\Projects\\zstack\\HomeAutomation\\SampleSwitch\\CC2530DB\\SampleSwitch.ewp": "CoordinatorEB"
+      },
+      "selected": {
+        "path": "${workspaceFolder}\\Projects\\zstack\\HomeAutomation\\SampleSwitch\\CC2530DB\\SampleSwitch.ewp"
+      }
+    }
+  },
+  "workbench": {
+    "path": "D:\\IAR10.10.1"
+  }
+}

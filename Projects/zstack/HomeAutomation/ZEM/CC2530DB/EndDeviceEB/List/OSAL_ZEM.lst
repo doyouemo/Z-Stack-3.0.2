@@ -1,0 +1,352 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               03/Feb/2026  00:00:31
+# Copyright 2004-2017 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\Source\OSAL_ZEM.c
+#    Command line       =  
+#        -f C:\Users\ASUS\AppData\Local\Temp\EWCDBF.tmp
+#        ("C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\Source\OSAL_ZEM.c" -D
+#        BDB_REPORTING -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE
+#        -D xPOWER_SAVING -D NWK_AUTO_POLL -D xZTOOL_P1 -D xMT_TASK -D
+#        xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D xMT_APP_CNF_FUNC -D
+#        LCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
+#        ZCL_DISCOVER -D ZCL_WRITE -D ZCL_BASIC -D ZCL_IDENTIFY -D
+#        ZCL_TEMPERATURE_MEASUREMENT -D ZCL_GROUPS -lC
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List"
+#        -lA "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List"
+#        --diag_suppress Pe001,Pa010 -o "C:\Users\ASUS\Desktop\work\graduration
+#        project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\Obj" -e
+#        --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 16 -f
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
+#        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0x1234
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0} -DMAC_MAX_FRAME_SIZE=116
+#        -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const __code"
+#        -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000
+#        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
+#        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000 -DENABLE_LED4_DISABLE_S1)
+#        -f "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\" -I
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\Source\" -I
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\Source\" -I
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\ZMain\TI2530DB\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\include\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\include\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mt\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\osal\include\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\af\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\bdb\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\gp\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_China.936
+#    List file          =  
+#        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List\OSAL_ZEM.lst
+#    Object file        =  
+#        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\Obj\OSAL_ZEM.r51
+#
+###############################################################################
+
+C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\Source\OSAL_ZEM.c
+      1          /*********************************************************************
+      2           * INCLUDES
+      3           */
+      4          
+      5          #include "ZComDef.h"
+      6          #include "hal_drivers.h"
+      7          #include "OSAL.h"
+      8          #include "OSAL_Tasks.h"
+      9          
+     10          #if defined ( MT_TASK )
+     11            #include "MT.h"
+     12            #include "MT_TASK.h"
+     13          #endif
+     14          
+     15          #include "nwk.h"
+     16          #include "APS.h"
+     17          #include "ZDApp.h"
+     18          #if defined ( ZIGBEE_FREQ_AGILITY ) || defined ( ZIGBEE_PANID_CONFLICT )
+     19            #include "ZDNwkMgr.h"
+     20          #endif
+     21          #if defined ( ZIGBEE_FRAGMENTATION )
+     22            #include "aps_frag.h"
+     23          #endif
+     24          
+     25          #include "zcl_ZEM.h"
+     26          
+     27          #include "bdb_interface.h"
+     28          #if !defined (DISABLE_GREENPOWER_BASIC_PROXY) && (ZG_BUILD_RTR_TYPE)
+     29            #include "gp_common.h"
+     30          #endif  
+     31          
+     32          #ifdef BDB_REPORTING
+     33          #include "bdb_Reporting.h"
+     34          #endif
+     35          
+     36          /*********************************************************************
+     37           * GLOBAL VARIABLES
+     38           */
+     39          
+     40          // The order in this table must be identical to the task initialization calls below in osalInitTask.
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     41          const pTaskEventHandlerFn tasksArr[] = {
+   \                     tasksArr:
+   \   000000   ....         DW `??macEventLoop::?relay`
+   \   000002   ....         DW `??nwk_event_loop::?relay`
+   \   000004   ....         DW `??Hal_ProcessEvent::?relay`
+   \   000006   ....         DW `??APS_event_loop::?relay`
+   \   000008   ....         DW `??APSF_ProcessEvent::?relay`
+   \   00000A   ....         DW `??ZDApp_event_loop::?relay`
+   \   00000C   ....         DW `??zcl_event_loop::?relay`
+   \   00000E   ....         DW `??bdb_event_loop::?relay`
+   \   000010   ....         DW `??zclZEM_event_loop::?relay`
+     42            macEventLoop,
+     43            nwk_event_loop,
+     44          #if !defined (DISABLE_GREENPOWER_BASIC_PROXY) && (ZG_BUILD_RTR_TYPE)
+     45            gp_event_loop,
+     46          #endif  
+     47            Hal_ProcessEvent,
+     48          #if defined( MT_TASK )
+     49            MT_ProcessEvent,
+     50          #endif
+     51            APS_event_loop,
+     52          #if defined ( ZIGBEE_FRAGMENTATION )
+     53            APSF_ProcessEvent,
+     54          #endif
+     55            ZDApp_event_loop,
+     56          #if defined ( ZIGBEE_FREQ_AGILITY ) || defined ( ZIGBEE_PANID_CONFLICT )
+     57            ZDNwkMgr_event_loop,
+     58          #endif
+     59            zcl_event_loop,
+     60            bdb_event_loop,
+     61            zclZEM_event_loop
+     62          };
+     63          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     64          const uint8 tasksCnt = sizeof( tasksArr ) / sizeof( tasksArr[0] );
+   \                     tasksCnt:
+   \   000000   09           DB 9
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     65          uint16 *tasksEvents;
+   \                     tasksEvents:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     66          
+     67          /*********************************************************************
+     68           * FUNCTIONS
+     69           *********************************************************************/
+     70          
+     71          /*********************************************************************
+     72           * @fn      osalInitTasks
+     73           *
+     74           * @brief   This function invokes the initialization function for each task.
+     75           *
+     76           * @param   void
+     77           *
+     78           * @return  none
+     79           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     80          void osalInitTasks( void )
+   \                     osalInitTasks:
+     81          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     82            uint8 taskID = 0;
+     83          
+     84            tasksEvents = (uint16 *)osal_mem_alloc( sizeof( uint16 ) * tasksCnt);
+   \   000004                ; Setup parameters for call to function osal_mem_alloc
+   \   000004   7A12         MOV       R2,#0x12
+   \   000006   7B00         MOV       R3,#0x0
+   \   000008   12....       LCALL     `??osal_mem_alloc::?relay`; Banked call to: osal_mem_alloc
+   \   00000B   90....       MOV       DPTR,#tasksEvents
+   \   00000E   EA           MOV       A,R2
+   \   00000F   F0           MOVX      @DPTR,A
+   \   000010   A3           INC       DPTR
+   \   000011   EB           MOV       A,R3
+   \   000012   F0           MOVX      @DPTR,A
+     85            osal_memset( tasksEvents, 0, (sizeof( uint16 ) * tasksCnt));
+   \   000013                ; Setup parameters for call to function osal_memset
+   \   000013   7C12         MOV       R4,#0x12
+   \   000015   7D00         MOV       R5,#0x0
+   \   000017   7900         MOV       R1,#0x0
+   \   000019   12....       LCALL     `??osal_memset::?relay`; Banked call to: osal_memset
+     86          
+     87            macTaskInit( taskID++ );
+   \   00001C                ; Setup parameters for call to function macTaskInit
+   \   00001C   7900         MOV       R1,#0x0
+   \   00001E   12....       LCALL     `??macTaskInit::?relay`; Banked call to: macTaskInit
+     88            nwk_init( taskID++ );
+   \   000021                ; Setup parameters for call to function nwk_init
+   \   000021   7901         MOV       R1,#0x1
+   \   000023   12....       LCALL     `??nwk_init::?relay`; Banked call to: nwk_init
+     89          #if !defined (DISABLE_GREENPOWER_BASIC_PROXY) && (ZG_BUILD_RTR_TYPE)
+     90            gp_Init( taskID++ );
+     91          #endif
+     92            Hal_Init( taskID++ );
+   \   000026                ; Setup parameters for call to function Hal_Init
+   \   000026   7902         MOV       R1,#0x2
+   \   000028   12....       LCALL     `??Hal_Init::?relay`; Banked call to: Hal_Init
+     93          #if defined( MT_TASK )
+     94            MT_TaskInit( taskID++ );
+     95          #endif
+     96            APS_Init( taskID++ );
+   \   00002B                ; Setup parameters for call to function APS_Init
+   \   00002B   7903         MOV       R1,#0x3
+   \   00002D   12....       LCALL     `??APS_Init::?relay`; Banked call to: APS_Init
+     97          #if defined ( ZIGBEE_FRAGMENTATION )
+     98            APSF_Init( taskID++ );
+   \   000030                ; Setup parameters for call to function APSF_Init
+   \   000030   7904         MOV       R1,#0x4
+   \   000032   12....       LCALL     `??APSF_Init::?relay`; Banked call to: APSF_Init
+     99          #endif
+    100            ZDApp_Init( taskID++ );
+   \   000035                ; Setup parameters for call to function ZDApp_Init
+   \   000035   7905         MOV       R1,#0x5
+   \   000037   12....       LCALL     `??ZDApp_Init::?relay`; Banked call to: ZDApp_Init
+    101          #if defined ( ZIGBEE_FREQ_AGILITY ) || defined ( ZIGBEE_PANID_CONFLICT )
+    102            ZDNwkMgr_Init( taskID++ );
+    103          #endif
+    104            zcl_Init( taskID++ );
+   \   00003A                ; Setup parameters for call to function zcl_Init
+   \   00003A   7906         MOV       R1,#0x6
+   \   00003C   12....       LCALL     `??zcl_Init::?relay`; Banked call to: zcl_Init
+    105            bdb_Init( taskID++ );
+   \   00003F                ; Setup parameters for call to function bdb_Init
+   \   00003F   7907         MOV       R1,#0x7
+   \   000041   12....       LCALL     `??bdb_Init::?relay`; Banked call to: bdb_Init
+    106            zclZEM_Init( taskID );
+   \   000044                ; Setup parameters for call to function zclZEM_Init
+   \   000044   7908         MOV       R1,#0x8
+   \   000046   12....       LCALL     `??zclZEM_Init::?relay`; Banked call to: zclZEM_Init
+    107            
+    108          
+    109          }
+   \   000049   D083         POP       DPH
+   \   00004B   D082         POP       DPL
+   \   00004D   02....       LJMP      ?BRET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??osalInitTasks::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    osalInitTasks
+    110          
+    111          /*********************************************************************
+    112          *********************************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK Function
+   ------ --------
+      2   osalInitTasks
+        2   -> APSF_Init
+        2   -> APS_Init
+        2   -> Hal_Init
+        2   -> ZDApp_Init
+        2   -> bdb_Init
+        2   -> macTaskInit
+        2   -> nwk_init
+        2   -> osal_mem_alloc
+        2   -> osal_memset
+        2   -> zclZEM_Init
+        2   -> zcl_Init
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      80  osalInitTasks
+       6  osalInitTasks::?relay
+      18  tasksArr
+       1  tasksCnt
+       2  tasksEvents
+
+ 
+ 80 bytes in segment BANKED_CODE
+  6 bytes in segment BANK_RELAYS
+ 19 bytes in segment XDATA_ROM_C
+  2 bytes in segment XDATA_Z
+ 
+  6 bytes of CODE     memory
+ 19 bytes of CONST    memory
+ 80 bytes of HUGECODE memory
+  2 bytes of XDATA    memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,739 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               03/Feb/2026  00:00:31
+# Copyright 2004-2017 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\Source\zcl_ZEM_data.c
+#    Command line       =  
+#        -f C:\Users\ASUS\AppData\Local\Temp\EWCF01.tmp
+#        ("C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\Source\zcl_ZEM_data.c" -D
+#        BDB_REPORTING -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE
+#        -D xPOWER_SAVING -D NWK_AUTO_POLL -D xZTOOL_P1 -D xMT_TASK -D
+#        xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D xMT_APP_CNF_FUNC -D
+#        LCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
+#        ZCL_DISCOVER -D ZCL_WRITE -D ZCL_BASIC -D ZCL_IDENTIFY -D
+#        ZCL_TEMPERATURE_MEASUREMENT -D ZCL_GROUPS -lC
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List"
+#        -lA "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List"
+#        --diag_suppress Pe001,Pa010 -o "C:\Users\ASUS\Desktop\work\graduration
+#        project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\Obj" -e
+#        --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 16 -f
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
+#        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0x1234
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0} -DMAC_MAX_FRAME_SIZE=116
+#        -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const __code"
+#        -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000
+#        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
+#        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000 -DENABLE_LED4_DISABLE_S1)
+#        -f "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\" -I
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\Source\" -I
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\Source\" -I
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\ZMain\TI2530DB\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\include\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\include\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mt\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\osal\include\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\af\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\bdb\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\gp\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_China.936
+#    List file          =  
+#        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List\zcl_ZEM_data.lst
+#    Object file        =  
+#        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\Obj\zcl_ZEM_data.r51
+#
+###############################################################################
+
+C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\Source\zcl_ZEM_data.c
+      1          
+      2          
+      3          /*********************************************************************
+      4           * INCLUDES
+      5           */
+      6          #include "ZComDef.h"
+      7          #include "OSAL.h"
+      8          #include "AF.h"
+      9          #include "ZDConfig.h"
+     10          
+     11          #include "zcl.h"
+     12          #include "zcl_general.h"
+     13          #include "zcl_ha.h"
+     14          #include "zcl_ms.h"
+     15          
+     16          #include "zcl_ZEM.h"
+     17          
+     18          /*********************************************************************
+     19           * CONSTANTS
+     20           */
+     21          
+     22          #define ZEM_DEVICE_VERSION     0
+     23          #define ZEM_FLAGS              0
+     24          
+     25          #define ZEM_HWVERSION          1
+     26          #define ZEM_ZCLVERSION         1
+     27          
+     28          #define ZEM_MAX_MEASURED_VALUE  2700  // 27.00C
+     29          #define ZEM_MIN_MEASURED_VALUE  1700  // 17.00C
+     30          
+     31          #define ZEM_MEASURED_VALUE      2000  // 20.00C
+     32          
+     33          /*********************************************************************
+     34           * TYPEDEFS
+     35           */
+     36          
+     37          /*********************************************************************
+     38           * MACROS
+     39           */
+     40          
+     41          /*********************************************************************
+     42           * GLOBAL VARIABLES
+     43           */
+     44          
+     45          // Global attributes
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     46          const uint16 zclZEM_clusterRevision_all = 0x0001; 
+   \                     zclZEM_clusterRevision_all:
+   \   000000   0100         DW 1
+     47          
+     48          // Basic Cluster
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     49          const uint8 zclZEM_HWRevision = ZEM_HWVERSION;
+   \                     zclZEM_HWRevision:
+   \   000000   01           DB 1
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     50          const uint8 zclZEM_ZCLVersion = ZEM_ZCLVERSION;
+   \                     zclZEM_ZCLVersion:
+   \   000000   01           DB 1
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     51          const uint8 zclZEM_ManufacturerName[] = { 16, 'T','e','x','a','s','I','n','s','t','r','u','m','e','n','t','s' };
+   \                     zclZEM_ManufacturerName:
+   \   000000   10           DB 16
+   \   000001   54           DB 84
+   \   000002   65           DB 101
+   \   000003   78           DB 120
+   \   000004   61           DB 97
+   \   000005   73           DB 115
+   \   000006   49           DB 73
+   \   000007   6E           DB 110
+   \   000008   73           DB 115
+   \   000009   74           DB 116
+   \   00000A   72           DB 114
+   \   00000B   75           DB 117
+   \   00000C   6D           DB 109
+   \   00000D   65           DB 101
+   \   00000E   6E           DB 110
+   \   00000F   74           DB 116
+   \   000010   73           DB 115
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     52          const uint8 zclZEM_ModelId[] = { 16, 'T','I','0','0','0','1',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ' };
+   \                     zclZEM_ModelId:
+   \   000000   10           DB 16
+   \   000001   54           DB 84
+   \   000002   49           DB 73
+   \   000003   30           DB 48
+   \   000004   30           DB 48
+   \   000005   30           DB 48
+   \   000006   31           DB 49
+   \   000007   20           DB 32
+   \   000008   20           DB 32
+   \   000009   20           DB 32
+   \   00000A   20           DB 32
+   \   00000B   20           DB 32
+   \   00000C   20           DB 32
+   \   00000D   20           DB 32
+   \   00000E   20           DB 32
+   \   00000F   20           DB 32
+   \   000010   20           DB 32
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     53          const uint8 zclZEM_DateCode[] = { 16, '2','0','0','6','0','8','3','1',' ',' ',' ',' ',' ',' ',' ',' ' };
+   \                     zclZEM_DateCode:
+   \   000000   10           DB 16
+   \   000001   32           DB 50
+   \   000002   30           DB 48
+   \   000003   30           DB 48
+   \   000004   36           DB 54
+   \   000005   30           DB 48
+   \   000006   38           DB 56
+   \   000007   33           DB 51
+   \   000008   31           DB 49
+   \   000009   20           DB 32
+   \   00000A   20           DB 32
+   \   00000B   20           DB 32
+   \   00000C   20           DB 32
+   \   00000D   20           DB 32
+   \   00000E   20           DB 32
+   \   00000F   20           DB 32
+   \   000010   20           DB 32
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     54          const uint8 zclZEM_PowerSource = POWER_SOURCE_MAINS_1_PHASE;
+   \                     zclZEM_PowerSource:
+   \   000000   01           DB 1
+     55          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     56          uint8 zclZEM_LocationDescription[17];
+   \                     zclZEM_LocationDescription:
+   \   000000                DS 17
+   \   000011                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     57          uint8 zclZEM_PhysicalEnvironment;
+   \                     zclZEM_PhysicalEnvironment:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     58          uint8 zclZEM_DeviceEnable;
+   \                     zclZEM_DeviceEnable:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     59          
+     60          // Identify Cluster
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     61          uint16 zclZEM_IdentifyTime;
+   \                     zclZEM_IdentifyTime:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     62          
+     63          // Temperature Sensor Cluster
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     64          int16 zclZEM_MeasuredValue;
+   \                     zclZEM_MeasuredValue:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     65          const int16 zclZEM_MinMeasuredValue = ZEM_MIN_MEASURED_VALUE; 
+   \                     zclZEM_MinMeasuredValue:
+   \   000000   A406         DW 1700
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     66          const uint16 zclZEM_MaxMeasuredValue = ZEM_MAX_MEASURED_VALUE;
+   \                     zclZEM_MaxMeasuredValue:
+   \   000000   8C0A         DW 2700
+     67          
+     68          /*********************************************************************
+     69           * ATTRIBUTE DEFINITIONS - Uses REAL cluster IDs
+     70           */
+     71          
+     72          // NOTE: The attributes listed in the AttrRec must be in ascending order 
+     73          // per cluster to allow right function of the Foundation discovery commands
+     74          
+
+   \                                 In  segment CODE_C, align 1
+     75          CONST zclAttrRec_t zclZEM_Attrs[] =
+   \                     zclZEM_Attrs:
+   \   000000   0000         DW 0
+   \   000002   0000         DW 0
+   \   000004   20           DB 32
+   \   000005   01           DB 1
+   \   000006   ....         DW zclZEM_ZCLVersion
+   \   000008   0000         DW 0
+   \   00000A   0300         DW 3
+   \   00000C   20           DB 32
+   \   00000D   01           DB 1
+   \   00000E   ....         DW zclZEM_HWRevision
+   \   000010   0000         DW 0
+   \   000012   0400         DW 4
+   \   000014   42           DB 66
+   \   000015   01           DB 1
+   \   000016   ....         DW zclZEM_ManufacturerName
+   \   000018   0000         DW 0
+   \   00001A   0500         DW 5
+   \   00001C   42           DB 66
+   \   00001D   01           DB 1
+   \   00001E   ....         DW zclZEM_ModelId
+   \   000020   0000         DW 0
+   \   000022   0600         DW 6
+   \   000024   42           DB 66
+   \   000025   01           DB 1
+   \   000026   ....         DW zclZEM_DateCode
+   \   000028   0000         DW 0
+   \   00002A   0700         DW 7
+   \   00002C   30           DB 48
+   \   00002D   01           DB 1
+   \   00002E   ....         DW zclZEM_PowerSource
+   \   000030   0000         DW 0
+   \   000032   1000         DW 16
+   \   000034   42           DB 66
+   \   000035   03           DB 3
+   \   000036   ....         DW zclZEM_LocationDescription
+   \   000038   0000         DW 0
+   \   00003A   1100         DW 17
+   \   00003C   30           DB 48
+   \   00003D   03           DB 3
+   \   00003E   ....         DW zclZEM_PhysicalEnvironment
+   \   000040   0000         DW 0
+   \   000042   1200         DW 18
+   \   000044   10           DB 16
+   \   000045   03           DB 3
+   \   000046   ....         DW zclZEM_DeviceEnable
+   \   000048   0000         DW 0
+   \   00004A   FDFF         DW 65533
+   \   00004C   21           DB 33
+   \   00004D   01           DB 1
+   \   00004E   ....         DW zclZEM_clusterRevision_all
+   \   000050   0300         DW 3
+   \   000052   0000         DW 0
+   \   000054   21           DB 33
+   \   000055   03           DB 3
+   \   000056   ....         DW zclZEM_IdentifyTime
+   \   000058   0300         DW 3
+   \   00005A   FDFF         DW 65533
+   \   00005C   21           DB 33
+   \   00005D   41           DB 65
+   \   00005E   ....         DW zclZEM_clusterRevision_all
+   \   000060   0204         DW 1026
+   \   000062   0000         DW 0
+   \   000064   29           DB 41
+   \   000065   05           DB 5
+   \   000066   ....         DW zclZEM_MeasuredValue
+   \   000068   0204         DW 1026
+   \   00006A   0100         DW 1
+   \   00006C   29           DB 41
+   \   00006D   01           DB 1
+   \   00006E   ....         DW zclZEM_MinMeasuredValue
+   \   000070   0204         DW 1026
+   \   000072   0200         DW 2
+   \   000074   29           DB 41
+   \   000075   01           DB 1
+   \   000076   ....         DW zclZEM_MaxMeasuredValue
+   \   000078   0204         DW 1026
+   \   00007A   FDFF         DW 65533
+   \   00007C   21           DB 33
+   \   00007D   01           DB 1
+   \   00007E   ....         DW zclZEM_clusterRevision_all
+     76          {
+     77            // *** General Basic Cluster Attributes ***
+     78            {
+     79              ZCL_CLUSTER_ID_GEN_BASIC,
+     80              { // Attribute record
+     81                ATTRID_BASIC_ZCL_VERSION,
+     82                ZCL_DATATYPE_UINT8,
+     83                ACCESS_CONTROL_READ,
+     84                (void *)&zclZEM_ZCLVersion
+     85              }
+     86            },
+     87            {
+     88              ZCL_CLUSTER_ID_GEN_BASIC,             // Cluster IDs - defined in the foundation (ie. zcl.h)
+     89              {  // Attribute record
+     90                ATTRID_BASIC_HW_VERSION,            // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+     91                ZCL_DATATYPE_UINT8,                 // Data Type - found in zcl.h
+     92                ACCESS_CONTROL_READ,                // Variable access control - found in zcl.h
+     93                (void *)&zclZEM_HWRevision  // Pointer to attribute variable
+     94              }
+     95            },
+     96            {
+     97              ZCL_CLUSTER_ID_GEN_BASIC,
+     98              { // Attribute record
+     99                ATTRID_BASIC_MANUFACTURER_NAME,
+    100                ZCL_DATATYPE_CHAR_STR,
+    101                ACCESS_CONTROL_READ,
+    102                (void *)zclZEM_ManufacturerName
+    103              }
+    104            },
+    105            {
+    106              ZCL_CLUSTER_ID_GEN_BASIC,
+    107              { // Attribute record
+    108                ATTRID_BASIC_MODEL_ID,
+    109                ZCL_DATATYPE_CHAR_STR,
+    110                ACCESS_CONTROL_READ,
+    111                (void *)zclZEM_ModelId
+    112              }
+    113            },
+    114            {
+    115              ZCL_CLUSTER_ID_GEN_BASIC,
+    116              { // Attribute record
+    117                ATTRID_BASIC_DATE_CODE,
+    118                ZCL_DATATYPE_CHAR_STR,
+    119                ACCESS_CONTROL_READ,
+    120                (void *)zclZEM_DateCode
+    121              }
+    122            },
+    123            {
+    124              ZCL_CLUSTER_ID_GEN_BASIC,
+    125              { // Attribute record
+    126                ATTRID_BASIC_POWER_SOURCE,
+    127                ZCL_DATATYPE_ENUM8,
+    128                ACCESS_CONTROL_READ,
+    129                (void *)&zclZEM_PowerSource
+    130              }
+    131            },
+    132            {
+    133              ZCL_CLUSTER_ID_GEN_BASIC,
+    134              { // Attribute record
+    135                ATTRID_BASIC_LOCATION_DESC,
+    136                ZCL_DATATYPE_CHAR_STR,
+    137                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    138                (void *)zclZEM_LocationDescription
+    139              }
+    140            },
+    141            {
+    142              ZCL_CLUSTER_ID_GEN_BASIC,
+    143              { // Attribute record
+    144                ATTRID_BASIC_PHYSICAL_ENV,
+    145                ZCL_DATATYPE_ENUM8,
+    146                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    147                (void *)&zclZEM_PhysicalEnvironment
+    148              }
+    149            },
+    150            {
+    151              ZCL_CLUSTER_ID_GEN_BASIC,
+    152              { // Attribute record
+    153                ATTRID_BASIC_DEVICE_ENABLED,
+    154                ZCL_DATATYPE_BOOLEAN,
+    155                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    156                (void *)&zclZEM_DeviceEnable
+    157              }
+    158            },
+    159            {
+    160              ZCL_CLUSTER_ID_GEN_BASIC,
+    161              {  // Attribute record
+    162                ATTRID_CLUSTER_REVISION,
+    163                ZCL_DATATYPE_UINT16,
+    164                ACCESS_CONTROL_READ,
+    165                (void *)&zclZEM_clusterRevision_all
+    166              }
+    167            },
+    168            // *** Identify Cluster Attribute ***
+    169            {
+    170              ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    171              { // Attribute record
+    172                ATTRID_IDENTIFY_TIME,
+    173                ZCL_DATATYPE_UINT16,
+    174                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    175                (void *)&zclZEM_IdentifyTime
+    176              }
+    177            },
+    178            {
+    179              ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    180              {  // Attribute record
+    181                ATTRID_CLUSTER_REVISION,
+    182                ZCL_DATATYPE_UINT16,
+    183                ACCESS_CONTROL_READ | ACCESS_GLOBAL,
+    184                (void *)&zclZEM_clusterRevision_all
+    185              }
+    186            },
+    187          
+    188            // *** Temperature Measurement Attriubtes ***
+    189            {
+    190              ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+    191              { // Attribute record
+    192                ATTRID_MS_TEMPERATURE_MEASURED_VALUE,
+    193                ZCL_DATATYPE_INT16,
+    194                ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
+    195                (void *)&zclZEM_MeasuredValue
+    196              }
+    197            },
+    198            {
+    199              ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+    200              { // Attribute record
+    201                ATTRID_MS_TEMPERATURE_MIN_MEASURED_VALUE,
+    202                ZCL_DATATYPE_INT16,
+    203                ACCESS_CONTROL_READ,
+    204                (void *)&zclZEM_MinMeasuredValue
+    205              }
+    206            },
+    207            {
+    208              ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+    209              { // Attribute record
+    210                ATTRID_MS_TEMPERATURE_MAX_MEASURED_VALUE,
+    211                ZCL_DATATYPE_INT16,
+    212                ACCESS_CONTROL_READ,
+    213                (void *)&zclZEM_MaxMeasuredValue
+    214              }
+    215            },
+    216          
+    217            {
+    218              ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+    219              {  // Attribute record
+    220                ATTRID_CLUSTER_REVISION,
+    221                ZCL_DATATYPE_UINT16,
+    222                ACCESS_CONTROL_READ,
+    223                (void *)&zclZEM_clusterRevision_all
+    224              }
+    225            },
+    226          };
+    227          
+
+   \                                 In  segment CODE_C, align 1
+    228          uint8 CONST zclZEM_NumAttributes = ( sizeof(zclZEM_Attrs) / sizeof(zclZEM_Attrs[0]) );
+   \                     zclZEM_NumAttributes:
+   \   000000   10           DB 16
+    229          
+    230          /*********************************************************************
+    231           * SIMPLE DESCRIPTOR
+    232           */
+    233          // This is the Cluster ID List and should be filled with Application
+    234          // specific cluster IDs.
+    235          #define ZCLZEM_MAX_INCLUSTERS       3
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    236          const cId_t zclZEM_InClusterList[ZCLZEM_MAX_INCLUSTERS] =
+   \                     zclZEM_InClusterList:
+   \   000000   0000         DW 0
+   \   000002   0300         DW 3
+   \   000004   0204         DW 1026
+    237          {
+    238            ZCL_CLUSTER_ID_GEN_BASIC,
+    239            ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    240            ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT
+    241          };
+    242          
+    243          #define ZCLZEM_MAX_OUTCLUSTERS       1
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    244          const cId_t zclZEM_OutClusterList[ZCLZEM_MAX_OUTCLUSTERS] =
+   \                     zclZEM_OutClusterList:
+   \   000000   0300         DW 3
+    245          {
+    246            ZCL_CLUSTER_ID_GEN_IDENTIFY
+    247          };
+    248          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    249          SimpleDescriptionFormat_t zclZEM_SimpleDesc =
+   \                     zclZEM_SimpleDesc:
+   \   000000                DS 12
+   \   00000C                REQUIRE `?<Initializer for zclZEM_SimpleDesc>`
+   \   00000C                REQUIRE __INIT_XDATA_I
+    250          {
+    251            ZEM_ENDPOINT,                  //  int Endpoint;
+    252            ZCL_HA_PROFILE_ID,                                 //  uint16 AppProfId[2];
+    253            ZCL_HA_DEVICEID_TEMPERATURE_SENSOR,                //  uint16 AppDeviceId[2];
+    254            ZEM_DEVICE_VERSION,            //  int   AppDevVer:4;
+    255            ZEM_FLAGS,                     //  int   AppFlags:4;
+    256            ZCLZEM_MAX_INCLUSTERS,         //  byte  AppNumInClusters;
+    257            (cId_t *)zclZEM_InClusterList, //  byte *pAppInClusterList;
+    258            ZCLZEM_MAX_OUTCLUSTERS,        //  byte  AppNumInClusters;
+    259            (cId_t *)zclZEM_OutClusterList //  byte *pAppInClusterList;
+    260          };
+    261           
+    262          /*********************************************************************
+    263           * GLOBAL FUNCTIONS
+    264           */
+    265          
+    266          /*********************************************************************
+    267           * LOCAL FUNCTIONS
+    268           */
+    269          
+    270          /*********************************************************************
+    271           * @fn      zclSampleLight_ResetAttributesToDefaultValues
+    272           *
+    273           * @brief   Reset all writable attributes to their default values.
+    274           *
+    275           * @param   none
+    276           *
+    277           * @return  none
+    278           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    279          void zclZEM_ResetAttributesToDefaultValues(void)
+   \                     zclZEM_ResetAttributesToDefaultValues:
+    280          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    281            int i;
+    282            
+    283            zclZEM_LocationDescription[0] = 16;
+   \   000004   90....       MOV       DPTR,#zclZEM_LocationDescription
+   \   000007   7410         MOV       A,#0x10
+   \   000009   F0           MOVX      @DPTR,A
+    284            for (i = 1; i <= 16; i++)
+    285            {
+    286              zclZEM_LocationDescription[i] = ' ';
+   \   00000A   7420         MOV       A,#0x20
+   \   00000C   A3           INC       DPTR
+   \   00000D   7810         MOV       R0,#0x10
+   \                     ??zclZEM_ResetAttributesToDefaultValues_0:
+   \   00000F   F0           MOVX      @DPTR,A
+   \   000010   A3           INC       DPTR
+   \   000011   D8FC         DJNZ      R0,??zclZEM_ResetAttributesToDefaultValues_0
+    287            }
+    288            
+    289            zclZEM_PhysicalEnvironment = PHY_UNSPECIFIED_ENV;
+   \   000013   90....       MOV       DPTR,#zclZEM_PhysicalEnvironment
+   \   000016   E4           CLR       A
+   \   000017   F0           MOVX      @DPTR,A
+    290            zclZEM_DeviceEnable = DEVICE_ENABLED;
+   \   000018   90....       MOV       DPTR,#zclZEM_DeviceEnable
+   \   00001B   04           INC       A
+   \   00001C   F0           MOVX      @DPTR,A
+    291            
+    292          #ifdef ZCL_IDENTIFY
+    293            zclZEM_IdentifyTime = 0;
+   \   00001D   90....       MOV       DPTR,#zclZEM_IdentifyTime
+   \   000020   E4           CLR       A
+   \   000021   F0           MOVX      @DPTR,A
+   \   000022   A3           INC       DPTR
+   \   000023   F0           MOVX      @DPTR,A
+    294          #endif
+    295            
+    296            zclZEM_MeasuredValue = ZEM_MEASURED_VALUE;
+   \   000024   90....       MOV       DPTR,#zclZEM_MeasuredValue
+   \   000027   74D0         MOV       A,#-0x30
+   \   000029   F0           MOVX      @DPTR,A
+   \   00002A   A3           INC       DPTR
+   \   00002B   7407         MOV       A,#0x7
+   \   00002D   F0           MOVX      @DPTR,A
+    297            
+    298          }
+   \   00002E   D083         POP       DPH
+   \   000030   D082         POP       DPL
+   \   000032   02....       LJMP      ?BRET
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclZEM_SimpleDesc>`:
+   \   000000   08           DB 8
+   \   000001   0401         DW 260
+   \   000003   0203         DW 770
+   \   000005   00           DB 0
+   \   000006   03           DB 3
+   \   000007   ....         DW zclZEM_InClusterList
+   \   000009   01           DB 1
+   \   00000A   ....         DW zclZEM_OutClusterList
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??zclZEM_ResetAttributesToDefaultValues::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclZEM_ResetAttributesToDefaultValues
+    299          
+    300          /****************************************************************************
+    301          ****************************************************************************/
+    302          
+    303          
+
+   Maximum stack usage in bytes:
+
+   ISTACK Function
+   ------ --------
+      2   zclZEM_ResetAttributesToDefaultValues
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      12  ?<Initializer for zclZEM_SimpleDesc>
+     128  zclZEM_Attrs
+      17  zclZEM_DateCode
+       1  zclZEM_DeviceEnable
+       1  zclZEM_HWRevision
+       2  zclZEM_IdentifyTime
+       6  zclZEM_InClusterList
+      17  zclZEM_LocationDescription
+      17  zclZEM_ManufacturerName
+       2  zclZEM_MaxMeasuredValue
+       2  zclZEM_MeasuredValue
+       2  zclZEM_MinMeasuredValue
+      17  zclZEM_ModelId
+       1  zclZEM_NumAttributes
+       2  zclZEM_OutClusterList
+       1  zclZEM_PhysicalEnvironment
+       1  zclZEM_PowerSource
+      53  zclZEM_ResetAttributesToDefaultValues
+       6  zclZEM_ResetAttributesToDefaultValues::?relay
+      12  zclZEM_SimpleDesc
+       1  zclZEM_ZCLVersion
+       2  zclZEM_clusterRevision_all
+
+ 
+  53 bytes in segment BANKED_CODE
+   6 bytes in segment BANK_RELAYS
+ 129 bytes in segment CODE_C
+  12 bytes in segment XDATA_I
+  12 bytes in segment XDATA_ID
+  68 bytes in segment XDATA_ROM_C
+  23 bytes in segment XDATA_Z
+ 
+ 147 bytes of CODE     memory
+  68 bytes of CONST    memory
+  53 bytes of HUGECODE memory
+  35 bytes of XDATA    memory
+
+Errors: none
+Warnings: none

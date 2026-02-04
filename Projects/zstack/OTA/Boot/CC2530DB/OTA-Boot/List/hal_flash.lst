@@ -1,0 +1,1772 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               17/Oct/2024  17:57:59
+# Copyright 2004-2017 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  near
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        d:\Z-Stack 3.0.2\Z-Stack
+#        3.0.2\Components\hal\target\CC2530EB\hal_flash.c
+#    Command line       =  
+#        -f C:\Users\ASUS\AppData\Local\Temp\EWF272.tmp ("d:\Z-Stack
+#        3.0.2\Z-Stack 3.0.2\Components\hal\target\CC2530EB\hal_flash.c" -D
+#        HAL_OTA_BOOT_CODE -lC "d:\Z-Stack 3.0.2\Z-Stack
+#        3.0.2\Projects\zstack\OTA\Boot\CC2530DB\OTA-Boot\List" -lA "d:\Z-Stack
+#        3.0.2\Z-Stack 3.0.2\Projects\zstack\OTA\Boot\CC2530DB\OTA-Boot\List"
+#        --remarks -o "d:\Z-Stack 3.0.2\Z-Stack
+#        3.0.2\Projects\zstack\OTA\Boot\CC2530DB\OTA-Boot\Obj" -e --debug
+#        --core=plain --dptr=16,1 --data_model=large --code_model=near
+#        --calling_convention=xdata_reentrant --place_constants=data
+#        --nr_virtual_regs 16 -I "d:\Z-Stack 3.0.2\Z-Stack
+#        3.0.2\Projects\zstack\OTA\Boot\CC2530DB\" -I "d:\Z-Stack 3.0.2\Z-Stack
+#        3.0.2\Projects\zstack\OTA\Boot\CC2530DB\..\..\Source\" -I "d:\Z-Stack
+#        3.0.2\Z-Stack
+#        3.0.2\Projects\zstack\OTA\Boot\CC2530DB\..\..\..\Tools\CC2530DB\" -I
+#        "d:\Z-Stack 3.0.2\Z-Stack
+#        3.0.2\Projects\zstack\OTA\Boot\CC2530DB\..\..\..\ZMain\TI2530DB\" -I
+#        "d:\Z-Stack 3.0.2\Z-Stack
+#        3.0.2\Projects\zstack\OTA\Boot\CC2530DB\..\..\..\..\..\Components\hal\include\"
+#        -I "d:\Z-Stack 3.0.2\Z-Stack
+#        3.0.2\Projects\zstack\OTA\Boot\CC2530DB\..\..\..\..\..\Components\osal\include\"
+#        -Ohz --require_prototypes --no_code_motion --mfc
+#        --discard_unused_publics "d:\Z-Stack 3.0.2\Z-Stack
+#        3.0.2\Components\hal\target\CC2530EB\hal_ota.c")
+#    Locale             =  Chinese (Simplified)_China.936
+#    List file          =  
+#        d:\Z-Stack 3.0.2\Z-Stack
+#        3.0.2\Projects\zstack\OTA\Boot\CC2530DB\OTA-Boot\List\hal_flash.lst
+#    Object file        =  
+#        d:\Z-Stack 3.0.2\Z-Stack
+#        3.0.2\Projects\zstack\OTA\Boot\CC2530DB\OTA-Boot\Obj\hal_flash.r51
+#
+###############################################################################
+
+d:\Z-Stack 3.0.2\Z-Stack 3.0.2\Components\hal\target\CC2530EB\hal_flash.c
+      1          /**************************************************************************************************
+      2            Filename:       hal_flash.c
+      3            Revised:        $Date: 2010-10-07 02:19:52 -0700 (Thu, 07 Oct 2010) $
+      4            Revision:       $Revision: 24049 $
+      5          
+      6            Description: This file contains the interface to the H/W Flash driver.
+      7          
+      8          
+      9            Copyright 2006-2010 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /* ------------------------------------------------------------------------------------------------
+     41           *                                          Includes
+     42           * ------------------------------------------------------------------------------------------------
+     43           */
+     44          
+     45          #include "hal_board_cfg.h"
+
+   \                                 In  segment SFR_AN, at 0x8f
+   \   unsigned char volatile __sfr P0INP
+   \                     P0INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x9d
+   \   unsigned char volatile __sfr SLEEPSTA
+   \                     SLEEPSTA:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x9e
+   \   unsigned char volatile __sfr CLKCONSTA
+   \                     CLKCONSTA:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xbe
+   \   unsigned char volatile __sfr SLEEPCMD
+   \                     SLEEPCMD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc6
+   \   unsigned char volatile __sfr CLKCONCMD
+   \                     CLKCONCMD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc7
+   \   unsigned char volatile __sfr MEMCTR
+   \                     MEMCTR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xd1
+   \   unsigned char volatile __sfr DMAIRQ
+   \                     DMAIRQ:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xd4
+   \   unsigned char volatile __sfr DMA0CFGL
+   \                     DMA0CFGL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xd5
+   \   unsigned char volatile __sfr DMA0CFGH
+   \                     DMA0CFGH:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xd6
+   \   unsigned char volatile __sfr DMAARM
+   \                     DMAARM:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf1
+   \   unsigned char volatile __sfr PERCFG
+   \                     PERCFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf5
+   \   unsigned char volatile __sfr P2SEL
+   \                     P2SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf8
+   \   union <unnamed> volatile __sfr _A_U1CSR
+   \                     _A_U1CSR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf9
+   \   unsigned char volatile __sfr U1DBUF
+   \                     U1DBUF:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfa
+   \   unsigned char volatile __sfr U1BAUD
+   \                     U1BAUD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfc
+   \   unsigned char volatile __sfr U1GCR
+   \                     U1GCR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+     46          #include "hal_dma.h"
+     47          #include "hal_flash.h"
+     48          #include "hal_mcu.h"
+     49          #include "hal_types.h"
+     50          
+     51          /**************************************************************************************************
+     52           * @fn          HalFlashRead
+     53           *
+     54           * @brief       This function reads 'cnt' bytes from the internal flash.
+     55           *
+     56           * input parameters
+     57           *
+     58           * @param       pg - A valid flash page number.
+     59           * @param       offset - A valid offset into the page.
+     60           * @param       buf - A valid buffer space at least as big as the 'cnt' parameter.
+     61           * @param       cnt - A valid number of bytes to read.
+     62           *
+     63           * output parameters
+     64           *
+     65           * None.
+     66           *
+     67           * @return      None.
+     68           **************************************************************************************************
+     69           */
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     70          void HalFlashRead(uint8 pg, uint16 offset, uint8 *buf, uint16 cnt)
+   \                     HalFlashRead:
+     71          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F5         MOV       A,#-0xb
+   \   000002   12....       LCALL     ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV       ?V0,R1
+     72            // Calculate the offset into the containing flash bank as it gets mapped into XDATA.
+     73            uint8 *pData = (uint8 *)(offset + HAL_FLASH_PAGE_MAP) +
+     74                           ((pg % HAL_FLASH_PAGE_PER_BANK) * HAL_FLASH_PAGE_SIZE);
+   \   000007   740F         MOV       A,#0xf
+   \   000009   55..         ANL       A,?V0
+   \   00000B   F5..         MOV       ?V2,A
+   \   00000D   75..00       MOV       ?V3,#0x0
+   \   000010   740B         MOV       A,#0xb
+   \   000012   78..         MOV       R0,#?V2
+   \   000014   12....       LCALL     ?S_SHL
+   \   000017   EA           MOV       A,R2
+   \   000018   2400         ADD       A,#0x0
+   \   00001A   F8           MOV       R0,A
+   \   00001B   EB           MOV       A,R3
+   \   00001C   3480         ADDC      A,#-0x80
+   \   00001E   F9           MOV       R1,A
+   \   00001F   E8           MOV       A,R0
+   \   000020   2400         ADD       A,#0x0
+   \   000022   E9           MOV       A,R1
+   \   000023   35..         ADDC      A,?V3
+   \   000025   F9           MOV       R1,A
+     75            uint8 memctr = MEMCTR;  // Save to restore.
+   \   000026   85C7..       MOV       ?V1,0xc7+0x0
+     76          
+     77          #if (!defined HAL_OAD_BOOT_CODE) && (!defined HAL_OTA_BOOT_CODE)
+     78            halIntState_t is;
+     79          #endif
+     80          
+     81            pg /= HAL_FLASH_PAGE_PER_BANK;  // Calculate the flash bank from the flash page.
+     82          
+     83          #if (!defined HAL_OAD_BOOT_CODE) && (!defined HAL_OTA_BOOT_CODE)
+     84            HAL_ENTER_CRITICAL_SECTION(is);
+     85          #endif
+     86          
+     87            // Calculate and map the containing flash bank into XDATA.
+     88            MEMCTR = (MEMCTR & 0xF8) | pg;
+   \   000029   E5..         MOV       A,?V0
+   \   00002B   C4           SWAP      A
+   \   00002C   540F         ANL       A,#0xf
+   \   00002E   FA           MOV       R2,A
+   \   00002F   E5C7         MOV       A,0xc7
+   \   000031   54F8         ANL       A,#0xf8
+   \   000033   4A           ORL       A,R2
+   \   000034   F5C7         MOV       0xc7,A
+   \   000036   740B         MOV       A,#0xb
+   \   000038   12....       LCALL     ?XSTACK_DISP0_8
+   \   00003B   E0           MOVX      A,@DPTR
+   \   00003C   FA           MOV       R2,A
+   \   00003D   A3           INC       DPTR
+   \   00003E   E0           MOVX      A,@DPTR
+   \   00003F   FB           MOV       R3,A
+   \   000040   801C         SJMP      ??HalFlashRead_0
+     89          
+     90            while (cnt--)
+     91            {
+     92              *buf++ = *pData++;
+   \                     ??HalFlashRead_1:
+   \   000042   8882         MOV       DPL,R0
+   \   000044   8983         MOV       DPH,R1
+   \   000046   E0           MOVX      A,@DPTR
+   \   000047   8C82         MOV       DPL,R4
+   \   000049   8D83         MOV       DPH,R5
+   \   00004B   F0           MOVX      @DPTR,A
+   \   00004C   8882         MOV       DPL,R0
+   \   00004E   8983         MOV       DPH,R1
+   \   000050   A3           INC       DPTR
+   \   000051   A882         MOV       R0,DPL
+   \   000053   A983         MOV       R1,DPH
+   \   000055   8C82         MOV       DPL,R4
+   \   000057   8D83         MOV       DPH,R5
+   \   000059   A3           INC       DPTR
+   \   00005A   AC82         MOV       R4,DPL
+   \   00005C   AD83         MOV       R5,DPH
+     93            }
+   \                     ??HalFlashRead_0:
+   \   00005E   EA           MOV       A,R2
+   \   00005F   FE           MOV       R6,A
+   \   000060   EB           MOV       A,R3
+   \   000061   FF           MOV       R7,A
+   \   000062   EE           MOV       A,R6
+   \   000063   24FF         ADD       A,#-0x1
+   \   000065   1A           DEC       R2
+   \   000066   EF           MOV       A,R7
+   \   000067   34FF         ADDC      A,#-0x1
+   \   000069   FB           MOV       R3,A
+   \   00006A   EE           MOV       A,R6
+   \   00006B   4F           ORL       A,R7
+   \   00006C   70D4         JNZ       ??HalFlashRead_1
+     94          
+     95            MEMCTR = memctr;
+   \   00006E   85..C7       MOV       0xc7,?V1
+     96          
+     97          #if (!defined HAL_OAD_BOOT_CODE) && (!defined HAL_OTA_BOOT_CODE)
+     98            HAL_EXIT_CRITICAL_SECTION(is);
+     99          #endif
+    100          }
+   \   000071   7F04         MOV       R7,#0x4
+   \   000073   02....       LJMP      ?FUNC_LEAVE_XDATA
+   \   000076                REQUIRE MEMCTR
+    101          
+    102          /**************************************************************************************************
+    103           * @fn          HalFlashWrite
+    104           *
+    105           * @brief       This function writes 'cnt' bytes to the internal flash.
+    106           *
+    107           * input parameters
+    108           *
+    109           * @param       addr - Valid HAL flash write address: actual addr / 4 and quad-aligned.
+    110           * @param       buf - Valid buffer space at least as big as 'cnt' X 4.
+    111           * @param       cnt - Number of 4-byte blocks to write.
+    112           *
+    113           * output parameters
+    114           *
+    115           * None.
+    116           *
+    117           * @return      None.
+    118           **************************************************************************************************
+    119           */
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    120          void HalFlashWrite(uint16 addr, uint8 *buf, uint16 cnt)
+   \                     HalFlashWrite:
+    121          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    122          #if (defined HAL_DMA) && (HAL_DMA == TRUE)
+    123            halDMADesc_t *ch = HAL_NV_DMA_GET_DESC();
+    124          
+    125            HAL_DMA_SET_SOURCE(ch, buf);
+   \   000005   EC           MOV       A,R4
+   \   000006   FE           MOV       R6,A
+   \   000007   ED           MOV       A,R5
+   \   000008   90....       MOV       DPTR,#dmaCh0
+   \   00000B   F0           MOVX      @DPTR,A
+   \   00000C   EE           MOV       A,R6
+   \   00000D   A3           INC       DPTR
+   \   00000E   F0           MOVX      @DPTR,A
+    126            HAL_DMA_SET_DEST(ch, &FWDATA);
+   \   00000F   A3           INC       DPTR
+   \   000010   7462         MOV       A,#0x62
+   \   000012   F0           MOVX      @DPTR,A
+   \   000013   A3           INC       DPTR
+   \   000014   7473         MOV       A,#0x73
+   \   000016   F0           MOVX      @DPTR,A
+    127            HAL_DMA_SET_VLEN(ch, HAL_DMA_VLEN_USE_LEN);
+   \   000017   A3           INC       DPTR
+   \   000018   E0           MOVX      A,@DPTR
+   \   000019   541F         ANL       A,#0x1f
+   \   00001B   F0           MOVX      @DPTR,A
+   \   00001C   7409         MOV       A,#0x9
+   \   00001E   12....       LCALL     ?XSTACK_DISP0_8
+   \   000021   E0           MOVX      A,@DPTR
+   \   000022   F5..         MOV       ?V0,A
+   \   000024   A3           INC       DPTR
+   \   000025   E0           MOVX      A,@DPTR
+   \   000026   F5..         MOV       ?V1,A
+    128            HAL_DMA_SET_LEN(ch, (cnt * HAL_FLASH_WORD_SIZE));
+   \   000028   E5..         MOV       A,?V0
+   \   00002A   33           RLC       A
+   \   00002B   33           RLC       A
+   \   00002C   54FC         ANL       A,#0xfc
+   \   00002E   90....       MOV       DPTR,#dmaCh0 + 5
+   \   000031   F0           MOVX      @DPTR,A
+   \   000032   7406         MOV       A,#0x6
+   \   000034   78..         MOV       R0,#?V0
+   \   000036   12....       LCALL     ?US_SHR
+   \   000039   E5..         MOV       A,?V0
+   \   00003B   90....       MOV       DPTR,#dmaCh0 + 4
+   \   00003E   F0           MOVX      @DPTR,A
+    129            HAL_DMA_SET_WORD_SIZE(ch, HAL_DMA_WORDSIZE_BYTE);
+    130            HAL_DMA_SET_TRIG_MODE(ch, HAL_DMA_TMODE_SINGLE);
+    131            HAL_DMA_SET_TRIG_SRC(ch, HAL_DMA_TRIG_FLASH);
+   \   00003F   90....       MOV       DPTR,#dmaCh0 + 6
+   \   000042   7412         MOV       A,#0x12
+   \   000044   F0           MOVX      @DPTR,A
+    132            HAL_DMA_SET_SRC_INC(ch, HAL_DMA_SRCINC_1);
+    133            HAL_DMA_SET_DST_INC(ch, HAL_DMA_DSTINC_0);
+    134            // The DMA is to be polled and shall not issue an IRQ upon completion.
+    135            HAL_DMA_SET_IRQ(ch, HAL_DMA_IRQMASK_DISABLE);
+    136            HAL_DMA_SET_M8( ch, HAL_DMA_M8_USE_8_BITS);
+    137            HAL_DMA_SET_PRIORITY(ch, HAL_DMA_PRI_HIGH);
+   \   000045   A3           INC       DPTR
+   \   000046   7442         MOV       A,#0x42
+   \   000048   F0           MOVX      @DPTR,A
+    138            HAL_DMA_CLEAR_IRQ(HAL_NV_DMA_CH);
+   \   000049   75D1FE       MOV       0xd1,#-0x2
+    139            HAL_DMA_ARM_CH(HAL_NV_DMA_CH);
+   \   00004C   75D601       MOV       0xd6,#0x1
+    140          
+    141            FADDRL = (uint8)addr;
+   \   00004F   EA           MOV       A,R2
+   \   000050   906271       MOV       DPTR,#0x6271
+   \   000053   F0           MOVX      @DPTR,A
+    142            FADDRH = (uint8)(addr >> 8);
+   \   000054   EB           MOV       A,R3
+   \   000055   A3           INC       DPTR
+   \   000056   F0           MOVX      @DPTR,A
+    143            FCTL |= 0x02;         // Trigger the DMA writes.
+   \   000057   906270       MOV       DPTR,#0x6270
+   \   00005A   E0           MOVX      A,@DPTR
+   \   00005B   D2E1         SETB      0xE0 /* A   */.1
+   \   00005D   F0           MOVX      @DPTR,A
+    144            while (FCTL & 0x80);  // Wait until writing is done.
+   \                     ??HalFlashWrite_0:
+   \   00005E   E0           MOVX      A,@DPTR
+   \   00005F   A2E7         MOV       C,0xE0 /* A   */.7
+   \   000061   40FB         JC        ??HalFlashWrite_0
+    145          #endif
+    146          }
+   \   000063   7F02         MOV       R7,#0x2
+   \   000065   02....       LJMP      ?FUNC_LEAVE_XDATA
+   \   000068                REQUIRE DMAIRQ
+   \   000068                REQUIRE DMAARM
+    147          
+    148          /**************************************************************************************************
+    149           * @fn          HalFlashErase
+    150           *
+    151           * @brief       This function erases the specified page of the internal flash.
+    152           *
+    153           * input parameters
+    154           *
+    155           * @param       pg - A valid flash page number to erase.
+    156           *
+    157           * output parameters
+    158           *
+    159           * None.
+    160           *
+    161           * @return      None.
+    162           **************************************************************************************************
+    163           */
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    164          void HalFlashErase(uint8 pg)
+   \                     HalFlashErase:
+    165          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    166            FADDRH = pg * (HAL_FLASH_PAGE_SIZE / HAL_FLASH_WORD_SIZE / 256);
+   \   000004   E9           MOV       A,R1
+   \   000005   C3           CLR       C
+   \   000006   33           RLC       A
+   \   000007   906272       MOV       DPTR,#0x6272
+   \   00000A   F0           MOVX      @DPTR,A
+    167            FCTL |= 0x01;
+   \   00000B   906270       MOV       DPTR,#0x6270
+   \   00000E   E0           MOVX      A,@DPTR
+   \   00000F   D2E0         SETB      0xE0 /* A   */.0
+   \   000011   F0           MOVX      @DPTR,A
+    168          }
+   \   000012   D083         POP       DPH
+   \   000014   D082         POP       DPL
+   \   000016   22           RET
+    169          
+    170          /**************************************************************************************************
+    171          */
+d:\Z-Stack 3.0.2\Z-Stack 3.0.2\Components\hal\target\CC2530EB\hal_ota.c
+      1          /******************************************************************************
+      2            Filename:       hal_ota.c
+      3            Revised:        $Date: 2010-11-18 08:22:50 -0800 (Thu, 18 Nov 2010) $
+      4            Revision:       $Revision: 24438 $
+      5          
+      6            Description:    This module contains optionally-compiled Boot Code to support
+      7                            OTA. The rest of the functionality is the H/W specific drivers
+      8                            to read/write the flash/NV containing the ACTIVE and the
+      9                            DOWNLOADED images.
+     10            Notes:          Targets the Texas Instruments CC253x family of processors.
+     11          
+     12          
+     13            Copyright 2010 Texas Instruments Incorporated. All rights reserved.
+     14          
+     15            IMPORTANT: Your use of this Software is limited to those specific rights
+     16            granted under the terms of a software license agreement between the user
+     17            who downloaded the software, his/her employer (which must be your employer)
+     18            and Texas Instruments Incorporated (the "License").  You may not use this
+     19            Software unless you agree to abide by the terms of the License. The License
+     20            limits your use, and you acknowledge, that the Software may not be modified,
+     21            copied or distributed unless embedded on a Texas Instruments microcontroller
+     22            or used solely and exclusively in conjunction with a Texas Instruments radio
+     23            frequency transceiver, which is integrated into your product.  Other than for
+     24            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     25            works of, modify, distribute, perform, display or sell this Software and/or
+     26            its documentation for any purpose.
+     27          
+     28            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     29            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     30            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     31            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     32            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     33            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     34            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     35            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     36            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     37            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     38            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     39          
+     40            Should you have any questions regarding your right to use this Software,
+     41            contact Texas Instruments Incorporated at www.TI.com.
+     42          ******************************************************************************/
+     43          
+     44          /******************************************************************************
+     45           * INCLUDES
+     46           */
+     47          #include "comdef.h"
+     48          #include "hal_board_cfg.h"
+     49          #include "hal_dma.h"
+     50          #include "hal_flash.h"
+     51          #include "hal_ota.h"
+     52          #include "hal_types.h"
+     53          
+     54          #include "ota_common.h"
+     55          
+     56          /******************************************************************************
+     57           * CONSTANTS
+     58           */
+     59          #if HAL_OTA_XNV_IS_SPI
+     60          #define XNV_STAT_CMD  0x05
+     61          #define XNV_WREN_CMD  0x06
+     62          #define XNV_WRPG_CMD  0x0A
+     63          #define XNV_READ_CMD  0x0B
+     64          
+     65          #define XNV_STAT_WIP  0x01
+     66          #endif
+     67          
+     68          /******************************************************************************
+     69           * TYPEDEFS
+     70           */
+     71          typedef struct
+     72          {
+     73            uint16 crc[2];
+     74            uint32 programSize;
+     75          } OTA_CrcControl_t;
+     76          
+     77          /******************************************************************************
+     78           * LOCAL VARIABLES
+     79           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     80          OTA_CrcControl_t OTA_crcControl;
+   \                     OTA_crcControl:
+   \   000000                DS 8
+   \   000008                REQUIRE __INIT_XDATA_Z
+     81          
+     82          #if HAL_OTA_BOOT_CODE
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     83          halDMADesc_t dmaCh0;
+   \                     dmaCh0:
+   \   000000                DS 8
+   \   000008                REQUIRE __INIT_XDATA_Z
+     84          #endif
+     85          
+     86          /******************************************************************************
+     87           * LOCAL FUNCTIONS
+     88           */
+     89          static uint16 runPoly(uint16 crc, uint8 val);
+     90          
+     91          #if HAL_OTA_XNV_IS_SPI
+     92          static void HalSPIRead(uint32 addr, uint8 *pBuf, uint16 len);
+     93          static void HalSPIWrite(uint32 addr, uint8 *pBuf, uint16 len);
+     94          static void xnvSPIWrite(uint8 ch);
+     95          #endif
+     96          
+     97          #if HAL_OTA_BOOT_CODE
+     98          static void dl2rc(void);
+     99          static uint16 crcCalc(void);
+    100          
+    101          /******************************************************************************
+    102           * @fn      main
+    103           *
+    104           * @brief   ISR for the reset vector.
+    105           *
+    106           * @param   None.
+    107           *
+    108           * @return  None.
+    109           */
+    110          #pragma location="NEAR_CODE"
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    111          void main(void)
+   \                     main:
+    112          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000                REQUIRE ?V8
+   \   000000                REQUIRE ?V9
+   \   000000                REQUIRE ?V10
+   \   000000                REQUIRE ?V11
+   \   000000                REQUIRE ?V12
+   \   000000                REQUIRE ?V13
+   \   000000                REQUIRE ?V14
+   \   000000                REQUIRE ?V15
+   \   000000                ; Auto size: 80
+   \   000000   74B0         MOV       A,#-0x50
+   \   000002   12....       LCALL     ?ALLOC_XSTACK8
+    113            HAL_BOARD_INIT();
+   \   000005   53BEFB       ANL       0xbe,#0xfb
+   \                     ??main_0:
+   \   000008   E59D         MOV       A,0x9d
+   \   00000A   A2E6         MOV       C,0xE0 /* A   */.6
+   \   00000C   50FA         JNC       ??main_0
+   \   00000E   00           NOP
+   \   00000F   78F8         MOV       R0,#-0x8
+   \   000011   7901         MOV       R1,#0x1
+   \                     ??main_1:
+   \   000013   00           NOP
+   \   000014   E8           MOV       A,R0
+   \   000015   24FF         ADD       A,#-0x1
+   \   000017   18           DEC       R0
+   \   000018   E9           MOV       A,R1
+   \   000019   34FF         ADDC      A,#-0x1
+   \   00001B   F9           MOV       R1,A
+   \   00001C   E8           MOV       A,R0
+   \   00001D   49           ORL       A,R1
+   \   00001E   70F3         JNZ       ??main_1
+   \   000020   75C600       MOV       0xc6,#0x0
+   \                     ??main_2:
+   \   000023   E59E         MOV       A,0x9e
+   \   000025   70FC         JNZ       ??main_2
+   \   000027   43BE04       ORL       0xbe,#0x4
+   \   00002A   906270       MOV       DPTR,#0x6270
+   \   00002D   7408         MOV       A,#0x8
+   \   00002F   F0           MOVX      @DPTR,A
+   \   000030   C290         CLR       0x90.0
+   \   000032   43FE01       ORL       0xfe,#0x1
+   \   000035   C291         CLR       0x90.1
+   \   000037   43FE02       ORL       0xfe,#0x2
+   \   00003A   C294         CLR       0x90.4
+   \   00003C   43FE10       ORL       0xfe,#0x10
+   \   00003F   C290         CLR       0x90.0
+   \   000041   438F01       ORL       0x8f,#0x1
+    114          #if HAL_OTA_XNV_IS_SPI
+    115            XNV_SPI_INIT();
+   \   000044   75F800       MOV       0xf8,#0x0
+   \   000047   75FC0B       MOV       0xfc,#0xb
+   \   00004A   75FAD8       MOV       0xfa,#-0x28
+   \   00004D   43FC20       ORL       0xfc,#0x20
+   \   000050   43F102       ORL       0xf1,#0x2
+   \   000053   43F4E0       ORL       0xf4,#0xe0
+   \   000056   53F4F1       ANL       0xf4,#0xf1
+   \   000059   43900E       ORL       0x90,#0xe
+   \   00005C   C291         CLR       0x90.1
+   \   00005E   43FE0E       ORL       0xfe,#0xe
+   \   000061   53F5DF       ANL       0xf5,#0xdf
+   \   000064   D2FE         SETB      0xf8.6
+   \   000066   D291         SETB      0x90.1
+    116          #endif
+    117            /* This is in place of calling HalDmaInit() which would require init of the
+    118             * other 4 DMA descriptors in addition to just Channel 0.
+    119             */
+    120            HAL_DMA_SET_ADDR_DESC0( &dmaCh0 );
+   \   000068   74..         MOV       A,#(dmaCh0 >> 8) & 0xff
+   \   00006A   F5D5         MOV       0xd5,A
+   \   00006C   74..         MOV       A,#dmaCh0 & 0xff
+   \   00006E   F5D4         MOV       0xd4,A
+   \   000070   8029         SJMP      ??main_3
+    121          
+    122            while (1)
+    123            {
+    124              HalFlashRead(HAL_OTA_CRC_ADDR / HAL_FLASH_PAGE_SIZE,
+    125                           HAL_OTA_CRC_ADDR % HAL_FLASH_PAGE_SIZE,
+    126                           (uint8 *)&OTA_crcControl, sizeof(OTA_crcControl));
+    127          
+    128              if (OTA_crcControl.crc[0] == OTA_crcControl.crc[1])
+    129              {
+    130                break;
+    131              }
+    132              else if ((OTA_crcControl.crc[0] != 0) && (OTA_crcControl.crc[0] == crcCalc()))
+    133              {
+    134                OTA_crcControl.crc[1] = OTA_crcControl.crc[0];
+   \                     ??main_4:
+   \   000072   90....       MOV       DPTR,#OTA_crcControl
+   \   000075   E0           MOVX      A,@DPTR
+   \   000076   F8           MOV       R0,A
+   \   000077   A3           INC       DPTR
+   \   000078   E0           MOVX      A,@DPTR
+   \   000079   F9           MOV       R1,A
+   \   00007A   A3           INC       DPTR
+   \   00007B   E8           MOV       A,R0
+   \   00007C   F0           MOVX      @DPTR,A
+   \   00007D   A3           INC       DPTR
+   \   00007E   E9           MOV       A,R1
+   \   00007F   F0           MOVX      @DPTR,A
+    135                HalFlashWrite((HAL_OTA_CRC_ADDR / HAL_FLASH_WORD_SIZE), (uint8 *)OTA_crcControl.crc, 1);
+   \   000080                ; Setup parameters for call to function HalFlashWrite
+   \   000080   75..01       MOV       ?V0,#0x1
+   \   000083   75..00       MOV       ?V1,#0x0
+   \   000086   78..         MOV       R0,#?V0
+   \   000088   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00008B   7C..         MOV       R4,#OTA_crcControl & 0xff
+   \   00008D   7D..         MOV       R5,#(OTA_crcControl >> 8) & 0xff
+   \   00008F   7A22         MOV       R2,#0x22
+   \   000091   7B02         MOV       R3,#0x2
+   \   000093   12....       LCALL     HalFlashWrite
+   \   000096   7402         MOV       A,#0x2
+   \   000098   12....       LCALL     ?DEALLOC_XSTACK8
+    136              }
+   \                     ??main_3:
+   \   00009B                ; Setup parameters for call to function HalFlashRead
+   \   00009B   75..08       MOV       ?V0,#0x8
+   \   00009E   75..00       MOV       ?V1,#0x0
+   \   0000A1   78..         MOV       R0,#?V0
+   \   0000A3   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000A6   7C..         MOV       R4,#OTA_crcControl & 0xff
+   \   0000A8   7D..         MOV       R5,#(OTA_crcControl >> 8) & 0xff
+   \   0000AA   7A88         MOV       R2,#-0x78
+   \   0000AC   7B00         MOV       R3,#0x0
+   \   0000AE   7901         MOV       R1,#0x1
+   \   0000B0   12....       LCALL     HalFlashRead
+   \   0000B3   7402         MOV       A,#0x2
+   \   0000B5   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0000B8   90....       MOV       DPTR,#OTA_crcControl
+   \   0000BB   E0           MOVX      A,@DPTR
+   \   0000BC   F8           MOV       R0,A
+   \   0000BD   A3           INC       DPTR
+   \   0000BE   E0           MOVX      A,@DPTR
+   \   0000BF   F9           MOV       R1,A
+   \   0000C0   A3           INC       DPTR
+   \   0000C1   E0           MOVX      A,@DPTR
+   \   0000C2   68           XRL       A,R0
+   \   0000C3   7003         JNZ       ??main_5
+   \   0000C5   A3           INC       DPTR
+   \   0000C6   E0           MOVX      A,@DPTR
+   \   0000C7   69           XRL       A,R1
+   \                     ??main_5:
+   \   0000C8   7009         JNZ       ??main_6
+    137              else
+    138              {
+    139                dl2rc();
+    140              }
+    141            }
+    142          
+    143            // Simulate a reset for the Application code by an absolute jump to location 0x0800.
+    144            asm("LJMP 0x800\n");
+   \   0000CA   020800       LJMP 0x800
+    145          }
+   \   0000CD   7450         MOV       A,#0x50
+   \   0000CF   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0000D2   22           RET
+   \                     ??main_6:
+   \   0000D3   E8           MOV       A,R0
+   \   0000D4   49           ORL       A,R1
+   \   0000D5   7003         JNZ       $+5
+   \   0000D7   02....       LJMP      ??main_7
+   \   0000DA   7E00         MOV       R6,#0x0
+   \   0000DC   7F00         MOV       R7,#0x0
+   \   0000DE   8E..         MOV       ?V4,R6
+   \   0000E0   8E..         MOV       ?V5,R6
+   \   0000E2   8E..         MOV       ?V6,R6
+   \   0000E4   8E..         MOV       ?V7,R6
+   \   0000E6   806F         SJMP      ??main_8
+   \                     ??main_9:
+   \   0000E8   90....       MOV       DPTR,#__Constant_4
+   \   0000EB   C082         PUSH      DPL
+   \   0000ED   85....       MOV       ?V0,?V4
+   \   0000F0   85....       MOV       ?V1,?V5
+   \   0000F3   85....       MOV       ?V2,?V6
+   \   0000F6   85....       MOV       ?V3,?V7
+   \   0000F9   90....       MOV       DPTR,#__Constant_ffffff78
+   \   0000FC   78..         MOV       R0,#?V0
+   \   0000FE   12....       LCALL     ?L_ADD_X
+   \   000101   7583..       MOV       DPH,#(__Constant_4 >> 8) & 0xff
+   \   000104   D082         POP       DPL
+   \   000106   78..         MOV       R0,#?V0
+   \   000108   12....       LCALL     ?UL_GE_X
+   \   00010B   5042         JNC       ??main_10
+   \   00010D                ; Setup parameters for call to function HalOTARead
+   \   00010D   75..01       MOV       ?V0,#0x1
+   \   000110   75..00       MOV       ?V1,#0x0
+   \   000113   78..         MOV       R0,#?V0
+   \   000115   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000118   7402         MOV       A,#0x2
+   \   00011A   12....       LCALL     ?XSTACK_DISP100_8
+   \   00011D   88..         MOV       ?V0,R0
+   \   00011F   89..         MOV       ?V1,R1
+   \   000121   78..         MOV       R0,#?V0
+   \   000123   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000126   7900         MOV       R1,#0x0
+   \   000128   AA..         MOV       R2,?V4
+   \   00012A   AB..         MOV       R3,?V5
+   \   00012C   AC..         MOV       R4,?V6
+   \   00012E   AD..         MOV       R5,?V7
+   \   000130   12....       LCALL     HalOTARead
+   \   000133   7404         MOV       A,#0x4
+   \   000135   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000138                ; Setup parameters for call to function runPoly
+   \   000138   85..82       MOV       DPL,?XSP + 0
+   \   00013B   85..83       MOV       DPH,?XSP + 1
+   \   00013E   E0           MOVX      A,@DPTR
+   \   00013F   F9           MOV       R1,A
+   \   000140   EE           MOV       A,R6
+   \   000141   FA           MOV       R2,A
+   \   000142   EF           MOV       A,R7
+   \   000143   FB           MOV       R3,A
+   \   000144   12....       LCALL     ??runPoly
+   \   000147   8A..         MOV       ?V0,R2
+   \   000149   8B..         MOV       ?V1,R3
+   \   00014B   AE..         MOV       R6,?V0
+   \   00014D   AF..         MOV       R7,?V1
+   \                     ??main_10:
+   \   00014F   90....       MOV       DPTR,#__Constant_1
+   \   000152   78..         MOV       R0,#?V4
+   \   000154   12....       LCALL     ?L_ADD_X
+   \                     ??main_8:
+   \   000157   90....       MOV       DPTR,#OTA_crcControl + 4
+   \   00015A   78..         MOV       R0,#?V4
+   \   00015C   12....       LCALL     ?UL_GE_X
+   \   00015F   5087         JNC       ??main_9
+   \   000161   90....       MOV       DPTR,#OTA_crcControl
+   \   000164   E0           MOVX      A,@DPTR
+   \   000165   6E           XRL       A,R6
+   \   000166   7003         JNZ       ??main_11
+   \   000168   A3           INC       DPTR
+   \   000169   E0           MOVX      A,@DPTR
+   \   00016A   6F           XRL       A,R7
+   \                     ??main_11:
+   \   00016B   7003         JNZ       $+5
+   \   00016D   02....       LJMP      ??main_4
+   \                     ??main_7:
+   \   000170   75..00       MOV       ?V0,#0x0
+   \   000173   75..02       MOV       ?V1,#0x2
+   \   000176                ; Setup parameters for call to function HalOTARead
+   \   000176   75..45       MOV       ?V2,#0x45
+   \   000179   75..00       MOV       ?V3,#0x0
+   \   00017C   78..         MOV       R0,#?V2
+   \   00017E   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000181   740D         MOV       A,#0xd
+   \   000183   12....       LCALL     ?XSTACK_DISP100_8
+   \   000186   88..         MOV       ?V2,R0
+   \   000188   89..         MOV       ?V3,R1
+   \   00018A   78..         MOV       R0,#?V2
+   \   00018C   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00018F   7901         MOV       R1,#0x1
+   \   000191   90....       MOV       DPTR,#__Constant_0
+   \   000194   12....       LCALL     ?XLOAD_R2345
+   \   000197   12....       LCALL     HalOTARead
+   \   00019A   7404         MOV       A,#0x4
+   \   00019C   12....       LCALL     ?DEALLOC_XSTACK8
+   \   00019F                ; Setup parameters for call to function HalOTARead
+   \   00019F   75..06       MOV       ?V2,#0x6
+   \   0001A2   75..00       MOV       ?V3,#0x0
+   \   0001A5   78..         MOV       R0,#?V2
+   \   0001A7   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0001AA   7407         MOV       A,#0x7
+   \   0001AC   12....       LCALL     ?XSTACK_DISP100_8
+   \   0001AF   88..         MOV       ?V2,R0
+   \   0001B1   89..         MOV       ?V3,R1
+   \   0001B3   78..         MOV       R0,#?V2
+   \   0001B5   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0001B8   7901         MOV       R1,#0x1
+   \   0001BA   7415         MOV       A,#0x15
+   \   0001BC   12....       LCALL     ?XSTACK_DISP0_8
+   \   0001BF   E0           MOVX      A,@DPTR
+   \   0001C0   F5..         MOV       ?V2,A
+   \   0001C2   A3           INC       DPTR
+   \   0001C3   E0           MOVX      A,@DPTR
+   \   0001C4   F5..         MOV       ?V3,A
+   \   0001C6   AA..         MOV       R2,?V2
+   \   0001C8   FB           MOV       R3,A
+   \   0001C9   E4           CLR       A
+   \   0001CA   FC           MOV       R4,A
+   \   0001CB   FD           MOV       R5,A
+   \   0001CC   12....       LCALL     HalOTARead
+   \   0001CF   7404         MOV       A,#0x4
+   \   0001D1   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0001D4   75..00       MOV       ?V12,#0x0
+   \   0001D7   75..00       MOV       ?V13,#0x0
+   \   0001DA   75..00       MOV       ?V14,#0x0
+   \   0001DD   75..00       MOV       ?V15,#0x0
+   \   0001E0   802B         SJMP      ??main_12
+   \                     ??main_13:
+   \   0001E2                ; Setup parameters for call to function HalFlashWrite
+   \   0001E2   8E..         MOV       ?V2,R6
+   \   0001E4   75..00       MOV       ?V3,#0x0
+   \   0001E7   78..         MOV       R0,#?V2
+   \   0001E9   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0001EC   7403         MOV       A,#0x3
+   \   0001EE   12....       LCALL     ?XSTACK_DISP102_8
+   \   0001F1   AA..         MOV       R2,?V0
+   \   0001F3   AB..         MOV       R3,?V1
+   \   0001F5   12....       LCALL     HalFlashWrite
+   \   0001F8   7402         MOV       A,#0x2
+   \   0001FA   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0001FD   05..         INC       ?V0
+   \   0001FF   E5..         MOV       A,?V0
+   \   000201   7002         JNZ       ??main_14
+   \   000203   05..         INC       ?V1
+   \                     ??main_14:
+   \   000205   90....       MOV       DPTR,#__Constant_4
+   \   000208   78..         MOV       R0,#?V12
+   \   00020A   12....       LCALL     ?L_ADD_X
+   \                     ??main_12:
+   \   00020D   7407         MOV       A,#0x7
+   \   00020F   12....       LCALL     ?XSTACK_DISP0_8
+   \   000212   78..         MOV       R0,#?V12
+   \   000214   12....       LCALL     ?UL_GE_X
+   \   000217   5003         JNC       $+5
+   \   000219   02....       LJMP      ??main_3
+   \   00021C                ; Setup parameters for call to function HalOTARead
+   \   00021C   75..04       MOV       ?V2,#0x4
+   \   00021F   75..00       MOV       ?V3,#0x0
+   \   000222   78..         MOV       R0,#?V2
+   \   000224   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000227   7403         MOV       A,#0x3
+   \   000229   12....       LCALL     ?XSTACK_DISP100_8
+   \   00022C   88..         MOV       ?V2,R0
+   \   00022E   89..         MOV       ?V3,R1
+   \   000230   78..         MOV       R0,#?V2
+   \   000232   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000235   7E01         MOV       R6,#0x1
+   \   000237   85....       MOV       ?V4,?V12
+   \   00023A   85....       MOV       ?V5,?V13
+   \   00023D   85....       MOV       ?V6,?V14
+   \   000240   85....       MOV       ?V7,?V15
+   \   000243   7415         MOV       A,#0x15
+   \   000245   12....       LCALL     ?XSTACK_DISP0_8
+   \   000248   E0           MOVX      A,@DPTR
+   \   000249   F5..         MOV       ?V8,A
+   \   00024B   A3           INC       DPTR
+   \   00024C   E0           MOVX      A,@DPTR
+   \   00024D   F5..         MOV       ?V9,A
+   \   00024F   E4           CLR       A
+   \   000250   F5..         MOV       ?V10,A
+   \   000252   F5..         MOV       ?V11,A
+   \   000254   78..         MOV       R0,#?V4
+   \   000256   79..         MOV       R1,#?V8
+   \   000258   12....       LCALL     ?L_ADD
+   \   00025B   90....       MOV       DPTR,#__Constant_6
+   \   00025E   78..         MOV       R0,#?V4
+   \   000260   12....       LCALL     ?L_ADD_X
+   \   000263   AA..         MOV       R2,?V4
+   \   000265   AB..         MOV       R3,?V5
+   \   000267   AC..         MOV       R4,?V6
+   \   000269   AD..         MOV       R5,?V7
+   \   00026B   EE           MOV       A,R6
+   \   00026C   F9           MOV       R1,A
+   \   00026D   12....       LCALL     HalOTARead
+   \   000270   7404         MOV       A,#0x4
+   \   000272   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000275   A8..         MOV       R0,?V0
+   \   000277   E5..         MOV       A,?V1
+   \   000279   5401         ANL       A,#0x1
+   \   00027B   F9           MOV       R1,A
+   \   00027C   E8           MOV       A,R0
+   \   00027D   49           ORL       A,R1
+   \   00027E   6003         JZ        $+5
+   \   000280   02....       LJMP      ??main_13
+   \   000283                ; Setup parameters for call to function HalFlashErase
+   \   000283   88..         MOV       ?V2,R0
+   \   000285   85....       MOV       ?V3,?V1
+   \   000288   7409         MOV       A,#0x9
+   \   00028A   78..         MOV       R0,#?V2
+   \   00028C   12....       LCALL     ?US_SHR
+   \   00028F   A9..         MOV       R1,?V2
+   \   000291   12....       LCALL     HalFlashErase
+   \   000294   02....       LJMP      ??main_13
+   \   000297                REQUIRE SLEEPCMD
+   \   000297                REQUIRE SLEEPSTA
+   \   000297                REQUIRE CLKCONCMD
+   \   000297                REQUIRE CLKCONSTA
+   \   000297                REQUIRE _A_P1
+   \   000297                REQUIRE P1DIR
+   \   000297                REQUIRE P0INP
+   \   000297                REQUIRE _A_U1CSR
+   \   000297                REQUIRE U1GCR
+   \   000297                REQUIRE U1BAUD
+   \   000297                REQUIRE PERCFG
+   \   000297                REQUIRE P1SEL
+   \   000297                REQUIRE P2SEL
+   \   000297                REQUIRE DMA0CFGH
+   \   000297                REQUIRE DMA0CFGL
+    146          
+    147          /******************************************************************************
+    148           * @fn      dl2rc
+    149           *
+    150           * @brief   Copy the DL image to the RC image location.
+    151           *
+    152           *  NOTE:   Assumes that DL image ends on a flash word boundary.
+    153           *
+    154           * @param   None.
+    155           *
+    156           * @return  None.
+    157           */
+    158          static void dl2rc(void)
+    159          {
+    160            uint32 oset;
+    161            OTA_SubElementHdr_t subElement;
+    162            OTA_ImageHeader_t header;
+    163            uint16 addr = HAL_OTA_RC_START / HAL_FLASH_WORD_SIZE;
+    164            uint8 buf[4];
+    165          
+    166            // Determine the length and starting point of the upgrade image
+    167            HalOTARead(0, (uint8 *)&header, sizeof(OTA_ImageHeader_t), HAL_OTA_DL);
+    168            HalOTARead(header.headerLength, (uint8*)&subElement, OTA_SUB_ELEMENT_HDR_LEN, HAL_OTA_DL);
+    169          
+    170            for (oset = 0; oset < subElement.length; oset += HAL_FLASH_WORD_SIZE)
+    171            {
+    172              HalOTARead(oset + header.headerLength + OTA_SUB_ELEMENT_HDR_LEN, buf, HAL_FLASH_WORD_SIZE, HAL_OTA_DL);
+    173              if ((addr % (HAL_FLASH_PAGE_SIZE / HAL_FLASH_WORD_SIZE)) == 0)
+    174              {
+    175                HalFlashErase(addr / (HAL_FLASH_PAGE_SIZE / HAL_FLASH_WORD_SIZE));
+    176              }
+    177              HalFlashWrite(addr++, buf, 1);
+    178            }
+    179          }
+    180          
+    181          /******************************************************************************
+    182           * @fn      crcCalc
+    183           *
+    184           * @brief   Run the CRC16 Polynomial calculation over the RC image.
+    185           *
+    186           * @param   None.
+    187           *
+    188           * @return  The CRC16 calculated.
+    189           */
+    190          static uint16 crcCalc()
+    191          {
+    192            uint32 oset;
+    193            uint16 crc = 0;
+    194          
+    195            // Run the CRC calculation over the active body of code.
+    196            for (oset = 0; oset < OTA_crcControl.programSize; oset++)
+    197            {
+    198              if ((oset < HAL_OTA_CRC_OSET) || (oset >= HAL_OTA_CRC_OSET + 4))
+    199              {
+    200                uint8 buf;
+    201                HalOTARead(oset, &buf, 1, HAL_OTA_RC);
+    202                crc = runPoly(crc, buf);
+    203              }
+    204            }
+    205          
+    206            return crc;
+    207          }
+    208          #endif //HAL_OTA_BOOT_CODE
+    209          
+    210          /******************************************************************************
+    211           * @fn      runPoly
+    212           *
+    213           * @brief   Run the CRC16 Polynomial calculation over the byte parameter.
+    214           *
+    215           * @param   crc - Running CRC calculated so far.
+    216           * @param   val - Value on which to run the CRC16.
+    217           *
+    218           * @return  crc - Updated for the run.
+    219           */
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    220          static uint16 runPoly(uint16 crc, uint8 val)
+   \                     ??runPoly:
+    221          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    222            const uint16 poly = 0x1021;
+    223            uint8 cnt;
+    224          
+    225            for (cnt = 0; cnt < 8; cnt++, val <<= 1)
+   \   000000   7808         MOV       R0,#0x8
+    226            {
+    227              uint8 msb = (crc & 0x8000) ? 1 : 0;
+   \                     ??runPoly_1:
+   \   000002   EB           MOV       A,R3
+   \   000003   5480         ANL       A,#0x80
+   \   000005   6004         JZ        ??runPoly_2
+   \   000007   D2F0         SETB      B.0
+   \   000009   8002         SJMP      ??runPoly_3
+   \                     ??runPoly_2:
+   \   00000B   C2F0         CLR       B.0
+    228          
+    229              crc <<= 1;
+   \                     ??runPoly_3:
+   \   00000D   EA           MOV       A,R2
+   \   00000E   25E0         ADD       A,0xE0 /* A   */
+   \   000010   FA           MOV       R2,A
+   \   000011   EB           MOV       A,R3
+   \   000012   33           RLC       A
+   \   000013   FB           MOV       R3,A
+    230              if (val & 0x80)  crc |= 0x0001;
+   \   000014   E9           MOV       A,R1
+   \   000015   A2E7         MOV       C,0xE0 /* A   */.7
+   \   000017   5004         JNC       ??runPoly_4
+   \   000019   7401         MOV       A,#0x1
+   \   00001B   4A           ORL       A,R2
+   \   00001C   FA           MOV       R2,A
+    231              if (msb)         crc ^= poly;
+   \                     ??runPoly_4:
+   \   00001D   A2F0         MOV       C,B.0
+   \   00001F   5008         JNC       ??runPoly_5
+   \   000021   7421         MOV       A,#0x21
+   \   000023   6A           XRL       A,R2
+   \   000024   FA           MOV       R2,A
+   \   000025   7410         MOV       A,#0x10
+   \   000027   6B           XRL       A,R3
+   \   000028   FB           MOV       R3,A
+    232            }
+   \                     ??runPoly_5:
+   \   000029   E9           MOV       A,R1
+   \   00002A   C3           CLR       C
+   \   00002B   33           RLC       A
+   \   00002C   F9           MOV       R1,A
+   \   00002D   18           DEC       R0
+   \   00002E   E8           MOV       A,R0
+   \   00002F   70D1         JNZ       ??runPoly_1
+    233          
+    234            return crc;
+   \   000031   22           RET
+    235          }
+    236          
+    237          /******************************************************************************
+    238           * @fn      HalOTAChkDL
+    239           *
+    240           * @brief   Run the CRC16 Polynomial calculation over the DL image.
+    241           *
+    242           * @param   None
+    243           *
+    244           * @return  SUCCESS or FAILURE.
+    245           */
+    246          uint8 HalOTAChkDL(uint8 dlImagePreambleOffset)
+    247          {
+    248           (void)dlImagePreambleOffset;  // Intentionally unreferenced parameter
+    249          
+    250            uint32 oset;
+    251            uint16 crc = 0;
+    252            OTA_CrcControl_t crcControl;
+    253            OTA_ImageHeader_t header;
+    254            uint32 programStart;
+    255          
+    256          #if HAL_OTA_XNV_IS_SPI
+    257            XNV_SPI_INIT();
+    258          #endif
+    259          
+    260            // Read the OTA File Header
+    261            HalOTARead(0, (uint8 *)&header, sizeof(OTA_ImageHeader_t), HAL_OTA_DL);
+    262          
+    263            // Calculate the update image start address
+    264            programStart = header.headerLength + OTA_SUB_ELEMENT_HDR_LEN;
+    265          
+    266            // Get the CRC Control structure
+    267            HalOTARead(programStart + HAL_OTA_CRC_OSET, (uint8 *)&crcControl, sizeof(crcControl), HAL_OTA_DL);
+    268          
+    269            if ((crcControl.programSize > HAL_OTA_DL_MAX) || (crcControl.programSize == 0))
+    270            {
+    271              return FAILURE;
+    272            }
+    273          
+    274            // Run the CRC calculation over the downloaded image.
+    275            for (oset = 0; oset < crcControl.programSize; oset++)
+    276            {
+    277              if ((oset < HAL_OTA_CRC_OSET) || (oset >= HAL_OTA_CRC_OSET+4))
+    278              {
+    279                uint8 buf;
+    280                HalOTARead(oset + programStart, &buf, 1, HAL_OTA_DL);
+    281                crc = runPoly(crc, buf);
+    282              }
+    283            }
+    284          
+    285            return (crcControl.crc[0] == crc) ? SUCCESS : FAILURE;
+    286          }
+    287          
+    288          /******************************************************************************
+    289           * @fn      HalOTAInvRC
+    290           *
+    291           * @brief   Invalidate the active image so that the boot code will instantiate
+    292           *          the DL image on the next reset.
+    293           *
+    294           * @param   None.
+    295           *
+    296           * @return  None.
+    297           */
+    298          void HalOTAInvRC(void)
+    299          {
+    300            uint16 crc[2] = {0,0xFFFF};
+    301            HalFlashWrite((HAL_OTA_CRC_ADDR / HAL_FLASH_WORD_SIZE), (uint8 *)crc, 1);
+    302          }
+    303          
+    304          /******************************************************************************
+    305           * @fn      HalOTARead
+    306           *
+    307           * @brief   Read from the storage medium according to image type.
+    308           *
+    309           * @param   oset - Offset into the monolithic image.
+    310           * @param   pBuf - Pointer to the buffer in which to copy the bytes read.
+    311           * @param   len - Number of bytes to read.
+    312           * @param   type - Which image: HAL_OTA_RC or HAL_OTA_DL.
+    313           *
+    314           * @return  None.
+    315           */
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    316          void HalOTARead(uint32 oset, uint8 *pBuf, uint16 len, image_t type)
+   \                     HalOTARead:
+    317          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F1         MOV       A,#-0xf
+   \   000002   12....       LCALL     ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 15
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV       ?V0,R2
+   \   000007   8B..         MOV       ?V1,R3
+   \   000009   8C..         MOV       ?V2,R4
+   \   00000B   8D..         MOV       ?V3,R5
+   \   00000D   E9           MOV       A,R1
+   \   00000E   FE           MOV       R6,A
+   \   00000F   740F         MOV       A,#0xf
+   \   000011   12....       LCALL     ?XSTACK_DISP0_8
+   \   000014   E0           MOVX      A,@DPTR
+   \   000015   F5..         MOV       ?V4,A
+   \   000017   A3           INC       DPTR
+   \   000018   E0           MOVX      A,@DPTR
+   \   000019   F5..         MOV       ?V5,A
+   \   00001B   7411         MOV       A,#0x11
+   \   00001D   12....       LCALL     ?XSTACK_DISP0_8
+   \   000020   E0           MOVX      A,@DPTR
+   \   000021   F5..         MOV       ?V6,A
+   \   000023   A3           INC       DPTR
+   \   000024   E0           MOVX      A,@DPTR
+   \   000025   F5..         MOV       ?V7,A
+    318            if (HAL_OTA_RC != type)
+   \   000027   EE           MOV       A,R6
+   \   000028   6014         JZ        ??HalOTARead_0
+    319            {
+    320          #if HAL_OTA_XNV_IS_INT
+    321              preamble_t preamble;
+    322          
+    323              HalOTARead(PREAMBLE_OFFSET, (uint8 *)&preamble, sizeof(preamble_t), HAL_OTA_RC);
+    324              oset += HAL_OTA_RC_START + HAL_OTA_DL_OSET;
+    325          #elif HAL_OTA_XNV_IS_SPI
+    326              oset += HAL_OTA_DL_OSET;
+    327              HalSPIRead(oset, pBuf, len);
+   \   00002A                ; Setup parameters for call to function HalSPIRead
+   \   00002A   78..         MOV       R0,#?V6
+   \   00002C   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00002F   78..         MOV       R0,#?V4
+   \   000031   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000034   12....       LCALL     ??HalSPIRead
+   \   000037   7404         MOV       A,#0x4
+   \   000039   12....       LCALL     ?DEALLOC_XSTACK8
+    328              return;
+   \   00003C   802F         SJMP      ??HalOTARead_1
+    329          #endif
+    330            }
+    331            else
+    332            {
+    333              oset += HAL_OTA_RC_START;
+   \                     ??HalOTARead_0:
+   \   00003E   90....       MOV       DPTR,#__Constant_800
+   \   000041   78..         MOV       R0,#?V0
+   \   000043   12....       LCALL     ?L_ADD_X
+    334            }
+    335          
+    336            HalFlashRead(oset / HAL_FLASH_PAGE_SIZE, oset % HAL_FLASH_PAGE_SIZE, pBuf, len);
+   \   000046                ; Setup parameters for call to function HalFlashRead
+   \   000046   78..         MOV       R0,#?V6
+   \   000048   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00004B   AC..         MOV       R4,?V4
+   \   00004D   AD..         MOV       R5,?V5
+   \   00004F   85....       MOV       ?V4,?V0
+   \   000052   85....       MOV       ?V5,?V1
+   \   000055   AA..         MOV       R2,?V4
+   \   000057   E5..         MOV       A,?V5
+   \   000059   5407         ANL       A,#0x7
+   \   00005B   FB           MOV       R3,A
+   \   00005C   740B         MOV       A,#0xb
+   \   00005E   78..         MOV       R0,#?V0
+   \   000060   12....       LCALL     ?UL_SHR
+   \   000063   A9..         MOV       R1,?V0
+   \   000065   12....       LCALL     HalFlashRead
+   \   000068   7402         MOV       A,#0x2
+   \   00006A   12....       LCALL     ?DEALLOC_XSTACK8
+    337          }
+   \                     ??HalOTARead_1:
+   \   00006D                REQUIRE ?Subroutine0
+   \   00006D                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F08         MOV       R7,#0x8
+   \   000002   02....       LJMP      ?FUNC_LEAVE_XDATA
+    338          
+    339          /******************************************************************************
+    340           * @fn      HalOTAWrite
+    341           *
+    342           * @brief   Write to the storage medium according to the image type.
+    343           *
+    344           *  NOTE:   Destructive write on page boundary! When writing to the first flash word
+    345           *          of a page boundary, the page is erased without saving/restoring the bytes not written.
+    346           *          Writes anywhere else on a page assume that the location written to has been erased.
+    347           *
+    348           * @param   oset - Offset into the monolithic image, aligned to HAL_FLASH_WORD_SIZE.
+    349           * @param   pBuf - Pointer to the buffer in from which to write.
+    350           * @param   len - Number of bytes to write. If not an even multiple of HAL_FLASH_WORD_SIZE,
+    351           *                remainder bytes are overwritten with garbage.
+    352           * @param   type - Which image: HAL_OTA_RC or HAL_OTA_DL.
+    353           *
+    354           * @return  None.
+    355           */
+    356          void HalOTAWrite(uint32 oset, uint8 *pBuf, uint16 len, image_t type)
+    357          {
+    358            if (HAL_OTA_RC != type)
+    359            {
+    360          #if HAL_OTA_XNV_IS_INT
+    361              oset += HAL_OTA_RC_START + HAL_OTA_DL_OSET;
+    362          #elif HAL_OTA_XNV_IS_SPI
+    363              oset += HAL_OTA_DL_OSET;
+    364              HalSPIWrite(oset, pBuf, len);
+    365              return;
+    366          #endif
+    367            }
+    368            else
+    369            {
+    370              oset += HAL_OTA_RC_START;
+    371            }
+    372          
+    373            if ((oset % HAL_FLASH_PAGE_SIZE) == 0)
+    374            {
+    375              HalFlashErase(oset / HAL_FLASH_PAGE_SIZE);
+    376            }
+    377          
+    378            HalFlashWrite(oset / HAL_FLASH_WORD_SIZE, pBuf, len / HAL_FLASH_WORD_SIZE);
+    379          }
+    380          
+    381          /******************************************************************************
+    382           * @fn      HalOTAAvail
+    383           *
+    384           * @brief   Determine the space available for downloading an image.
+    385           *
+    386           * @param   None.
+    387           *
+    388           * @return  Number of bytes available for storing an OTA image.
+    389           */
+    390          uint32 HalOTAAvail(void)
+    391          {
+    392            return HAL_OTA_DL_MAX - HAL_OTA_DL_OSET;
+    393          }
+    394          
+    395          #if HAL_OTA_XNV_IS_SPI
+    396          /******************************************************************************
+    397           * @fn      xnvSPIWrite
+    398           *
+    399           * @brief   SPI write sequence for code size savings.
+    400           *
+    401           * @param   ch - The byte to write to the SPI.
+    402           *
+    403           * @return  None.
+    404           */
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    405          static void xnvSPIWrite(uint8 ch)
+   \                     ??xnvSPIWrite:
+    406          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    407            XNV_SPI_TX(ch);
+   \   000000   C2F9         CLR       0xf8.1
+   \   000002   89F9         MOV       0xf9,R1
+    408            XNV_SPI_WAIT_RXRDY();
+   \                     ??xnvSPIWrite_1:
+   \   000004   A2F9         MOV       C,0xf8.1
+   \   000006   50FC         JNC       ??xnvSPIWrite_1
+    409          }
+   \   000008   22           RET
+   \   000009                REQUIRE _A_U1CSR
+   \   000009                REQUIRE U1DBUF
+    410          
+    411          /******************************************************************************
+    412           * @fn      HalSPIRead
+    413           *
+    414           * @brief   Read from the external NV storage via SPI.
+    415           *
+    416           * @param   addr - Offset into the external NV.
+    417           * @param   pBuf - Pointer to buffer to copy the bytes read from external NV.
+    418           * @param   len - Number of bytes to read from external NV.
+    419           *
+    420           * @return  None.
+    421           *****************************************************************************/
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    422          static void HalSPIRead(uint32 addr, uint8 *pBuf, uint16 len)
+   \                     ??HalSPIRead:
+    423          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F1         MOV       A,#-0xf
+   \   000002   12....       LCALL     ?FUNC_ENTER_XDATA
+   \   000005                ; Saved register size: 15
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV       ?V4,R2
+   \   000007   8B..         MOV       ?V5,R3
+   \   000009   8C..         MOV       ?V6,R4
+   \   00000B   8D..         MOV       ?V7,R5
+    424          #if !HAL_OTA_BOOT_CODE
+    425            uint8 shdw = P1DIR;
+    426            halIntState_t his;
+    427            HAL_ENTER_CRITICAL_SECTION(his);
+    428            P1DIR |= BV(3);
+    429          #endif
+    430          
+    431            XNV_SPI_BEGIN();
+   \   00000D   C293         CLR       0x90.3
+    432            do
+    433            {
+    434              xnvSPIWrite(XNV_STAT_CMD);
+   \                     ??HalSPIRead_1:
+   \   00000F                ; Setup parameters for call to function xnvSPIWrite
+   \   00000F   7905         MOV       R1,#0x5
+   \   000011   12....       LCALL     ??xnvSPIWrite
+    435            } while (XNV_SPI_RX() & XNV_STAT_WIP);
+   \   000014   E5F9         MOV       A,0xf9
+   \   000016   A2E0         MOV       C,0xE0 /* A   */.0
+   \   000018   40F5         JC        ??HalSPIRead_1
+    436            XNV_SPI_END();
+   \   00001A   D293         SETB      0x90.3
+    437            asm("NOP"); asm("NOP");
+   \   00001C   00           NOP
+   \   00001D   00           NOP
+    438          
+    439            XNV_SPI_BEGIN();
+   \   00001E   C293         CLR       0x90.3
+    440            xnvSPIWrite(XNV_READ_CMD);
+   \   000020                ; Setup parameters for call to function xnvSPIWrite
+   \   000020   790B         MOV       R1,#0xb
+   \   000022   12....       LCALL     ??xnvSPIWrite
+    441            xnvSPIWrite(addr >> 16);
+   \   000025                ; Setup parameters for call to function xnvSPIWrite
+   \   000025   85....       MOV       ?V0,?V4
+   \   000028   85....       MOV       ?V1,?V5
+   \   00002B   85....       MOV       ?V2,?V6
+   \   00002E   85....       MOV       ?V3,?V7
+   \   000031   7410         MOV       A,#0x10
+   \   000033   78..         MOV       R0,#?V0
+   \   000035   12....       LCALL     ?UL_SHR
+   \   000038   A9..         MOV       R1,?V0
+   \   00003A   12....       LCALL     ??xnvSPIWrite
+    442            xnvSPIWrite(addr >> 8);
+   \   00003D                ; Setup parameters for call to function xnvSPIWrite
+   \   00003D   85....       MOV       ?V1,?V5
+   \   000040   A9..         MOV       R1,?V1
+   \   000042   12....       LCALL     ??xnvSPIWrite
+    443            xnvSPIWrite(addr);
+   \   000045                ; Setup parameters for call to function xnvSPIWrite
+   \   000045   85....       MOV       ?V0,?V4
+   \   000048   A9..         MOV       R1,?V0
+   \   00004A   12....       LCALL     ??xnvSPIWrite
+    444            xnvSPIWrite(0);
+   \   00004D                ; Setup parameters for call to function xnvSPIWrite
+   \   00004D   7900         MOV       R1,#0x0
+   \   00004F   12....       LCALL     ??xnvSPIWrite
+   \   000052   740F         MOV       A,#0xf
+   \   000054   12....       LCALL     ?XSTACK_DISP0_8
+   \   000057   E0           MOVX      A,@DPTR
+   \   000058   FE           MOV       R6,A
+   \   000059   A3           INC       DPTR
+   \   00005A   E0           MOVX      A,@DPTR
+   \   00005B   FF           MOV       R7,A
+   \   00005C   7411         MOV       A,#0x11
+   \   00005E   12....       LCALL     ?XSTACK_DISP0_8
+   \   000061   E0           MOVX      A,@DPTR
+   \   000062   F5..         MOV       ?V0,A
+   \   000064   A3           INC       DPTR
+   \   000065   E0           MOVX      A,@DPTR
+   \   000066   F5..         MOV       ?V1,A
+   \   000068   8011         SJMP      ??HalSPIRead_2
+    445          
+    446            while (len--)
+    447            {
+    448              xnvSPIWrite(0);
+   \                     ??HalSPIRead_3:
+   \   00006A                ; Setup parameters for call to function xnvSPIWrite
+   \   00006A   7900         MOV       R1,#0x0
+   \   00006C   12....       LCALL     ??xnvSPIWrite
+    449              *pBuf++ = XNV_SPI_RX();
+   \   00006F   E5F9         MOV       A,0xf9
+   \   000071   8E82         MOV       DPL,R6
+   \   000073   8F83         MOV       DPH,R7
+   \   000075   F0           MOVX      @DPTR,A
+   \   000076   A3           INC       DPTR
+   \   000077   AE82         MOV       R6,DPL
+   \   000079   AF83         MOV       R7,DPH
+    450            }
+   \                     ??HalSPIRead_2:
+   \   00007B   A8..         MOV       R0,?V0
+   \   00007D   A9..         MOV       R1,?V1
+   \   00007F   E8           MOV       A,R0
+   \   000080   24FF         ADD       A,#-0x1
+   \   000082   F5..         MOV       ?V0,A
+   \   000084   E9           MOV       A,R1
+   \   000085   34FF         ADDC      A,#-0x1
+   \   000087   F5..         MOV       ?V1,A
+   \   000089   E8           MOV       A,R0
+   \   00008A   49           ORL       A,R1
+   \   00008B   70DD         JNZ       ??HalSPIRead_3
+    451            XNV_SPI_END();
+   \   00008D   D293         SETB      0x90.3
+    452          
+    453          #if !HAL_OTA_BOOT_CODE
+    454            P1DIR = shdw;
+    455            HAL_EXIT_CRITICAL_SECTION(his);
+    456          #endif
+    457          }
+   \   00008F   02....       LJMP      ?Subroutine0
+   \   000092                REQUIRE _A_P1
+   \   000092                REQUIRE U1DBUF
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_ffffff78:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_ffffff78>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_ffffff78>`:
+   \   000000   78FFFFFF     DD 4294967160
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_4:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_4>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_4>`:
+   \   000000   04000000     DD 4
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_1:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_1>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_1>`:
+   \   000000   01000000     DD 1
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_0:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_0>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_0>`:
+   \   000000   00000000     DD 0
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_6:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_6>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_6>`:
+   \   000000   06000000     DD 6
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_800:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_800>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_800>`:
+   \   000000   00080000     DD 2048
+    458          
+    459          /******************************************************************************
+    460           * @fn      HalSPIWrite
+    461           *
+    462           * @brief   Write to the external NV storage via SPI.
+    463           *
+    464           * @param   addr - Offset into the external NV.
+    465           * @param   pBuf - Pointer to the buffer in from which to write bytes to external NV.
+    466           * @param   len - Number of bytes to write to external NV.
+    467           *
+    468           * @return  None.
+    469           *****************************************************************************/
+    470          static void HalSPIWrite(uint32 addr, uint8 *pBuf, uint16 len)
+    471          {
+    472            uint8 cnt;
+    473          #if !HAL_OTA_BOOT_CODE
+    474            uint8 shdw = P1DIR;
+    475            halIntState_t his;
+    476            HAL_ENTER_CRITICAL_SECTION(his);
+    477            P1DIR |= BV(3);
+    478          #endif
+    479          
+    480            while (len)
+    481            {
+    482              XNV_SPI_BEGIN();
+    483              do
+    484              {
+    485                xnvSPIWrite(XNV_STAT_CMD);
+    486              } while (XNV_SPI_RX() & XNV_STAT_WIP);
+    487              XNV_SPI_END();
+    488              asm("NOP"); asm("NOP");
+    489          
+    490              XNV_SPI_BEGIN();
+    491              xnvSPIWrite(XNV_WREN_CMD);
+    492              XNV_SPI_END();
+    493              asm("NOP"); asm("NOP");
+    494          
+    495              XNV_SPI_BEGIN();
+    496              xnvSPIWrite(XNV_WRPG_CMD);
+    497              xnvSPIWrite(addr >> 16);
+    498              xnvSPIWrite(addr >> 8);
+    499              xnvSPIWrite(addr);
+    500          
+    501              // Can only write within any one page boundary, so prepare for next page write if bytes remain.
+    502              cnt = 0 - (uint8)addr;
+    503              if (cnt)
+    504              {
+    505                addr += cnt;
+    506              }
+    507              else
+    508              {
+    509                addr += 256;
+    510              }
+    511          
+    512              do
+    513              {
+    514                xnvSPIWrite(*pBuf++);
+    515                cnt--;
+    516                len--;
+    517              } while (len && cnt);
+    518              XNV_SPI_END();
+    519            }
+    520          
+    521          #if !HAL_OTA_BOOT_CODE
+    522            P1DIR = shdw;
+    523            HAL_EXIT_CRITICAL_SECTION(his);
+    524          #endif
+    525          }
+    526          
+    527          #elif !HAL_OTA_XNV_IS_INT
+    528          #error Invalid Xtra-NV for OTA.
+    529          #endif
+    530          
+    531          /******************************************************************************
+    532          */
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      2     80   HalFlashErase
+      1     93   HalFlashRead
+      0     91   HalFlashWrite
+      0    103   HalOTARead
+        0     17   -> HalFlashRead
+        0     19   -> HalSPIRead
+      1     34   HalSPIRead
+        0     15   -> xnvSPIWrite
+      2     84   main
+        0     80   -> HalFlashErase
+        0     82   -> HalFlashRead
+        0     82   -> HalFlashWrite
+        0     84   -> HalOTARead
+        0     80   -> runPoly
+      0     80   runPoly
+      0     15   xnvSPIWrite
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ?<Initializer for __Constant_0>
+       4  ?<Initializer for __Constant_1>
+       4  ?<Initializer for __Constant_4>
+       4  ?<Initializer for __Constant_6>
+       4  ?<Initializer for __Constant_800>
+       4  ?<Initializer for __Constant_ffffff78>
+       5  ?Subroutine0
+       1  CLKCONCMD
+       1  CLKCONSTA
+       1  DMA0CFGH
+       1  DMA0CFGL
+       1  DMAARM
+       1  DMAIRQ
+      23  HalFlashErase
+     118  HalFlashRead
+     104  HalFlashWrite
+     109  HalOTARead
+     146  HalSPIRead
+       1  MEMCTR
+       8  OTA_crcControl
+       1  P0INP
+       1  P1DIR
+       1  P1SEL
+       1  P2SEL
+       1  PERCFG
+       1  SLEEPCMD
+       1  SLEEPSTA
+       1  U1BAUD
+       1  U1DBUF
+       1  U1GCR
+       1  _A_P1
+       1  _A_U1CSR
+       4  __Constant_0
+       4  __Constant_1
+       4  __Constant_4
+       4  __Constant_6
+       4  __Constant_800
+       4  __Constant_ffffff78
+       8  dmaCh0
+     663  main
+      50  runPoly
+       9  xnvSPIWrite
+
+ 
+ 1 227 bytes in segment NEAR_CODE
+    19 bytes in segment SFR_AN
+    24 bytes in segment XDATA_I
+    24 bytes in segment XDATA_ID
+    16 bytes in segment XDATA_Z
+ 
+ 1 227 bytes of CODE  memory (+ 24 bytes shared)
+     0 bytes of DATA  memory (+ 19 bytes shared)
+    16 bytes of XDATA memory (+ 24 bytes shared)
+
+Errors: none
+Warnings: none

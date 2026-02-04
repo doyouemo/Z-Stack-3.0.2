@@ -1,0 +1,578 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               03/Feb/2026  00:00:29
+# Copyright 2004-2017 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Components\hal\common\hal_drivers.c
+#    Command line       =  
+#        -f C:\Users\ASUS\AppData\Local\Temp\EWC61F.tmp
+#        ("C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Components\hal\common\hal_drivers.c" -D BDB_REPORTING -D
+#        SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D xPOWER_SAVING
+#        -D NWK_AUTO_POLL -D xZTOOL_P1 -D xMT_TASK -D xMT_APP_FUNC -D
+#        xMT_SYS_FUNC -D xMT_ZDO_FUNC -D xMT_APP_CNF_FUNC -D
+#        LCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
+#        ZCL_DISCOVER -D ZCL_WRITE -D ZCL_BASIC -D ZCL_IDENTIFY -D
+#        ZCL_TEMPERATURE_MEASUREMENT -D ZCL_GROUPS -lC
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List"
+#        -lA "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List"
+#        --diag_suppress Pe001,Pa010 -o "C:\Users\ASUS\Desktop\work\graduration
+#        project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\Obj" -e
+#        --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 16 -f
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
+#        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0x1234
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0} -DMAC_MAX_FRAME_SIZE=116
+#        -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const __code"
+#        -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000
+#        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
+#        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000 -DENABLE_LED4_DISABLE_S1)
+#        -f "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\" -I
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\Source\" -I
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\Source\" -I
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\ZMain\TI2530DB\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\include\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\include\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mt\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\osal\include\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\af\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\bdb\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\gp\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_China.936
+#    List file          =  
+#        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List\hal_drivers.lst
+#    Object file        =  
+#        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\Obj\hal_drivers.r51
+#
+###############################################################################
+
+C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\hal\common\hal_drivers.c
+      1          
+      2          /**************************************************************************************************
+      3           *                                            INCLUDES
+      4           **************************************************************************************************/
+      5          
+      6          #include "hal_adc.h"
+      7          #if (defined HAL_AES) && (HAL_AES == TRUE)
+      8          #include "hal_aes.h"
+      9          #endif
+     10          #if (defined HAL_BUZZER) && (HAL_BUZZER == TRUE)
+     11          #include "hal_buzzer.h"
+     12          #endif
+     13          #if (defined HAL_DMA) && (HAL_DMA == TRUE)
+     14          #include "hal_dma.h"
+     15          #endif
+     16          #include "hal_drivers.h"
+     17          #include "hal_key.h"
+     18          #include "hal_lcd.h"
+     19          #include "hal_led.h"
+     20          #include "hal_sleep.h"
+     21          #include "hal_timer.h"
+     22          #include "hal_types.h"
+     23          #include "hal_uart.h"
+     24          #ifdef CC2591_COMPRESSION_WORKAROUND
+     25          #include "mac_rx.h"
+     26          #endif
+     27          #include "OSAL.h"
+     28          #if defined POWER_SAVING
+     29          #include "OSAL_PwrMgr.h"
+     30          #endif
+     31          #if (defined HAL_HID) && (HAL_HID == TRUE)
+     32          #include "usb_hid.h"
+     33          #endif
+     34          #if (defined HAL_SPI) && (HAL_SPI == TRUE)
+     35          #include "hal_spi.h"
+     36          #endif
+     37          
+     38          /**************************************************************************************************
+     39           *                                      GLOBAL VARIABLES
+     40           **************************************************************************************************/
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     41          uint8 Hal_TaskID;
+   \                     Hal_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     42          
+     43          extern void HalLedUpdate( void ); /* Notes: This for internal only so it shouldn't be in hal_led.h */
+     44          
+     45          /**************************************************************************************************
+     46           * @fn      Hal_Init
+     47           *
+     48           * @brief   Hal Initialization function.
+     49           *
+     50           * @param   task_id - Hal TaskId
+     51           *
+     52           * @return  None
+     53           **************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     54          void Hal_Init( uint8 task_id )
+   \                     Hal_Init:
+     55          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     56            /* Register task ID */
+     57            Hal_TaskID = task_id;
+   \   000004   E9           MOV       A,R1
+   \   000005   90....       MOV       DPTR,#Hal_TaskID
+   \   000008   F0           MOVX      @DPTR,A
+     58          
+     59          #ifdef CC2591_COMPRESSION_WORKAROUND
+     60            osal_start_reload_timer( Hal_TaskID, PERIOD_RSSI_RESET_EVT, PERIOD_RSSI_RESET_TIMEOUT );
+     61          #endif
+     62          }
+   \   000009                REQUIRE ?Subroutine0
+   \   000009                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP       DPH
+   \   000002   D082         POP       DPL
+   \   000004   02....       LJMP      ?BRET
+     63          
+     64          /**************************************************************************************************
+     65           * @fn      Hal_DriverInit
+     66           *
+     67           * @brief   Initialize HW - These need to be initialized before anyone.
+     68           *
+     69           * @param   task_id - Hal TaskId
+     70           *
+     71           * @return  None
+     72           **************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     73          void HalDriverInit (void)
+   \                     HalDriverInit:
+     74          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     75            /* TIMER */
+     76          #if (defined HAL_TIMER) && (HAL_TIMER == TRUE)
+     77          #endif
+     78          
+     79            /* ADC */
+     80          #if (defined HAL_ADC) && (HAL_ADC == TRUE)
+     81            HalAdcInit();
+   \   000004                ; Setup parameters for call to function HalAdcInit
+   \   000004   12....       LCALL     `??HalAdcInit::?relay`; Banked call to: HalAdcInit
+     82          #endif
+     83          
+     84            /* DMA */
+     85          #if (defined HAL_DMA) && (HAL_DMA == TRUE)
+     86            // Must be called before the init call to any module that uses DMA.
+     87            HalDmaInit();
+   \   000007                ; Setup parameters for call to function HalDmaInit
+   \   000007   12....       LCALL     `??HalDmaInit::?relay`; Banked call to: HalDmaInit
+     88          #endif
+     89          
+     90            /* AES */
+     91          #if (defined HAL_AES) && (HAL_AES == TRUE)
+     92            HalAesInit();
+   \   00000A                ; Setup parameters for call to function HalAesInit
+   \   00000A   12....       LCALL     `??HalAesInit::?relay`; Banked call to: HalAesInit
+     93          #endif
+     94          
+     95            /* LCD */
+     96          #if (defined HAL_LCD) && (HAL_LCD == TRUE)
+     97            HalLcdInit();
+     98          #endif
+     99          
+    100            /* LED */
+    101          #if (defined HAL_LED) && (HAL_LED == TRUE)
+    102            HalLedInit();
+   \   00000D                ; Setup parameters for call to function HalLedInit
+   \   00000D   12....       LCALL     `??HalLedInit::?relay`; Banked call to: HalLedInit
+    103          #endif
+    104          
+    105            /* UART */
+    106          #if (defined HAL_UART) && (HAL_UART == TRUE)
+    107            HalUARTInit();
+    108          #endif
+    109          
+    110            /* KEY */
+    111          #if (defined HAL_KEY) && (HAL_KEY == TRUE)
+    112            HalKeyInit();
+   \   000010                ; Setup parameters for call to function HalKeyInit
+   \   000010   12....       LCALL     `??HalKeyInit::?relay`; Banked call to: HalKeyInit
+    113          #endif
+    114            
+    115            /* SPI */
+    116          #if (defined HAL_SPI) && (HAL_SPI == TRUE)
+    117            HalSpiInit();
+    118          #endif
+    119          
+    120            /* HID */
+    121          #if (defined HAL_HID) && (HAL_HID == TRUE)
+    122            usbHidInit();
+    123          #endif
+    124          }
+   \   000013   80..         SJMP      ?Subroutine0
+    125          
+    126          /**************************************************************************************************
+    127           * @fn      Hal_ProcessEvent
+    128           *
+    129           * @brief   Hal Process Event
+    130           *
+    131           * @param   task_id - Hal TaskId
+    132           *          events - events
+    133           *
+    134           * @return  None
+    135           **************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    136          uint16 Hal_ProcessEvent( uint8 task_id, uint16 events )
+   \                     Hal_ProcessEvent:
+    137          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV       A,R2
+   \   000006   FE           MOV       R6,A
+   \   000007   EB           MOV       A,R3
+   \   000008   FF           MOV       R7,A
+    138            uint8 *msgPtr;
+    139          
+    140            (void)task_id;  // Intentionally unreferenced parameter
+    141          
+    142            if ( events & SYS_EVENT_MSG )
+   \   000009   5480         ANL       A,#0x80
+   \   00000B   6018         JZ        ??Hal_ProcessEvent_0
+    143            {
+    144              msgPtr = osal_msg_receive(Hal_TaskID);
+   \   00000D                ; Setup parameters for call to function osal_msg_receive
+   \   00000D   8003         SJMP      ??Hal_ProcessEvent_1
+    145          
+    146              while (msgPtr)
+    147              {
+    148                /* Do something here - for now, just deallocate the msg and move on */
+    149          
+    150                /* De-allocate */
+    151                osal_msg_deallocate( msgPtr );
+   \                     ??Hal_ProcessEvent_2:
+   \   00000F                ; Setup parameters for call to function osal_msg_deallocate
+   \   00000F   12....       LCALL     `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+    152                /* Next */
+    153                msgPtr = osal_msg_receive( Hal_TaskID );
+   \   000012                ; Setup parameters for call to function osal_msg_receive
+   \                     ??Hal_ProcessEvent_1:
+   \   000012   90....       MOV       DPTR,#Hal_TaskID
+   \   000015   E0           MOVX      A,@DPTR
+   \   000016   F9           MOV       R1,A
+   \   000017   12....       LCALL     `??osal_msg_receive::?relay`; Banked call to: osal_msg_receive
+    154              }
+   \   00001A   EA           MOV       A,R2
+   \   00001B   4B           ORL       A,R3
+   \   00001C   70F1         JNZ       ??Hal_ProcessEvent_2
+    155              return events ^ SYS_EVENT_MSG;
+   \   00001E   EE           MOV       A,R6
+   \   00001F   FA           MOV       R2,A
+   \   000020   EF           MOV       A,R7
+   \   000021   6480         XRL       A,#0x80
+   \   000023   8037         SJMP      ??Hal_ProcessEvent_3
+    156            }
+    157          
+    158          #if (defined HAL_BUZZER) && (HAL_BUZZER == TRUE)
+    159            if (events & HAL_BUZZER_EVENT)
+    160            {
+    161              HalBuzzerStop();
+    162              return events ^ HAL_BUZZER_EVENT;
+    163            }
+    164          #endif
+    165          
+    166          #ifdef CC2591_COMPRESSION_WORKAROUND
+    167            if ( events & PERIOD_RSSI_RESET_EVT )
+    168            {
+    169              macRxResetRssi();
+    170              return (events ^ PERIOD_RSSI_RESET_EVT);
+    171            }
+    172          #endif
+    173          
+    174            if ( events & HAL_LED_BLINK_EVENT )
+   \                     ??Hal_ProcessEvent_0:
+   \   000025   EE           MOV       A,R6
+   \   000026   5420         ANL       A,#0x20
+   \   000028   6008         JZ        ??Hal_ProcessEvent_4
+    175            {
+    176          #if (defined (BLINK_LEDS)) && (HAL_LED == TRUE)
+    177              HalLedUpdate();
+   \   00002A                ; Setup parameters for call to function HalLedUpdate
+   \   00002A   12....       LCALL     `??HalLedUpdate::?relay`; Banked call to: HalLedUpdate
+    178          #endif /* BLINK_LEDS && HAL_LED */
+    179              return events ^ HAL_LED_BLINK_EVENT;
+   \   00002D   EE           MOV       A,R6
+   \   00002E   6420         XRL       A,#0x20
+   \   000030   8028         SJMP      ??Hal_ProcessEvent_5
+    180            }
+    181          
+    182            if (events & HAL_KEY_EVENT)
+   \                     ??Hal_ProcessEvent_4:
+   \   000032   EE           MOV       A,R6
+   \   000033   5410         ANL       A,#0x10
+   \   000035   6028         JZ        ??Hal_ProcessEvent_6
+    183            {
+    184          #if (defined HAL_KEY) && (HAL_KEY == TRUE)
+    185              /* Check for keys */
+    186              HalKeyPoll();
+   \   000037                ; Setup parameters for call to function HalKeyPoll
+   \   000037   12....       LCALL     `??HalKeyPoll::?relay`; Banked call to: HalKeyPoll
+    187          
+    188              /* if interrupt disabled, do next polling */
+    189              if (!Hal_KeyIntEnable)
+   \   00003A   90....       MOV       DPTR,#Hal_KeyIntEnable
+   \   00003D   E0           MOVX      A,@DPTR
+   \   00003E   7017         JNZ       ??Hal_ProcessEvent_7
+    190              {
+    191                osal_start_timerEx( Hal_TaskID, HAL_KEY_EVENT, 100);
+   \   000040                ; Setup parameters for call to function osal_start_timerEx
+   \   000040   90....       MOV       DPTR,#__Constant_64
+   \   000043   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   000046   7A10         MOV       R2,#0x10
+   \   000048   7B00         MOV       R3,#0x0
+   \   00004A   90....       MOV       DPTR,#Hal_TaskID
+   \   00004D   E0           MOVX      A,@DPTR
+   \   00004E   F9           MOV       R1,A
+   \   00004F   12....       LCALL     `??osal_start_timerEx::?relay`; Banked call to: osal_start_timerEx
+   \   000052   7404         MOV       A,#0x4
+   \   000054   12....       LCALL     ?DEALLOC_XSTACK8
+    192              }
+    193          #endif
+    194              return events ^ HAL_KEY_EVENT;
+   \                     ??Hal_ProcessEvent_7:
+   \   000057   EE           MOV       A,R6
+   \   000058   6410         XRL       A,#0x10
+   \                     ??Hal_ProcessEvent_5:
+   \   00005A   FA           MOV       R2,A
+   \   00005B   EF           MOV       A,R7
+   \                     ??Hal_ProcessEvent_3:
+   \   00005C   FB           MOV       R3,A
+   \   00005D   8004         SJMP      ??Hal_ProcessEvent_8
+    195            }
+    196          
+    197          #if defined POWER_SAVING
+    198            if ( events & HAL_SLEEP_TIMER_EVENT )
+    199            {
+    200              halRestoreSleepLevel();
+    201              return events ^ HAL_SLEEP_TIMER_EVENT;
+    202            }
+    203          
+    204            if ( events & HAL_PWRMGR_HOLD_EVENT )
+    205            {
+    206              (void)osal_pwrmgr_task_state(Hal_TaskID, PWRMGR_HOLD);
+    207          
+    208              (void)osal_stop_timerEx(Hal_TaskID, HAL_PWRMGR_CONSERVE_EVENT);
+    209              (void)osal_clear_event(Hal_TaskID, HAL_PWRMGR_CONSERVE_EVENT);
+    210          
+    211              return (events & ~(HAL_PWRMGR_HOLD_EVENT | HAL_PWRMGR_CONSERVE_EVENT));
+    212            }
+    213          
+    214            if ( events & HAL_PWRMGR_CONSERVE_EVENT )
+    215            {
+    216              (void)osal_pwrmgr_task_state(Hal_TaskID, PWRMGR_CONSERVE);
+    217              return events ^ HAL_PWRMGR_CONSERVE_EVENT;
+    218            }
+    219          #endif
+    220          
+    221            return 0;
+   \                     ??Hal_ProcessEvent_6:
+   \   00005F   7A00         MOV       R2,#0x0
+   \   000061   7B00         MOV       R3,#0x0
+   \                     ??Hal_ProcessEvent_8:
+   \   000063   7F02         MOV       R7,#0x2
+   \   000065   02....       LJMP      ?BANKED_LEAVE_XDATA
+    222          }
+    223          
+    224          /**************************************************************************************************
+    225           * @fn      Hal_ProcessPoll
+    226           *
+    227           * @brief   This routine will be called by OSAL to poll UART, TIMER...
+    228           *
+    229           * @param   task_id - Hal TaskId
+    230           *
+    231           * @return  None
+    232           **************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    233          void Hal_ProcessPoll ()
+   \                     Hal_ProcessPoll:
+    234          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    235          #if defined( POWER_SAVING )
+    236            /* Allow sleep before the next OSAL event loop */
+    237            ALLOW_SLEEP_MODE();
+    238          #endif
+    239            
+    240            /* UART Poll */
+    241          #if (defined HAL_UART) && (HAL_UART == TRUE)
+    242            HalUARTPoll();
+    243          #endif
+    244            
+    245            /* SPI Poll */
+    246          #if (defined HAL_SPI) && (HAL_SPI == TRUE)
+    247            HalSpiPoll();
+    248          #endif
+    249          
+    250            /* HID poll */
+    251          #if (defined HAL_HID) && (HAL_HID == TRUE)
+    252            usbHidProcessEvents();
+    253          #endif
+    254           
+    255          }
+   \   000000   02....       LJMP      ?BRET
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_64:
+   \   000000   64000000     DD 100
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Hal_Init::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Hal_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??HalDriverInit::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalDriverInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Hal_ProcessEvent::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Hal_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Hal_ProcessPoll::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Hal_ProcessPoll
+    256          
+    257          /**************************************************************************************************
+    258          **************************************************************************************************/
+    259          
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      2      0   HalDriverInit
+        2      0   -> HalAdcInit
+        2      0   -> HalAesInit
+        2      0   -> HalDmaInit
+        2      0   -> HalKeyInit
+        2      0   -> HalLedInit
+      2      0   Hal_Init
+      0     14   Hal_ProcessEvent
+        0     10   -> HalKeyPoll
+        0     10   -> HalLedUpdate
+        0     10   -> osal_msg_deallocate
+        0     10   -> osal_msg_receive
+        0     14   -> osal_start_timerEx
+      0      0   Hal_ProcessPoll
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       7  ?Subroutine0
+      21  HalDriverInit
+       6  HalDriverInit::?relay
+       9  Hal_Init
+       6  Hal_Init::?relay
+     104  Hal_ProcessEvent
+       6  Hal_ProcessEvent::?relay
+       3  Hal_ProcessPoll
+       6  Hal_ProcessPoll::?relay
+       1  Hal_TaskID
+       4  __Constant_64
+
+ 
+ 144 bytes in segment BANKED_CODE
+  24 bytes in segment BANK_RELAYS
+   4 bytes in segment XDATA_ROM_C
+   1 byte  in segment XDATA_Z
+ 
+  24 bytes of CODE     memory
+   0 bytes of CONST    memory (+ 4 bytes shared)
+ 144 bytes of HUGECODE memory
+   1 byte  of XDATA    memory
+
+Errors: none
+Warnings: none

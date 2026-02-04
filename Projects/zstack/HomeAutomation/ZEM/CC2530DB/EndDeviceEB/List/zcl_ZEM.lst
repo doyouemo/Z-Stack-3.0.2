@@ -1,0 +1,3081 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               03/Feb/2026  00:00:31
+# Copyright 2004-2017 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\Source\zcl_ZEM.c
+#    Command line       =  
+#        -f C:\Users\ASUS\AppData\Local\Temp\EWCEE1.tmp
+#        ("C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\Source\zcl_ZEM.c" -D
+#        BDB_REPORTING -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE
+#        -D xPOWER_SAVING -D NWK_AUTO_POLL -D xZTOOL_P1 -D xMT_TASK -D
+#        xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D xMT_APP_CNF_FUNC -D
+#        LCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
+#        ZCL_DISCOVER -D ZCL_WRITE -D ZCL_BASIC -D ZCL_IDENTIFY -D
+#        ZCL_TEMPERATURE_MEASUREMENT -D ZCL_GROUPS -lC
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List"
+#        -lA "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List"
+#        --diag_suppress Pe001,Pa010 -o "C:\Users\ASUS\Desktop\work\graduration
+#        project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\Obj" -e
+#        --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 16 -f
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
+#        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0x1234
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0} -DMAC_MAX_FRAME_SIZE=116
+#        -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const __code"
+#        -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000
+#        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
+#        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000 -DENABLE_LED4_DISABLE_S1)
+#        -f "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\" -I
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\Source\" -I
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\Source\" -I
+#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\ZMain\TI2530DB\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\include\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\include\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mt\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\osal\include\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\af\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\bdb\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\gp\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac\"
+#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_China.936
+#    List file          =  
+#        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List\zcl_ZEM.lst
+#    Object file        =  
+#        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\Obj\zcl_ZEM.r51
+#
+###############################################################################
+
+C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\Source\zcl_ZEM.c
+      1          /*********************************************************************
+      2           * INCLUDES
+      3           */
+      4          #include "ZComDef.h"
+      5          #include "OSAL.h"
+      6          #include "AF.h"
+      7          #include "ZDApp.h"
+      8          #include "ZDObject.h"
+      9          #include "ZDProfile.h"
+     10          #include "MT_SYS.h"
+     11          
+     12          #include "zcl.h"
+     13          #include "zcl_general.h"
+     14          #include "zcl_ha.h"
+     15          #include "zcl_ms.h"
+     16          
+     17          #include "zcl_ZEM.h"
+     18          
+     19          #include "onboard.h"
+
+   \                                 In  segment SFR_AN, at 0xf1
+   \   unsigned char volatile __sfr PERCFG
+   \                     PERCFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+     20          
+     21          /* HAL */
+     22          #include "hal_lcd.h"
+     23          #include "hal_led.h"
+     24          #include "hal_key.h"
+     25          #include "hal_uart.h"
+     26          
+     27          #include "bdb_interface.h"
+     28          #include "bdb_Reporting.h"
+     29             
+     30          /*********************************************************************
+     31           * MACROS
+     32           */
+     33          
+     34          // how often to report temperature
+     35          #define ZEM_REPORT_INTERVAL   10000
+     36          
+     37          #define GUI_LOCAL_TEMP    1
+     38          
+     39          #define APP_TITLE "   Temp Sensor  "
+     40          
+     41          /*********************************************************************
+     42           * CONSTANTS
+     43           */
+     44          
+     45          /*********************************************************************
+     46           * TYPEDEFS
+     47           */
+     48          
+     49          /*********************************************************************
+     50           * GLOBAL VARIABLES
+     51           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     52          byte zclZEM_TaskID;
+   \                     zclZEM_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     53          
+     54          extern int16 zdpExternalStateTaskID;
+     55          
+     56          // UART Buffer
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     57          static uint8 zclZEM_UartBuf[ZCLZEM_UART_BUF_LEN];
+   \                     zclZEM_UartBuf:
+   \   000000                DS 64
+   \   000040                REQUIRE __INIT_XDATA_Z
+     58          
+     59          /*********************************************************************
+     60           * GLOBAL FUNCTIONS
+     61           */
+     62          
+     63          /*********************************************************************
+     64           * LOCAL VARIABLES
+     65           */
+     66          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     67          uint8 zclZEM_NwkState = 0; // DEV_INIT
+   \                     zclZEM_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     68          
+     69          //static uint8 aProcessCmd[] = { 1, 0, 0, 0 }; // used for reset command, { length + cmd0 + cmd1 + data }
+     70          
+     71          // Application Endpoint for data communication
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     72          static endPointDesc_t ZEM_AppEp =
+   \                     ZEM_AppEp:
+   \   000000                DS 7
+   \   000007                REQUIRE `?<Initializer for ZEM_AppEp>`
+   \   000007                REQUIRE __INIT_XDATA_I
+     73          {
+     74            ZEM_ENDPOINT,                       // Application endpoint
+     75            0,
+     76            &zclZEM_TaskID,
+     77            &zclZEM_SimpleDesc,                 // Simple description for this application
+     78            (afNetworkLatencyReq_t)0            // No Network Latency req
+     79          };
+     80          #ifdef BDB_REPORTING
+     81          #if BDBREPORTING_MAX_ANALOG_ATTR_SIZE == 8
+     82            uint8 reportableChange[] = {0x2C, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}; // 0x2C01 is 300 in int16
+     83          #endif
+     84          #if BDBREPORTING_MAX_ANALOG_ATTR_SIZE == 4
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     85            uint8 reportableChange[] = {0x2C, 0x01, 0x00, 0x00}; // 0x2C01 is 300 in int16
+   \                     reportableChange:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for reportableChange>`
+   \   000004                REQUIRE __INIT_XDATA_I
+     86          #endif 
+     87          #if BDBREPORTING_MAX_ANALOG_ATTR_SIZE == 2
+     88            uint8 reportableChange[] = {0x2C, 0x01}; // 0x2C01 is 300 in int16
+     89          #endif 
+     90          #endif
+     91          
+     92          /*********************************************************************
+     93           * LOCAL FUNCTIONS
+     94           */
+     95          static void zclZEM_HandleKeys( byte shift, byte keys );
+     96          static void zclZEM_BasicResetCB( void );
+     97          
+     98          static void zclZEM_ProcessCommissioningStatus(bdbCommissioningModeMsg_t* bdbCommissioningModeMsg);
+     99          
+    100          // Functions to process ZCL Foundation incoming Command/Response messages
+    101          static void zclZEM_ProcessIncomingMsg( zclIncomingMsg_t *msg );
+    102          #ifdef ZCL_READ
+    103          static uint8 zclZEM_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg );
+    104          #endif
+    105          #ifdef ZCL_WRITE
+    106          static uint8 zclZEM_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg );
+    107          #endif
+    108          static uint8 zclZEM_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg );
+    109          #ifdef ZCL_DISCOVER
+    110          static uint8 zclZEM_ProcessInDiscCmdsRspCmd( zclIncomingMsg_t *pInMsg );
+    111          static uint8 zclZEM_ProcessInDiscAttrsRspCmd( zclIncomingMsg_t *pInMsg );
+    112          static uint8 zclZEM_ProcessInDiscAttrsExtRspCmd( zclIncomingMsg_t *pInMsg );
+    113          #endif // ZCL_DISCOVER
+    114          
+    115          static void zclSampleApp_BatteryWarningCB( uint8 voltLevel);
+    116          
+    117          /*********************************************************************
+    118           * STATUS STRINGS
+    119           */
+    120          
+    121          /*********************************************************************
+    122           * CONSTANTS
+    123           */
+    124          
+    125          
+    126          /*********************************************************************
+    127           * ZCL General Profile Callback table
+    128           */
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    129          static zclGeneral_AppCallbacks_t zclZEM_CmdCallbacks =
+   \                     zclZEM_CmdCallbacks:
+   \   000000                DS 18
+   \   000012                REQUIRE `?<Initializer for zclZEM_CmdCallbacks>`
+   \   000012                REQUIRE __INIT_XDATA_I
+    130          {
+    131            zclZEM_BasicResetCB,        // Basic Cluster Reset command
+    132            NULL,                                           // Identify Trigger Effect command
+    133            NULL,             				                      // On/Off cluster command
+    134            NULL,                                           // On/Off cluster enhanced command Off with Effect
+    135            NULL,                                           // On/Off cluster enhanced command On with Recall Global Scene
+    136            NULL,                                           // On/Off cluster enhanced command On with Timed Off
+    137          #ifdef ZCL_LEVEL_CTRL
+    138            NULL,                                           // Level Control Move to Level command
+    139            NULL,                                           // Level Control Move command
+    140            NULL,                                           // Level Control Step command
+    141            NULL,                                           // Level Control Stop command
+    142          #endif
+    143          #ifdef ZCL_GROUPS
+    144            NULL,                                           // Group Response commands
+    145          #endif
+    146          #ifdef ZCL_SCENES
+    147            NULL,                                           // Scene Store Request command
+    148            NULL,                                           // Scene Recall Request command
+    149            NULL,                                           // Scene Response command
+    150          #endif
+    151          #ifdef ZCL_ALARMS
+    152            NULL,                                           // Alarm (Response) commands
+    153          #endif
+    154          #ifdef SE_UK_EXT
+    155            NULL,                                           // Get Event Log command
+    156            NULL,                                           // Publish Event Log command
+    157          #endif
+    158            NULL,                                           // RSSI Location command
+    159            NULL                                            // RSSI Location Response command
+    160          };
+    161          
+    162          /*********************************************************************
+    163           * @fn          zclZEM_Init
+    164           *
+    165           * @brief       Initialization function for the zclGeneral layer.
+    166           *
+    167           * @param       none
+    168           *
+    169           * @return      none
+    170           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    171          void zclZEM_Init( byte task_id )
+   \                     zclZEM_Init:
+    172          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 79
+   \   000005   74B1         MOV       A,#-0x4f
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   E9           MOV       A,R1
+    173            zclZEM_TaskID = task_id;
+   \   00000B   90....       MOV       DPTR,#zclZEM_TaskID
+   \   00000E   F0           MOVX      @DPTR,A
+    174          
+    175            // Register the Simple Descriptor for this application
+    176            bdb_RegisterSimpleDescriptor( &zclZEM_SimpleDesc ); 
+   \   00000F                ; Setup parameters for call to function bdb_RegisterSimpleDescriptor
+   \   00000F   7A..         MOV       R2,#zclZEM_SimpleDesc & 0xff
+   \   000011   7B..         MOV       R3,#(zclZEM_SimpleDesc >> 8) & 0xff
+   \   000013   12....       LCALL     `??bdb_RegisterSimpleDescriptor::?relay`; Banked call to: bdb_RegisterSimpleDescriptor
+    177            
+    178            // Register the ZCL General Cluster Library callback functions
+    179            zclGeneral_RegisterCmdCallbacks( ZEM_ENDPOINT, &zclZEM_CmdCallbacks );
+   \   000016                ; Setup parameters for call to function zclGeneral_RegisterCmdCallbacks
+   \   000016   7A..         MOV       R2,#zclZEM_CmdCallbacks & 0xff
+   \   000018   7B..         MOV       R3,#(zclZEM_CmdCallbacks >> 8) & 0xff
+   \   00001A   7908         MOV       R1,#0x8
+   \   00001C   12....       LCALL     `??zclGeneral_RegisterCmdCallbacks::?relay`; Banked call to: zclGeneral_RegisterCmdCallbacks
+    180          
+    181            // Register the application's attribute list
+    182            zclZEM_ResetAttributesToDefaultValues();
+   \   00001F                ; Setup parameters for call to function zclZEM_ResetAttributesToDefaultValues
+   \   00001F   12....       LCALL     `??zclZEM_ResetAttributesToDefaultValues::?relay`; Banked call to: zclZEM_ResetAttributesToDefaultValues
+    183            zcl_registerAttrList( ZEM_ENDPOINT, zclZEM_NumAttributes, zclZEM_Attrs );
+   \   000022                ; Setup parameters for call to function zcl_registerAttrList
+   \   000022   7C..         MOV       R4,#zclZEM_Attrs & 0xff
+   \   000024   7D..         MOV       R5,#(zclZEM_Attrs >> 8) & 0xff
+   \   000026   90....       MOV       DPTR,#zclZEM_NumAttributes
+   \   000029   E4           CLR       A
+   \   00002A   93           MOVC      A,@A+DPTR
+   \   00002B   FA           MOV       R2,A
+   \   00002C   7908         MOV       R1,#0x8
+   \   00002E   12....       LCALL     `??zcl_registerAttrList::?relay`; Banked call to: zcl_registerAttrList
+    184          
+    185            // Register the Application to receive the unprocessed Foundation command/response messages
+    186            zcl_registerForMsg( zclZEM_TaskID );
+   \   000031                ; Setup parameters for call to function zcl_registerForMsg
+   \   000031   90....       MOV       DPTR,#zclZEM_TaskID
+   \   000034   E0           MOVX      A,@DPTR
+   \   000035   F9           MOV       R1,A
+   \   000036   12....       LCALL     `??zcl_registerForMsg::?relay`; Banked call to: zcl_registerForMsg
+    187          
+    188            // Register low voltage NV memory protection application callback
+    189            RegisterVoltageWarningCB( zclSampleApp_BatteryWarningCB );
+   \   000039                ; Setup parameters for call to function RegisterVoltageWarningCB
+   \   000039   7A..         MOV       R2,#`??zclSampleApp_BatteryWarningCB::?relay` & 0xff
+   \   00003B   7B..         MOV       R3,#(`??zclSampleApp_BatteryWarningCB::?relay` >> 8) & 0xff
+   \   00003D   12....       LCALL     `??RegisterVoltageWarningCB::?relay`; Banked call to: RegisterVoltageWarningCB
+    190          
+    191            // Register for all key events - This app will handle all key events
+    192            RegisterForKeys( zclZEM_TaskID );
+   \   000040                ; Setup parameters for call to function RegisterForKeys
+   \   000040   90....       MOV       DPTR,#zclZEM_TaskID
+   \   000043   E0           MOVX      A,@DPTR
+   \   000044   F9           MOV       R1,A
+   \   000045   12....       LCALL     `??RegisterForKeys::?relay`; Banked call to: RegisterForKeys
+    193          
+    194            bdb_RegisterCommissioningStatusCB( zclZEM_ProcessCommissioningStatus );
+   \   000048                ; Setup parameters for call to function bdb_RegisterCommissioningStatusCB
+   \   000048   7A..         MOV       R2,#`??zclZEM_ProcessCommissioningStatus::?relay` & 0xff
+   \   00004A   7B..         MOV       R3,#(`??zclZEM_ProcessCommissioningStatus::?relay` >> 8) & 0xff
+   \   00004C   12....       LCALL     `??bdb_RegisterCommissioningStatusCB::?relay`; Banked call to: bdb_RegisterCommissioningStatusCB
+    195          
+    196          #ifdef ZDO_COORDINATOR
+    197            bdb_StartCommissioning( BDB_COMMISSIONING_MODE_NWK_FORMATION |
+    198                                    BDB_COMMISSIONING_MODE_FINDING_BINDING );
+    199            NLME_PermitJoiningRequest(255);
+    200            // Broadcast
+    201            osal_start_timerEx(zclZEM_TaskID,
+    202                               ZEM_BROADCAST_EVT,
+    203                               ZEM_BROADCAST_PERIOD);
+    204            // groupcast
+    205            osal_start_timerEx(zclZEM_TaskID,
+    206                               ZEM_GROUPCAST_EVT,
+    207                               ZEM_GROUPCAST_PERIOD);
+    208          #else
+    209            bdb_StartCommissioning( BDB_COMMISSIONING_MODE_NWK_STEERING |
+    210                                    BDB_COMMISSIONING_MODE_FINDING_BINDING );
+   \   00004F                ; Setup parameters for call to function bdb_StartCommissioning
+   \   00004F   790A         MOV       R1,#0xa
+   \   000051   12....       LCALL     `??bdb_StartCommissioning::?relay`; Banked call to: bdb_StartCommissioning
+    211            // Add group
+    212            aps_Group_t group = {
+    213              .ID = GROUP_ID,
+    214              .name = "",
+    215            };
+   \   000054   90....       MOV       DPTR,#`?<Constant {21, ""}>`
+   \   000057   743D         MOV       A,#0x3d
+   \   000059   12....       LCALL     ?XSTACK_DISP102_8
+   \   00005C   7412         MOV       A,#0x12
+   \   00005E   12....       LCALL     ?MOVE_LONG8_XDATA_XDATA
+    216            aps_AddGroup(ZEM_ENDPOINT, &group);
+   \   000061                ; Setup parameters for call to function aps_AddGroup
+   \   000061   743D         MOV       A,#0x3d
+   \   000063   12....       LCALL     ?XSTACK_DISP101_8
+   \   000066   7908         MOV       R1,#0x8
+   \   000068   12....       LCALL     `??aps_AddGroup::?relay`; Banked call to: aps_AddGroup
+    217            // P2P
+    218            osal_start_timerEx(zclZEM_TaskID,
+    219                               ZEM_P2P_EVT,
+    220                               ZEM_P2P_PERIOD);
+   \   00006B                ; Setup parameters for call to function osal_start_timerEx
+   \   00006B   90....       MOV       DPTR,#__Constant_3e8
+   \   00006E   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   000071   7A00         MOV       R2,#0x0
+   \   000073   7B02         MOV       R3,#0x2
+   \   000075   90....       MOV       DPTR,#zclZEM_TaskID
+   \   000078   E0           MOVX      A,@DPTR
+   \   000079   F9           MOV       R1,A
+   \   00007A   12....       LCALL     `??osal_start_timerEx::?relay`; Banked call to: osal_start_timerEx
+   \   00007D   7404         MOV       A,#0x4
+   \   00007F   12....       LCALL     ?DEALLOC_XSTACK8
+    221          #endif
+    222          
+    223            // Initialize UART communication
+    224            zclZEM_InitUart();
+   \   000082   43F101       ORL       0xf1,#0x1
+   \   000085   43F430       ORL       0xf4,#0x30
+   \   000088   43FE10       ORL       0xfe,#0x10
+   \   00008B   53FEDF       ANL       0xfe,#0xdf
+   \   00008E   85..82       MOV       DPL,?XSP + 0
+   \   000091   85..83       MOV       DPH,?XSP + 1
+   \   000094   7401         MOV       A,#0x1
+   \   000096   F0           MOVX      @DPTR,A
+   \   000097   12....       LCALL     ?XSTACK_DISP0_8
+   \   00009A   7404         MOV       A,#0x4
+   \   00009C   F0           MOVX      @DPTR,A
+   \   00009D   7402         MOV       A,#0x2
+   \   00009F   12....       LCALL     ?XSTACK_DISP0_8
+   \   0000A2   E4           CLR       A
+   \   0000A3   F0           MOVX      @DPTR,A
+   \   0000A4   7403         MOV       A,#0x3
+   \   0000A6   12....       LCALL     ?XSTACK_DISP0_8
+   \   0000A9   E4           CLR       A
+   \   0000AA   F0           MOVX      @DPTR,A
+   \   0000AB   A3           INC       DPTR
+   \   0000AC   F0           MOVX      @DPTR,A
+   \   0000AD   740A         MOV       A,#0xa
+   \   0000AF   12....       LCALL     ?XSTACK_DISP0_8
+   \   0000B2   7440         MOV       A,#0x40
+   \   0000B4   F0           MOVX      @DPTR,A
+   \   0000B5   A3           INC       DPTR
+   \   0000B6   E4           CLR       A
+   \   0000B7   F0           MOVX      @DPTR,A
+   \   0000B8   7412         MOV       A,#0x12
+   \   0000BA   12....       LCALL     ?XSTACK_DISP0_8
+   \   0000BD   E4           CLR       A
+   \   0000BE   F0           MOVX      @DPTR,A
+   \   0000BF   A3           INC       DPTR
+   \   0000C0   F0           MOVX      @DPTR,A
+   \   0000C1   7405         MOV       A,#0x5
+   \   0000C3   12....       LCALL     ?XSTACK_DISP0_8
+   \   0000C6   7406         MOV       A,#0x6
+   \   0000C8   F0           MOVX      @DPTR,A
+   \   0000C9   7416         MOV       A,#0x16
+   \   0000CB   12....       LCALL     ?XSTACK_DISP0_8
+   \   0000CE   7401         MOV       A,#0x1
+   \   0000D0   F0           MOVX      @DPTR,A
+   \   0000D1   741B         MOV       A,#0x1b
+   \   0000D3   12....       LCALL     ?XSTACK_DISP0_8
+   \   0000D6   74..         MOV       A,#`??zclZEM_UartCB::?relay` & 0xff
+   \   0000D8   F0           MOVX      @DPTR,A
+   \   0000D9   A3           INC       DPTR
+   \   0000DA   74..         MOV       A,#(`??zclZEM_UartCB::?relay` >> 8) & 0xff
+   \   0000DC   F0           MOVX      @DPTR,A
+   \   0000DD                ; Setup parameters for call to function HalUARTOpen
+   \   0000DD   AA..         MOV       R2,?XSP + 0
+   \   0000DF   AB..         MOV       R3,?XSP + 1
+   \   0000E1   7900         MOV       R1,#0x0
+   \   0000E3   12....       LCALL     `??HalUARTOpen::?relay`; Banked call to: HalUARTOpen
+    225            
+    226            // Read and send MAC address
+    227            zclZEM_ReadAndSendMAC();
+   \   0000E6                ; Setup parameters for call to function zclZEM_ReadAndSendMAC
+   \   0000E6   12....       LCALL     `??zclZEM_ReadAndSendMAC::?relay`; Banked call to: zclZEM_ReadAndSendMAC
+    228          
+    229            // 设备类型检测 - 确保只有协调器才处理网络形成相关事件
+    230            uint8 testMsg[] = "Device Type Test: ";
+   \   0000E9   90....       MOV       DPTR,#`?<Constant "Device Type Test: ">`
+   \   0000EC   742A         MOV       A,#0x2a
+   \   0000EE   12....       LCALL     ?XSTACK_DISP102_8
+   \   0000F1   7413         MOV       A,#0x13
+   \   0000F3   12....       LCALL     ?MOVE_LONG8_XDATA_XDATA
+    231            HalUARTWrite(HAL_UART_PORT_0, testMsg, sizeof(testMsg)-1);
+   \   0000F6                ; Setup parameters for call to function HalUARTWrite
+   \   0000F6   7C12         MOV       R4,#0x12
+   \   0000F8   FD           MOV       R5,A
+   \   0000F9   742A         MOV       A,#0x2a
+   \   0000FB   12....       LCALL     ?XSTACK_DISP101_8
+   \   0000FE   7900         MOV       R1,#0x0
+   \   000100   12....       LCALL     `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+    232            
+    233            #ifdef ZDO_COORDINATOR
+    234              uint8 deviceType[] = "Coordinator Device\r\n";
+    235            #elif defined(ZDO_ROUTER)
+    236              uint8 deviceType[] = "Router Device\r\n";
+    237            #else
+    238              uint8 deviceType[] = "End Device\r\n";
+   \   000103   90....       MOV       DPTR,#`?<Constant "End Device\\r\\n">`
+   \   000106   741D         MOV       A,#0x1d
+   \   000108   12....       LCALL     ?XSTACK_DISP102_8
+   \   00010B   740D         MOV       A,#0xd
+   \   00010D   12....       LCALL     ?MOVE_LONG8_XDATA_XDATA
+    239            #endif
+    240            HalUARTWrite(HAL_UART_PORT_0, deviceType, sizeof(deviceType)-1);
+   \   000110                ; Setup parameters for call to function HalUARTWrite
+   \   000110   7C0C         MOV       R4,#0xc
+   \   000112   FD           MOV       R5,A
+   \   000113   741D         MOV       A,#0x1d
+   \   000115   12....       LCALL     ?XSTACK_DISP101_8
+   \   000118   7900         MOV       R1,#0x0
+   \   00011A   12....       LCALL     `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+    241          
+    242          #ifdef BDB_REPORTING
+    243            //Adds the default configuration values for the temperature attribute of the ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT cluster, for endpoint ZEM_ENDPOINT
+    244            //Default maxReportingInterval value is 10 seconds
+    245            //Default minReportingInterval value is 3 seconds
+    246            //Default reportChange value is 300 (3 degrees)
+    247            bdb_RepAddAttrCfgRecordDefaultToList(ZEM_ENDPOINT, ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT, ATTRID_MS_TEMPERATURE_MEASURED_VALUE, 0, 10, reportableChange);
+   \   00011D                ; Setup parameters for call to function bdb_RepAddAttrCfgRecordDefaultToList
+   \   00011D   75....       MOV       ?V0,#reportableChange & 0xff
+   \   000120   75....       MOV       ?V1,#(reportableChange >> 8) & 0xff
+   \   000123   78..         MOV       R0,#?V0
+   \   000125   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000128   75..0A       MOV       ?V0,#0xa
+   \   00012B   75..00       MOV       ?V1,#0x0
+   \   00012E   78..         MOV       R0,#?V0
+   \   000130   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000133   E4           CLR       A
+   \   000134   F5..         MOV       ?V0,A
+   \   000136   78..         MOV       R0,#?V0
+   \   000138   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00013B   7C00         MOV       R4,#0x0
+   \   00013D   7D00         MOV       R5,#0x0
+   \   00013F   7A02         MOV       R2,#0x2
+   \   000141   7B04         MOV       R3,#0x4
+   \   000143   7908         MOV       R1,#0x8
+   \   000145   12....       LCALL     `??bdb_RepAddAttrCfgRecordDefaultToList::?relay`; Banked call to: bdb_RepAddAttrCfgRecordDefaultToList
+   \   000148   7406         MOV       A,#0x6
+   \   00014A   12....       LCALL     ?DEALLOC_XSTACK8
+    248          #endif
+    249            
+    250            zdpExternalStateTaskID = zclZEM_TaskID;
+   \   00014D   90....       MOV       DPTR,#zclZEM_TaskID
+   \   000150   E0           MOVX      A,@DPTR
+   \   000151   90....       MOV       DPTR,#zdpExternalStateTaskID
+   \   000154   F0           MOVX      @DPTR,A
+   \   000155   A3           INC       DPTR
+   \   000156   E4           CLR       A
+   \   000157   F0           MOVX      @DPTR,A
+    251             osal_start_timerEx(
+    252                zclZEM_TaskID,
+    253                ZEMAPP_EVT,
+    254                3000);
+   \   000158                ; Setup parameters for call to function osal_start_timerEx
+   \   000158   90....       MOV       DPTR,#__Constant_bb8
+   \   00015B   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   00015E   7A80         MOV       R2,#-0x80
+   \   000160   7B00         MOV       R3,#0x0
+   \   000162   90....       MOV       DPTR,#zclZEM_TaskID
+   \   000165   E0           MOVX      A,@DPTR
+   \   000166   F9           MOV       R1,A
+   \   000167   12....       LCALL     `??osal_start_timerEx::?relay`; Banked call to: osal_start_timerEx
+   \   00016A   7404         MOV       A,#0x4
+   \   00016C   12....       LCALL     ?DEALLOC_XSTACK8
+    255          }
+   \   00016F   744F         MOV       A,#0x4f
+   \   000171                REQUIRE ?Subroutine0
+   \   000171                REQUIRE PERCFG
+   \   000171                REQUIRE P1SEL
+   \   000171                REQUIRE P1DIR
+   \   000171                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000003   7F02         MOV       R7,#0x2
+   \   000005   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {21, ""}>`:
+   \   000000   1500         DW 21
+   \   000002   00           DB ""
+   \   000003   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   00000B   00000000     DB 0, 0, 0, 0, 0, 0, 0
+   \            000000  
+    256          
+    257          /*********************************************************************
+    258           * @fn          zclSample_event_loop
+    259           *
+    260           * @brief       Event Loop Processor for zclGeneral.
+    261           *
+    262           * @param       none
+    263           *
+    264           * @return      none
+    265           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    266          uint16 zclZEM_event_loop( uint8 task_id, uint16 events )
+   \                     zclZEM_event_loop:
+    267          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV       A,#-0xc
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 26
+   \   000005   74E6         MOV       A,#-0x1a
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   EA           MOV       A,R2
+   \   00000B   FE           MOV       R6,A
+   \   00000C   EB           MOV       A,R3
+   \   00000D   FF           MOV       R7,A
+    268            afIncomingMSGPacket_t *MSGpkt;
+    269          
+    270            (void)task_id;  // Intentionally unreferenced parameter
+    271          
+    272            if ( events & SYS_EVENT_MSG )
+   \   00000E   5480         ANL       A,#0x80
+   \   000010   701B         JNZ       ??zclZEM_event_loop_0
+    273            {
+    274              while ( (MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( zclZEM_TaskID )) )
+    275              {
+    276                switch ( MSGpkt->hdr.event )
+    277                {
+    278                  case ZCL_INCOMING_MSG:
+    279                    // Incoming ZCL Foundation command/response messages
+    280                    zclZEM_ProcessIncomingMsg( (zclIncomingMsg_t *)MSGpkt );
+    281                    break;
+    282          
+    283                  case AF_INCOMING_MSG_CMD:
+    284                    // Incoming AF data messages
+    285                    zclZEM_AF_RxProc( MSGpkt );
+    286                    break;
+    287          
+    288                  case KEY_CHANGE:
+    289                    zclZEM_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+    290                    break;
+    291          
+    292                  case ZDO_STATE_CHANGE:
+    293                    // 处理网络状态变化
+    294                    {
+    295                      uint8 newState = ((uint8*)MSGpkt)[0];
+    296                      zclZEM_NwkState = newState; // 更新网络状态
+    297                      
+    298                      if (newState == 5) // DEV_END_DEVICE
+    299                      {
+    300                        // 终端设备已加入网络
+    301                        uint8 successMsg[] = "Network joined successfully!\r\n";
+    302                        HalUARTWrite(HAL_UART_PORT_0, successMsg, sizeof(successMsg)-1);
+    303                        
+    304                        // 联网成功后向协调器发送MAC地址
+    305                        #ifndef ZDO_COORDINATOR
+    306                        zclZEM_SendMACToCoordinator();
+    307                        #endif
+    308                      }
+    309                      else if (newState == 9) // DEV_NWK_ORPHAN
+    310                      {
+    311                        // 设备成为孤立设备
+    312                        #ifndef ZDO_COORDINATOR
+    313                        {
+    314                          static uint8 retryCount = 0;
+    315                          if (retryCount < 3)
+    316                          {
+    317                            retryCount++;
+    318                            osal_start_timerEx(zclZEM_TaskID, ZEM_REJOIN_EVT, 2000);
+    319                          }
+    320                        }
+    321                        #endif
+    322                      }
+    323                    }
+    324                    break;
+    325          
+    326                  default:
+    327                    break;
+    328                }
+    329          
+    330                // Release the memory
+    331                osal_msg_deallocate( (uint8 *)MSGpkt );
+    332              }
+    333          
+    334              // return unprocessed events
+    335              return (events ^ SYS_EVENT_MSG);
+    336            }
+    337            
+    338          #if ZG_BUILD_ENDDEVICE_TYPE    
+    339            if ( events & ZEM_END_DEVICE_REJOIN_EVT )
+   \   000012   EE           MOV       A,R6
+   \   000013   5402         ANL       A,#0x2
+   \   000015   604C         JZ        ??zclZEM_event_loop_1
+    340            {
+    341              bdb_ZedAttemptRecoverNwk();
+   \   000017                ; Setup parameters for call to function bdb_ZedAttemptRecoverNwk
+   \   000017   12....       LCALL     `??bdb_ZedAttemptRecoverNwk::?relay`; Banked call to: bdb_ZedAttemptRecoverNwk
+    342              return ( events ^ ZEM_END_DEVICE_REJOIN_EVT );
+   \   00001A   EE           MOV       A,R6
+   \   00001B   6402         XRL       A,#0x2
+   \   00001D   02....       LJMP      ??zclZEM_event_loop_2 & 0xFFFF
+    343            }
+   \                     ??zclZEM_event_loop_3:
+   \   000020   90....       MOV       DPTR,#zclZEM_NwkState
+   \   000023   74D1         MOV       A,#-0x2f
+   \   000025   F0           MOVX      @DPTR,A
+   \                     ??zclZEM_event_loop_4:
+   \   000026                ; Setup parameters for call to function osal_msg_deallocate
+   \   000026   AA..         MOV       R2,?V0
+   \   000028   AB..         MOV       R3,?V1
+   \   00002A   12....       LCALL     `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+   \                     ??zclZEM_event_loop_0:
+   \   00002D                ; Setup parameters for call to function osal_msg_receive
+   \   00002D   90....       MOV       DPTR,#zclZEM_TaskID
+   \   000030   E0           MOVX      A,@DPTR
+   \   000031   F9           MOV       R1,A
+   \   000032   12....       LCALL     `??osal_msg_receive::?relay`; Banked call to: osal_msg_receive
+   \   000035   8A..         MOV       ?V0,R2
+   \   000037   8B..         MOV       ?V1,R3
+   \   000039   EA           MOV       A,R2
+   \   00003A   45..         ORL       A,?V1
+   \   00003C   601D         JZ        ??zclZEM_event_loop_5
+   \   00003E   8A82         MOV       DPL,R2
+   \   000040   8B83         MOV       DPH,R3
+   \   000042   E0           MOVX      A,@DPTR
+   \   000043   24E6         ADD       A,#-0x1a
+   \   000045   600F         JZ        ??zclZEM_event_loop_6
+   \   000047   24E6         ADD       A,#-0x1a
+   \   000049   6006         JZ        ??zclZEM_event_loop_7
+   \   00004B   2463         ADD       A,#0x63
+   \   00004D   60D1         JZ        ??zclZEM_event_loop_3
+   \   00004F   80D5         SJMP      ??zclZEM_event_loop_4
+   \                     ??zclZEM_event_loop_7:
+   \   000051                ; Setup parameters for call to function zclZEM_ProcessIncomingMsg
+   \   000051   12....       LCALL     `??zclZEM_ProcessIncomingMsg::?relay`; Banked call to: zclZEM_ProcessIncomingMsg
+   \   000054   80D0         SJMP      ??zclZEM_event_loop_4
+   \                     ??zclZEM_event_loop_6:
+   \   000056                ; Setup parameters for call to function zclZEM_AF_RxProc
+   \   000056   12....       LCALL     `??zclZEM_AF_RxProc::?relay`; Banked call to: zclZEM_AF_RxProc
+   \   000059   80CB         SJMP      ??zclZEM_event_loop_4
+   \                     ??zclZEM_event_loop_5:
+   \   00005B   EE           MOV       A,R6
+   \   00005C   FA           MOV       R2,A
+   \   00005D   EF           MOV       A,R7
+   \   00005E   6480         XRL       A,#0x80
+   \   000060   02....       LJMP      ??zclZEM_event_loop_8 & 0xFFFF
+    344          #endif
+    345          
+    346            if ( events & ZEM_LCD_AUTO_UPDATE_EVT )
+   \                     ??zclZEM_event_loop_1:
+   \   000063   EE           MOV       A,R6
+   \   000064   5410         ANL       A,#0x10
+   \   000066   6005         JZ        ??zclZEM_event_loop_9
+    347            {
+    348              return ( events ^ ZEM_LCD_AUTO_UPDATE_EVT );
+   \   000068   EE           MOV       A,R6
+   \   000069   6410         XRL       A,#0x10
+   \   00006B   8008         SJMP      ??zclZEM_event_loop_10
+    349            }
+    350          
+    351            if ( events & ZEM_KEY_AUTO_REPEAT_EVT )
+   \                     ??zclZEM_event_loop_9:
+   \   00006D   EE           MOV       A,R6
+   \   00006E   5420         ANL       A,#0x20
+   \   000070   6007         JZ        ??zclZEM_event_loop_11
+    352            {
+    353              return ( events ^ ZEM_KEY_AUTO_REPEAT_EVT );
+   \   000072   EE           MOV       A,R6
+   \   000073   6420         XRL       A,#0x20
+   \                     ??zclZEM_event_loop_10:
+   \   000075   FA           MOV       R2,A
+   \   000076   02....       LJMP      ??zclZEM_event_loop_12 & 0xFFFF
+    354            }
+    355            
+    356            // Broadcast event
+    357            if ( events & ZEM_BROADCAST_EVT )
+   \                     ??zclZEM_event_loop_11:
+   \   000079   EE           MOV       A,R6
+   \   00007A   5480         ANL       A,#0x80
+   \   00007C   7003         JNZ       $+5
+   \   00007E   02....       LJMP      ??zclZEM_event_loop_13 & 0xFFFF
+    358            {
+    359              uint8 broadcastData[] = "Broadcast";
+   \   000081   90....       MOV       DPTR,#`?<Constant "Broadcast">`
+   \   000084   7410         MOV       A,#0x10
+   \   000086   12....       LCALL     ?XSTACK_DISP102_8
+   \   000089   740A         MOV       A,#0xa
+   \   00008B   12....       LCALL     ?MOVE_LONG8_XDATA_XDATA
+    360              zclZEM_AF_Broadcast(CLUSTER_BROADCAST, 
+    361                                  sizeof(broadcastData)-1, 
+    362                                  broadcastData);
+   \   00008E   7408         MOV       A,#0x8
+   \   000090   12....       LCALL     ?XSTACK_DISP0_8
+   \   000093   740F         MOV       A,#0xf
+   \   000095   12....       LCALL     ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000098   74FF         MOV       A,#-0x1
+   \   00009A   F0           MOVX      @DPTR,A
+   \   00009B   A3           INC       DPTR
+   \   00009C   F0           MOVX      @DPTR,A
+   \   00009D   7409         MOV       A,#0x9
+   \   00009F   12....       LCALL     ?XSTACK_DISP0_8
+   \   0000A2   7408         MOV       A,#0x8
+   \   0000A4   F0           MOVX      @DPTR,A
+   \   0000A5   90....       MOV       DPTR,#??transferId_1
+   \   0000A8   12....       LCALL     ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   0000AB   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   0000AE   75....       MOV       ?V0,#??transferId_1 & 0xff
+   \   0000B1   75....       MOV       ?V1,#(??transferId_1 >> 8) & 0xff
+   \   0000B4   78..         MOV       R0,#?V0
+   \   0000B6   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000B9   7413         MOV       A,#0x13
+   \   0000BB   12....       LCALL     ?XSTACK_DISP100_8
+   \   0000BE   88..         MOV       ?V0,R0
+   \   0000C0   89..         MOV       ?V1,R1
+   \   0000C2   78..         MOV       R0,#?V0
+   \   0000C4   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000C7   75..09       MOV       ?V0,#0x9
+   \   0000CA   75..00       MOV       ?V1,#0x0
+   \   0000CD   78..         MOV       R0,#?V0
+   \   0000CF   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000D2   75..01       MOV       ?V0,#0x1
+   \   0000D5   78..         MOV       R0,#?V0
+   \   0000D7   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000DA   7900         MOV       R1,#0x0
+   \   0000DC   7C..         MOV       R4,#ZEM_AppEp & 0xff
+   \   0000DE   7D..         MOV       R5,#(ZEM_AppEp >> 8) & 0xff
+   \   0000E0   7409         MOV       A,#0x9
+   \   0000E2   12....       LCALL     ?XSTACK_DISP101_8
+   \   0000E5   12....       LCALL     `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+   \   0000E8   7409         MOV       A,#0x9
+   \   0000EA   12....       LCALL     ?DEALLOC_XSTACK8
+    363              osal_start_timerEx(zclZEM_TaskID,
+    364                                ZEM_BROADCAST_EVT,
+    365                                ZEM_BROADCAST_PERIOD);
+   \   0000ED                ; Setup parameters for call to function osal_start_timerEx
+   \   0000ED   90....       MOV       DPTR,#__Constant_3e8
+   \   0000F0   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   0000F3   7A80         MOV       R2,#-0x80
+   \   0000F5   7B00         MOV       R3,#0x0
+   \   0000F7   90....       MOV       DPTR,#zclZEM_TaskID
+   \   0000FA   E0           MOVX      A,@DPTR
+   \   0000FB   F9           MOV       R1,A
+   \   0000FC   12....       LCALL     `??osal_start_timerEx::?relay`; Banked call to: osal_start_timerEx
+   \   0000FF   7404         MOV       A,#0x4
+   \   000101   12....       LCALL     ?DEALLOC_XSTACK8
+    366              return ( events ^ ZEM_BROADCAST_EVT );
+   \   000104   EE           MOV       A,R6
+   \   000105   6480         XRL       A,#0x80
+   \                     ??zclZEM_event_loop_2:
+   \   000107   FA           MOV       R2,A
+   \   000108   EF           MOV       A,R7
+   \   000109   02....       LJMP      ??zclZEM_event_loop_8 & 0xFFFF
+    367            }
+    368            
+    369            // Groupcast event
+    370            if ( events & ZEM_GROUPCAST_EVT )
+   \                     ??zclZEM_event_loop_13:
+   \   00010C   EF           MOV       A,R7
+   \   00010D   5401         ANL       A,#0x1
+   \   00010F   7003         JNZ       $+5
+   \   000111   02....       LJMP      ??zclZEM_event_loop_14 & 0xFFFF
+    371            {
+    372              uint8 groupcastData[] = "Groupcast";
+   \   000114   90....       MOV       DPTR,#`?<Constant "Groupcast">`
+   \   000117   7410         MOV       A,#0x10
+   \   000119   12....       LCALL     ?XSTACK_DISP102_8
+   \   00011C   740A         MOV       A,#0xa
+   \   00011E   12....       LCALL     ?MOVE_LONG8_XDATA_XDATA
+    373              zclZEM_AF_Groupcast(GROUP_ID,
+    374                                  CLUSTER_GROUPCAST,
+    375                                  sizeof(groupcastData)-1, 
+    376                                  groupcastData);
+   \   000121   7408         MOV       A,#0x8
+   \   000123   12....       LCALL     ?XSTACK_DISP0_8
+   \   000126   7401         MOV       A,#0x1
+   \   000128   12....       LCALL     ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   00012B   7415         MOV       A,#0x15
+   \   00012D   F0           MOVX      @DPTR,A
+   \   00012E   A3           INC       DPTR
+   \   00012F   E4           CLR       A
+   \   000130   F0           MOVX      @DPTR,A
+   \   000131   7409         MOV       A,#0x9
+   \   000133   12....       LCALL     ?XSTACK_DISP0_8
+   \   000136   7408         MOV       A,#0x8
+   \   000138   F0           MOVX      @DPTR,A
+   \   000139   90....       MOV       DPTR,#??transferId_2
+   \   00013C   12....       LCALL     ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   00013F   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000142   75....       MOV       ?V0,#??transferId_2 & 0xff
+   \   000145   75....       MOV       ?V1,#(??transferId_2 >> 8) & 0xff
+   \   000148   78..         MOV       R0,#?V0
+   \   00014A   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00014D   7413         MOV       A,#0x13
+   \   00014F   12....       LCALL     ?XSTACK_DISP100_8
+   \   000152   88..         MOV       ?V0,R0
+   \   000154   89..         MOV       ?V1,R1
+   \   000156   78..         MOV       R0,#?V0
+   \   000158   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00015B   75..09       MOV       ?V0,#0x9
+   \   00015E   75..00       MOV       ?V1,#0x0
+   \   000161   78..         MOV       R0,#?V0
+   \   000163   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000166   75..02       MOV       ?V0,#0x2
+   \   000169   78..         MOV       R0,#?V0
+   \   00016B   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00016E   7900         MOV       R1,#0x0
+   \   000170   7C..         MOV       R4,#ZEM_AppEp & 0xff
+   \   000172   7D..         MOV       R5,#(ZEM_AppEp >> 8) & 0xff
+   \   000174   7409         MOV       A,#0x9
+   \   000176   12....       LCALL     ?XSTACK_DISP101_8
+   \   000179   12....       LCALL     `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+   \   00017C   7409         MOV       A,#0x9
+   \   00017E   12....       LCALL     ?DEALLOC_XSTACK8
+    377              osal_start_timerEx(zclZEM_TaskID,
+    378                                ZEM_GROUPCAST_EVT,
+    379                                ZEM_GROUPCAST_PERIOD);
+   \   000181                ; Setup parameters for call to function osal_start_timerEx
+   \   000181   90....       MOV       DPTR,#__Constant_3e8
+   \   000184   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   000187   7A00         MOV       R2,#0x0
+   \   000189   7B01         MOV       R3,#0x1
+   \   00018B   90....       MOV       DPTR,#zclZEM_TaskID
+   \   00018E   E0           MOVX      A,@DPTR
+   \   00018F   F9           MOV       R1,A
+   \   000190   12....       LCALL     `??osal_start_timerEx::?relay`; Banked call to: osal_start_timerEx
+   \   000193   7404         MOV       A,#0x4
+   \   000195   12....       LCALL     ?DEALLOC_XSTACK8
+    380              return ( events ^ ZEM_GROUPCAST_EVT );
+   \   000198   EE           MOV       A,R6
+   \   000199   FA           MOV       R2,A
+   \   00019A   EF           MOV       A,R7
+   \   00019B   6401         XRL       A,#0x1
+   \   00019D   804E         SJMP      ??zclZEM_event_loop_8
+    381            }
+    382            
+    383            // P2P event
+    384            if ( events & ZEM_P2P_EVT )
+   \                     ??zclZEM_event_loop_14:
+   \   00019F   EF           MOV       A,R7
+   \   0001A0   5402         ANL       A,#0x2
+   \   0001A2   604C         JZ        ??zclZEM_event_loop_15
+    385            {
+    386              uint8 p2pData[] = "P2P";
+   \   0001A4   90....       MOV       DPTR,#`?<Constant "P2P">`
+   \   0001A7   740C         MOV       A,#0xc
+   \   0001A9   12....       LCALL     ?XSTACK_DISP102_8
+   \   0001AC   7404         MOV       A,#0x4
+   \   0001AE   12....       LCALL     ?MOVE_LONG8_XDATA_XDATA
+    387              zclZEM_AF_P2P(0x0000, // 目标设备网络地址（这里使用0x0000作为示例）
+    388                            CLUSTER_P2P,
+    389                            sizeof(p2pData)-1, 
+    390                            p2pData);
+   \   0001B1                ; Setup parameters for call to function zclZEM_AF_P2P
+   \   0001B1   740C         MOV       A,#0xc
+   \   0001B3   12....       LCALL     ?XSTACK_DISP100_8
+   \   0001B6   88..         MOV       ?V0,R0
+   \   0001B8   89..         MOV       ?V1,R1
+   \   0001BA   78..         MOV       R0,#?V0
+   \   0001BC   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0001BF   7903         MOV       R1,#0x3
+   \   0001C1   7C00         MOV       R4,#0x0
+   \   0001C3   7D00         MOV       R5,#0x0
+   \   0001C5   7A00         MOV       R2,#0x0
+   \   0001C7   7B00         MOV       R3,#0x0
+   \   0001C9   12....       LCALL     `??zclZEM_AF_P2P::?relay`; Banked call to: zclZEM_AF_P2P
+   \   0001CC   7402         MOV       A,#0x2
+   \   0001CE   12....       LCALL     ?DEALLOC_XSTACK8
+    391              osal_start_timerEx(zclZEM_TaskID,
+    392                                ZEM_P2P_EVT,
+    393                                ZEM_P2P_PERIOD);
+   \   0001D1                ; Setup parameters for call to function osal_start_timerEx
+   \   0001D1   90....       MOV       DPTR,#__Constant_3e8
+   \   0001D4   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   0001D7   7A00         MOV       R2,#0x0
+   \   0001D9   7B02         MOV       R3,#0x2
+   \   0001DB   90....       MOV       DPTR,#zclZEM_TaskID
+   \   0001DE   E0           MOVX      A,@DPTR
+   \   0001DF   F9           MOV       R1,A
+   \   0001E0   12....       LCALL     `??osal_start_timerEx::?relay`; Banked call to: osal_start_timerEx
+   \   0001E3   7404         MOV       A,#0x4
+   \   0001E5   12....       LCALL     ?DEALLOC_XSTACK8
+    394              return ( events ^ ZEM_P2P_EVT );
+   \   0001E8   EE           MOV       A,R6
+   \   0001E9   FA           MOV       R2,A
+   \   0001EA   EF           MOV       A,R7
+   \   0001EB   6402         XRL       A,#0x2
+   \                     ??zclZEM_event_loop_8:
+   \   0001ED   FB           MOV       R3,A
+   \   0001EE   8004         SJMP      ??zclZEM_event_loop_12
+    395            }
+    396            
+    397            if(events & ZEMAPP_EVT)
+    398             {
+    399              HalLedBlink(
+    400                  HAL_LED_1, // 指定使用LED1
+    401                  10, // 指定闪烁次数为10次
+    402                  50, // 指定50%的时间LED处于点亮状态
+    403                  1000); // 指定每次闪烁周期为1000ms
+    404              return (events ^ ZEMAPP_EVT);
+    405             }
+    406            #ifdef ZDO_COORDINATOR
+    407              if ( events & ZEM_RETRY_FORMATION_EVT )//如果事件类型为重试网络形成事件
+    408              {
+    409                  // 重试网络形成，并打印失败信息
+    410                  uint8 failMsg[] = "Network formation failed! Retrying...\r\n";
+    411                  HalUARTWrite(HAL_UART_PORT_0, failMsg, sizeof(failMsg)-1);
+    412                  
+    413                  /* 重试网络形成 */
+    414                  bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_FORMATION |
+    415                                              BDB_COMMISSIONING_MODE_FINDING_BINDING );
+    416                  
+    417                  // 无论成功与否，5秒后再次重试 - 实现真正的无限重试
+    418                  osal_start_timerEx(zclZEM_TaskID, ZEM_RETRY_FORMATION_EVT, 5000);
+    419                  
+    420                return ( events ^ ZEM_RETRY_FORMATION_EVT );
+    421              }
+    422            #else
+    423              if ( events & ZEM_REJOIN_EVT )//如果事件类型为重新加入网络事件
+    424              {
+    425                  // 重新加入网络
+    426                  
+    427                  /* 重新加入网络 */
+    428                  bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_STEERING |
+    429                                              BDB_COMMISSIONING_MODE_FINDING_BINDING );
+    430                return ( events ^ ZEM_REJOIN_EVT );
+    431              }
+    432            #endif
+    433          
+    434            // Discard unknown events
+    435            return 0;
+   \                     ??zclZEM_event_loop_15:
+   \   0001F0   7A00         MOV       R2,#0x0
+   \   0001F2   7B00         MOV       R3,#0x0
+   \                     ??zclZEM_event_loop_12:
+   \   0001F4   741A         MOV       A,#0x1a
+   \   0001F6                REQUIRE ?Subroutine1
+   \   0001F6                ; // Fall through to label ?Subroutine1
+    436          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000003   7F04         MOV       R7,#0x4
+   \   000005   02....       LJMP      ?BANKED_LEAVE_XDATA
+    437          
+    438          /*********************************************************************
+    439           * @fn      zclZEM_InitUart
+    440           *
+    441           * @brief   Initialize UART for communication
+    442           *
+    443           * @param   none
+    444           *
+    445           * @return  none
+    446           */
+    447          static void zclZEM_InitUart(void)
+    448          {
+    449            // 统一使用协调器的UART引脚配置（P1.4/P1.5）
+    450            /********** 1. 配置UART0的P1.4/P1.5和PERCFG寄存器 **********/
+    451            // PERCFG的bit0(U0CFG)设置为1：UART0映射到Alternative 2位置(P1.4/P1.5)
+    452            PERCFG |= (1 << 0);  // 配置PERCFG |= 0x01来设置相应的bit0
+    453          
+    454            /********** 2. 配置P1.4/P1.5为UART0功能和P1端口寄存器 **********/
+    455            // P1SEL的bit4(P1.4)和bit5(P1.5)设置为1：配置为外设功能(UART)
+    456            P1SEL |= (1 << 4) | (1 << 5);  // 配置P1SEL |= 0x30(00110000)
+    457            // P1DIR的bit4(P1.4=TX)设置为1：输出；bit5(P1.5=RX)设置为0：输入
+    458            P1DIR |= (1 << 4);   // P1.4(TX)作为输出
+    459            P1DIR &= ~(1 << 5);  // P1.5(RX)作为输入
+    460          
+    461            halUARTCfg_t uartConfig;
+    462            /* UART Configuration */
+    463            uartConfig.configured          = TRUE;      // Enable configuration
+    464            uartConfig.baudRate            = HAL_UART_BR_115200;  // Baud rate
+    465            uartConfig.flowControl         = FALSE;     // Disable hardware flow control
+    466            uartConfig.flowControlThreshold= 0;         // Flow control threshold
+    467            uartConfig.rx.maxBufSize       = ZCLZEM_UART_BUF_LEN;  // Receive buffer size
+    468            uartConfig.tx.maxBufSize       = 0;         // Transmit buffer size
+    469            uartConfig.idleTimeout         = 6;         // Default timeout
+    470            uartConfig.intEnable           = TRUE;      // Enable interrupt
+    471            uartConfig.callBackFunc        = zclZEM_UartCB;  // Set callback function
+    472            /* Start UART */
+    473            // 统一使用UART0端口（协调器配置）
+    474            HalUARTOpen(HAL_UART_PORT_0, &uartConfig);  // Open UART0 with configuration
+    475          }
+    476          
+    477          
+    478          void zclZEM_SendMACToCoordinator(void)
+    479          {
+    480            uint8* macAddr;
+    481            uint8 macData[10]; // MAC地址数据包：1字节类型标识 + 8字节MAC地址 + 1字节结束符
+    482            
+    483            // 读取MAC地址
+    484            macAddr = NLME_GetExtAddr();
+    485            
+    486            // 构建数据包
+    487            macData[0] = 0x01; // 类型标识：MAC地址数据
+    488            osal_memcpy(&macData[1], macAddr, 8); // 复制MAC地址
+    489            macData[9] = 0x00; // 结束符
+    490            
+    491            // 向协调器发送数据（协调器网络地址通常为0x0000）
+    492            zclZEM_AF_P2P(0x0000, // 协调器网络地址
+    493                          CLUSTER_P2P, // 使用点对点集群
+    494                          10, // 数据长度
+    495                          macData); // 数据内容
+    496            
+    497            // 同时通过串口显示发送信息
+    498            uint8 sendMsg[] = "MAC address sent to coordinator!\r\n";
+    499            HalUARTWrite(HAL_UART_PORT_0, sendMsg, sizeof(sendMsg)-1);
+    500          }
+    501          
+    502          /*********************************************************************
+    503           * @fn      zclZEM_ReadAndSendMAC
+    504           *
+    505           * @brief   Read MAC address and send it via UART
+    506           *
+    507           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    508          void zclZEM_ReadAndSendMAC(void)
+   \                     zclZEM_ReadAndSendMAC:
+    509          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV       A,#-0xc
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 56
+   \   000005   74C8         MOV       A,#-0x38
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+    510            uint8* macAddr;
+    511            uint8 macStr[50]; // 足够存储MAC地址字符串
+    512            uint8 i, pos = 0;
+    513            
+    514            // Read MAC address from system
+    515            macAddr = NLME_GetExtAddr();
+   \   00000A                ; Setup parameters for call to function NLME_GetExtAddr
+   \   00000A   12....       LCALL     `??NLME_GetExtAddr::?relay`; Banked call to: NLME_GetExtAddr
+   \   00000D   8A..         MOV       ?V0,R2
+   \   00000F   8B..         MOV       ?V1,R3
+   \   000011   AE..         MOV       R6,?V0
+   \   000013   AF..         MOV       R7,?V1
+    516            
+    517            // 手动构建MAC地址字符串
+    518            const uint8 header[] = "MAC: ";
+   \   000015   90....       MOV       DPTR,#`?<Constant "MAC: ">`
+   \   000018   AC..         MOV       R4,?XSP + 0
+   \   00001A   AD..         MOV       R5,?XSP + 1
+   \   00001C   7406         MOV       A,#0x6
+   \   00001E   12....       LCALL     ?MOVE_LONG8_XDATA_XDATA
+    519            osal_memcpy(macStr, header, 4);
+   \   000021                ; Setup parameters for call to function osal_memcpy
+   \   000021   A8..         MOV       R0,?XSP + 0
+   \   000023   A9..         MOV       R1,?XSP + 1
+   \   000025   88..         MOV       ?V0,R0
+   \   000027   89..         MOV       ?V1,R1
+   \   000029   F5..         MOV       ?V2,A
+   \   00002B   78..         MOV       R0,#?V0
+   \   00002D   12....       LCALL     ?PUSH_XSTACK_I_THREE
+   \   000030   7C04         MOV       R4,#0x4
+   \   000032   7D00         MOV       R5,#0x0
+   \   000034   7409         MOV       A,#0x9
+   \   000036   12....       LCALL     ?XSTACK_DISP101_8
+   \   000039   12....       LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   00003C   7403         MOV       A,#0x3
+   \   00003E   12....       LCALL     ?DEALLOC_XSTACK8
+    520            pos = 4;
+   \   000041   7804         MOV       R0,#0x4
+    521            
+    522            // 添加MAC地址字节，格式化为十六进制
+    523            for (i = 0; i < 8; i++) {
+   \   000043   7C00         MOV       R4,#0x0
+    524              // 转换高4位
+    525              uint8 highNibble = (macAddr[i] >> 4) & 0x0F;
+   \                     ??zclZEM_ReadAndSendMAC_0:
+   \   000045   EC           MOV       A,R4
+   \   000046   FA           MOV       R2,A
+   \   000047   EE           MOV       A,R6
+   \   000048   2A           ADD       A,R2
+   \   000049   FA           MOV       R2,A
+   \   00004A   E4           CLR       A
+   \   00004B   3F           ADDC      A,R7
+   \   00004C   FB           MOV       R3,A
+   \   00004D   8A82         MOV       DPL,R2
+   \   00004F   8B83         MOV       DPH,R3
+   \   000051   E0           MOVX      A,@DPTR
+   \   000052   C4           SWAP      A
+   \   000053   540F         ANL       A,#0xf
+   \   000055   F9           MOV       R1,A
+    526              macStr[pos++] = (highNibble < 10) ? ('0' + highNibble) : ('A' + highNibble - 10);
+   \   000056   88..         MOV       ?V0,R0
+   \   000058   7401         MOV       A,#0x1
+   \   00005A   28           ADD       A,R0
+   \   00005B   F8           MOV       R0,A
+   \   00005C   E9           MOV       A,R1
+   \   00005D   C3           CLR       C
+   \   00005E   940A         SUBB      A,#0xa
+   \   000060   5004         JNC       ??zclZEM_ReadAndSendMAC_1
+   \   000062   7430         MOV       A,#0x30
+   \   000064   8002         SJMP      ??zclZEM_ReadAndSendMAC_2
+   \                     ??zclZEM_ReadAndSendMAC_1:
+   \   000066   7437         MOV       A,#0x37
+   \                     ??zclZEM_ReadAndSendMAC_2:
+   \   000068   29           ADD       A,R1
+   \   000069   C0E0         PUSH      A
+   \   00006B   E5..         MOV       A,?V0
+   \   00006D   F5..         MOV       ?V2,A
+   \   00006F   7406         MOV       A,#0x6
+   \   000071   12....       LCALL     ?XSTACK_DISP0_8
+   \   000074   E582         MOV       A,DPL
+   \   000076   25..         ADD       A,?V2
+   \   000078   F582         MOV       DPL,A
+   \   00007A   E4           CLR       A
+   \   00007B   3583         ADDC      A,DPH
+   \   00007D   F583         MOV       DPH,A
+   \   00007F   D0E0         POP       A
+   \   000081   F0           MOVX      @DPTR,A
+    527              
+    528              // 转换低4位
+    529              uint8 lowNibble = macAddr[i] & 0x0F;
+   \   000082   8A82         MOV       DPL,R2
+   \   000084   8B83         MOV       DPH,R3
+   \   000086   E0           MOVX      A,@DPTR
+   \   000087   540F         ANL       A,#0xf
+   \   000089   F9           MOV       R1,A
+    530              macStr[pos++] = (lowNibble < 10) ? ('0' + lowNibble) : ('A' + lowNibble - 10);
+   \   00008A   88..         MOV       ?V1,R0
+   \   00008C   7401         MOV       A,#0x1
+   \   00008E   28           ADD       A,R0
+   \   00008F   F8           MOV       R0,A
+   \   000090   E9           MOV       A,R1
+   \   000091   C3           CLR       C
+   \   000092   940A         SUBB      A,#0xa
+   \   000094   5004         JNC       ??zclZEM_ReadAndSendMAC_3
+   \   000096   7430         MOV       A,#0x30
+   \   000098   8002         SJMP      ??zclZEM_ReadAndSendMAC_4
+   \                     ??zclZEM_ReadAndSendMAC_3:
+   \   00009A   7437         MOV       A,#0x37
+   \                     ??zclZEM_ReadAndSendMAC_4:
+   \   00009C   29           ADD       A,R1
+   \   00009D   F9           MOV       R1,A
+   \   00009E   AA..         MOV       R2,?V1
+   \   0000A0   7406         MOV       A,#0x6
+   \   0000A2   12....       LCALL     ?XSTACK_DISP0_8
+   \   0000A5   12....       LCALL     ?Subroutine12 & 0xFFFF
+   \                     ??CrossCallReturnLabel_13:
+   \   0000A8   E9           MOV       A,R1
+   \   0000A9   F0           MOVX      @DPTR,A
+    531              
+    532              // 添加冒号分隔符（最后一个字节后不加）
+    533              if (i < 7) {
+   \   0000AA   EC           MOV       A,R4
+   \   0000AB   C3           CLR       C
+   \   0000AC   9407         SUBB      A,#0x7
+   \   0000AE   500C         JNC       ??zclZEM_ReadAndSendMAC_5
+    534                macStr[pos++] = ':';
+   \   0000B0   7406         MOV       A,#0x6
+   \   0000B2   12....       LCALL     ?XSTACK_DISP0_8
+   \   0000B5   12....       LCALL     ?Subroutine15 & 0xFFFF
+    535              }
+    536            }
+   \                     ??CrossCallReturnLabel_19:
+   \   0000B8   743A         MOV       A,#0x3a
+   \   0000BA   F0           MOVX      @DPTR,A
+   \   0000BB   08           INC       R0
+   \                     ??zclZEM_ReadAndSendMAC_5:
+   \   0000BC   0C           INC       R4
+   \   0000BD   EC           MOV       A,R4
+   \   0000BE   C3           CLR       C
+   \   0000BF   9408         SUBB      A,#0x8
+   \   0000C1   4082         JC        ??zclZEM_ReadAndSendMAC_0
+    537            
+    538            // 添加换行符
+    539            macStr[pos++] = '\r';
+   \   0000C3   E8           MOV       A,R0
+   \   0000C4   FA           MOV       R2,A
+   \   0000C5   7406         MOV       A,#0x6
+   \   0000C7   12....       LCALL     ?XSTACK_DISP0_8
+   \   0000CA   12....       LCALL     ?Subroutine12 & 0xFFFF
+   \                     ??CrossCallReturnLabel_14:
+   \   0000CD   740D         MOV       A,#0xd
+   \   0000CF   F0           MOVX      @DPTR,A
+   \   0000D0   08           INC       R0
+    540            macStr[pos++] = '\n';
+   \   0000D1   7406         MOV       A,#0x6
+   \   0000D3   12....       LCALL     ?XSTACK_DISP0_8
+   \   0000D6   12....       LCALL     ?Subroutine15 & 0xFFFF
+   \                     ??CrossCallReturnLabel_20:
+   \   0000D9   740A         MOV       A,#0xa
+   \   0000DB   F0           MOVX      @DPTR,A
+    541            
+    542            // Send MAC address via UART
+    543            // 统一使用UART0端口（协调器配置）
+    544            HalUARTWrite(HAL_UART_PORT_0, macStr, pos);
+   \   0000DC                ; Setup parameters for call to function HalUARTWrite
+   \   0000DC   7401         MOV       A,#0x1
+   \   0000DE   28           ADD       A,R0
+   \   0000DF   FC           MOV       R4,A
+   \   0000E0   7D00         MOV       R5,#0x0
+   \   0000E2   7406         MOV       A,#0x6
+   \   0000E4   12....       LCALL     ?XSTACK_DISP101_8
+   \   0000E7   7900         MOV       R1,#0x0
+   \   0000E9   12....       LCALL     `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+    545          }
+   \   0000EC   7438         MOV       A,#0x38
+   \   0000EE   02....       LJMP      ?Subroutine1 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine15:
+   \   000000   E582         MOV       A,DPL
+   \   000002   28           ADD       A,R0
+   \   000003   F582         MOV       DPL,A
+   \   000005   E4           CLR       A
+   \   000006   3583         ADDC      A,DPH
+   \   000008   F583         MOV       DPH,A
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine12:
+   \   000000   E582         MOV       A,DPL
+   \   000002   2A           ADD       A,R2
+   \   000003   F582         MOV       DPL,A
+   \   000005   E4           CLR       A
+   \   000006   3583         ADDC      A,DPH
+   \   000008   F583         MOV       DPH,A
+   \   00000A   22           RET
+    546          
+    547          /*********************************************************************
+    548           * @fn      zclZEM_UartCB
+    549           *
+    550           * @brief   UART callback function
+    551           *
+    552           * @param   port - UART port
+    553           * @param   event - UART event
+    554           *
+    555           * @return  none
+    556           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    557          static void zclZEM_UartCB(uint8 port, uint8 event)
+   \                     zclZEM_UartCB:
+    558          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    559            // 获取当前串口接收缓冲区有多少字节的数据
+    560            uint8 rxLen = Hal_UART_RxBufLen(HAL_UART_PORT_0); 
+   \   000005                ; Setup parameters for call to function Hal_UART_RxBufLen
+   \   000005   7900         MOV       R1,#0x0
+   \   000007   12....       LCALL     `??Hal_UART_RxBufLen::?relay`; Banked call to: Hal_UART_RxBufLen
+   \   00000A   EA           MOV       A,R2
+    561            if(rxLen != 0) // 如果字节数数量不等于0 
+   \   00000B   601A         JZ        ??zclZEM_UartCB_0
+    562            {
+    563              // 从串口缓冲区中读取数据
+    564              HalUARTRead(HAL_UART_PORT_0, zclZEM_UartBuf, rxLen);
+   \   00000D   FE           MOV       R6,A
+   \   00000E                ; Setup parameters for call to function HalUARTRead
+   \   00000E   FC           MOV       R4,A
+   \   00000F   7D00         MOV       R5,#0x0
+   \   000011   7A..         MOV       R2,#zclZEM_UartBuf & 0xff
+   \   000013   7B..         MOV       R3,#(zclZEM_UartBuf >> 8) & 0xff
+   \   000015   7900         MOV       R1,#0x0
+   \   000017   12....       LCALL     `??HalUARTRead::?relay`; Banked call to: HalUARTRead
+    565              // 通过串口发送数据，例如把数据发送到串口助手
+    566              HalUARTWrite(HAL_UART_PORT_0, zclZEM_UartBuf, rxLen);  
+   \   00001A                ; Setup parameters for call to function HalUARTWrite
+   \   00001A   EE           MOV       A,R6
+   \   00001B   FC           MOV       R4,A
+   \   00001C   7D00         MOV       R5,#0x0
+   \   00001E   7A..         MOV       R2,#zclZEM_UartBuf & 0xff
+   \   000020   7B..         MOV       R3,#(zclZEM_UartBuf >> 8) & 0xff
+   \   000022   7900         MOV       R1,#0x0
+   \   000024   12....       LCALL     `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+    567            }
+    568          }
+   \                     ??zclZEM_UartCB_0:
+   \   000027                REQUIRE ?Subroutine2
+   \   000027                ; // Fall through to label ?Subroutine2
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   7F01         MOV       R7,#0x1
+   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+    569          
+    570          /*********************************************************************
+    571           * @fn      zclZEM_HandleKeys
+    572           *
+    573           * @brief   Handles all key events for this device.
+    574           *
+    575           * @param   shift - true if in shift/alt.
+    576           * @param   keys - bit field for key events. Valid entries:
+    577           *                 HAL_KEY_SW_5
+    578           *                 HAL_KEY_SW_4
+    579           *                 HAL_KEY_SW_3
+    580           *                 HAL_KEY_SW_2
+    581           *                 HAL_KEY_SW_1
+    582           *
+    583           * @return  none
+    584           */
+    585          static void zclZEM_HandleKeys( byte shift, byte keys )
+    586          {
+    587          }
+    588          
+    589          /*********************************************************************
+    590           * @fn      zclZEM_LcdDisplayMainMode
+    591           *
+    592           * @brief   Called to display the main screen on the LCD.
+    593           *
+    594           * @param   none
+    595           *
+    596           * @return  none
+    597           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    598          static void zclZEM_ProcessCommissioningStatus(bdbCommissioningModeMsg_t* bdbCommissioningModeMsg)
+   \                     zclZEM_ProcessCommissioningStatus:
+    599          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 51
+   \   000004   74CD         MOV       A,#-0x33
+   \   000006   12....       LCALL     ?ALLOC_XSTACK8
+    600              switch(bdbCommissioningModeMsg->bdbCommissioningMode)
+   \   000009   8A82         MOV       DPL,R2
+   \   00000B   8B83         MOV       DPH,R3
+   \   00000D   A3           INC       DPTR
+   \   00000E   E0           MOVX      A,@DPTR
+   \   00000F   14           DEC       A
+   \   000010   601B         JZ        ??zclZEM_ProcessCommissioningStatus_0
+   \   000012   14           DEC       A
+   \   000013   6006         JZ        ??zclZEM_ProcessCommissioningStatus_1
+   \   000015   24FD         ADD       A,#-0x3
+   \   000017   6034         JZ        ??zclZEM_ProcessCommissioningStatus_2
+   \   000019   8052         SJMP      ??zclZEM_ProcessCommissioningStatus_3
+    601              {
+    602                case BDB_COMMISSIONING_FORMATION:
+    603                  if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_SUCCESS)
+   \                     ??zclZEM_ProcessCommissioningStatus_1:
+   \   00001B   8A82         MOV       DPL,R2
+   \   00001D   8B83         MOV       DPH,R3
+   \   00001F   E0           MOVX      A,@DPTR
+   \   000020   704B         JNZ       ??zclZEM_ProcessCommissioningStatus_3
+    604                  {
+    605                    //After formation, perform nwk steering again plus the remaining commissioning modes that has not been process yet
+    606                    bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_STEERING | bdbCommissioningModeMsg->bdbRemainingCommissioningModes);
+   \   000022                ; Setup parameters for call to function bdb_StartCommissioning
+   \   000022   A3           INC       DPTR
+   \   000023   A3           INC       DPTR
+   \   000024   E0           MOVX      A,@DPTR
+   \   000025   4402         ORL       A,#0x2
+   \   000027   F9           MOV       R1,A
+   \   000028   12....       LCALL     `??bdb_StartCommissioning::?relay`; Banked call to: bdb_StartCommissioning
+   \   00002B   8040         SJMP      ??zclZEM_ProcessCommissioningStatus_3
+    607                    // 网络形成成功
+    608                    #ifdef ZDO_COORDINATOR
+    609                    uint8 successMsg[] = "Network formation successful!\r\n";
+    610                    HalUARTWrite(HAL_UART_PORT_0, successMsg, sizeof(successMsg)-1);
+    611                    #endif
+    612                  }
+    613                  else
+    614                  {
+    615                    //Want to try other channels?
+    616                    //try with bdb_setChannelAttribute
+    617                    // 网络形成失败
+    618                    #ifdef ZDO_COORDINATOR
+    619                    uint8 failMsg[] = "Network formation failed! Retrying in 5 seconds...\r\n";
+    620                    HalUARTWrite(HAL_UART_PORT_0, failMsg, sizeof(failMsg)-1);
+    621                    
+    622                    // 无限重试网络形成 - 确保每次失败后都重新设置定时器
+    623                    osal_start_timerEx(zclZEM_TaskID, ZEM_RETRY_FORMATION_EVT, 5000);
+    624                    #endif
+    625                  }
+    626                break;
+    627                case BDB_COMMISSIONING_NWK_STEERING:
+    628                  if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_SUCCESS)
+   \                     ??zclZEM_ProcessCommissioningStatus_0:
+   \   00002D   8A82         MOV       DPL,R2
+   \   00002F   8B83         MOV       DPH,R3
+   \   000031   E0           MOVX      A,@DPTR
+   \   000032   6039         JZ        ??zclZEM_ProcessCommissioningStatus_3
+    629                  {
+    630                    //YOUR JOB:
+    631                    //We are on the nwk, what now?
+    632                    // 网络引导成功
+    633                    #ifdef ZDO_COORDINATOR
+    634                    uint8 deviceJoinedMsg[] = "Device joined the network!\r\n";
+    635                    HalUARTWrite(HAL_UART_PORT_0, deviceJoinedMsg, sizeof(deviceJoinedMsg)-1);
+    636                    #endif
+    637                  }
+    638                  else
+    639                  {
+    640                    // 网络引导失败
+    641                    #ifdef ZDO_COORDINATOR
+    642                    /* 协调器 */
+    643                    #else
+    644                    /* 路由器或者终端 */
+    645                    uint8 failMsg[] = "Network steering failed! Retrying in 1 second...\r\n";
+   \   000034   90....       MOV       DPTR,#`?<Constant "Network steering fail...">`
+   \   000037   AC..         MOV       R4,?XSP + 0
+   \   000039   AD..         MOV       R5,?XSP + 1
+   \   00003B   7433         MOV       A,#0x33
+   \   00003D   12....       LCALL     ?MOVE_LONG8_XDATA_XDATA
+    646                    HalUARTWrite(HAL_UART_PORT_0, failMsg, sizeof(failMsg)-1);
+   \   000040                ; Setup parameters for call to function HalUARTWrite
+   \   000040   7C32         MOV       R4,#0x32
+   \   000042   FD           MOV       R5,A
+   \   000043   AA..         MOV       R2,?XSP + 0
+   \   000045   AB..         MOV       R3,?XSP + 1
+   \   000047   F9           MOV       R1,A
+   \   000048   12....       LCALL     `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+    647                    
+    648                    /* 无限重试网络引导 */
+    649                    osal_start_timerEx(zclZEM_TaskID, 
+    650                                              ZEM_REJOIN_EVT, 
+    651                                              ZEM_REJOIN_PERIOD);
+   \   00004B                ; Setup parameters for call to function osal_start_timerEx
+   \   00004B   8009         SJMP      ??zclZEM_ProcessCommissioningStatus_4
+    652                    #endif
+    653                  }
+    654                  break;
+    655                case BDB_COMMISSIONING_FINDING_BINDING:
+    656                  if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_SUCCESS)
+    657                  {
+    658                    //YOUR JOB:
+    659                  }
+    660                  else
+    661                  {
+    662                    //YOUR JOB:
+    663                    //retry?, wait for user interaction?
+    664                  }
+    665                break;
+    666                case BDB_COMMISSIONING_INITIALIZATION:
+    667                  //Initialization notification can only be successful. Failure on initialization 
+    668                  //only happens for ZED and is notified as BDB_COMMISSIONING_PARENT_LOST notification
+    669                  
+    670                  //YOUR JOB:
+    671                  //We are on a network, what now?
+    672                  
+    673                break;
+    674          #if ZG_BUILD_ENDDEVICE_TYPE    
+    675              case BDB_COMMISSIONING_PARENT_LOST:
+    676                if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_NETWORK_RESTORED)
+   \                     ??zclZEM_ProcessCommissioningStatus_2:
+   \   00004D   8A82         MOV       DPL,R2
+   \   00004F   8B83         MOV       DPH,R3
+   \   000051   E0           MOVX      A,@DPTR
+   \   000052   640D         XRL       A,#0xd
+   \   000054   6017         JZ        ??zclZEM_ProcessCommissioningStatus_3
+    677                {
+    678                  //We did recover from losing parent
+    679                }
+    680                else
+    681                {
+    682                  //Parent not found, attempt to rejoin again after a fixed delay
+    683                  //osal_start_timerEx(zclZEM_TaskID, SAMPLEAPP_END_DEVICE_REJOIN_EVT, SAMPLEAPP_END_DEVICE_REJOIN_DELAY);
+    684                  
+    685                  /* 协调器 */
+    686          #ifdef ZDO_COORDINATOR
+    687                  /* 路由器或者终端 */
+    688          #else
+    689                /* 启动重新加入事件 */
+    690                osal_start_timerEx(zclZEM_TaskID, 
+    691                                  ZEM_REJOIN_EVT, 
+    692                                  ZEM_REJOIN_PERIOD);
+   \   000056                ; Setup parameters for call to function osal_start_timerEx
+   \                     ??zclZEM_ProcessCommissioningStatus_4:
+   \   000056   90....       MOV       DPTR,#__Constant_3e8
+   \   000059   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   00005C   7A00         MOV       R2,#0x0
+   \   00005E   7B01         MOV       R3,#0x1
+   \   000060   90....       MOV       DPTR,#zclZEM_TaskID
+   \   000063   E0           MOVX      A,@DPTR
+   \   000064   F9           MOV       R1,A
+   \   000065   12....       LCALL     `??osal_start_timerEx::?relay`; Banked call to: osal_start_timerEx
+   \   000068   7404         MOV       A,#0x4
+   \   00006A   12....       LCALL     ?DEALLOC_XSTACK8
+    693          #endif
+    694                }
+    695              break;
+    696          #endif 
+    697              }
+    698          
+    699          }
+   \                     ??zclZEM_ProcessCommissioningStatus_3:
+   \   00006D   7433         MOV       A,#0x33
+   \   00006F   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000072                REQUIRE ?Subroutine3
+   \   000072                ; // Fall through to label ?Subroutine3
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   D083         POP       DPH
+   \   000002   D082         POP       DPL
+   \   000004   02....       LJMP      ?BRET
+    700          
+    701          /*********************************************************************
+    702           * @fn      zclZEM_BasicResetCB
+    703           *
+    704           * @brief   Callback from the ZCL General Cluster Library
+    705           *          to set all the Basic Cluster attributes to default values.
+    706           *
+    707           * @param   none
+    708           *
+    709           * @return  none
+    710           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    711          static void zclZEM_BasicResetCB( void )
+   \                     zclZEM_BasicResetCB:
+    712          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    713            zclZEM_ResetAttributesToDefaultValues();
+   \   000004                ; Setup parameters for call to function zclZEM_ResetAttributesToDefaultValues
+   \   000004   12....       LCALL     `??zclZEM_ResetAttributesToDefaultValues::?relay`; Banked call to: zclZEM_ResetAttributesToDefaultValues
+    714            
+    715          }
+   \   000007   80..         SJMP      ?Subroutine3
+    716          
+    717          /*********************************************************************
+    718           * @fn      zclSampleApp_BatteryWarningCB
+    719           *
+    720           * @brief   Called to handle battery-low situation.
+    721           *
+    722           * @param   voltLevel - level of severity
+    723           *
+    724           * @return  none
+    725           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    726          void zclSampleApp_BatteryWarningCB( uint8 voltLevel )
+   \                     zclSampleApp_BatteryWarningCB:
+    727          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    728            if ( voltLevel == VOLT_LEVEL_CAUTIOUS )
+    729            {
+    730              // Send warning message to the gateway and blink LED
+    731            }
+    732            else if ( voltLevel == VOLT_LEVEL_BAD )
+    733            {
+    734              // Shut down the system
+    735            }
+    736          }
+   \   000000   02....       LJMP      ?BRET
+    737          
+    738          /******************************************************************************
+    739           *
+    740           *  Functions for processing ZCL Foundation incoming Command/Response messages
+    741           *
+    742           *****************************************************************************/
+    743          
+    744          /*********************************************************************
+    745           * @fn      zclZEM_ProcessIncomingMsg
+    746           *
+    747           * @brief   Process ZCL Foundation incoming message
+    748           *
+    749           * @param   pInMsg - pointer to the received message
+    750           *
+    751           * @return  none
+    752           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    753          static void zclZEM_ProcessIncomingMsg( zclIncomingMsg_t *pInMsg)
+   \                     zclZEM_ProcessIncomingMsg:
+    754          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    755            switch ( pInMsg->zclHdr.commandID )
+   \   000005   EA           MOV       A,R2
+   \   000006   2417         ADD       A,#0x17
+   \   000008   12....       LCALL     ?Subroutine13 & 0xFFFF
+   \                     ??CrossCallReturnLabel_15:
+   \   00000B   A3           INC       DPTR
+   \   00000C   A3           INC       DPTR
+   \   00000D   A3           INC       DPTR
+   \   00000E   E0           MOVX      A,@DPTR
+   \   00000F   14           DEC       A
+   \   000010   6016         JZ        ??zclZEM_ProcessIncomingMsg_0
+   \   000012   24FD         ADD       A,#-0x3
+   \   000014   601F         JZ        ??zclZEM_ProcessIncomingMsg_1
+   \   000016   24F7         ADD       A,#-0x9
+   \   000018   602D         JZ        ??zclZEM_ProcessIncomingMsg_2
+   \   00001A   24FB         ADD       A,#-0x5
+   \   00001C   6024         JZ        ??zclZEM_ProcessIncomingMsg_3
+   \   00001E   24FE         ADD       A,#-0x2
+   \   000020   6020         JZ        ??zclZEM_ProcessIncomingMsg_3
+   \   000022   24FE         ADD       A,#-0x2
+   \   000024   6033         JZ        ??zclZEM_ProcessIncomingMsg_4
+   \   000026   8043         SJMP      ??zclZEM_ProcessIncomingMsg_5
+    756            {
+    757          #ifdef ZCL_READ
+    758              case ZCL_CMD_READ_RSP:
+    759                zclZEM_ProcessInReadRspCmd( pInMsg );
+   \                     ??zclZEM_ProcessIncomingMsg_0:
+   \   000028   12....       LCALL     ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_11:
+   \   00002B   E0           MOVX      A,@DPTR
+   \   00002C   F9           MOV       R1,A
+   \   00002D   E8           MOV       A,R0
+   \   00002E   C3           CLR       C
+   \   00002F   99           SUBB      A,R1
+   \   000030   5039         JNC       ??zclZEM_ProcessIncomingMsg_5
+   \   000032   08           INC       R0
+   \   000033   80F6         SJMP      ??CrossCallReturnLabel_11
+    760                break;
+    761          #endif
+    762          #ifdef ZCL_WRITE
+    763              case ZCL_CMD_WRITE_RSP:
+    764                zclZEM_ProcessInWriteRspCmd( pInMsg );
+   \                     ??zclZEM_ProcessIncomingMsg_1:
+   \   000035   12....       LCALL     ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_12:
+   \   000038   E0           MOVX      A,@DPTR
+   \   000039   F9           MOV       R1,A
+   \   00003A   E8           MOV       A,R0
+   \   00003B   C3           CLR       C
+   \   00003C   99           SUBB      A,R1
+   \   00003D   502C         JNC       ??zclZEM_ProcessIncomingMsg_5
+   \   00003F   08           INC       R0
+   \   000040   80F6         SJMP      ??CrossCallReturnLabel_12
+    765                break;
+    766          #endif
+    767          #ifdef ZCL_REPORT
+    768              // See ZCL Test Applicaiton (zcl_testapp.c) for sample code on Attribute Reporting
+    769              case ZCL_CMD_CONFIG_REPORT:
+    770                //zclZEM_ProcessInConfigReportCmd( pInMsg );
+    771                break;
+    772                case ZCL_CMD_READ_REPORT_CFG:
+    773                //zclZEM_ProcessInReadReportCfgCmd( pInMsg );
+    774                break;
+    775              case ZCL_CMD_CONFIG_REPORT_RSP:
+    776                //zclZEM_ProcessInConfigReportRspCmd( pInMsg );
+    777                break;
+    778              case ZCL_CMD_READ_REPORT_CFG_RSP:
+    779                //zclZEM_ProcessInReadReportCfgRspCmd( pInMsg );
+    780                break;
+    781          
+    782              case ZCL_CMD_REPORT:
+    783                //zclZEM_ProcessInReportCmd( pInMsg );
+    784                break;
+    785          #endif
+    786              case ZCL_CMD_DEFAULT_RSP:
+    787                zclZEM_ProcessInDefaultRspCmd( pInMsg );
+    788                break;
+    789          #ifdef ZCL_DISCOVER
+    790              case ZCL_CMD_DISCOVER_CMDS_RECEIVED_RSP:
+    791                zclZEM_ProcessInDiscCmdsRspCmd( pInMsg );
+   \                     ??zclZEM_ProcessIncomingMsg_3:
+   \   000042                ; Setup parameters for call to function zclZEM_ProcessInDiscCmdsRspCmd
+    792                break;
+    793          
+    794              case ZCL_CMD_DISCOVER_CMDS_GEN_RSP:
+    795                zclZEM_ProcessInDiscCmdsRspCmd( pInMsg );
+   \   000042                ; Setup parameters for call to function zclZEM_ProcessInDiscCmdsRspCmd
+   \   000042   12....       LCALL     `??zclZEM_ProcessInDiscCmdsRspCmd::?relay`; Banked call to: zclZEM_ProcessInDiscCmdsRspCmd
+    796                break;
+   \   000045   8024         SJMP      ??zclZEM_ProcessIncomingMsg_5
+    797          
+    798              case ZCL_CMD_DISCOVER_ATTRS_RSP:
+    799                zclZEM_ProcessInDiscAttrsRspCmd( pInMsg );
+   \                     ??zclZEM_ProcessIncomingMsg_2:
+   \   000047   12....       LCALL     ?Subroutine11 & 0xFFFF
+   \                     ??CrossCallReturnLabel_22:
+   \   00004A   8882         MOV       DPL,R0
+   \   00004C   8983         MOV       DPH,R1
+   \   00004E   A3           INC       DPTR
+   \   00004F   E0           MOVX      A,@DPTR
+   \   000050   FB           MOV       R3,A
+   \   000051   EA           MOV       A,R2
+   \   000052   C3           CLR       C
+   \   000053   9B           SUBB      A,R3
+   \   000054   5015         JNC       ??zclZEM_ProcessIncomingMsg_5
+   \   000056   0A           INC       R2
+   \   000057   80F1         SJMP      ??CrossCallReturnLabel_22
+    800                break;
+    801          
+    802              case ZCL_CMD_DISCOVER_ATTRS_EXT_RSP:
+    803                zclZEM_ProcessInDiscAttrsExtRspCmd( pInMsg );
+   \                     ??zclZEM_ProcessIncomingMsg_4:
+   \   000059   12....       LCALL     ?Subroutine11 & 0xFFFF
+    804                break;
+    805          #endif
+    806              default:
+    807                break;
+    808            }
+   \                     ??CrossCallReturnLabel_23:
+   \   00005C   8001         SJMP      ??zclZEM_ProcessIncomingMsg_6
+   \                     ??zclZEM_ProcessIncomingMsg_7:
+   \   00005E   0A           INC       R2
+   \                     ??zclZEM_ProcessIncomingMsg_6:
+   \   00005F   8882         MOV       DPL,R0
+   \   000061   8983         MOV       DPH,R1
+   \   000063   A3           INC       DPTR
+   \   000064   E0           MOVX      A,@DPTR
+   \   000065   FB           MOV       R3,A
+   \   000066   EA           MOV       A,R2
+   \   000067   C3           CLR       C
+   \   000068   9B           SUBB      A,R3
+   \   000069   40F3         JC        ??zclZEM_ProcessIncomingMsg_7
+    809          
+    810            if ( pInMsg->attrCmd )
+   \                     ??zclZEM_ProcessIncomingMsg_5:
+   \   00006B   8E82         MOV       DPL,R6
+   \   00006D   8F83         MOV       DPH,R7
+   \   00006F   E0           MOVX      A,@DPTR
+   \   000070   FA           MOV       R2,A
+   \   000071   A3           INC       DPTR
+   \   000072   E0           MOVX      A,@DPTR
+   \   000073   FB           MOV       R3,A
+   \   000074   EA           MOV       A,R2
+   \   000075   4B           ORL       A,R3
+   \   000076   6003         JZ        ??zclZEM_ProcessIncomingMsg_8
+    811            {
+    812              osal_mem_free( pInMsg->attrCmd );
+   \   000078                ; Setup parameters for call to function osal_mem_free
+   \   000078   12....       LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+    813            }
+    814          }
+   \                     ??zclZEM_ProcessIncomingMsg_8:
+   \   00007B   02....       LJMP      ?Subroutine2 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine11:
+   \   000000   8E82         MOV       DPL,R6
+   \   000002   8F83         MOV       DPH,R7
+   \   000004                REQUIRE ??Subroutine17_0
+   \   000004                ; // Fall through to label ??Subroutine17_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine17_0:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   F8           MOV       R0,A
+   \   000002   A3           INC       DPTR
+   \   000003   E0           MOVX      A,@DPTR
+   \   000004   F9           MOV       R1,A
+   \   000005   7A00         MOV       R2,#0x0
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine10:
+   \   000000   8E82         MOV       DPL,R6
+   \   000002   8F83         MOV       DPH,R7
+   \   000004   E0           MOVX      A,@DPTR
+   \   000005   F8           MOV       R0,A
+   \   000006   A3           INC       DPTR
+   \   000007   E0           MOVX      A,@DPTR
+   \   000008   F9           MOV       R1,A
+   \   000009   8882         MOV       DPL,R0
+   \   00000B   8983         MOV       DPH,R1
+   \   00000D   7800         MOV       R0,#0x0
+   \   00000F   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine13:
+   \   000000   F8           MOV       R0,A
+   \   000001   E4           CLR       A
+   \   000002   3B           ADDC      A,R3
+   \   000003   F9           MOV       R1,A
+   \   000004   E8           MOV       A,R0
+   \   000005   FE           MOV       R6,A
+   \   000006   E9           MOV       A,R1
+   \   000007   FF           MOV       R7,A
+   \   000008   8A82         MOV       DPL,R2
+   \   00000A   8B83         MOV       DPH,R3
+   \   00000C   A3           INC       DPTR
+   \   00000D   A3           INC       DPTR
+   \   00000E   A3           INC       DPTR
+   \   00000F   A3           INC       DPTR
+   \   000010   22           RET
+    815          
+    816          #ifdef ZCL_READ
+    817          /*********************************************************************
+    818           * @fn      zclZEM_ProcessInReadRspCmd
+    819           *
+    820           * @brief   Process the "Profile" Read Response Command
+    821           *
+    822           * @param   pInMsg - incoming message to process
+    823           *
+    824           * @return  none
+    825           */
+    826          static uint8 zclZEM_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg )
+    827          {
+    828            zclReadRspCmd_t *readRspCmd;
+    829            uint8 i;
+    830          
+    831            readRspCmd = (zclReadRspCmd_t *)pInMsg->attrCmd;
+    832            for ( i = 0; i < readRspCmd->numAttr; i++ )
+    833            {
+    834              // Notify the originator of the results of the original read attributes
+    835              // attempt and, for each successfull request, the value of the requested
+    836              // attribute
+    837            }
+    838          
+    839            return ( TRUE );
+    840          }
+    841          #endif // ZCL_READ
+    842          
+    843          #ifdef ZCL_WRITE
+    844          /*********************************************************************
+    845           * @fn      zclZEM_ProcessInWriteRspCmd
+    846           *
+    847           * @brief   Process the "Profile" Write Response Command
+    848           *
+    849           * @param   pInMsg - incoming message to process
+    850           *
+    851           * @return  none
+    852           */
+    853          static uint8 zclZEM_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg )
+    854          {
+    855            zclWriteRspCmd_t *writeRspCmd;
+    856            uint8 i;
+    857          
+    858            writeRspCmd = (zclWriteRspCmd_t *)pInMsg->attrCmd;
+    859            for ( i = 0; i < writeRspCmd->numAttr; i++ )
+    860            {
+    861              // Notify the device of the results of the its original write attributes
+    862              // command.
+    863            }
+    864          
+    865            return ( TRUE );
+    866          }
+    867          #endif // ZCL_WRITE
+    868          
+    869          /*********************************************************************
+    870           * @fn      zclZEM_ProcessInDefaultRspCmd
+    871           *
+    872           * @brief   Process the "Profile" Default Response Command
+    873           *
+    874           * @param   pInMsg - incoming message to process
+    875           *
+    876           * @return  none
+    877           */
+    878          static uint8 zclZEM_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg )
+    879          {
+    880            // zclDefaultRspCmd_t *defaultRspCmd = (zclDefaultRspCmd_t *)pInMsg->attrCmd;
+    881          
+    882            // Device is notified of the Default Response command.
+    883            (void)pInMsg;
+    884          
+    885            return ( TRUE );
+    886          }
+    887          
+    888          #ifdef ZCL_DISCOVER
+    889          /*********************************************************************
+    890           * @fn      zclZEM_ProcessInDiscCmdsRspCmd
+    891           *
+    892           * @brief   Process the Discover Commands Response Command
+    893           *
+    894           * @param   pInMsg - incoming message to process
+    895           *
+    896           * @return  none
+    897           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    898          static uint8 zclZEM_ProcessInDiscCmdsRspCmd( zclIncomingMsg_t *pInMsg )
+   \                     zclZEM_ProcessInDiscCmdsRspCmd:
+    899          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    900            zclDiscoverCmdsCmdRsp_t *discoverRspCmd;
+    901            uint8 i;
+    902          
+    903            discoverRspCmd = (zclDiscoverCmdsCmdRsp_t *)pInMsg->attrCmd;
+   \   000004   EA           MOV       A,R2
+   \   000005   2417         ADD       A,#0x17
+   \   000007   F582         MOV       DPL,A
+   \   000009   E4           CLR       A
+   \   00000A   3B           ADDC      A,R3
+   \   00000B   F583         MOV       DPH,A
+   \   00000D   12....       LCALL     ??Subroutine17_0 & 0xFFFF
+    904            for ( i = 0; i < discoverRspCmd->numCmd; i++ )
+   \                     ??CrossCallReturnLabel_21:
+   \   000010   8001         SJMP      ??zclZEM_ProcessInDiscCmdsRspCmd_0
+   \                     ??zclZEM_ProcessInDiscCmdsRspCmd_1:
+   \   000012   0A           INC       R2
+   \                     ??zclZEM_ProcessInDiscCmdsRspCmd_0:
+   \   000013   8882         MOV       DPL,R0
+   \   000015   8983         MOV       DPH,R1
+   \   000017   A3           INC       DPTR
+   \   000018   A3           INC       DPTR
+   \   000019   E0           MOVX      A,@DPTR
+   \   00001A   FB           MOV       R3,A
+   \   00001B   EA           MOV       A,R2
+   \   00001C   C3           CLR       C
+   \   00001D   9B           SUBB      A,R3
+   \   00001E   40F2         JC        ??zclZEM_ProcessInDiscCmdsRspCmd_1
+    905            {
+    906              // Device is notified of the result of its attribute discovery command.
+    907            }
+    908          
+    909            return ( TRUE );
+   \   000020   7901         MOV       R1,#0x1
+   \   000022   02....       LJMP      ?Subroutine3 & 0xFFFF
+    910          }
+    911          
+    912          /*********************************************************************
+    913           * @fn      zclZEM_ProcessInDiscAttrsRspCmd
+    914           *
+    915           * @brief   Process the "Profile" Discover Attributes Response Command
+    916           *
+    917           * @param   pInMsg - incoming message to process
+    918           *
+    919           * @return  none
+    920           */
+    921          static uint8 zclZEM_ProcessInDiscAttrsRspCmd( zclIncomingMsg_t *pInMsg )
+    922          {
+    923            zclDiscoverAttrsRspCmd_t *discoverRspCmd;
+    924            uint8 i;
+    925          
+    926            discoverRspCmd = (zclDiscoverAttrsRspCmd_t *)pInMsg->attrCmd;
+    927            for ( i = 0; i < discoverRspCmd->numAttr; i++ )
+    928            {
+    929              // Device is notified of the result of its attribute discovery command.
+    930            }
+    931          
+    932            return ( TRUE );
+    933          }
+    934          
+    935          /*********************************************************************
+    936           * @fn      zclZEM_ProcessInDiscAttrsExtRspCmd
+    937           *
+    938           * @brief   Process the "Profile" Discover Attributes Extended Response Command
+    939           *
+    940           * @param   pInMsg - incoming message to process
+    941           *
+    942           * @return  none
+    943           */
+    944          static uint8 zclZEM_ProcessInDiscAttrsExtRspCmd( zclIncomingMsg_t *pInMsg )
+    945          {
+    946            zclDiscoverAttrsExtRsp_t *discoverRspCmd;
+    947            uint8 i;
+    948          
+    949            discoverRspCmd = (zclDiscoverAttrsExtRsp_t *)pInMsg->attrCmd;
+    950            for ( i = 0; i < discoverRspCmd->numAttr; i++ )
+    951            {
+    952              // Device is notified of the result of its attribute discovery command.
+    953            }
+    954          
+    955            return ( TRUE );
+    956          }
+    957          #endif // ZCL_DISCOVER
+    958          
+    959          
+    960          
+    961          
+    962          /*********************************************************************
+    963           * @fn      zclZEM_AF_P2P
+    964           *
+    965           * @brief   点对点发送函数
+    966           *
+    967           * @param   destNwkAddr - 目标设备的网络地址
+    968           * @param   cid - Cluster ID，后续课程将会详细讲解
+    969           * @param   len - 数据长度
+    970           * @param   data - 数据内容
+    971           *
+    972           * @return  none
+    973           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    974          static void zclZEM_AF_P2P(
+   \                     zclZEM_AF_P2P:
+    975              uint16 destNwkAddr,
+    976              uint16 cid,
+    977              uint8 len,
+    978              uint8 *data)
+    979          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 12
+   \   000005   74F4         MOV       A,#-0xc
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   E9           MOV       A,R1
+   \   00000B   FE           MOV       R6,A
+    980              afAddrType_t dstAddr; //寻址信息配置
+    981              static uint8 transferId = 0;//传输ID，是数据包的标识符
+    982              
+    983              /* Destination */
+    984              dstAddr.addrMode = afAddr16Bit;// 设置目标地址模式为16位网络地址，表示使用P2P的通信方式
+   \   00000C   7408         MOV       A,#0x8
+   \   00000E   12....       LCALL     ?XSTACK_DISP0_8
+   \   000011   7402         MOV       A,#0x2
+   \   000013   12....       LCALL     ?Subroutine5 & 0xFFFF
+    985              dstAddr.addr.shortAddr = destNwkAddr;//目标设备的网络地址
+   \                     ??CrossCallReturnLabel_2:
+   \   000016   EA           MOV       A,R2
+   \   000017   F0           MOVX      @DPTR,A
+   \   000018   A3           INC       DPTR
+   \   000019   EB           MOV       A,R3
+   \   00001A   F0           MOVX      @DPTR,A
+    986              dstAddr.endPoint = ZEM_ENDPOINT;//目标设备的端点号
+   \   00001B   7409         MOV       A,#0x9
+   \   00001D   12....       LCALL     ?XSTACK_DISP0_8
+   \   000020   7408         MOV       A,#0x8
+   \   000022   F0           MOVX      @DPTR,A
+    987              
+    988              transferId++;
+   \   000023   90....       MOV       DPTR,#??transferId
+   \   000026   12....       LCALL     ?Subroutine6 & 0xFFFF
+    989              
+    990              AF_DataRequest(&dstAddr,
+    991                  &ZEM_AppEp,//应用程序端点描述符
+    992                  cid,
+    993                  len,
+    994                  data,
+    995                  &transferId,
+    996                  AF_DISCV_ROUTE,//进行路由扫描操作，用于建立发送数据报文的通信路径。关于这个参数，暂时保持例程默认的代码就可以了
+    997                  AF_DEFAULT_RADIUS);//指定最大的路由跳转级数
+   \                     ??CrossCallReturnLabel_5:
+   \   000029   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   00002C   75....       MOV       ?V0,#??transferId & 0xff
+   \   00002F   75....       MOV       ?V1,#(??transferId >> 8) & 0xff
+   \   000032   78..         MOV       R0,#?V0
+   \   000034   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000037   7419         MOV       A,#0x19
+   \   000039   12....       LCALL     ?XSTACK_DISP0_8
+   \   00003C   12....       LCALL     ?PUSH_XSTACK8_X_TWO
+   \   00003F   EE           MOV       A,R6
+   \   000040   F5..         MOV       ?V0,A
+   \   000042   75..00       MOV       ?V1,#0x0
+   \   000045   78..         MOV       R0,#?V0
+   \   000047   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00004A   8C..         MOV       ?V0,R4
+   \   00004C   8D..         MOV       ?V1,R5
+   \   00004E   78..         MOV       R0,#?V0
+   \   000050   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000053   7900         MOV       R1,#0x0
+   \   000055   7C..         MOV       R4,#ZEM_AppEp & 0xff
+   \   000057   7D..         MOV       R5,#(ZEM_AppEp >> 8) & 0xff
+   \   000059   7409         MOV       A,#0x9
+   \   00005B   12....       LCALL     ?XSTACK_DISP101_8
+   \   00005E   12....       LCALL     `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+   \   000061   7409         MOV       A,#0x9
+   \   000063   12....       LCALL     ?DEALLOC_XSTACK8
+    998          }
+   \   000066   740C         MOV       A,#0xc
+   \   000068   02....       LJMP      ?Subroutine0 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   04           INC       A
+   \   000002   F0           MOVX      @DPTR,A
+   \   000003                ; Setup parameters for call to function AF_DataRequest
+   \   000003                ; Setup parameters for call to function AF_DataRequest
+   \   000003                ; Setup parameters for call to function AF_DataRequest
+   \   000003   75..1E       MOV       ?V0,#0x1e
+   \   000006   78..         MOV       R0,#?V0
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   F0           MOVX      @DPTR,A
+   \   000001   85..82       MOV       DPL,?XSP + 0
+   \   000004   85..83       MOV       DPH,?XSP + 1
+   \   000007   22           RET
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ??transferId:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    999          
+   1000          /*********************************************************************
+   1001           * @fn      zclZEM_AF_Broadcast
+   1002           *
+   1003           * @brief   广播发送函数
+   1004           *
+   1005           * @param   cid - Cluster ID
+   1006           * @param   len - 待发送数据的长度
+   1007           * @param   data - 待发送数据的内容
+   1008           *
+   1009           * @return  none
+   1010           */
+   1011          static void zclZEM_AF_Broadcast(
+   1012              uint16 cid,
+   1013              uint8 len,
+   1014              uint8 *data)
+   1015          {
+   1016              afAddrType_t dstAddr;
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   1017              static uint8 transferId = 0;
+   \                     ??transferId_1:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+   1018              
+   1019              /* Destination */
+   1020              dstAddr.addrMode = afAddrBroadcast;   // 使用广播模式
+   1021              dstAddr.addr.shortAddr = 0xFFFF; // 广播地址
+   1022              dstAddr.endPoint = ZEM_ENDPOINT; // 目标设备的端点号
+   1023              
+   1024              /* Transfer id */
+   1025              transferId++;
+   1026              
+   1027              /* Send */
+   1028              AF_DataRequest(&dstAddr,
+   1029                  &ZEM_AppEp,//应用程序端点描述符
+   1030                  cid,
+   1031                  len,
+   1032                  data,
+   1033                  &transferId,
+   1034                  AF_TX_OPTIONS_NONE,
+   1035                  AF_DEFAULT_RADIUS );//指定了最大的路由跳转级数
+   1036          }
+   1037          
+   1038          /*********************************************************************
+   1039           * @fn      zclZEM_AF_Groupcast
+   1040           *
+   1041           * @brief   组播发送函数
+   1042           *
+   1043           * @param   groupId - 组ID
+   1044           * @param   cid - ClusterID，后续章节将会详细讲解
+   1045           * @param   len - 待发送数据的长度
+   1046           * @param   data - 待发送数据的内容
+   1047           *
+   1048           * @return  none
+   1049           */
+   1050          static void zclZEM_AF_Groupcast(
+   1051              uint16 groupId,
+   1052              uint16 cid,
+   1053              uint8 len,
+   1054              uint8 *data)
+   1055          {
+   1056              afAddrType_t dstAddr;
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   1057              static uint8 transferId = 0;
+   \                     ??transferId_2:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+   1058              
+   1059              /* Destination */
+   1060              dstAddr.addrMode = afAddrGroup;//使用组播通信模式
+   1061              dstAddr.addr.shortAddr = groupId;
+   1062              dstAddr.endPoint = ZEM_ENDPOINT;//组中的设备的端点号
+   1063              
+   1064              /* Transfer id */
+   1065              transferId++;
+   1066              
+   1067              /* Send */
+   1068              AF_DataRequest(&dstAddr,
+   1069                  &ZEM_AppEp,//应用程序端点描述符
+   1070                  cid,
+   1071                  len,
+   1072                  data,
+   1073                  &transferId,
+   1074                  AF_TX_OPTIONS_NONE,
+   1075                  AF_DEFAULT_RADIUS );//指定最大的路由跳转级数，暂时可忽略
+   1076          }
+   1077          
+   1078          /*********************************************************************
+   1079           * @fn      zclZEM_AF_RxProc
+   1080           *
+   1081           * @brief   接收数据处理函数
+   1082           *
+   1083           * @param   MSGpkt - 接收到数据
+   1084           *
+   1085           * @return  none
+   1086           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   1087          static void zclZEM_AF_RxProc(afIncomingMSGPacket_t *MSGpkt)
+   \                     zclZEM_AF_RxProc:
+   1088          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V8
+   \   000000                REQUIRE ?V9
+   \   000000                REQUIRE ?V10
+   \   000000   74ED         MOV       A,#-0x13
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 19
+   \   000005                ; Auto size: 64
+   \   000005   74C0         MOV       A,#-0x40
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   1089              /*计数器，记录接收到的点对点通信数据包个数*/
+   1090              static uint8 p2pCnt = 0;
+   1091              /*计数器，记录接收到的广播通信数据包个数*/
+   1092              static uint8 bcCnt = 0;
+   1093              /*计数器，记录接收到的组播通信数据包个数*/
+   1094              static uint8 gcCnt = 0;
+   1095              
+   1096              switch( MSGpkt->clusterId )  // 判断接收到的数据包的Cluster ID
+   \   00000A   75....       MOV       ?V4,#`?<Constant " Count: ">` & 0xff
+   \   00000D   75....       MOV       ?V5,#(`?<Constant " Count: ">` >> 8) & 0xff
+   \   000010   75..00       MOV       ?V6,#0x0
+   \   000013   EA           MOV       A,R2
+   \   000014   2422         ADD       A,#0x22
+   \   000016   F5..         MOV       ?V0,A
+   \   000018   E4           CLR       A
+   \   000019   3B           ADDC      A,R3
+   \   00001A   F5..         MOV       ?V1,A
+   \   00001C   EA           MOV       A,R2
+   \   00001D   2420         ADD       A,#0x20
+   \   00001F   12....       LCALL     ?Subroutine13 & 0xFFFF
+   \                     ??CrossCallReturnLabel_16:
+   \   000022   E0           MOVX      A,@DPTR
+   \   000023   F5..         MOV       ?V2,A
+   \   000025   A3           INC       DPTR
+   \   000026   E0           MOVX      A,@DPTR
+   \   000027   F5..         MOV       ?V3,A
+   \   000029   78..         MOV       R0,#?V2
+   \   00002B   12....       LCALL     ?US_SWITCH_DENSE
+   \                     `?<Jumptable for zclZEM_AF_RxProc>_0`:
+   \   00002E   0000         DW        0
+   \   000030   02           DB        2
+   \   000031   ....         DW        ??zclZEM_AF_RxProc_0
+   \   000033   ....         DW        ??zclZEM_AF_RxProc_1
+   \   000035   ....         DW        ??zclZEM_AF_RxProc_2
+   \   000037   ....         DW        ??zclZEM_AF_RxProc_3
+   1097              {
+   1098                  case CLUSTER_P2P:
+   1099                      p2pCnt++;  // 接收到P2P数据包，进行计数
+   \                     ??zclZEM_AF_RxProc_1:
+   \   000039   90....       MOV       DPTR,#??p2pCnt
+   \   00003C   E0           MOVX      A,@DPTR
+   \   00003D   04           INC       A
+   \   00003E   F0           MOVX      @DPTR,A
+   1100                      // 通过串口输出接收到的数据和计数器值
+   1101                      {
+   1102                          uint8 p2pMsg[64];
+   1103                          osal_memcpy(p2pMsg, "P2P Data: ", 10);
+   \   00003F                ; Setup parameters for call to function osal_memcpy
+   \   00003F   75....       MOV       ?V8,#`?<Constant "P2P Data: ">` & 0xff
+   \   000042   75....       MOV       ?V9,#(`?<Constant "P2P Data: ">` >> 8) & 0xff
+   \   000045   75..00       MOV       ?V10,#0x0
+   \   000048   78..         MOV       R0,#?V8
+   \   00004A   12....       LCALL     ?PUSH_XSTACK_I_THREE
+   \   00004D   7C0A         MOV       R4,#0xa
+   \   00004F   7D00         MOV       R5,#0x0
+   \   000051   7403         MOV       A,#0x3
+   \   000053   12....       LCALL     ?XSTACK_DISP101_8
+   \   000056   12....       LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000059   7403         MOV       A,#0x3
+   \   00005B   12....       LCALL     ?DEALLOC_XSTACK8
+   1104                          osal_memcpy(p2pMsg + 10, MSGpkt->cmd.Data, MSGpkt->cmd.DataLength);
+   \   00005E                ; Setup parameters for call to function osal_memcpy
+   \   00005E   12....       LCALL     ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_6:
+   \   000061   12....       LCALL     ?PUSH_XSTACK_I_THREE
+   \   000064   8E82         MOV       DPL,R6
+   \   000066   8F83         MOV       DPH,R7
+   \   000068   E0           MOVX      A,@DPTR
+   \   000069   FC           MOV       R4,A
+   \   00006A   A3           INC       DPTR
+   \   00006B   E0           MOVX      A,@DPTR
+   \   00006C   FD           MOV       R5,A
+   \   00006D   740D         MOV       A,#0xd
+   \   00006F   12....       LCALL     ?XSTACK_DISP0_8
+   \   000072   AA82         MOV       R2,DPL
+   \   000074   AB83         MOV       R3,DPH
+   \   000076   12....       LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000079   7403         MOV       A,#0x3
+   \   00007B   12....       LCALL     ?DEALLOC_XSTACK8
+   1105                          osal_memcpy(p2pMsg + 10 + MSGpkt->cmd.DataLength, " Count: ", 8);
+   \   00007E                ; Setup parameters for call to function osal_memcpy
+   \   00007E   78..         MOV       R0,#?V4
+   \   000080   12....       LCALL     ?PUSH_XSTACK_I_THREE
+   \   000083   7C08         MOV       R4,#0x8
+   \   000085   7D00         MOV       R5,#0x0
+   \   000087   8E82         MOV       DPL,R6
+   \   000089   8F83         MOV       DPH,R7
+   \   00008B   7403         MOV       A,#0x3
+   \   00008D   12....       LCALL     ?XSTACK_DISP100_8
+   \   000090   89..         MOV       ?V1,R1
+   \   000092   12....       LCALL     ??Subroutine18_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_24:
+   \   000095   240A         ADD       A,#0xa
+   \   000097   FA           MOV       R2,A
+   \   000098   E4           CLR       A
+   \   000099   39           ADDC      A,R1
+   \   00009A   FB           MOV       R3,A
+   \   00009B   12....       LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   00009E   7403         MOV       A,#0x3
+   \   0000A0   12....       LCALL     ?DEALLOC_XSTACK8
+   1106                          p2pMsg[18 + MSGpkt->cmd.DataLength] = '0' + p2pCnt;
+   \   0000A3   90....       MOV       DPTR,#??p2pCnt
+   \   0000A6   E0           MOVX      A,@DPTR
+   \   0000A7   2430         ADD       A,#0x30
+   \   0000A9   C0E0         PUSH      A
+   \   0000AB   12....       LCALL     ?Subroutine9 & 0xFFFF
+   1107                          p2pMsg[19 + MSGpkt->cmd.DataLength] = '\r';
+   1108                          p2pMsg[20 + MSGpkt->cmd.DataLength] = '\n';
+   1109                          HalUARTWrite(HAL_UART_PORT_0, p2pMsg, 21 + MSGpkt->cmd.DataLength);
+   1110                      }
+   \                     ??CrossCallReturnLabel_25:
+   \   0000AE   2412         ADD       A,#0x12
+   \   0000B0   F582         MOV       DPL,A
+   \   0000B2   E4           CLR       A
+   \   0000B3   39           ADDC      A,R1
+   \   0000B4   F583         MOV       DPH,A
+   \   0000B6   D0E0         POP       A
+   \   0000B8   12....       LCALL     ??Subroutine19_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_31:
+   \   0000BB   2413         ADD       A,#0x13
+   \   0000BD   12....       LCALL     ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_29:
+   \   0000C0   2414         ADD       A,#0x14
+   \   0000C2   12....       LCALL     ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_17:
+   \   0000C5   2415         ADD       A,#0x15
+   \   0000C7   02....       LJMP      ??zclZEM_AF_RxProc_4 & 0xFFFF
+   1111                      break;
+   1112                  case CLUSTER_BROADCAST:
+   1113                      bcCnt++;  // 接收到广播数据包，进行计数
+   \                     ??zclZEM_AF_RxProc_2:
+   \   0000CA   90....       MOV       DPTR,#??bcCnt
+   \   0000CD   E0           MOVX      A,@DPTR
+   \   0000CE   04           INC       A
+   \   0000CF   F0           MOVX      @DPTR,A
+   1114                      // 通过串口输出接收到的数据和计数器值
+   1115                      {
+   1116                          uint8 bcMsg[64];
+   1117                          osal_memcpy(bcMsg, "Broadcast Data: ", 16);
+   \   0000D0                ; Setup parameters for call to function osal_memcpy
+   \   0000D0   75....       MOV       ?V8,#`?<Constant "Broadcast Data: ">` & 0xff
+   \   0000D3   75....       MOV       ?V9,#(`?<Constant "Broadcast Data: ">` >> 8) & 0xff
+   \   0000D6   75..00       MOV       ?V10,#0x0
+   \   0000D9   78..         MOV       R0,#?V8
+   \   0000DB   12....       LCALL     ?PUSH_XSTACK_I_THREE
+   \   0000DE   7C10         MOV       R4,#0x10
+   \   0000E0   7D00         MOV       R5,#0x0
+   \   0000E2   7403         MOV       A,#0x3
+   \   0000E4   12....       LCALL     ?XSTACK_DISP101_8
+   \   0000E7   12....       LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   0000EA   7403         MOV       A,#0x3
+   \   0000EC   12....       LCALL     ?DEALLOC_XSTACK8
+   1118                          osal_memcpy(bcMsg + 16, MSGpkt->cmd.Data, MSGpkt->cmd.DataLength);
+   \   0000EF                ; Setup parameters for call to function osal_memcpy
+   \   0000EF   12....       LCALL     ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_7:
+   \   0000F2   12....       LCALL     ?PUSH_XSTACK_I_THREE
+   \   0000F5   8E82         MOV       DPL,R6
+   \   0000F7   8F83         MOV       DPH,R7
+   \   0000F9   E0           MOVX      A,@DPTR
+   \   0000FA   FC           MOV       R4,A
+   \   0000FB   A3           INC       DPTR
+   \   0000FC   E0           MOVX      A,@DPTR
+   \   0000FD   FD           MOV       R5,A
+   \   0000FE   7413         MOV       A,#0x13
+   \   000100   12....       LCALL     ?XSTACK_DISP0_8
+   \   000103   AA82         MOV       R2,DPL
+   \   000105   AB83         MOV       R3,DPH
+   \   000107   12....       LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   00010A   7403         MOV       A,#0x3
+   \   00010C   12....       LCALL     ?DEALLOC_XSTACK8
+   1119                          osal_memcpy(bcMsg + 16 + MSGpkt->cmd.DataLength, " Count: ", 8);
+   \   00010F                ; Setup parameters for call to function osal_memcpy
+   \   00010F   78..         MOV       R0,#?V4
+   \   000111   12....       LCALL     ?PUSH_XSTACK_I_THREE
+   \   000114   7C08         MOV       R4,#0x8
+   \   000116   7D00         MOV       R5,#0x0
+   \   000118   8E82         MOV       DPL,R6
+   \   00011A   8F83         MOV       DPH,R7
+   \   00011C   7403         MOV       A,#0x3
+   \   00011E   12....       LCALL     ?XSTACK_DISP100_8
+   \   000121   12....       LCALL     ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_9:
+   \   000124   12....       LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000127   7403         MOV       A,#0x3
+   \   000129   12....       LCALL     ?DEALLOC_XSTACK8
+   1120                          bcMsg[24 + MSGpkt->cmd.DataLength] = '0' + bcCnt;
+   \   00012C   90....       MOV       DPTR,#??bcCnt
+   \   00012F   8065         SJMP      ??zclZEM_AF_RxProc_5
+   1121                          bcMsg[25 + MSGpkt->cmd.DataLength] = '\r';
+   1122                          bcMsg[26 + MSGpkt->cmd.DataLength] = '\n';
+   1123                          HalUARTWrite(HAL_UART_PORT_0, bcMsg, 27 + MSGpkt->cmd.DataLength);
+   1124                      }
+   1125                      break;
+   1126                  case CLUSTER_GROUPCAST:
+   1127                      gcCnt++;  // 接收到组播数据包，进行计数
+   \                     ??zclZEM_AF_RxProc_3:
+   \   000131   90....       MOV       DPTR,#??gcCnt
+   \   000134   E0           MOVX      A,@DPTR
+   \   000135   04           INC       A
+   \   000136   F0           MOVX      @DPTR,A
+   1128                      // 通过串口输出接收到的数据和计数器值
+   1129                      {
+   1130                          uint8 gcMsg[64];
+   1131                          osal_memcpy(gcMsg, "Groupcast Data: ", 16);
+   \   000137                ; Setup parameters for call to function osal_memcpy
+   \   000137   75....       MOV       ?V8,#`?<Constant "Groupcast Data: ">` & 0xff
+   \   00013A   75....       MOV       ?V9,#(`?<Constant "Groupcast Data: ">` >> 8) & 0xff
+   \   00013D   75..00       MOV       ?V10,#0x0
+   \   000140   78..         MOV       R0,#?V8
+   \   000142   12....       LCALL     ?PUSH_XSTACK_I_THREE
+   \   000145   7C10         MOV       R4,#0x10
+   \   000147   7D00         MOV       R5,#0x0
+   \   000149   7403         MOV       A,#0x3
+   \   00014B   12....       LCALL     ?XSTACK_DISP101_8
+   \   00014E   12....       LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000151   7403         MOV       A,#0x3
+   \   000153   12....       LCALL     ?DEALLOC_XSTACK8
+   1132                          osal_memcpy(gcMsg + 16, MSGpkt->cmd.Data, MSGpkt->cmd.DataLength);
+   \   000156                ; Setup parameters for call to function osal_memcpy
+   \   000156   12....       LCALL     ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   000159   12....       LCALL     ?PUSH_XSTACK_I_THREE
+   \   00015C   8E82         MOV       DPL,R6
+   \   00015E   8F83         MOV       DPH,R7
+   \   000160   E0           MOVX      A,@DPTR
+   \   000161   FC           MOV       R4,A
+   \   000162   A3           INC       DPTR
+   \   000163   E0           MOVX      A,@DPTR
+   \   000164   FD           MOV       R5,A
+   \   000165   7413         MOV       A,#0x13
+   \   000167   12....       LCALL     ?XSTACK_DISP0_8
+   \   00016A   AA82         MOV       R2,DPL
+   \   00016C   AB83         MOV       R3,DPH
+   \   00016E   12....       LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000171   7403         MOV       A,#0x3
+   \   000173   12....       LCALL     ?DEALLOC_XSTACK8
+   1133                          osal_memcpy(gcMsg + 16 + MSGpkt->cmd.DataLength, " Count: ", 8);
+   \   000176                ; Setup parameters for call to function osal_memcpy
+   \   000176   78..         MOV       R0,#?V4
+   \   000178   12....       LCALL     ?PUSH_XSTACK_I_THREE
+   \   00017B   7C08         MOV       R4,#0x8
+   \   00017D   7D00         MOV       R5,#0x0
+   \   00017F   8E82         MOV       DPL,R6
+   \   000181   8F83         MOV       DPH,R7
+   \   000183   7403         MOV       A,#0x3
+   \   000185   12....       LCALL     ?XSTACK_DISP100_8
+   \   000188   12....       LCALL     ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_10:
+   \   00018B   12....       LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   00018E   7403         MOV       A,#0x3
+   \   000190   12....       LCALL     ?DEALLOC_XSTACK8
+   1134                          gcMsg[24 + MSGpkt->cmd.DataLength] = '0' + gcCnt;
+   \   000193   90....       MOV       DPTR,#??gcCnt
+   \                     ??zclZEM_AF_RxProc_5:
+   \   000196   E0           MOVX      A,@DPTR
+   \   000197   2430         ADD       A,#0x30
+   \   000199   C0E0         PUSH      A
+   1135                          gcMsg[25 + MSGpkt->cmd.DataLength] = '\r';
+   1136                          gcMsg[26 + MSGpkt->cmd.DataLength] = '\n';
+   1137                          HalUARTWrite(HAL_UART_PORT_0, gcMsg, 27 + MSGpkt->cmd.DataLength);
+   1138                      }
+   \   00019B   12....       LCALL     ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_26:
+   \   00019E   2418         ADD       A,#0x18
+   \   0001A0   F582         MOV       DPL,A
+   \   0001A2   E4           CLR       A
+   \   0001A3   39           ADDC      A,R1
+   \   0001A4   F583         MOV       DPH,A
+   \   0001A6   D0E0         POP       A
+   \   0001A8   12....       LCALL     ??Subroutine19_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_32:
+   \   0001AB   2419         ADD       A,#0x19
+   \   0001AD   12....       LCALL     ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_30:
+   \   0001B0   241A         ADD       A,#0x1a
+   \   0001B2   12....       LCALL     ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_18:
+   \   0001B5   241B         ADD       A,#0x1b
+   \                     ??zclZEM_AF_RxProc_4:
+   \   0001B7   FC           MOV       R4,A
+   \   0001B8   A3           INC       DPTR
+   \   0001B9   E0           MOVX      A,@DPTR
+   \   0001BA   3400         ADDC      A,#0x0
+   \   0001BC   FD           MOV       R5,A
+   \   0001BD   AA..         MOV       R2,?XSP + 0
+   \   0001BF   AB..         MOV       R3,?XSP + 1
+   \   0001C1   7900         MOV       R1,#0x0
+   \   0001C3   12....       LCALL     `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+   1139                      break;
+   1140                  default:
+   1141                      break;
+   1142              }
+   1143          }
+   \                     ??zclZEM_AF_RxProc_0:
+   \   0001C6   7440         MOV       A,#0x40
+   \   0001C8   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0001CB   7F0B         MOV       R7,#0xb
+   \   0001CD   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine14:
+   \   000000   F582         MOV       DPL,A
+   \   000002   E4           CLR       A
+   \   000003   39           ADDC      A,R1
+   \   000004   F583         MOV       DPH,A
+   \   000006   740A         MOV       A,#0xa
+   \   000008   F0           MOVX      @DPTR,A
+   \   000009                ; Setup parameters for call to function HalUARTWrite
+   \   000009                ; Setup parameters for call to function HalUARTWrite
+   \   000009   8E82         MOV       DPL,R6
+   \   00000B   8F83         MOV       DPH,R7
+   \   00000D   E0           MOVX      A,@DPTR
+   \   00000E   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine9:
+   \   000000   8E82         MOV       DPL,R6
+   \   000002   8F83         MOV       DPH,R7
+   \   000004   A8..         MOV       R0,?XSP + 0
+   \   000006   88..         MOV       ?V0,R0
+   \   000008                REQUIRE ??Subroutine18_0
+   \   000008                ; // Fall through to label ??Subroutine18_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine18_0:
+   \   000000   12....       LCALL     ?Subroutine16 & 0xFFFF
+   \                     ??CrossCallReturnLabel_28:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine16:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   28           ADD       A,R0
+   \   000002   F8           MOV       R0,A
+   \   000003   A3           INC       DPTR
+   \   000004   E0           MOVX      A,@DPTR
+   \   000005   35..         ADDC      A,?V1
+   \   000007   F9           MOV       R1,A
+   \   000008   E8           MOV       A,R0
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   89..         MOV       ?V1,R1
+   \   000002   12....       LCALL     ?Subroutine16 & 0xFFFF
+   \                     ??CrossCallReturnLabel_27:
+   \   000005   2410         ADD       A,#0x10
+   \   000007   FA           MOV       R2,A
+   \   000008   E4           CLR       A
+   \   000009   39           ADDC      A,R1
+   \   00000A   FB           MOV       R3,A
+   \   00000B   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   85..82       MOV       DPL,?V0
+   \   000003   85..83       MOV       DPH,?V1
+   \   000006   E0           MOVX      A,@DPTR
+   \   000007   F5..         MOV       ?V0,A
+   \   000009   A3           INC       DPTR
+   \   00000A   E0           MOVX      A,@DPTR
+   \   00000B   F5..         MOV       ?V1,A
+   \   00000D   75..00       MOV       ?V2,#0x0
+   \   000010   78..         MOV       R0,#?V0
+   \   000012   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   F582         MOV       DPL,A
+   \   000002   E4           CLR       A
+   \   000003   39           ADDC      A,R1
+   \   000004   F583         MOV       DPH,A
+   \   000006   740D         MOV       A,#0xd
+   \   000008                REQUIRE ??Subroutine19_0
+   \   000008                ; // Fall through to label ??Subroutine19_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine19_0:
+   \   000000   F0           MOVX      @DPTR,A
+   \   000001   8E82         MOV       DPL,R6
+   \   000003   8F83         MOV       DPH,R7
+   \   000005   E0           MOVX      A,@DPTR
+   \   000006   25..         ADD       A,?V0
+   \   000008   F8           MOV       R0,A
+   \   000009   A3           INC       DPTR
+   \   00000A   E0           MOVX      A,@DPTR
+   \   00000B   35..         ADDC      A,?V1
+   \   00000D   F9           MOV       R1,A
+   \   00000E   E8           MOV       A,R0
+   \   00000F   22           RET
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ??p2pCnt:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ??bcCnt:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ??gcCnt:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for ZEM_AppEp>`:
+   \   000000   08           DB 8
+   \   000001   00           DB 0
+   \   000002   ....         DW zclZEM_TaskID
+   \   000004   ....         DW zclZEM_SimpleDesc
+   \   000006   00           DB 0
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for reportableChange>`:
+   \   000000   2C           DB 44
+   \   000001   01           DB 1
+   \   000002   00           DB 0
+   \   000003   00           DB 0
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclZEM_CmdCallbacks>`:
+   \   000000   ....         DW `??zclZEM_BasicResetCB::?relay`
+   \   000002   0000         DW 0H
+   \   000004   0000         DW 0H
+   \   000006   0000         DW 0H
+   \   000008   0000         DW 0H
+   \   00000A   0000         DW 0H
+   \   00000C   0000         DW 0H
+   \   00000E   0000         DW 0H
+   \   000010   0000         DW 0H
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??zclZEM_Init::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclZEM_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??zclZEM_event_loop::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclZEM_event_loop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??zclZEM_ReadAndSendMAC::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclZEM_ReadAndSendMAC
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??zclZEM_UartCB::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclZEM_UartCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??zclZEM_ProcessCommissioningStatus::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclZEM_ProcessCommissioningStatus
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??zclZEM_BasicResetCB::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclZEM_BasicResetCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??zclSampleApp_BatteryWarningCB::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclSampleApp_BatteryWarningCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??zclZEM_ProcessIncomingMsg::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclZEM_ProcessIncomingMsg
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??zclZEM_ProcessInDiscCmdsRspCmd::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclZEM_ProcessInDiscCmdsRspCmd
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??zclZEM_AF_P2P::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclZEM_AF_P2P
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??zclZEM_AF_RxProc::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclZEM_AF_RxProc
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Device Type Test: ">`:
+   \   000000   44657669     DB "Device Type Test: "
+   \            63652054
+   \            79706520
+   \            54657374
+   \            3A2000  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "End Device\\r\\n">`:
+   \   000000   456E6420     DB "End Device\015\012"
+   \            44657669
+   \            63650D0A
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Broadcast">`:
+   \   000000   42726F61     DB "Broadcast"
+   \            64636173
+   \            7400    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Groupcast">`:
+   \   000000   47726F75     DB "Groupcast"
+   \            70636173
+   \            7400    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "P2P">`:
+   \   000000   50325000     DB "P2P"
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "MAC: ">`:
+   \   000000   4D41433A     DB "MAC: "
+   \            2000    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Network steering fail...">`:
+   \   000000   4E657477     DB 4EH, 65H, 74H, 77H, 6FH, 72H, 6BH, 20H
+   \            6F726B20
+   \   000008   73746565     DB 73H, 74H, 65H, 65H, 72H, 69H, 6EH, 67H
+   \            72696E67
+   \   000010   20666169     DB 20H, 66H, 61H, 69H, 6CH, 65H, 64H, 21H
+   \            6C656421
+   \   000018   20526574     DB 20H, 52H, 65H, 74H, 72H, 79H, 69H, 6EH
+   \            7279696E
+   \   000020   6720696E     DB 67H, 20H, 69H, 6EH, 20H, 31H, 20H, 73H
+   \            20312073
+   \   000028   65636F6E     DB 65H, 63H, 6FH, 6EH, 64H, 2EH, 2EH, 2EH
+   \            642E2E2E
+   \   000030   0D0A00       DB 0DH, 0AH, 0
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "P2P Data: ">`:
+   \   000000   50325020     DB "P2P Data: "
+   \            44617461
+   \            3A2000  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant " Count: ">`:
+   \   000000   20436F75     DB " Count: "
+   \            6E743A20
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Broadcast Data: ">`:
+   \   000000   42726F61     DB "Broadcast Data: "
+   \            64636173
+   \            74204461
+   \            74613A20
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Groupcast Data: ">`:
+   \   000000   47726F75     DB "Groupcast Data: "
+   \            70636173
+   \            74204461
+   \            74613A20
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_3e8:
+   \   000000   E8030000     DD 1000
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_bb8:
+   \   000000   B80B0000     DD 3000
+   1144          
+   1145          /****************************************************************************
+   1146          ****************************************************************************/
+   1147          
+   1148          
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      0      0   zclSampleApp_BatteryWarningCB
+      0     71   zclZEM_AF_P2P
+        0     31   -> AF_DataRequest
+      1    124   zclZEM_AF_RxProc
+        0     83   -> HalUARTWrite
+        0     86   -> osal_memcpy
+      2      0   zclZEM_BasicResetCB
+        2      0   -> zclZEM_ResetAttributesToDefaultValues
+      0     95   zclZEM_Init
+        0     89   -> HalUARTOpen
+        0     89   -> HalUARTWrite
+        0     89   -> RegisterForKeys
+        0     89   -> RegisterVoltageWarningCB
+        0     89   -> aps_AddGroup
+        0     89   -> bdb_RegisterCommissioningStatusCB
+        0     89   -> bdb_RegisterSimpleDescriptor
+        0     95   -> bdb_RepAddAttrCfgRecordDefaultToList
+        0     89   -> bdb_StartCommissioning
+        0     93   -> osal_start_timerEx
+        0     89   -> zclGeneral_RegisterCmdCallbacks
+        0     89   -> zclZEM_ReadAndSendMAC
+        0     89   -> zclZEM_ResetAttributesToDefaultValues
+        0     89   -> zcl_registerAttrList
+        0     89   -> zcl_registerForMsg
+      2     55   zclZEM_ProcessCommissioningStatus
+        2     51   -> HalUARTWrite
+        2     51   -> bdb_StartCommissioning
+        2     55   -> osal_start_timerEx
+      2      9   zclZEM_ProcessInDiscCmdsRspCmd
+      0     47   zclZEM_ProcessIncomingMsg
+        0      9   -> osal_mem_free
+        0      9   -> zclZEM_ProcessInDiscCmdsRspCmd
+      1    160   zclZEM_ReadAndSendMAC
+        0     68   -> HalUARTWrite
+        0     68   -> NLME_GetExtAddr
+        0     71   -> osal_memcpy
+      0      9   zclZEM_UartCB
+        0      9   -> HalUARTRead
+        0      9   -> HalUARTWrite
+        0      9   -> Hal_UART_RxBufLen
+      0     47   zclZEM_event_loop
+        0     47   -> AF_DataRequest
+        0     38   -> bdb_ZedAttemptRecoverNwk
+        0     38   -> osal_msg_deallocate
+        0     38   -> osal_msg_receive
+        0     42   -> osal_start_timerEx
+        0     40   -> zclZEM_AF_P2P
+        0     38   -> zclZEM_AF_RxProc
+        0     38   -> zclZEM_ProcessIncomingMsg
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       9  ?<Constant " Count: ">
+      17  ?<Constant "Broadcast Data: ">
+      10  ?<Constant "Broadcast">
+      19  ?<Constant "Device Type Test: ">
+      13  ?<Constant "End Device\r\n">
+      17  ?<Constant "Groupcast Data: ">
+      10  ?<Constant "Groupcast">
+       6  ?<Constant "MAC: ">
+      51  ?<Constant "Network steering fail...">
+      11  ?<Constant "P2P Data: ">
+       4  ?<Constant "P2P">
+      18  ?<Constant {21, ""}>
+       7  ?<Initializer for ZEM_AppEp>
+       4  ?<Initializer for reportableChange>
+      18  ?<Initializer for zclZEM_CmdCallbacks>
+       8  ??Subroutine17_0
+       4  ??Subroutine18_0
+      16  ??Subroutine19_0
+       8  ?Subroutine0
+       8  ?Subroutine1
+      16  ?Subroutine10
+       4  ?Subroutine11
+      11  ?Subroutine12
+      17  ?Subroutine13
+      15  ?Subroutine14
+      11  ?Subroutine15
+      10  ?Subroutine16
+       5  ?Subroutine2
+       7  ?Subroutine3
+       8  ?Subroutine4
+       8  ?Subroutine5
+       9  ?Subroutine6
+      19  ?Subroutine7
+      12  ?Subroutine8
+       8  ?Subroutine9
+       1  P1DIR
+       1  P1SEL
+       1  PERCFG
+       7  ZEM_AppEp
+       4  __Constant_3e8
+       4  __Constant_bb8
+       1  bcCnt
+       1  gcCnt
+       1  p2pCnt
+       4  reportableChange
+       1  transferId
+       1  transferId
+       1  transferId
+       3  zclSampleApp_BatteryWarningCB
+       6  zclSampleApp_BatteryWarningCB::?relay
+     107  zclZEM_AF_P2P
+       6  zclZEM_AF_P2P::?relay
+     464  zclZEM_AF_RxProc
+       6  zclZEM_AF_RxProc::?relay
+       9  zclZEM_BasicResetCB
+       6  zclZEM_BasicResetCB::?relay
+      18  zclZEM_CmdCallbacks
+     369  zclZEM_Init
+       6  zclZEM_Init::?relay
+       1  zclZEM_NwkState
+     114  zclZEM_ProcessCommissioningStatus
+       6  zclZEM_ProcessCommissioningStatus::?relay
+      37  zclZEM_ProcessInDiscCmdsRspCmd
+       6  zclZEM_ProcessInDiscCmdsRspCmd::?relay
+     126  zclZEM_ProcessIncomingMsg
+       6  zclZEM_ProcessIncomingMsg::?relay
+     241  zclZEM_ReadAndSendMAC
+       6  zclZEM_ReadAndSendMAC::?relay
+       1  zclZEM_TaskID
+      64  zclZEM_UartBuf
+      39  zclZEM_UartCB
+       6  zclZEM_UartCB::?relay
+     502  zclZEM_event_loop
+       6  zclZEM_event_loop::?relay
+
+ 
+ 2 215 bytes in segment BANKED_CODE
+    66 bytes in segment BANK_RELAYS
+     3 bytes in segment SFR_AN
+    29 bytes in segment XDATA_I
+    29 bytes in segment XDATA_ID
+   193 bytes in segment XDATA_ROM_C
+    72 bytes in segment XDATA_Z
+ 
+    95 bytes of CODE     memory
+   185 bytes of CONST    memory (+ 8 bytes shared)
+     0 bytes of DATA     memory (+ 3 bytes shared)
+ 2 215 bytes of HUGECODE memory
+   101 bytes of XDATA    memory
+
+Errors: none
+Warnings: none
