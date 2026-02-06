@@ -891,6 +891,16 @@ void bdb_StartCommissioning(uint8 mode)
     
     osal_nv_read(ZCD_NV_BDBNODEISONANETWORK,0,sizeof(bdbAttributes.bdbNodeIsOnANetwork),&bdbAttributes.bdbNodeIsOnANetwork);
     
+    // 打印NV读取结果
+    extern void HalUARTWrite(uint8 port, uint8 *buf, uint16 len);
+    uint8 nvMsg[] = "NV read: ";
+    HalUARTWrite(0, nvMsg, sizeof(nvMsg)-1);
+    uint8 statusMsg[4];
+    statusMsg[0] = '0' + bdbAttributes.bdbNodeIsOnANetwork;
+    statusMsg[1] = '\r';
+    statusMsg[2] = '\n';
+    HalUARTWrite(0, statusMsg, 3);
+    
     //Are we on a network
     if(bdbAttributes.bdbNodeIsOnANetwork == TRUE)
     {
@@ -957,6 +967,10 @@ void bdb_StartCommissioning(uint8 mode)
   //Got requested only to initialize, if so, report that it failed
   if(bdbAttributes.bdbCommissioningMode == 0)
   {
+    // 添加调试信息，检查bdbCommissioningMode值
+    uint8 debugMsg[] = "bdbCommissioningMode == 0, 只初始化不组网\r\n";
+    HalUARTWrite(0, debugMsg, sizeof(debugMsg)-1);
+    
     //Set the initialization state and report it to fail
     bdbCommissioningProcedureState.bdbCommissioningState = BDB_INITIALIZATION;
     bdb_reportCommissioningState(BDB_INITIALIZATION,FALSE);

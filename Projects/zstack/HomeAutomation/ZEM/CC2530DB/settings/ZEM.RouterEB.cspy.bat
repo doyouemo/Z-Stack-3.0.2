@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"D:\IAR10.10.1\common\bin\cspybat" -f "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\settings\ZEM.RouterEB.general.xcl" --backend -f "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\settings\ZEM.RouterEB.driver.xcl" 
+"D:\software\IAR\IAR\common\bin\cspybat" -f "D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\settings\ZEM.RouterEB.general.xcl" --backend -f "D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\settings\ZEM.RouterEB.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"D:\IAR10.10.1\common\bin\cspybat" -f "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\settings\ZEM.RouterEB.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\settings\ZEM.RouterEB.driver.xcl" 
+"D:\software\IAR\IAR\common\bin\cspybat" -f "D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\settings\ZEM.RouterEB.general.xcl" "--debug_file=%~1" --backend -f "D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\settings\ZEM.RouterEB.driver.xcl" 
 
 @echo off 
 :end

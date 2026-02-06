@@ -1,10 +1,10 @@
-"D:\IAR10.10.1\8051\bin\8051proc.dll" 
+"D:\software\IAR\IAR\8051\bin\8051proc.dll" 
 
-"D:\IAR10.10.1\8051\bin\8051emu_cc.dll" 
+"D:\software\IAR\IAR\8051\bin\8051emu_cc.dll" 
 
-"C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Exe\SampleSwitch.d51" 
+"D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\CoordinatorEB\Exe\SampleSwitch.d51" 
 
---plugin "D:\IAR10.10.1\8051\bin\8051bat.dll" 
+--plugin "D:\software\IAR\IAR\8051\bin\8051bat.dll" 
 
 
 

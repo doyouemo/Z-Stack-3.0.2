@@ -1,112 +1,112 @@
-"C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\mac\low_level\srf04\mac_autopend.c"
+"D:\project\Z-Stack 3.0.2\Components\mac\low_level\srf04\mac_autopend.c"
 -std=c99
 -ferror-limit=100
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\Source
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\Source
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\Source
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\Source
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\ZMain\TI2530DB
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\ZMain\TI2530DB
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\include
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\include
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\include
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\include
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\high_level
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\high_level
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mt
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mt
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\osal\include
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\osal\include
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\saddr
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\saddr
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\sdata
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\sdata
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\af
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\af
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\bdb
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\bdb
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\gp
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\gp
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\nwk
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\nwk
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sapi
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sapi
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sec
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sec
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sys
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sys
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zcl
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zcl
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zdo
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zdo
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac\f8w
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac\f8w
 -I
-D:\IAR10.10.1\8051\inc
+D:\software\IAR\IAR\8051\inc
 -I
-D:\IAR10.10.1\8051\lib\dlib
+D:\software\IAR\IAR\8051\lib\dlib
 -I
-D:\IAR10.10.1\8051\inc\clib
+D:\software\IAR\IAR\8051\inc\clib
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\Source
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\ZEM\Source
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Source
+D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Source
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\ZMain\TI2530DB
+D:\project\Z-Stack 3.0.2\Projects\zstack\ZMain\TI2530DB
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\hal\include
+D:\project\Z-Stack 3.0.2\Components\hal\include
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\hal\target\CC2530EB
+D:\project\Z-Stack 3.0.2\Components\hal\target\CC2530EB
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\mac\include
+D:\project\Z-Stack 3.0.2\Components\mac\include
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\mac\high_level
+D:\project\Z-Stack 3.0.2\Components\mac\high_level
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\mac\low_level\srf04
+D:\project\Z-Stack 3.0.2\Components\mac\low_level\srf04
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\mac\low_level\srf04\single_chip
+D:\project\Z-Stack 3.0.2\Components\mac\low_level\srf04\single_chip
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\mt
+D:\project\Z-Stack 3.0.2\Components\mt
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\osal\include
+D:\project\Z-Stack 3.0.2\Components\osal\include
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\services\saddr
+D:\project\Z-Stack 3.0.2\Components\services\saddr
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\services\sdata
+D:\project\Z-Stack 3.0.2\Components\services\sdata
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\stack\af
+D:\project\Z-Stack 3.0.2\Components\stack\af
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\stack\bdb
+D:\project\Z-Stack 3.0.2\Components\stack\bdb
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\stack\gp
+D:\project\Z-Stack 3.0.2\Components\stack\gp
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\stack\nwk
+D:\project\Z-Stack 3.0.2\Components\stack\nwk
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\stack\sapi
+D:\project\Z-Stack 3.0.2\Components\stack\sapi
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\stack\sec
+D:\project\Z-Stack 3.0.2\Components\stack\sec
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\stack\sys
+D:\project\Z-Stack 3.0.2\Components\stack\sys
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\stack\zcl
+D:\project\Z-Stack 3.0.2\Components\stack\zcl
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\stack\zdo
+D:\project\Z-Stack 3.0.2\Components\stack\zdo
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\zmac
+D:\project\Z-Stack 3.0.2\Components\zmac
 -I
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\zmac\f8w
+D:\project\Z-Stack 3.0.2\Components\zmac\f8w
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0
@@ -441,10 +441,6 @@ C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components
 -D__EDG_ANSIC=1
 -D__EDG_CPP11_IL_EXTENSIONS_SUPPORTED=1
 -DBDB_REPORTING=1
--DSECURE=1
--DTC_LINKKEY_JOIN=1
--DNV_INIT=1
--DNV_RESTORE=1
 -DxPOWER_SAVING=1
 -DNWK_AUTO_POLL=1
 -DxZTOOL_P1=1
@@ -462,15 +458,18 @@ C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components
 -DZCL_IDENTIFY=1
 -DZCL_TEMPERATURE_MEASUREMENT=1
 -DZCL_GROUPS=1
+-DHAL_UART=TRUE
+-DINT_HEAP_LEN=2048
 -DCPU32MHZ=1
 -DROOT=__near_func
 -DMAC_CFG_TX_DATA_MAX=3
 -DMAC_CFG_TX_MAX=6
 -DMAC_CFG_RX_MAX=3
 -DZIGBEEPRO=1
+-DSECURE=1
 -DZG_SECURE_DYNAMIC=0
 -DREFLECTOR=1
--DDEFAULT_CHANLIST=0x00000800
+-DDEFAULT_CHANLIST=0x00100000
 -DZDAPP_CONFIG_PAN_ID=0x1234
 -DNWK_START_DELAY=100
 -DEXTENDED_JOINING_RANDOM_MASK=0x007F

@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //
-// IAR C/C++ Compiler V10.10.1.4655 for 8051              03/Feb/2026  00:00:30
+// IAR C/C++ Compiler V10.10.1.4655 for 8051              05/Feb/2026  17:28:18
 // Copyright 2004-2017 IAR Systems AB.
 // Standalone license - IAR Embedded Workbench for 8051
 //
@@ -12,36 +12,31 @@
 //    Dptr setup         =  1,16
 //                          
 //    Source file        =  
-//        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
-//        3.0.2\Components\stack\nwk\nwk_globals.c
+//        D:\project\Z-Stack 3.0.2\Components\stack\nwk\nwk_globals.c
 //    Command line       =  
-//        -f C:\Users\ASUS\AppData\Local\Temp\EWCC60.tmp
-//        ("C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -f C:\Users\KLF\AppData\Local\Temp\EW5E28.tmp ("D:\project\Z-Stack
 //        3.0.2\Components\stack\nwk\nwk_globals.c" -D BDB_REPORTING -D
-//        SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D xPOWER_SAVING
-//        -D NWK_AUTO_POLL -D xZTOOL_P1 -D xMT_TASK -D xMT_APP_FUNC -D
-//        xMT_SYS_FUNC -D xMT_ZDO_FUNC -D xMT_APP_CNF_FUNC -D
+//        xPOWER_SAVING -D NWK_AUTO_POLL -D xZTOOL_P1 -D xMT_TASK -D
+//        xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D xMT_APP_CNF_FUNC -D
 //        LCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
 //        ZCL_DISCOVER -D ZCL_WRITE -D ZCL_BASIC -D ZCL_IDENTIFY -D
-//        ZCL_TEMPERATURE_MEASUREMENT -D ZCL_GROUPS -lC
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        ZCL_TEMPERATURE_MEASUREMENT -D ZCL_GROUPS -D HAL_UART=TRUE -D
+//        INT_HEAP_LEN=2048 -lC "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List"
-//        -lA "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -lA "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List"
-//        --diag_suppress Pe001,Pa010 -o
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        --diag_suppress Pe001,Pa010 -o "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\Obj" -e
 //        --debug --core=plain --dptr=16,1 --data_model=large
 //        --code_model=banked --calling_convention=xdata_reentrant
 //        --place_constants=data_rom --nr_virtual_regs 16 -f
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"
 //        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
-//        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
 //        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
-//        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0x1234
+//        -DDEFAULT_CHANLIST=0x00100000 -DZDAPP_CONFIG_PAN_ID=0x1234
 //        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
 //        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
 //        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
@@ -54,63 +49,62 @@
 //        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
 //        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
 //        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
-//        -DENABLE_LED4_DISABLE_S1) -f "C:\Users\ASUS\Desktop\work\graduration
-//        project\software\Z-Stack
+//        -DENABLE_LED4_DISABLE_S1) -f "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\" -I
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\Source\" -I
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\Source\" -I
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\ZMain\TI2530DB\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\include\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\include\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mt\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\osal\include\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\saddr\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\sdata\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\af\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\bdb\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\gp\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sec\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sys\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
 //        -Ohz --require_prototypes)
 //    Locale             =  Chinese (Simplified)_China.936
 //    List file          =  
-//        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List\nwk_globals.s51
 //
 ///////////////////////////////////////////////////////////////////////////////
@@ -145,7 +139,6 @@
         EXTERN ?BRET
         EXTERN ?DEALLOC_XSTACK8
         EXTERN ?PUSH_XSTACK_I_ONE
-        EXTERN ?PUSH_XSTACK_I_TWO
         EXTERN ?US_SWITCH_SPARSE
         EXTERN __INIT_XDATA_I
         EXTERN __INIT_XDATA_Z
@@ -171,9 +164,9 @@
         PUBLIC EnergyLevelStr
         PUBLIC FailedStr
         PUBLIC NIB_init
-        FUNCTION NIB_init,0a1203H
+        FUNCTION NIB_init,021203H
         ARGFRAME XSTACK, 0, STACK
-        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME ISTACK, 2, STACK
         PUBLIC NetworkIDStr
         PUBLIC OrphanRspStr
         PUBLIC ParentStr
@@ -417,8 +410,6 @@ NLME_SetUpdateID    SYMBOL "NLME_SetUpdateID"
 `??NLME_SetUpdateID::?relay` SYMBOL "?relay", NLME_SetUpdateID
 osal_memset         SYMBOL "osal_memset"
 `??osal_memset::?relay` SYMBOL "?relay", osal_memset
-osal_nv_read        SYMBOL "osal_nv_read"
-`??osal_nv_read::?relay` SYMBOL "?relay", osal_nv_read
 osal_rand           SYMBOL "osal_rand"
 `??osal_rand::?relay` SYMBOL "?relay", osal_rand
 sAddrExtCpy         SYMBOL "sAddrExtCpy"
@@ -446,8 +437,6 @@ nwk_globals_init    SYMBOL "nwk_globals_init"
         FUNCTION `??NLME_SetUpdateID::?relay`,00H
         EXTERN `??osal_memset::?relay`
         FUNCTION `??osal_memset::?relay`,00H
-        EXTERN `??osal_nv_read::?relay`
-        FUNCTION `??osal_nv_read::?relay`,00H
         EXTERN `??osal_rand::?relay`
         FUNCTION `??osal_rand::?relay`,00H
         EXTERN `??sAddrExtCpy::?relay`
@@ -489,39 +478,32 @@ nwk_globals_init    SYMBOL "nwk_globals_init"
         ARGFRAME DOVERLAY, 0, STATIC
         EXTERN NLME_SetUpdateID
         FUNCTION NLME_SetUpdateID,0202H
-        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME ISTACK, 2, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME XSTACK, 0, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         EXTERN ZDO_Config_Node_Descriptor
         EXTERN _NIB
         EXTERN osal_memset
         FUNCTION osal_memset,0202H
-        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME ISTACK, 2, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 10, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        EXTERN osal_nv_read
-        FUNCTION osal_nv_read,0202H
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME XSTACK, 0, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         EXTERN osal_rand
         FUNCTION osal_rand,0202H
-        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME ISTACK, 2, STACK
         ARGFRAME PSTACK, 0, STACK
         ARGFRAME XSTACK, 10, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         EXTERN sAddrExtCpy
         FUNCTION sAddrExtCpy,0202H
-        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME ISTACK, 2, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME XSTACK, 0, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         EXTERN zgBcastDeliveryTime
@@ -535,7 +517,7 @@ nwk_globals_init    SYMBOL "nwk_globals_init"
         EXTERN zgRouteDiscoveryTime
         EXTERN zgRouteExpiryTime
 
-// C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\stack\nwk\nwk_globals.c
+// D:\project\Z-Stack 3.0.2\Components\stack\nwk\nwk_globals.c
 //    1 /**************************************************************************************************
 //    2   Filename:       nwk_globals.c
 //    3   Revised:        $Date: 2015-01-08 16:32:12 -0800 (Thu, 08 Jan 2015) $
@@ -1397,14 +1379,25 @@ nwk_globals_init:
 //  385     NwkInitChildAging();
 //  386   }
 //  387 }
-        POP       DPH
-          CFI DPH0 SameValue
-          CFI CFA_SP SP+-4
-        POP       DPL
-          CFI DPL0 SameValue
-          CFI CFA_SP SP+-3
-        LJMP      ?BRET
           CFI EndBlock cfiBlock0
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine0:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+-5
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI DPH0 Frame(CFA_SP, 5)
+        POP       DPH
+          CFI CFA_SP SP+-4
+          CFI DPH0 SameValue
+        POP       DPL
+          CFI CFA_SP SP+-3
+          CFI DPL0 SameValue
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock1
 //  388 
 //  389 /*********************************************************************
 //  390  * @fn       NIB_init()
@@ -1421,82 +1414,61 @@ nwk_globals_init:
         RSEG BANKED_CODE:HUGECODE:NOROOT(0)
 //  400 void NIB_init()
 NIB_init:
-          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Block cfiBlock2 Using cfiCommon0
           CFI Function NIB_init
         CODE
 //  401 {
         FUNCALL NIB_init, osal_rand
-        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME XSTACK, 0, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME ISTACK, 2, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME XSTACK, 0, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL NIB_init, osal_memset
-        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME XSTACK, 0, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME ISTACK, 2, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME XSTACK, 0, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL NIB_init, sAddrExtCpy
-        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME XSTACK, 0, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME ISTACK, 2, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 10, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL NIB_init, osal_nv_read
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 14, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME XSTACK, 0, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL NIB_init, NLME_SetUpdateID
-        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
         LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME XSTACK, 0, STACK
         LOCFRAME IOVERLAY, 0, STATIC
         LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME ISTACK, 2, STACK
         ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME XSTACK, 0, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        REQUIRE ?V0
-        REQUIRE ?V1
-        MOV       A,#-0xa
-        LCALL     ?BANKED_ENTER_XDATA
-          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
-          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
-          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
-          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
-          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
-          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
-          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
-          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
-          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
-          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
-          CFI CFA_SP SP+0
-          CFI CFA_XSP16 add(XSP16, 10)
-        ; Saved register size: 10
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
         ; Auto size: 0
 //  402   _NIB.SequenceNum = LO_UINT16(osal_rand());
         ; Setup parameters for call to function osal_rand
@@ -1681,41 +1653,18 @@ NIB_init:
 //  471 #if defined ( NV_RESTORE )
 //  472   if ( osal_nv_read( ZCD_NV_NWKMGR_ADDR, 0, sizeof( _NIB.nwkManagerAddr ),
 //  473                      &_NIB.nwkManagerAddr ) != SUCCESS )
-        ; Setup parameters for call to function osal_nv_read
-        MOV       ?V0,#(_NIB + 105) & 0xff
-        MOV       ?V1,#((_NIB + 105) >> 8) & 0xff
-        MOV       R0,#?V0
-        LCALL     ?PUSH_XSTACK_I_TWO
-          CFI CFA_XSP16 add(XSP16, 12)
-        MOV       ?V0,#0x2
-        MOV       ?V1,#0x0
-        MOV       R0,#?V0
-        LCALL     ?PUSH_XSTACK_I_TWO
-          CFI CFA_XSP16 add(XSP16, 14)
-        MOV       R4,#0x0
-        MOV       R5,#0x0
-        MOV       R2,#-0x77
-        MOV       R3,#0x0
-        LCALL     `??osal_nv_read::?relay`; Banked call to: osal_nv_read
-        MOV       A,#0x4
-        LCALL     ?DEALLOC_XSTACK8
-          CFI CFA_XSP16 add(XSP16, 10)
-        MOV       A,R1
-        JZ        ??NIB_init_0
 //  474 #endif
 //  475   {
 //  476     _NIB.nwkManagerAddr = 0x0000;
         MOV       DPTR,#_NIB + 105
-        CLR       A
         MOVX      @DPTR,A
         INC       DPTR
         MOVX      @DPTR,A
 //  477   }
 //  478 
 //  479   NLME_SetUpdateID( 0 );
-??NIB_init_0:
         ; Setup parameters for call to function NLME_SetUpdateID
-        MOV       R1,#0x0
+        MOV       R1,A
         LCALL     `??NLME_SetUpdateID::?relay`; Banked call to: NLME_SetUpdateID
 //  480   _NIB.nwkTotalTransmissions = 0;
         MOV       DPTR,#_NIB + 107
@@ -1724,28 +1673,7 @@ NIB_init:
         INC       DPTR
         MOVX      @DPTR,A
 //  481 }
-          CFI EndBlock cfiBlock1
-        REQUIRE ?Subroutine0
-        ; // Fall through to label ?Subroutine0
-
-        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
-?Subroutine0:
-          CFI Block cfiBlock2 Using cfiCommon0
-          CFI NoFunction
-          CFI CFA_SP SP+0
-          CFI CFA_XSP16 add(XSP16, 10)
-          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
-          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
-          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
-          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
-          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
-          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
-          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
-          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
-          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
-          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
-        MOV       R7,#0x2
-        LJMP      ?BANKED_LEAVE_XDATA
+        LJMP      ?Subroutine0 & 0xFFFF
           CFI EndBlock cfiBlock2
 
         RSEG BANKED_CODE:HUGECODE:NOROOT(0)
@@ -1753,33 +1681,15 @@ NIB_init:
           CFI Block cfiCond3 Using cfiCommon0
           CFI Function NIB_init
           CFI Conditional ??CrossCallReturnLabel_0
-          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
-          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
-          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
-          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
-          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
-          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
-          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
-          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
-          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
-          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
-          CFI CFA_SP SP+-2
-          CFI CFA_XSP16 add(XSP16, 10)
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-7
           CFI Block cfiCond4 Using cfiCommon0
           CFI (cfiCond4) Function NIB_init
           CFI (cfiCond4) Conditional ??CrossCallReturnLabel_1
-          CFI (cfiCond4) R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
-          CFI (cfiCond4) VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
-          CFI (cfiCond4) V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
-          CFI (cfiCond4) V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
-          CFI (cfiCond4) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
-          CFI (cfiCond4) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
-          CFI (cfiCond4) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
-          CFI (cfiCond4) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
-          CFI (cfiCond4) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
-          CFI (cfiCond4) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
-          CFI (cfiCond4) CFA_SP SP+-2
-          CFI (cfiCond4) CFA_XSP16 add(XSP16, 10)
+          CFI (cfiCond4) DPL0 Frame(CFA_SP, 4)
+          CFI (cfiCond4) DPH0 Frame(CFA_SP, 5)
+          CFI (cfiCond4) CFA_SP SP+-7
           CFI Block cfiPicker5 Using cfiCommon1
           CFI (cfiPicker5) NoFunction
           CFI (cfiPicker5) Picker
@@ -2251,7 +2161,8 @@ nwk_adjustDelay:
         MOV       R2,A
         MOV       A,R1
         MOV       R3,A
-        LJMP      ?Subroutine0 & 0xFFFF
+        MOV       R7,#0x2
+        LJMP      ?BANKED_LEAVE_XDATA
 //  618 }
           CFI EndBlock cfiBlock7
 
@@ -2298,7 +2209,7 @@ nwk_adjustDelay:
 //  620 /*********************************************************************
 //  621 *********************************************************************/
 // 
-//   481 bytes in segment BANKED_CODE
+//   437 bytes in segment BANKED_CODE
 //    24 bytes in segment BANK_RELAYS
 //   151 bytes in segment CODE_C
 //     2 bytes in segment XDATA_I
@@ -2308,7 +2219,7 @@ nwk_adjustDelay:
 // 
 //   177 bytes of CODE     memory
 //   178 bytes of CONST    memory
-//   481 bytes of HUGECODE memory
+//   437 bytes of HUGECODE memory
 // 1 411 bytes of XDATA    memory
 //
 //Errors: none

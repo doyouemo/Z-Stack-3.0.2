@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR C/C++ Compiler V10.10.1.4655 for 8051               04/Feb/2026  17:09:06
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               06/Feb/2026  14:07:52
 # Copyright 2004-2017 IAR Systems AB.
 # Standalone license - IAR Embedded Workbench for 8051
 #
@@ -14,13 +14,12 @@
 #    Source file        =  
 #        D:\project\Z-Stack 3.0.2\Components\stack\nwk\nwk_globals.c
 #    Command line       =  
-#        -f C:\Users\KLF\AppData\Local\Temp\EW61A9.tmp ("D:\project\Z-Stack
-#        3.0.2\Components\stack\nwk\nwk_globals.c" -D BDB_REPORTING -D SECURE=1
-#        -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D xZTOOL_P1 -D xMT_TASK
-#        -D xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D xMT_APP_CNF_FUNC -D
-#        LCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
-#        ZCL_DISCOVER -D ZCL_WRITE -D ZCL_BASIC -D ZCL_IDENTIFY -D
-#        ZCL_TEMPERATURE_MEASUREMENT -D ZCL_GROUPS -D HAL_LED=TRUE -D
+#        -f C:\Users\KLF\AppData\Local\Temp\EW30BC.tmp ("D:\project\Z-Stack
+#        3.0.2\Components\stack\nwk\nwk_globals.c" -D BDB_REPORTING -D
+#        xZTOOL_P1 -D xMT_TASK -D xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC
+#        -D xMT_APP_CNF_FUNC -D LCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE
+#        -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D ZCL_BASIC -D ZCL_IDENTIFY
+#        -D ZCL_TEMPERATURE_MEASUREMENT -D ZCL_GROUPS -D HAL_LED=TRUE -D
 #        HAL_UART=TRUE -D INT_HEAP_LEN=2048 -lC "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\CoordinatorEB\List"
 #        -lA "D:\project\Z-Stack
@@ -902,9 +901,14 @@ D:\project\Z-Stack 3.0.2\Components\stack\nwk\nwk_globals.c
     386            }
     387          }
    \                     ??nwk_globals_init_0:
-   \   000019   D083         POP       DPH
-   \   00001B   D082         POP       DPL
-   \   00001D   02....       LJMP      ?BRET
+   \   000019                REQUIRE ?Subroutine0
+   \   000019                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP       DPH
+   \   000002   D082         POP       DPL
+   \   000004   02....       LJMP      ?BRET
     388          
     389          /*********************************************************************
     390           * @fn       NIB_init()
@@ -922,36 +926,34 @@ D:\project\Z-Stack 3.0.2\Components\stack\nwk\nwk_globals.c
     400          void NIB_init()
    \                     NIB_init:
     401          {
-   \   000000                REQUIRE ?V0
-   \   000000                REQUIRE ?V1
-   \   000000   74F6         MOV       A,#-0xa
-   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
-   \   000005                ; Saved register size: 10
-   \   000005                ; Auto size: 0
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
     402            _NIB.SequenceNum = LO_UINT16(osal_rand());
-   \   000005                ; Setup parameters for call to function osal_rand
-   \   000005   12....       LCALL     `??osal_rand::?relay`; Banked call to: osal_rand
-   \   000008   EA           MOV       A,R2
-   \   000009   90....       MOV       DPTR,#_NIB
-   \   00000C   F0           MOVX      @DPTR,A
+   \   000004                ; Setup parameters for call to function osal_rand
+   \   000004   12....       LCALL     `??osal_rand::?relay`; Banked call to: osal_rand
+   \   000007   EA           MOV       A,R2
+   \   000008   90....       MOV       DPTR,#_NIB
+   \   00000B   F0           MOVX      @DPTR,A
     403          
     404            _NIB.nwkProtocolVersion = ZB_PROT_VERS;
-   \   00000D   90....       MOV       DPTR,#_NIB + 17
-   \   000010   7402         MOV       A,#0x2
-   \   000012   F0           MOVX      @DPTR,A
+   \   00000C   90....       MOV       DPTR,#_NIB + 17
+   \   00000F   7402         MOV       A,#0x2
+   \   000011   F0           MOVX      @DPTR,A
     405            _NIB.MaxDepth = MAX_NODE_DEPTH;
-   \   000013   90....       MOV       DPTR,#_NIB + 4
-   \   000016   7414         MOV       A,#0x14
-   \   000018   F0           MOVX      @DPTR,A
+   \   000012   90....       MOV       DPTR,#_NIB + 4
+   \   000015   7414         MOV       A,#0x14
+   \   000017   F0           MOVX      @DPTR,A
     406          
     407          #if ( NWK_MODE == NWK_MODE_MESH )
     408            _NIB.beaconOrder = BEACON_ORDER_NO_BEACONS;
-   \   000019   90....       MOV       DPTR,#_NIB + 40
-   \   00001C   740F         MOV       A,#0xf
-   \   00001E   F0           MOVX      @DPTR,A
+   \   000018   90....       MOV       DPTR,#_NIB + 40
+   \   00001B   740F         MOV       A,#0xf
+   \   00001D   F0           MOVX      @DPTR,A
     409            _NIB.superFrameOrder = BEACON_ORDER_NO_BEACONS;
-   \   00001F   A3           INC       DPTR
-   \   000020   F0           MOVX      @DPTR,A
+   \   00001E   A3           INC       DPTR
+   \   00001F   F0           MOVX      @DPTR,A
     410          #endif
     411          
     412            // BROADCAST SETTINGS:
@@ -963,42 +965,42 @@ D:\project\Z-Stack 3.0.2\Components\stack\nwk\nwk_globals.c
     418            //   Passive Ack Timeout
     419            //     - set to multiples of 100ms
     420            _NIB.BroadcastDeliveryTime = zgBcastDeliveryTime;
-   \   000021   90....       MOV       DPTR,#zgBcastDeliveryTime
-   \   000024   E0           MOVX      A,@DPTR
-   \   000025   90....       MOV       DPTR,#_NIB + 7
-   \   000028   F0           MOVX      @DPTR,A
+   \   000020   90....       MOV       DPTR,#zgBcastDeliveryTime
+   \   000023   E0           MOVX      A,@DPTR
+   \   000024   90....       MOV       DPTR,#_NIB + 7
+   \   000027   F0           MOVX      @DPTR,A
     421            _NIB.PassiveAckTimeout     = zgPassiveAckTimeout;
-   \   000029   90....       MOV       DPTR,#zgPassiveAckTimeout
-   \   00002C   E0           MOVX      A,@DPTR
-   \   00002D   90....       MOV       DPTR,#_NIB + 1
-   \   000030   F0           MOVX      @DPTR,A
+   \   000028   90....       MOV       DPTR,#zgPassiveAckTimeout
+   \   00002B   E0           MOVX      A,@DPTR
+   \   00002C   90....       MOV       DPTR,#_NIB + 1
+   \   00002F   F0           MOVX      @DPTR,A
     422            _NIB.MaxBroadcastRetries   = zgMaxBcastRetires;
-   \   000031   90....       MOV       DPTR,#zgMaxBcastRetires
-   \   000034   E0           MOVX      A,@DPTR
-   \   000035   90....       MOV       DPTR,#_NIB + 2
-   \   000038   F0           MOVX      @DPTR,A
+   \   000030   90....       MOV       DPTR,#zgMaxBcastRetires
+   \   000033   E0           MOVX      A,@DPTR
+   \   000034   90....       MOV       DPTR,#_NIB + 2
+   \   000037   F0           MOVX      @DPTR,A
     423          
     424            _NIB.ReportConstantCost = 0;
-   \   000039   90....       MOV       DPTR,#_NIB + 8
-   \   00003C   E4           CLR       A
-   \   00003D   F0           MOVX      @DPTR,A
+   \   000038   90....       MOV       DPTR,#_NIB + 8
+   \   00003B   E4           CLR       A
+   \   00003C   F0           MOVX      @DPTR,A
     425            _NIB.RouteDiscRetries = 0;
-   \   00003E   A3           INC       DPTR
-   \   00003F   F0           MOVX      @DPTR,A
+   \   00003D   A3           INC       DPTR
+   \   00003E   F0           MOVX      @DPTR,A
     426            _NIB.SecureAllFrames = USE_NWK_SECURITY;
-   \   000040   90....       MOV       DPTR,#_NIB + 11
-   \   000043   04           INC       A
-   \   000044   F0           MOVX      @DPTR,A
+   \   00003F   90....       MOV       DPTR,#_NIB + 11
+   \   000042   04           INC       A
+   \   000043   F0           MOVX      @DPTR,A
     427            _NIB.nwkAllFresh = NWK_ALL_FRESH;
-   \   000045   90....       MOV       DPTR,#_NIB + 104
-   \   000048   F0           MOVX      @DPTR,A
+   \   000044   90....       MOV       DPTR,#_NIB + 104
+   \   000047   F0           MOVX      @DPTR,A
     428          
     429            if ( ZG_SECURE_ENABLED )
     430            {
     431              _NIB.SecurityLevel = SECURITY_LEVEL;
-   \   000049   90....       MOV       DPTR,#_NIB + 12
-   \   00004C   7405         MOV       A,#0x5
-   \   00004E   F0           MOVX      @DPTR,A
+   \   000048   90....       MOV       DPTR,#_NIB + 12
+   \   00004B   7405         MOV       A,#0x5
+   \   00004D   F0           MOVX      @DPTR,A
     432            }
     433            else
     434            {
@@ -1006,104 +1008,104 @@ D:\project\Z-Stack 3.0.2\Components\stack\nwk\nwk_globals.c
     436            }
     437          
     438            _NIB.SymLink = TRUE;
-   \   00004F   A3           INC       DPTR
-   \   000050   7401         MOV       A,#0x1
-   \   000052   F0           MOVX      @DPTR,A
+   \   00004E   A3           INC       DPTR
+   \   00004F   7401         MOV       A,#0x1
+   \   000051   F0           MOVX      @DPTR,A
     439          
     440            _NIB.CapabilityFlags = ZDO_Config_Node_Descriptor.CapabilityFlags;
-   \   000053   90....       MOV       DPTR,#ZDO_Config_Node_Descriptor + 2
-   \   000056   E0           MOVX      A,@DPTR
-   \   000057   90....       MOV       DPTR,#_NIB + 14
-   \   00005A   F0           MOVX      @DPTR,A
+   \   000052   90....       MOV       DPTR,#ZDO_Config_Node_Descriptor + 2
+   \   000055   E0           MOVX      A,@DPTR
+   \   000056   90....       MOV       DPTR,#_NIB + 14
+   \   000059   F0           MOVX      @DPTR,A
     441          
     442            _NIB.TransactionPersistenceTime = zgIndirectMsgTimeout;
-   \   00005B   90....       MOV       DPTR,#zgIndirectMsgTimeout
-   \   00005E   E0           MOVX      A,@DPTR
-   \   00005F   90....       MOV       DPTR,#_NIB + 15
-   \   000062   F0           MOVX      @DPTR,A
-   \   000063   A3           INC       DPTR
-   \   000064   E4           CLR       A
-   \   000065   F0           MOVX      @DPTR,A
+   \   00005A   90....       MOV       DPTR,#zgIndirectMsgTimeout
+   \   00005D   E0           MOVX      A,@DPTR
+   \   00005E   90....       MOV       DPTR,#_NIB + 15
+   \   000061   F0           MOVX      @DPTR,A
+   \   000062   A3           INC       DPTR
+   \   000063   E4           CLR       A
+   \   000064   F0           MOVX      @DPTR,A
     443          
     444            _NIB.RouteDiscoveryTime = zgRouteDiscoveryTime;
-   \   000066   90....       MOV       DPTR,#zgRouteDiscoveryTime
-   \   000069   E0           MOVX      A,@DPTR
-   \   00006A   90....       MOV       DPTR,#_NIB + 18
-   \   00006D   F0           MOVX      @DPTR,A
+   \   000065   90....       MOV       DPTR,#zgRouteDiscoveryTime
+   \   000068   E0           MOVX      A,@DPTR
+   \   000069   90....       MOV       DPTR,#_NIB + 18
+   \   00006C   F0           MOVX      @DPTR,A
     445            _NIB.RouteExpiryTime = zgRouteExpiryTime;
-   \   00006E   90....       MOV       DPTR,#zgRouteExpiryTime
-   \   000071   E0           MOVX      A,@DPTR
-   \   000072   90....       MOV       DPTR,#_NIB + 19
-   \   000075   12....       LCALL     ?Subroutine1 & 0xFFFF
+   \   00006D   90....       MOV       DPTR,#zgRouteExpiryTime
+   \   000070   E0           MOVX      A,@DPTR
+   \   000071   90....       MOV       DPTR,#_NIB + 19
+   \   000074   12....       LCALL     ?Subroutine1 & 0xFFFF
     446          
     447            _NIB.nwkDevAddress = INVALID_NODE_ADDR;
     448            _NIB.nwkLogicalChannel = 0;
    \                     ??CrossCallReturnLabel_0:
-   \   000078   A3           INC       DPTR
-   \   000079   E4           CLR       A
-   \   00007A   12....       LCALL     ?Subroutine1 & 0xFFFF
+   \   000077   A3           INC       DPTR
+   \   000078   E4           CLR       A
+   \   000079   12....       LCALL     ?Subroutine1 & 0xFFFF
     449            _NIB.nwkCoordAddress = INVALID_NODE_ADDR;
     450            osal_memset( _NIB.nwkCoordExtAddress, 0, Z_EXTADDR_LEN );
    \                     ??CrossCallReturnLabel_1:
-   \   00007D                ; Setup parameters for call to function osal_memset
-   \   00007D   7C08         MOV       R4,#0x8
-   \   00007F   7D00         MOV       R5,#0x0
-   \   000081   7900         MOV       R1,#0x0
-   \   000083   7A..         MOV       R2,#(_NIB + 25) & 0xff
-   \   000085   7B..         MOV       R3,#((_NIB + 25) >> 8) & 0xff
-   \   000087   12....       LCALL     `??osal_memset::?relay`; Banked call to: osal_memset
+   \   00007C                ; Setup parameters for call to function osal_memset
+   \   00007C   7C08         MOV       R4,#0x8
+   \   00007E   7D00         MOV       R5,#0x0
+   \   000080   7900         MOV       R1,#0x0
+   \   000082   7A..         MOV       R2,#(_NIB + 25) & 0xff
+   \   000084   7B..         MOV       R3,#((_NIB + 25) >> 8) & 0xff
+   \   000086   12....       LCALL     `??osal_memset::?relay`; Banked call to: osal_memset
     451            _NIB.nwkPanId = INVALID_NODE_ADDR;
-   \   00008A   90....       MOV       DPTR,#_NIB + 33
-   \   00008D   74FE         MOV       A,#-0x2
-   \   00008F   F0           MOVX      @DPTR,A
-   \   000090   A3           INC       DPTR
-   \   000091   04           INC       A
-   \   000092   F0           MOVX      @DPTR,A
+   \   000089   90....       MOV       DPTR,#_NIB + 33
+   \   00008C   74FE         MOV       A,#-0x2
+   \   00008E   F0           MOVX      @DPTR,A
+   \   00008F   A3           INC       DPTR
+   \   000090   04           INC       A
+   \   000091   F0           MOVX      @DPTR,A
     452          
     453            osal_cpyExtAddr( _NIB.extendedPANID, zgExtendedPANID );
-   \   000093                ; Setup parameters for call to function sAddrExtCpy
-   \   000093   7C..         MOV       R4,#zgExtendedPANID & 0xff
-   \   000095   7D..         MOV       R5,#(zgExtendedPANID >> 8) & 0xff
-   \   000097   7A..         MOV       R2,#(_NIB + 53) & 0xff
-   \   000099   7B..         MOV       R3,#((_NIB + 53) >> 8) & 0xff
-   \   00009B   12....       LCALL     `??sAddrExtCpy::?relay`; Banked call to: sAddrExtCpy
+   \   000092                ; Setup parameters for call to function sAddrExtCpy
+   \   000092   7C..         MOV       R4,#zgExtendedPANID & 0xff
+   \   000094   7D..         MOV       R5,#(zgExtendedPANID >> 8) & 0xff
+   \   000096   7A..         MOV       R2,#(_NIB + 53) & 0xff
+   \   000098   7B..         MOV       R3,#((_NIB + 53) >> 8) & 0xff
+   \   00009A   12....       LCALL     `??sAddrExtCpy::?relay`; Banked call to: sAddrExtCpy
     454          
     455            _NIB.nwkKeyLoaded = FALSE;
-   \   00009E   90....       MOV       DPTR,#_NIB + 61
-   \   0000A1   E4           CLR       A
-   \   0000A2   F0           MOVX      @DPTR,A
+   \   00009D   90....       MOV       DPTR,#_NIB + 61
+   \   0000A0   E4           CLR       A
+   \   0000A1   F0           MOVX      @DPTR,A
     456          
     457            _NIB.nwkLinkStatusPeriod = NWK_LINK_STATUS_PERIOD;
-   \   0000A3   90....       MOV       DPTR,#_NIB + 98
-   \   0000A6   740F         MOV       A,#0xf
-   \   0000A8   F0           MOVX      @DPTR,A
+   \   0000A2   90....       MOV       DPTR,#_NIB + 98
+   \   0000A5   740F         MOV       A,#0xf
+   \   0000A7   F0           MOVX      @DPTR,A
     458            _NIB.nwkRouterAgeLimit = NWK_ROUTE_AGE_LIMIT;
-   \   0000A9   A3           INC       DPTR
-   \   0000AA   7403         MOV       A,#0x3
-   \   0000AC   F0           MOVX      @DPTR,A
+   \   0000A8   A3           INC       DPTR
+   \   0000A9   7403         MOV       A,#0x3
+   \   0000AB   F0           MOVX      @DPTR,A
     459          
     460            //MTO and source routing
     461            _NIB.nwkConcentratorDiscoveryTime = zgConcentratorDiscoveryTime;
-   \   0000AD   90....       MOV       DPTR,#zgConcentratorDiscoveryTime
-   \   0000B0   E0           MOVX      A,@DPTR
-   \   0000B1   90....       MOV       DPTR,#_NIB + 102
-   \   0000B4   F0           MOVX      @DPTR,A
+   \   0000AC   90....       MOV       DPTR,#zgConcentratorDiscoveryTime
+   \   0000AF   E0           MOVX      A,@DPTR
+   \   0000B0   90....       MOV       DPTR,#_NIB + 102
+   \   0000B3   F0           MOVX      @DPTR,A
     462            _NIB.nwkIsConcentrator = zgConcentratorEnable;
-   \   0000B5   90....       MOV       DPTR,#zgConcentratorEnable
-   \   0000B8   E0           MOVX      A,@DPTR
-   \   0000B9   90....       MOV       DPTR,#_NIB + 101
-   \   0000BC   F0           MOVX      @DPTR,A
+   \   0000B4   90....       MOV       DPTR,#zgConcentratorEnable
+   \   0000B7   E0           MOVX      A,@DPTR
+   \   0000B8   90....       MOV       DPTR,#_NIB + 101
+   \   0000BB   F0           MOVX      @DPTR,A
     463            _NIB.nwkConcentratorRadius = zgConcentratorRadius;
-   \   0000BD   90....       MOV       DPTR,#zgConcentratorRadius
-   \   0000C0   E0           MOVX      A,@DPTR
-   \   0000C1   90....       MOV       DPTR,#_NIB + 103
-   \   0000C4   F0           MOVX      @DPTR,A
+   \   0000BC   90....       MOV       DPTR,#zgConcentratorRadius
+   \   0000BF   E0           MOVX      A,@DPTR
+   \   0000C0   90....       MOV       DPTR,#_NIB + 103
+   \   0000C3   F0           MOVX      @DPTR,A
     464          
     465          #if defined ( ZIGBEEPRO )
     466            _NIB.nwkUseMultiCast = MULTICAST_ENABLED;
-   \   0000C5   90....       MOV       DPTR,#_NIB + 100
-   \   0000C8   E4           CLR       A
-   \   0000C9   F0           MOVX      @DPTR,A
+   \   0000C4   90....       MOV       DPTR,#_NIB + 100
+   \   0000C7   E4           CLR       A
+   \   0000C8   F0           MOVX      @DPTR,A
     467          #else
     468            _NIB.nwkUseMultiCast = FALSE;
     469          #endif
@@ -1111,53 +1113,27 @@ D:\project\Z-Stack 3.0.2\Components\stack\nwk\nwk_globals.c
     471          #if defined ( NV_RESTORE )
     472            if ( osal_nv_read( ZCD_NV_NWKMGR_ADDR, 0, sizeof( _NIB.nwkManagerAddr ),
     473                               &_NIB.nwkManagerAddr ) != SUCCESS )
-   \   0000CA                ; Setup parameters for call to function osal_nv_read
-   \   0000CA   75....       MOV       ?V0,#(_NIB + 105) & 0xff
-   \   0000CD   75....       MOV       ?V1,#((_NIB + 105) >> 8) & 0xff
-   \   0000D0   78..         MOV       R0,#?V0
-   \   0000D2   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   0000D5   75..02       MOV       ?V0,#0x2
-   \   0000D8   75..00       MOV       ?V1,#0x0
-   \   0000DB   78..         MOV       R0,#?V0
-   \   0000DD   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   0000E0   7C00         MOV       R4,#0x0
-   \   0000E2   7D00         MOV       R5,#0x0
-   \   0000E4   7A89         MOV       R2,#-0x77
-   \   0000E6   7B00         MOV       R3,#0x0
-   \   0000E8   12....       LCALL     `??osal_nv_read::?relay`; Banked call to: osal_nv_read
-   \   0000EB   7404         MOV       A,#0x4
-   \   0000ED   12....       LCALL     ?DEALLOC_XSTACK8
-   \   0000F0   E9           MOV       A,R1
-   \   0000F1   6007         JZ        ??NIB_init_0
     474          #endif
     475            {
     476              _NIB.nwkManagerAddr = 0x0000;
-   \   0000F3   90....       MOV       DPTR,#_NIB + 105
-   \   0000F6   E4           CLR       A
-   \   0000F7   F0           MOVX      @DPTR,A
-   \   0000F8   A3           INC       DPTR
-   \   0000F9   F0           MOVX      @DPTR,A
+   \   0000C9   90....       MOV       DPTR,#_NIB + 105
+   \   0000CC   F0           MOVX      @DPTR,A
+   \   0000CD   A3           INC       DPTR
+   \   0000CE   F0           MOVX      @DPTR,A
     477            }
     478          
     479            NLME_SetUpdateID( 0 );
-   \                     ??NIB_init_0:
-   \   0000FA                ; Setup parameters for call to function NLME_SetUpdateID
-   \   0000FA   7900         MOV       R1,#0x0
-   \   0000FC   12....       LCALL     `??NLME_SetUpdateID::?relay`; Banked call to: NLME_SetUpdateID
+   \   0000CF                ; Setup parameters for call to function NLME_SetUpdateID
+   \   0000CF   F9           MOV       R1,A
+   \   0000D0   12....       LCALL     `??NLME_SetUpdateID::?relay`; Banked call to: NLME_SetUpdateID
     480            _NIB.nwkTotalTransmissions = 0;
-   \   0000FF   90....       MOV       DPTR,#_NIB + 107
-   \   000102   E4           CLR       A
-   \   000103   F0           MOVX      @DPTR,A
-   \   000104   A3           INC       DPTR
-   \   000105   F0           MOVX      @DPTR,A
+   \   0000D3   90....       MOV       DPTR,#_NIB + 107
+   \   0000D6   E4           CLR       A
+   \   0000D7   F0           MOVX      @DPTR,A
+   \   0000D8   A3           INC       DPTR
+   \   0000D9   F0           MOVX      @DPTR,A
     481          }
-   \   000106                REQUIRE ?Subroutine0
-   \   000106                ; // Fall through to label ?Subroutine0
-
-   \                                 In  segment BANKED_CODE, align 1, keep-with-next
-   \                     ?Subroutine0:
-   \   000000   7F02         MOV       R7,#0x2
-   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+   \   0000DA   02....       LJMP      ?Subroutine0 & 0xFFFF
 
    \                                 In  segment BANKED_CODE, align 1, keep-with-next
    \                     ?Subroutine1:
@@ -1528,7 +1504,8 @@ D:\project\Z-Stack 3.0.2\Components\stack\nwk\nwk_globals.c
    \   000028   FA           MOV       R2,A
    \   000029   E9           MOV       A,R1
    \   00002A   FB           MOV       R3,A
-   \   00002B   02....       LJMP      ?Subroutine0 & 0xFFFF
+   \   00002B   7F02         MOV       R7,#0x2
+   \   00002D   02....       LJMP      ?BANKED_LEAVE_XDATA
     618          }
 
    \                                 In  segment XDATA_ID, align 1, keep-with-next
@@ -1562,12 +1539,11 @@ D:\project\Z-Stack 3.0.2\Components\stack\nwk\nwk_globals.c
 
    ISTACK XSTACK Function
    ------ ------ --------
-      0     14   NIB_init
-        0     10   -> NLME_SetUpdateID
-        0     10   -> osal_memset
-        0     14   -> osal_nv_read
-        0     10   -> osal_rand
-        0     10   -> sAddrExtCpy
+      2      0   NIB_init
+        2      0   -> NLME_SetUpdateID
+        2      0   -> osal_memset
+        2      0   -> osal_rand
+        2      0   -> sAddrExtCpy
       0     17   nwk_Status
         0     16   -> BuzzerControl
         0     16   -> HalLcdWriteScreen
@@ -1587,7 +1563,7 @@ D:\project\Z-Stack 3.0.2\Components\stack\nwk\nwk_globals.c
    Bytes  Function/Label
    -----  --------------
        1  ?<Initializer for gMIN_TREE_LQI>
-       5  ?Subroutine0
+       7  ?Subroutine0
        9  ?Subroutine1
       15  AssocCnfFailStr
       10  AssocCnfStr
@@ -1601,7 +1577,7 @@ D:\project\Z-Stack 3.0.2\Components\stack\nwk\nwk_globals.c
       11  EndDeviceStr
       13  EnergyLevelStr
        7  FailedStr
-     262  NIB_init
+     221  NIB_init
        6  NIB_init::?relay
       12  NetworkIDStr
       16  OrphanRspStr
@@ -1660,9 +1636,9 @@ D:\project\Z-Stack 3.0.2\Components\stack\nwk\nwk_globals.c
        2  nwkPollCount
      290  nwk_Status
        6  nwk_Status::?relay
-      46  nwk_adjustDelay
+      48  nwk_adjustDelay
        6  nwk_adjustDelay::?relay
-      32  nwk_globals_init
+      25  nwk_globals_init
        6  nwk_globals_init::?relay
       64  rtDiscTable
       24  rtgSrcRelayList
@@ -1671,7 +1647,7 @@ D:\project\Z-Stack 3.0.2\Components\stack\nwk\nwk_globals.c
       60  timeoutValue
 
  
-   644 bytes in segment BANKED_CODE
+   600 bytes in segment BANKED_CODE
     24 bytes in segment BANK_RELAYS
    138 bytes in segment CODE_C
      1 byte  in segment XDATA_I
@@ -1681,7 +1657,7 @@ D:\project\Z-Stack 3.0.2\Components\stack\nwk\nwk_globals.c
  
    163 bytes of CODE     memory
    178 bytes of CONST    memory
-   644 bytes of HUGECODE memory
+   600 bytes of HUGECODE memory
  1 596 bytes of XDATA    memory
 
 Errors: none

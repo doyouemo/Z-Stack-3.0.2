@@ -74,7 +74,7 @@ static endPointDesc_t ZEM_AppEp =
   ZEM_ENDPOINT,                       // Application endpoint
   0,
   &zclZEM_TaskID,
-  &zclZEM_SimpleDesc,                 // Simple description for this application
+  (SimpleDescriptionFormat_t *)&zclZEM_SimpleDesc,                 // Simple description for this application
   (afNetworkLatencyReq_t)0            // No Network Latency req
 };
 #ifdef BDB_REPORTING
@@ -193,43 +193,24 @@ void zclZEM_Init( byte task_id )
 
   bdb_RegisterCommissioningStatusCB( zclZEM_ProcessCommissioningStatus );
 
+  // Register the endpoint with AF (Application Framework)
+  afRegister( &ZEM_AppEp  );
+  
+  // 清除之前保存的网络信息，确保每次启动都重新组网
+  NLME_SetDefaultNV();
+  
+  // Initialize UART communication
+  zclZEM_InitUart();
+
 #ifdef ZDO_COORDINATOR
-  // 重置网络状态，强制每次都重新初始化网络
-  // 设置ZCD_STARTOPT_DEFAULT_NETWORK_STATE位，使设备每次都重新组网
-  extern uint8 zgWriteStartupOptions( uint8 action, uint8 bitOptions );
-  
-  // 设置默认网络状态选项
-  zgWriteStartupOptions( 1, 0x01 );
-  
-  // 执行网络形成
   bdb_StartCommissioning( BDB_COMMISSIONING_MODE_NWK_FORMATION |
                           BDB_COMMISSIONING_MODE_FINDING_BINDING );
   NLME_PermitJoiningRequest(255);
-  // Broadcast
-  osal_start_timerEx(zclZEM_TaskID,
-                     ZEM_BROADCAST_EVT,
-                     ZEM_BROADCAST_PERIOD);
-  // groupcast
-  osal_start_timerEx(zclZEM_TaskID,
-                     ZEM_GROUPCAST_EVT,
-                     ZEM_GROUPCAST_PERIOD);
+
 #else
   bdb_StartCommissioning( BDB_COMMISSIONING_MODE_NWK_STEERING |
                           BDB_COMMISSIONING_MODE_FINDING_BINDING );
-  // Add group
-  aps_Group_t group = {
-    .ID = GROUP_ID,
-    .name = "",
-  };
-  aps_AddGroup(ZEM_ENDPOINT, &group);
-  // P2P
-  osal_start_timerEx(zclZEM_TaskID,
-                     ZEM_P2P_EVT,
-                     ZEM_P2P_PERIOD);
 #endif
-
-  // Initialize UART communication
-  zclZEM_InitUart();
   
   // Read and send MAC address
   zclZEM_ReadAndSendMAC();
@@ -246,7 +227,7 @@ void zclZEM_Init( byte task_id )
    osal_start_timerEx(
       zclZEM_TaskID,
       ZEMAPP_EVT,
-      3000);
+      2000);
 }
 
 /*********************************************************************
@@ -268,6 +249,7 @@ uint16 zclZEM_event_loop( uint8 task_id, uint16 events )
   {
     while ( (MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( zclZEM_TaskID )) )
     {
+      
       switch ( MSGpkt->hdr.event )
       {
         case ZCL_INCOMING_MSG:
@@ -285,37 +267,6 @@ uint16 zclZEM_event_loop( uint8 task_id, uint16 events )
           break;
 
         case ZDO_STATE_CHANGE:
-          // 处理网络状态变化
-          {
-            uint8 newState = ((uint8*)MSGpkt)[0];
-            zclZEM_NwkState = newState; // 更新网络状态
-            
-            if (newState == 5) // DEV_END_DEVICE
-            {
-              // 终端设备已加入网络
-              uint8 successMsg[] = "Network joined successfully!\r\n";
-              HalUARTWrite(HAL_UART_PORT_0, successMsg, sizeof(successMsg)-1);
-              
-              // 联网成功后向协调器发送MAC地址
-              #ifndef ZDO_COORDINATOR
-              zclZEM_SendMACToCoordinator();
-              #endif
-            }
-            else if (newState == 9) // DEV_NWK_ORPHAN
-            {
-              // 设备成为孤立设备
-              #ifndef ZDO_COORDINATOR
-              {
-                static uint8 retryCount = 0;
-                if (retryCount < 3)
-                {
-                  retryCount++;
-                  osal_start_timerEx(zclZEM_TaskID, ZEM_REJOIN_EVT, 2000);
-                }
-              }
-              #endif
-            }
-          }
           break;
 
         default:
@@ -333,14 +284,58 @@ uint16 zclZEM_event_loop( uint8 task_id, uint16 events )
   // 先处理LED闪烁事件，确保不会被SYS_EVENT_MSG阻塞
   if(events & ZEMAPP_EVT)
   { 
-    HalLedBlink(
-        HAL_LED_1, // 指定使用LED1
-        10, // 指定闪烁次数为10次
-        50, // 指定50%的时间LED处于点亮状态
-        1000); // 指定每次闪烁周期为1000ms
+    static uint8 sendType = 0; // 0: 发送格式1, 1: 发送格式2, 2: 发送格式3
+    uint8* macAddr = NLME_GetExtAddr();
+    uint8 macStr[100]; // 足够存储MAC地址字符串
+    uint8 i, pos = 0;
     
-    // 设置下一次LED闪烁定时器
-    osal_start_timerEx(zclZEM_TaskID, ZEMAPP_EVT, 10000);
+    // 添加起始分隔符
+    macStr[pos++] = '/';
+    
+    // 添加设备自身MAC地址（16个十六进制字符）- 小端序
+    for (int i = 7; i >= 0; i--) {
+      // 转换高4位
+      uint8 highNibble = (macAddr[i] >> 4) & 0x0F;
+      macStr[pos++] = (highNibble < 10) ? ('0' + highNibble) : ('A' + highNibble - 10);
+      
+      // 转换低4位
+      uint8 lowNibble = macAddr[i] & 0x0F;
+      macStr[pos++] = (lowNibble < 10) ? ('0' + lowNibble) : ('A' + lowNibble - 10);
+    }
+    
+    // 根据发送类型添加不同的固定MAC地址和格式
+    if (sendType == 0) {
+      // 格式1：/设备MAC地址/0123456789abcdef/1/2/2
+      const uint8 fixedMac1[] = "/0123456789abcdef/1/2/2";
+      for (i = 0; i < 23; i++) {
+        macStr[pos++] = fixedMac1[i];
+      }
+      sendType = 1; // 下次发送格式2
+    } else if (sendType == 1) {
+      // 格式2：/设备MAC地址/123456789abcdef0/2/3/6
+      const uint8 fixedMac2[] = "/123456789abcdef0/2/3/6";
+      for (i = 0; i < 23; i++) {
+        macStr[pos++] = fixedMac2[i];
+      }
+      sendType = 2; // 下次发送格式3
+    } else {
+      // 格式3：/设备MAC地址/23456789abcdef01/0/220/0
+      const uint8 fixedMac3[] = "/23456789abcdef01/0/220/0";
+      for (i = 0; i < 25; i++) {
+        macStr[pos++] = fixedMac3[i];
+      }
+      sendType = 0; // 下次发送格式1
+    }
+    
+    // 添加换行符
+    macStr[pos++] = '\r';
+    macStr[pos++] = '\n';
+    
+    // 发送到串口
+    HalUARTWrite(HAL_UART_PORT_0, macStr, pos);
+    
+    // 设置下一次定时器（3秒间隔）
+    osal_start_timerEx(zclZEM_TaskID, ZEMAPP_EVT, 2000);
     
     return (events ^ ZEMAPP_EVT);
   }
@@ -393,22 +388,47 @@ uint16 zclZEM_event_loop( uint8 task_id, uint16 events )
   // P2P event
   if ( events & ZEM_P2P_EVT )
   {
-    uint8 p2pData[] = "P2P";
-    zclZEM_AF_P2P(0x0000, // 目标设备网络地址（这里使用0x0000作为示例）
-                  CLUSTER_P2P,
-                  sizeof(p2pData)-1, 
-                  p2pData);
+    // 添加调试信息，检查网络状态
+    uint8 p2pDebugMsg[] = "ZEM_P2P_EVT processed! Network state: ";
+    HalUARTWrite(HAL_UART_PORT_0, p2pDebugMsg, sizeof(p2pDebugMsg)-1);
+    
+    uint8 stateStr[8];
+    // 转换网络状态为十六进制显示
+    uint8 stateByte = devState;
+    uint8 highNibble = (stateByte >> 4) & 0x0F;
+    uint8 lowNibble = stateByte & 0x0F;
+    stateStr[0] = (highNibble < 10) ? ('0' + highNibble) : ('A' + highNibble - 10);
+    stateStr[1] = (lowNibble < 10) ? ('0' + lowNibble) : ('A' + lowNibble - 10);
+    stateStr[2] = '\r';
+    stateStr[3] = '\n';
+    HalUARTWrite(0, stateStr, 4);
+    
+    // 使用P2P事件发送MAC地址
+    zclZEM_SendMACToCoordinator();
+    
     osal_start_timerEx(zclZEM_TaskID,
                       ZEM_P2P_EVT,
                       ZEM_P2P_PERIOD);
     return ( events ^ ZEM_P2P_EVT );
   }
+  
+  // 网络形成重试事件
+  if ( events & ZEM_RETRY_FORMATION_EVT )
+  {
+    
+    // 重新调用组网函数
+    bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_FORMATION |
+                                BDB_COMMISSIONING_MODE_FINDING_BINDING );
+    return ( events ^ ZEM_RETRY_FORMATION_EVT );
+  }
   #ifndef ZDO_COORDINATOR
     if ( events & ZEM_REJOIN_EVT )//如果事件类型为重新加入网络事件
     {
-        // 重新加入网络
+        // 添加调试信息
+        uint8 rejoinMsg[] = "ZEM_REJOIN_EVT processed! Starting network steering...\r\n";
+        HalUARTWrite(HAL_UART_PORT_0, rejoinMsg, sizeof(rejoinMsg)-1);
         
-        /* 重新加入网络 */
+        // 重新加入网络
         bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_STEERING |
                                     BDB_COMMISSIONING_MODE_FINDING_BINDING );
       return ( events ^ ZEM_REJOIN_EVT );
@@ -590,8 +610,67 @@ static void zclZEM_ProcessCommissioningStatus(bdbCommissioningModeMsg_t* bdbComm
           bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_STEERING | bdbCommissioningModeMsg->bdbRemainingCommissioningModes);
           // 网络形成成功
           #ifdef ZDO_COORDINATOR
-          uint8 successMsg[] = "Network formation successful!\r\n";
+          uint8 successMsg[] = "Network formation successful! PANID: ";
           HalUARTWrite(HAL_UART_PORT_0, successMsg, sizeof(successMsg)-1);
+          
+          // 打印PANID（十六进制格式）
+          uint8 panidStr[8];
+          uint16 panId = _NIB.nwkPanId;
+          
+          // 转换高字节
+          uint8 highByte = (panId >> 8) & 0xFF;
+          uint8 highNibbleH = (highByte >> 4) & 0x0F;
+          uint8 lowNibbleH = highByte & 0x0F;
+          panidStr[0] = (highNibbleH < 10) ? ('0' + highNibbleH) : ('A' + highNibbleH - 10);
+          panidStr[1] = (lowNibbleH < 10) ? ('0' + lowNibbleH) : ('A' + lowNibbleH - 10);
+          
+          // 转换低字节
+          uint8 lowByte = panId & 0xFF;
+          uint8 highNibbleL = (lowByte >> 4) & 0x0F;
+          uint8 lowNibbleL = lowByte & 0x0F;
+          panidStr[2] = (highNibbleL < 10) ? ('0' + highNibbleL) : ('A' + highNibbleL - 10);
+          panidStr[3] = (lowNibbleL < 10) ? ('0' + lowNibbleL) : ('A' + lowNibbleL - 10);
+          
+          panidStr[4] = '\r';
+          panidStr[5] = '\n';
+          HalUARTWrite(0, panidStr, 6);
+          
+          // 打印网络地址（十六进制格式）
+          uint8 nwkAddrMsg[] = "Network Address: 0x";
+          HalUARTWrite(HAL_UART_PORT_0, nwkAddrMsg, sizeof(nwkAddrMsg)-1);
+          
+          uint16 nwkAddr = NLME_GetShortAddr(); // 获取协调器的网络地址
+          uint8 nwkAddrStr[6];
+          
+          // 转换高字节
+          uint8 nwkHighByte = (nwkAddr >> 8) & 0xFF;
+          uint8 nwkHighNibbleH = (nwkHighByte >> 4) & 0x0F;
+          uint8 nwkLowNibbleH = nwkHighByte & 0x0F;
+          nwkAddrStr[0] = (nwkHighNibbleH < 10) ? ('0' + nwkHighNibbleH) : ('A' + nwkHighNibbleH - 10);
+          nwkAddrStr[1] = (nwkLowNibbleH < 10) ? ('0' + nwkLowNibbleH) : ('A' + nwkLowNibbleH - 10);
+          
+          // 转换低字节
+          uint8 nwkLowByte = nwkAddr & 0xFF;
+          uint8 nwkHighNibbleL = (nwkLowByte >> 4) & 0x0F;
+          uint8 nwkLowNibbleL = nwkLowByte & 0x0F;
+          nwkAddrStr[2] = (nwkHighNibbleL < 10) ? ('0' + nwkHighNibbleL) : ('A' + nwkHighNibbleL - 10);
+          nwkAddrStr[3] = (nwkLowNibbleL < 10) ? ('0' + nwkLowNibbleL) : ('A' + nwkLowNibbleL - 10);
+          
+          nwkAddrStr[4] = '\r';
+          nwkAddrStr[5] = '\n';
+          HalUARTWrite(0, nwkAddrStr, 6);
+          
+          // 协调器组网成功后LED常亮
+          HalLedSet(HAL_LED_1, HAL_LED_MODE_ON);
+          
+          // 组网成功后允许设备加入网络
+          NLME_PermitJoiningRequest(255);
+          
+          // 组网成功后启动广播和组播定时器
+          // Broadcast
+          osal_start_timerEx(zclZEM_TaskID,
+                             ZEM_BROADCAST_EVT,
+                             ZEM_BROADCAST_PERIOD);
           #endif
         }
         else
@@ -603,33 +682,9 @@ static void zclZEM_ProcessCommissioningStatus(bdbCommissioningModeMsg_t* bdbComm
           uint8 failMsg[] = "Network formation failed! Retrying...\r\n";
           HalUARTWrite(HAL_UART_PORT_0, failMsg, sizeof(failMsg)-1);
           
-          // 打印具体的失败原因
-          uint8 statusMsg[64];
-          osal_memcpy(statusMsg, "Failure reason: ", 15);
-          
-          switch(bdbCommissioningModeMsg->bdbCommissioningStatus) {
-            case BDB_COMMISSIONING_NO_NETWORK:
-              osal_memcpy(&statusMsg[15], "No network found", 15);
-              break;
-            case BDB_COMMISSIONING_FORMATION_FAILURE:
-              osal_memcpy(&statusMsg[15], "Formation failure", 17);
-              break;
-            case BDB_COMMISSIONING_TCLK_EX_FAILURE:
-              osal_memcpy(&statusMsg[15], "TCLK exchange failure", 20);
-              break;
-            case BDB_COMMISSIONING_FAILURE:
-              osal_memcpy(&statusMsg[15], "General failure", 14);
-              break;
-            default:
-              osal_memcpy(&statusMsg[15], "Unknown error", 13);
-              break;
-          }
-          osal_memcpy(&statusMsg[30], "\r\n", 2);
-          HalUARTWrite(HAL_UART_PORT_0, statusMsg, 32);
-          
-          // 直接重新调用组网函数，不需要通过定时器
+          // 直接重新调用组网函数
           bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_FORMATION |
-                                      BDB_COMMISSIONING_MODE_FINDING_BINDING );
+                                BDB_COMMISSIONING_MODE_FINDING_BINDING);
           #endif
         }
       break;
@@ -640,8 +695,67 @@ static void zclZEM_ProcessCommissioningStatus(bdbCommissioningModeMsg_t* bdbComm
           //We are on the nwk, what now?
           // 网络引导成功
           #ifdef ZDO_COORDINATOR
-          uint8 deviceJoinedMsg[] = "Device joined the network!\r\n";
-          HalUARTWrite(HAL_UART_PORT_0, deviceJoinedMsg, sizeof(deviceJoinedMsg)-1);
+          #else
+          uint8 steeringSuccessMsg[] = "Network steering successful! PANID: ";
+          HalUARTWrite(HAL_UART_PORT_0, steeringSuccessMsg, sizeof(steeringSuccessMsg)-1);
+          
+          // 打印PANID（十六进制格式）
+          uint8 panidStr[8];
+          uint16 panId = _NIB.nwkPanId;
+          
+          // 转换高字节
+          uint8 highByte = (panId >> 8) & 0xFF;
+          uint8 highNibbleH = (highByte >> 4) & 0x0F;
+          uint8 lowNibbleH = highByte & 0x0F;
+          panidStr[0] = (highNibbleH < 10) ? ('0' + highNibbleH) : ('A' + highNibbleH - 10);
+          panidStr[1] = (lowNibbleH < 10) ? ('0' + lowNibbleH) : ('A' + lowNibbleH - 10);
+          
+          // 转换低字节
+          uint8 lowByte = panId & 0xFF;
+          uint8 highNibbleL = (lowByte >> 4) & 0x0F;
+          uint8 lowNibbleL = lowByte & 0x0F;
+          panidStr[2] = (highNibbleL < 10) ? ('0' + highNibbleL) : ('A' + highNibbleL - 10);
+          panidStr[3] = (lowNibbleL < 10) ? ('0' + lowNibbleL) : ('A' + lowNibbleL - 10);
+          
+          panidStr[4] = '\r';
+          panidStr[5] = '\n';
+          HalUARTWrite(0, panidStr, 6);
+          
+          // 打印网络地址（十六进制格式）
+          uint8 nwkAddrMsg[] = "Network Address: 0x";
+          HalUARTWrite(HAL_UART_PORT_0, nwkAddrMsg, sizeof(nwkAddrMsg)-1);
+          
+          uint16 nwkAddr = NLME_GetShortAddr(); // 获取终端的网络地址
+          uint8 nwkAddrStr[6];
+          
+          // 转换高字节
+          uint8 nwkHighByte = (nwkAddr >> 8) & 0xFF;
+          uint8 nwkHighNibbleH = (nwkHighByte >> 4) & 0x0F;
+          uint8 nwkLowNibbleH = nwkHighByte & 0x0F;
+          nwkAddrStr[0] = (nwkHighNibbleH < 10) ? ('0' + nwkHighNibbleH) : ('A' + nwkHighNibbleH - 10);
+          nwkAddrStr[1] = (nwkLowNibbleH < 10) ? ('0' + nwkLowNibbleH) : ('A' + nwkLowNibbleH - 10);
+          
+          // 转换低字节
+          uint8 nwkLowByte = nwkAddr & 0xFF;
+          uint8 nwkHighNibbleL = (nwkLowByte >> 4) & 0x0F;
+          uint8 nwkLowNibbleL = nwkLowByte & 0x0F;
+          nwkAddrStr[2] = (nwkHighNibbleL < 10) ? ('0' + nwkHighNibbleL) : ('A' + nwkHighNibbleL - 10);
+          nwkAddrStr[3] = (nwkLowNibbleL < 10) ? ('0' + nwkLowNibbleL) : ('A' + nwkLowNibbleL - 10);
+          
+          nwkAddrStr[4] = '\r';
+          nwkAddrStr[5] = '\n';
+          HalUARTWrite(0, nwkAddrStr, 6);
+          
+          // 入网成功后使用P2P向协调器发送MAC地址
+          zclZEM_SendMACToCoordinator();
+          
+          // 入网成功后启动P2P定时器，定期向协调器发送MAC地址
+          osal_start_timerEx(zclZEM_TaskID,
+                             ZEM_P2P_EVT,
+                             ZEM_P2P_PERIOD);
+          
+          // 终端入网成功后LED常亮
+          HalLedSet(HAL_LED_1, HAL_LED_MODE_ON);
           #endif
         }
         else
@@ -1120,6 +1234,11 @@ static void zclZEM_AF_RxProc(afIncomingMSGPacket_t *MSGpkt)
             break;
         case CLUSTER_BROADCAST:
             bcCnt++;  // 接收到广播数据包，进行计数
+            
+            // 添加广播接收调试信息
+            uint8 bcRecvMsg[] = "Broadcast message received!\r\n";
+            HalUARTWrite(HAL_UART_PORT_0, bcRecvMsg, sizeof(bcRecvMsg)-1);
+            
             // 通过串口输出接收到的数据和计数器值
             {
                 uint8 bcMsg[64];

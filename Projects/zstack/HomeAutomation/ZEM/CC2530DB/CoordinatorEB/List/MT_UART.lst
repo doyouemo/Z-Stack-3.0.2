@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR C/C++ Compiler V10.10.1.4655 for 8051               04/Feb/2026  17:09:06
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               06/Feb/2026  14:07:51
 # Copyright 2004-2017 IAR Systems AB.
 # Standalone license - IAR Embedded Workbench for 8051
 #
@@ -13,12 +13,11 @@
 #                          
 #    Source file        =  D:\project\Z-Stack 3.0.2\Components\mt\MT_UART.c
 #    Command line       =  
-#        -f C:\Users\KLF\AppData\Local\Temp\EW6148.tmp ("D:\project\Z-Stack
-#        3.0.2\Components\mt\MT_UART.c" -D BDB_REPORTING -D SECURE=1 -D
-#        TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D xZTOOL_P1 -D xMT_TASK -D
-#        xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D xMT_APP_CNF_FUNC -D
-#        LCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
-#        ZCL_DISCOVER -D ZCL_WRITE -D ZCL_BASIC -D ZCL_IDENTIFY -D
+#        -f C:\Users\KLF\AppData\Local\Temp\EW2FDD.tmp ("D:\project\Z-Stack
+#        3.0.2\Components\mt\MT_UART.c" -D BDB_REPORTING -D xZTOOL_P1 -D
+#        xMT_TASK -D xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D
+#        xMT_APP_CNF_FUNC -D LCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D
+#        ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D ZCL_BASIC -D ZCL_IDENTIFY -D
 #        ZCL_TEMPERATURE_MEASUREMENT -D ZCL_GROUPS -D HAL_LED=TRUE -D
 #        HAL_UART=TRUE -D INT_HEAP_LEN=2048 -lC "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\CoordinatorEB\List"

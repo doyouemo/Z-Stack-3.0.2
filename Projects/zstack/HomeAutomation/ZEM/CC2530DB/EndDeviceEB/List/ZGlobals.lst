@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR C/C++ Compiler V10.10.1.4655 for 8051               03/Feb/2026  00:00:32
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               05/Feb/2026  17:28:20
 # Copyright 2004-2017 IAR Systems AB.
 # Standalone license - IAR Embedded Workbench for 8051
 #
@@ -12,35 +12,30 @@
 #    Dptr setup         =  1,16
 #                          
 #    Source file        =  
-#        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
-#        3.0.2\Components\stack\sys\ZGlobals.c
+#        D:\project\Z-Stack 3.0.2\Components\stack\sys\ZGlobals.c
 #    Command line       =  
-#        -f C:\Users\ASUS\AppData\Local\Temp\EWD10C.tmp
-#        ("C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
-#        3.0.2\Components\stack\sys\ZGlobals.c" -D BDB_REPORTING -D SECURE=1 -D
-#        TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D xPOWER_SAVING -D
-#        NWK_AUTO_POLL -D xZTOOL_P1 -D xMT_TASK -D xMT_APP_FUNC -D xMT_SYS_FUNC
-#        -D xMT_ZDO_FUNC -D xMT_APP_CNF_FUNC -D LCD_SUPPORTED=DEBUG -D
-#        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
-#        ZCL_BASIC -D ZCL_IDENTIFY -D ZCL_TEMPERATURE_MEASUREMENT -D ZCL_GROUPS
-#        -lC "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -f C:\Users\KLF\AppData\Local\Temp\EW63FE.tmp ("D:\project\Z-Stack
+#        3.0.2\Components\stack\sys\ZGlobals.c" -D BDB_REPORTING -D
+#        xPOWER_SAVING -D NWK_AUTO_POLL -D xZTOOL_P1 -D xMT_TASK -D
+#        xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D xMT_APP_CNF_FUNC -D
+#        LCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
+#        ZCL_DISCOVER -D ZCL_WRITE -D ZCL_BASIC -D ZCL_IDENTIFY -D
+#        ZCL_TEMPERATURE_MEASUREMENT -D ZCL_GROUPS -D HAL_UART=TRUE -D
+#        INT_HEAP_LEN=2048 -lC "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List"
-#        -lA "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -lA "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List"
-#        --diag_suppress Pe001,Pa010 -o "C:\Users\ASUS\Desktop\work\graduration
-#        project\software\Z-Stack
+#        --diag_suppress Pe001,Pa010 -o "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\Obj" -e
 #        --debug --core=plain --dptr=16,1 --data_model=large
 #        --code_model=banked --calling_convention=xdata_reentrant
-#        --place_constants=data_rom --nr_virtual_regs 16 -f
-#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        --place_constants=data_rom --nr_virtual_regs 16 -f "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"
 #        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
-#        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f
-#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
 #        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
-#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0x1234
+#        -DDEFAULT_CHANLIST=0x00100000 -DZDAPP_CONFIG_PAN_ID=0x1234
 #        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
 #        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
 #        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
@@ -53,70 +48,70 @@
 #        -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000
 #        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
 #        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000 -DENABLE_LED4_DISABLE_S1)
-#        -f "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -f "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\" -I
-#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\Source\" -I
-#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\Source\" -I
-#        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\ZMain\TI2530DB\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\include\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\include\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mt\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\osal\include\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\saddr\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\sdata\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\af\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\bdb\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\gp\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sec\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sys\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac\"
-#        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        -I "D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
 #        -Ohz --require_prototypes)
 #    Locale             =  Chinese (Simplified)_China.936
 #    List file          =  
-#        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List\ZGlobals.lst
 #    Object file        =  
-#        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+#        D:\project\Z-Stack
 #        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\Obj\ZGlobals.r51
 #
 ###############################################################################
 
-C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\stack\sys\ZGlobals.c
+D:\project\Z-Stack 3.0.2\Components\stack\sys\ZGlobals.c
       1          /**************************************************************************************************
       2            Filename:       ZGlobals.c
       3            Revised:        $Date: 2015-10-05 14:56:09 -0700 (Mon, 05 Oct 2015) $
@@ -833,171 +828,9 @@ C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components
    \                                 In  segment CODE_C, align 1
     341          static CONST zgItem_t zgItemTable[] =
    \                     zgItemTable:
-   \   000000   8F00         DW 143
-   \   000002   0100         DW 1
-   \   000004   ....         DW zgZdoDirectCB
-   \   000006   8700         DW 135
-   \   000008   0100         DW 1
-   \   00000A   ....         DW zgDeviceLogicalType
-   \   00000C   3500         DW 53
-   \   00000E   0400         DW 4
-   \   000010   ....         DW zgPollRate
-   \   000012   2500         DW 37
-   \   000014   0200         DW 2
-   \   000016   ....         DW zgQueuedPollRate
-   \   000018   2600         DW 38
-   \   00001A   0200         DW 2
-   \   00001C   ....         DW zgResponsePollRate
-   \   00001E   2700         DW 39
-   \   000020   0200         DW 2
-   \   000022   ....         DW zgRejoinPollRate
-   \   000024   2800         DW 40
-   \   000026   0100         DW 1
-   \   000028   ....         DW zgMaxDataRetries
-   \   00002A   2900         DW 41
-   \   00002C   0100         DW 1
-   \   00002E   ....         DW zgMaxPollFailureRetries
-   \   000030   8400         DW 132
-   \   000032   0400         DW 4
-   \   000034   ....         DW zgDefaultChannelList
-   \   000036   8600         DW 134
-   \   000038   0100         DW 1
-   \   00003A   ....         DW bdbAttributes + 0DH
-   \   00003C   2A00         DW 42
-   \   00003E   0100         DW 1
-   \   000040   ....         DW zgStackProfile
-   \   000042   2B00         DW 43
-   \   000044   0100         DW 1
-   \   000046   ....         DW zgIndirectMsgTimeout
-   \   000048   2C00         DW 44
-   \   00004A   0100         DW 1
-   \   00004C   ....         DW zgRouteExpiryTime
-   \   00004E   2D00         DW 45
-   \   000050   0800         DW 8
-   \   000052   ....         DW zgExtendedPANID
-   \   000054   2E00         DW 46
-   \   000056   0100         DW 1
-   \   000058   ....         DW zgMaxBcastRetires
-   \   00005A   2F00         DW 47
-   \   00005C   0100         DW 1
-   \   00005E   ....         DW zgPassiveAckTimeout
-   \   000060   3000         DW 48
-   \   000062   0100         DW 1
-   \   000064   ....         DW zgBcastDeliveryTime
-   \   000066   3100         DW 49
-   \   000068   0100         DW 1
-   \   00006A   ....         DW zgNwkMode
-   \   00006C   3200         DW 50
-   \   00006E   0100         DW 1
-   \   000070   ....         DW zgConcentratorEnable
-   \   000072   3300         DW 51
-   \   000074   0100         DW 1
-   \   000076   ....         DW zgConcentratorDiscoveryTime
-   \   000078   3400         DW 52
-   \   00007A   0100         DW 1
-   \   00007C   ....         DW zgConcentratorRadius
-   \   00007E   3600         DW 54
-   \   000080   0100         DW 1
-   \   000082   ....         DW zgConcentratorRC
-   \   000084   3800         DW 56
-   \   000086   0100         DW 1
-   \   000088   ....         DW zgNwkSrcRtgExpiryTime
-   \   00008A   3900         DW 57
-   \   00008C   0100         DW 1
-   \   00008E   ....         DW zgRouteDiscoveryTime
-   \   000090   8300         DW 131
-   \   000092   0200         DW 2
-   \   000094   ....         DW zgConfigPANID
-   \   000096   6300         DW 99
-   \   000098   0100         DW 1
-   \   00009A   ....         DW zgPreConfigKeys
-   \   00009C   6400         DW 100
-   \   00009E   0100         DW 1
-   \   0000A0   ....         DW zgSecurityMode
-   \   0000A2   6500         DW 101
-   \   0000A4   0100         DW 1
-   \   0000A6   ....         DW zgSecurePermitJoin
-   \   0000A8   6D00         DW 109
-   \   0000AA   0100         DW 1
-   \   0000AC   ....         DW zgUseDefaultTCLK
-   \   0000AE   7100         DW 113
-   \   0000B0   0800         DW 8
-   \   0000B2   ....         DW zgApsTrustCenterAddr
-   \   0000B4   6600         DW 102
-   \   0000B6   0100         DW 1
-   \   0000B8   ....         DW zgApsLinkKeyType
-   \   0000BA   4300         DW 67
-   \   0000BC   0100         DW 1
-   \   0000BE   ....         DW zgApscMaxFrameRetries
-   \   0000C0   4400         DW 68
-   \   0000C2   0200         DW 2
-   \   0000C4   ....         DW zgApscAckWaitDurationPolled
-   \   0000C6   4500         DW 69
-   \   0000C8   0100         DW 1
-   \   0000CA   ....         DW zgApsAckWaitMultiplier
-   \   0000CC   4600         DW 70
-   \   0000CE   0200         DW 2
-   \   0000D0   ....         DW zgApsDefaultMaxBindingTime
-   \   0000D2   4700         DW 71
-   \   0000D4   0800         DW 8
-   \   0000D6   ....         DW zgApsUseExtendedPANID
-   \   0000D8   4800         DW 72
-   \   0000DA   0100         DW 1
-   \   0000DC   ....         DW zgApsUseInsecureJoin
-   \   0000DE   4B00         DW 75
-   \   0000E0   0100         DW 1
-   \   0000E2   ....         DW zgApsNonMemberRadius
-   \   0000E4   0400         DW 4
-   \   0000E6   0100         DW 1
-   \   0000E8   ....         DW zgStartDelay
-   \   0000EA   A100         DW 161
-   \   0000EC   0100         DW 1
-   \   0000EE   ....         DW zgSapiEndpoint
-   \   0000F0   3700         DW 55
-   \   0000F2   0100         DW 1
-   \   0000F4   ....         DW zgNwkMgrMode
-   \   0000F6   8800         DW 136
-   \   0000F8   0100         DW 1
-   \   0000FA   ....         DW zgNwkMgrMinTransmissions
-   \   0000FC   3C00         DW 60
-   \   0000FE   0100         DW 1
-   \   000100   ....         DW zgRouterOffAssocCleanup
-   \   000102   3D00         DW 61
-   \   000104   0100         DW 1
-   \   000106   ....         DW zgNwkLeaveRequestAllowed
-   \   000108   4900         DW 73
-   \   00010A   0200         DW 2
-   \   00010C   ....         DW zgNwkCommissionedNwkAddr
-   \   00010E   6700         DW 103
-   \   000110   0100         DW 1
-   \   000112   ....         DW zgApsAllowR19Sec
-   \   000114   4D00         DW 77
-   \   000116   0200         DW 2
-   \   000118   ....         DW zgApscDupRejTimeoutInc
-   \   00011A   4E00         DW 78
-   \   00011C   0100         DW 1
-   \   00011E   ....         DW zgApscDupRejTimeoutCount
-   \   000120   4F00         DW 79
-   \   000122   0200         DW 2
-   \   000124   ....         DW zgApsMinDupRejTableSize
-   \   000126   3E00         DW 62
-   \   000128   0100         DW 1
-   \   00012A   ....         DW zgChildAgingEnable
-   \   00012C   5100         DW 81
-   \   00012E   0100         DW 1
-   \   000130   ....         DW zgNwkParentInformation
-   \   000132   5200         DW 82
-   \   000134   0100         DW 1
-   \   000136   ....         DW zgNwkEndDeviceTimeoutDefault
-   \   000138   5300         DW 83
-   \   00013A   0100         DW 1
-   \   00013C   ....         DW zgEndDeviceTimeoutValue
-   \   00013E   5400         DW 84
-   \   000140   0100         DW 1
-   \   000142   ....         DW zgEndDeviceConfiguration
-   \   000144   0000         DW 0
-   \   000146   0000         DW 0
-   \   000148   0000         DW 0H
+   \   000000   0000         DW 0
+   \   000002   0000         DW 0
+   \   000004   0000         DW 0H
     342          {
     343          #if defined ( NV_INIT )
     344          #if !defined MT_TASK
@@ -1261,30 +1094,20 @@ C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components
     599          {
    \   000000                REQUIRE ?V0
    \   000000                REQUIRE ?V1
-   \   000000                REQUIRE ?V2
-   \   000000                REQUIRE ?V3
-   \   000000   74F4         MOV       A,#-0xc
+   \   000000   74F6         MOV       A,#-0xa
    \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
-   \   000005                ; Saved register size: 12
+   \   000005                ; Saved register size: 10
    \   000005                ; Auto size: 18
    \   000005   74EE         MOV       A,#-0x12
    \   000007   12....       LCALL     ?ALLOC_XSTACK8
     600            uint8  setDefault = FALSE;
-   \   00000A   7E00         MOV       R6,#0x0
     601            uint8  status;
     602            
     603          #ifdef NV_RESTORE
     604            // Do we want to default the Config state values
     605            if ( zgReadStartupOptions() & ZCD_STARTOPT_DEFAULT_CONFIG_STATE )
-   \   00000C                ; Setup parameters for call to function zgReadStartupOptions
-   \   00000C   12....       LCALL     `??zgReadStartupOptions::?relay`; Banked call to: zgReadStartupOptions
-   \   00000F   E9           MOV       A,R1
-   \   000010   F8           MOV       R0,A
-   \   000011   A2E0         MOV       C,0xE0 /* A   */.0
-   \   000013   5002         JNC       ??zgInit_0
     606            {
     607              setDefault = TRUE;
-   \   000015   7E01         MOV       R6,#0x1
     608            }
     609          #else
     610              setDefault = TRUE;
@@ -1294,29 +1117,25 @@ C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components
     614          
     615            //Force to reset state if device is forced to FN
     616            if((status == SUCCESS) && setDefault)
-   \                     ??zgInit_0:
-   \   000017                ; Setup parameters for call to function osal_nv_item_init
-   \   000017   75....       MOV       ?V0,#(bdbAttributes + 14) & 0xff
-   \   00001A   75....       MOV       ?V1,#((bdbAttributes + 14) >> 8) & 0xff
-   \   00001D   78..         MOV       R0,#?V0
-   \   00001F   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   000022   7C01         MOV       R4,#0x1
-   \   000024   7D00         MOV       R5,#0x0
-   \   000026   7A55         MOV       R2,#0x55
-   \   000028   7B00         MOV       R3,#0x0
-   \   00002A   12....       LCALL     `??osal_nv_item_init::?relay`; Banked call to: osal_nv_item_init
-   \   00002D   7402         MOV       A,#0x2
-   \   00002F   12....       LCALL     ?DEALLOC_XSTACK8
-   \   000032   E9           MOV       A,R1
-   \   000033   700A         JNZ       ??zgInit_1
-   \   000035   EE           MOV       A,R6
-   \   000036   A2E0         MOV       C,0xE0 /* A   */.0
-   \   000038   5005         JNC       ??zgInit_1
+   \   00000A                ; Setup parameters for call to function osal_nv_item_init
+   \   00000A   75....       MOV       ?V0,#(bdbAttributes + 14) & 0xff
+   \   00000D   75....       MOV       ?V1,#((bdbAttributes + 14) >> 8) & 0xff
+   \   000010   78..         MOV       R0,#?V0
+   \   000012   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000015   7C01         MOV       R4,#0x1
+   \   000017   7D00         MOV       R5,#0x0
+   \   000019   7A55         MOV       R2,#0x55
+   \   00001B   7B00         MOV       R3,#0x0
+   \   00001D   12....       LCALL     `??osal_nv_item_init::?relay`; Banked call to: osal_nv_item_init
+   \   000020   7402         MOV       A,#0x2
+   \   000022   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000025   E9           MOV       A,R1
+   \   000026   7005         JNZ       ??zgInit_0
     617            {
     618              bdb_setNodeIsOnANetwork(false);
-   \   00003A                ; Setup parameters for call to function bdb_setNodeIsOnANetwork
-   \   00003A   7900         MOV       R1,#0x0
-   \   00003C   12....       LCALL     `??bdb_setNodeIsOnANetwork::?relay`; Banked call to: bdb_setNodeIsOnANetwork
+   \   000028                ; Setup parameters for call to function bdb_setNodeIsOnANetwork
+   \   000028   7900         MOV       R1,#0x0
+   \   00002A   12....       LCALL     `??bdb_setNodeIsOnANetwork::?relay`; Banked call to: bdb_setNodeIsOnANetwork
     619            }
     620            
     621          #if defined (FEATURE_SYSTEM_STATS) 
@@ -1346,160 +1165,157 @@ C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components
     645          #endif  // FEATURE_SYSTEM_STATS
     646          
     647            zgUpgradeNVItems();
-   \                     ??zgInit_1:
-   \   00003F                ; Setup parameters for call to function osal_nv_item_len
-   \   00003F   7A24         MOV       R2,#0x24
-   \   000041   7B00         MOV       R3,#0x0
-   \   000043   12....       LCALL     `??osal_nv_item_len::?relay`; Banked call to: osal_nv_item_len
-   \   000046   8A..         MOV       ?V0,R2
-   \   000048   8B..         MOV       ?V1,R3
-   \   00004A                ; Setup parameters for call to function osal_nv_item_len
-   \   00004A   7A35         MOV       R2,#0x35
-   \   00004C   7B00         MOV       R3,#0x0
-   \   00004E   12....       LCALL     `??osal_nv_item_len::?relay`; Banked call to: osal_nv_item_len
-   \   000051   8B..         MOV       ?V3,R3
-   \   000053   EA           MOV       A,R2
-   \   000054   45..         ORL       A,?V3
-   \   000056   7072         JNZ       ??zgInit_2
-   \   000058   7402         MOV       A,#0x2
-   \   00005A   65..         XRL       A,?V0
-   \   00005C   45..         ORL       A,?V1
-   \   00005E   706A         JNZ       ??zgInit_2
-   \   000060                ; Setup parameters for call to function osal_nv_read
-   \   000060   A8..         MOV       R0,?XSP + 0
-   \   000062   A9..         MOV       R1,?XSP + 1
-   \   000064   88..         MOV       ?V0,R0
-   \   000066   89..         MOV       ?V1,R1
-   \   000068   78..         MOV       R0,#?V0
-   \   00006A   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   00006D   75..02       MOV       ?V0,#0x2
-   \   000070   75..00       MOV       ?V1,#0x0
-   \   000073   78..         MOV       R0,#?V0
-   \   000075   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   000078   7C00         MOV       R4,#0x0
-   \   00007A   7D00         MOV       R5,#0x0
-   \   00007C   7A24         MOV       R2,#0x24
-   \   00007E   7B00         MOV       R3,#0x0
-   \   000080   12....       LCALL     `??osal_nv_read::?relay`; Banked call to: osal_nv_read
-   \   000083   7404         MOV       A,#0x4
-   \   000085   12....       LCALL     ?DEALLOC_XSTACK8
-   \   000088   85..82       MOV       DPL,?XSP + 0
-   \   00008B   85..83       MOV       DPH,?XSP + 1
-   \   00008E   E0           MOVX      A,@DPTR
-   \   00008F   F8           MOV       R0,A
-   \   000090   A3           INC       DPTR
-   \   000091   E0           MOVX      A,@DPTR
-   \   000092   F9           MOV       R1,A
-   \   000093   E8           MOV       A,R0
-   \   000094   FA           MOV       R2,A
-   \   000095   E9           MOV       A,R1
-   \   000096   FB           MOV       R3,A
-   \   000097   90....       MOV       DPTR,#zgPollRate
-   \   00009A   EA           MOV       A,R2
-   \   00009B   F0           MOVX      @DPTR,A
-   \   00009C   A3           INC       DPTR
-   \   00009D   EB           MOV       A,R3
-   \   00009E   F0           MOVX      @DPTR,A
-   \   00009F   A3           INC       DPTR
-   \   0000A0   E4           CLR       A
-   \   0000A1   F0           MOVX      @DPTR,A
-   \   0000A2   A3           INC       DPTR
-   \   0000A3   F0           MOVX      @DPTR,A
-   \   0000A4                ; Setup parameters for call to function osal_nv_item_init
-   \   0000A4   75....       MOV       ?V0,#zgPollRate & 0xff
-   \   0000A7   75....       MOV       ?V1,#(zgPollRate >> 8) & 0xff
-   \   0000AA   78..         MOV       R0,#?V0
-   \   0000AC   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   0000AF   7C04         MOV       R4,#0x4
+   \                     ??zgInit_0:
+   \   00002D                ; Setup parameters for call to function osal_nv_item_len
+   \   00002D   7A24         MOV       R2,#0x24
+   \   00002F   7B00         MOV       R3,#0x0
+   \   000031   12....       LCALL     `??osal_nv_item_len::?relay`; Banked call to: osal_nv_item_len
+   \   000034   8A..         MOV       ?V0,R2
+   \   000036   8B..         MOV       ?V1,R3
+   \   000038   AE..         MOV       R6,?V0
+   \   00003A   AF..         MOV       R7,?V1
+   \   00003C                ; Setup parameters for call to function osal_nv_item_len
+   \   00003C   7A35         MOV       R2,#0x35
+   \   00003E   7B00         MOV       R3,#0x0
+   \   000040   12....       LCALL     `??osal_nv_item_len::?relay`; Banked call to: osal_nv_item_len
+   \   000043   8B..         MOV       ?V1,R3
+   \   000045   EA           MOV       A,R2
+   \   000046   45..         ORL       A,?V1
+   \   000048   7070         JNZ       ??zgInit_1
+   \   00004A   7402         MOV       A,#0x2
+   \   00004C   6E           XRL       A,R6
+   \   00004D   4F           ORL       A,R7
+   \   00004E   706A         JNZ       ??zgInit_1
+   \   000050                ; Setup parameters for call to function osal_nv_read
+   \   000050   A8..         MOV       R0,?XSP + 0
+   \   000052   A9..         MOV       R1,?XSP + 1
+   \   000054   88..         MOV       ?V0,R0
+   \   000056   89..         MOV       ?V1,R1
+   \   000058   78..         MOV       R0,#?V0
+   \   00005A   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00005D   75..02       MOV       ?V0,#0x2
+   \   000060   75..00       MOV       ?V1,#0x0
+   \   000063   78..         MOV       R0,#?V0
+   \   000065   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000068   7C00         MOV       R4,#0x0
+   \   00006A   7D00         MOV       R5,#0x0
+   \   00006C   7A24         MOV       R2,#0x24
+   \   00006E   7B00         MOV       R3,#0x0
+   \   000070   12....       LCALL     `??osal_nv_read::?relay`; Banked call to: osal_nv_read
+   \   000073   7404         MOV       A,#0x4
+   \   000075   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000078   85..82       MOV       DPL,?XSP + 0
+   \   00007B   85..83       MOV       DPH,?XSP + 1
+   \   00007E   E0           MOVX      A,@DPTR
+   \   00007F   F8           MOV       R0,A
+   \   000080   A3           INC       DPTR
+   \   000081   E0           MOVX      A,@DPTR
+   \   000082   F9           MOV       R1,A
+   \   000083   E8           MOV       A,R0
+   \   000084   FC           MOV       R4,A
+   \   000085   E9           MOV       A,R1
+   \   000086   FD           MOV       R5,A
+   \   000087   90....       MOV       DPTR,#zgPollRate
+   \   00008A   EC           MOV       A,R4
+   \   00008B   F0           MOVX      @DPTR,A
+   \   00008C   A3           INC       DPTR
+   \   00008D   ED           MOV       A,R5
+   \   00008E   F0           MOVX      @DPTR,A
+   \   00008F   A3           INC       DPTR
+   \   000090   E4           CLR       A
+   \   000091   F0           MOVX      @DPTR,A
+   \   000092   A3           INC       DPTR
+   \   000093   F0           MOVX      @DPTR,A
+   \   000094                ; Setup parameters for call to function osal_nv_item_init
+   \   000094   75....       MOV       ?V0,#zgPollRate & 0xff
+   \   000097   75....       MOV       ?V1,#(zgPollRate >> 8) & 0xff
+   \   00009A   78..         MOV       R0,#?V0
+   \   00009C   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00009F   7C04         MOV       R4,#0x4
+   \   0000A1   7D00         MOV       R5,#0x0
+   \   0000A3   7A35         MOV       R2,#0x35
+   \   0000A5   7B00         MOV       R3,#0x0
+   \   0000A7   12....       LCALL     `??osal_nv_item_init::?relay`; Banked call to: osal_nv_item_init
+   \   0000AA   7402         MOV       A,#0x2
+   \   0000AC   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0000AF                ; Setup parameters for call to function osal_nv_delete
+   \   0000AF   7C02         MOV       R4,#0x2
    \   0000B1   7D00         MOV       R5,#0x0
-   \   0000B3   7A35         MOV       R2,#0x35
+   \   0000B3   7A24         MOV       R2,#0x24
    \   0000B5   7B00         MOV       R3,#0x0
-   \   0000B7   12....       LCALL     `??osal_nv_item_init::?relay`; Banked call to: osal_nv_item_init
-   \   0000BA   7402         MOV       A,#0x2
-   \   0000BC   12....       LCALL     ?DEALLOC_XSTACK8
-   \   0000BF                ; Setup parameters for call to function osal_nv_delete
-   \   0000BF   7C02         MOV       R4,#0x2
-   \   0000C1   7D00         MOV       R5,#0x0
-   \   0000C3   7A24         MOV       R2,#0x24
-   \   0000C5   7B00         MOV       R3,#0x0
-   \   0000C7   12....       LCALL     `??osal_nv_delete::?relay`; Banked call to: osal_nv_delete
+   \   0000B7   12....       LCALL     `??osal_nv_delete::?relay`; Banked call to: osal_nv_delete
     648          
     649            // Initialize the Extended PAN ID as my own extended address
     650            ZMacGetReq( ZMacExtAddr, zgExtendedPANID );
-   \                     ??zgInit_2:
-   \   0000CA                ; Setup parameters for call to function ZMacGetReq
-   \   0000CA   7A..         MOV       R2,#zgExtendedPANID & 0xff
-   \   0000CC   7B..         MOV       R3,#(zgExtendedPANID >> 8) & 0xff
-   \   0000CE   79E2         MOV       R1,#-0x1e
-   \   0000D0   12....       LCALL     `??ZMacGetReq::?relay`; Banked call to: ZMacGetReq
+   \                     ??zgInit_1:
+   \   0000BA                ; Setup parameters for call to function ZMacGetReq
+   \   0000BA   7A..         MOV       R2,#zgExtendedPANID & 0xff
+   \   0000BC   7B..         MOV       R3,#(zgExtendedPANID >> 8) & 0xff
+   \   0000BE   79E2         MOV       R1,#-0x1e
+   \   0000C0   12....       LCALL     `??ZMacGetReq::?relay`; Banked call to: ZMacGetReq
     651          
     652            // Initialize the items table
     653            zgInitItems( setDefault );
-   \   0000D3                ; Setup parameters for call to function zgInitItems
-   \   0000D3   EE           MOV       A,R6
-   \   0000D4   F9           MOV       R1,A
-   \   0000D5   12....       LCALL     `??zgInitItems::?relay`; Banked call to: zgInitItems
+   \   0000C3                ; Setup parameters for call to function zgInitItems
+   \   0000C3   7901         MOV       R1,#0x1
+   \   0000C5   12....       LCALL     `??zgInitItems::?relay`; Banked call to: zgInitItems
     654          
     655          #ifndef NONWK
     656            if ( ZG_SECURE_ENABLED )
     657            {
     658              // Initialize the Pre-Configured Key to the default key
     659              zgPreconfigKeyInit( setDefault );
-   \   0000D8                ; Setup parameters for call to function osal_memset
-   \   0000D8   7C10         MOV       R4,#0x10
-   \   0000DA   7D00         MOV       R5,#0x0
-   \   0000DC   7900         MOV       R1,#0x0
-   \   0000DE   7402         MOV       A,#0x2
-   \   0000E0   12....       LCALL     ?XSTACK_DISP101_8
-   \   0000E3   12....       LCALL     `??osal_memset::?relay`; Banked call to: osal_memset
-   \   0000E6                ; Setup parameters for call to function osal_nv_item_init
-   \   0000E6   7402         MOV       A,#0x2
-   \   0000E8   12....       LCALL     ?XSTACK_DISP100_8
-   \   0000EB   88..         MOV       ?V0,R0
-   \   0000ED   89..         MOV       ?V1,R1
-   \   0000EF   78..         MOV       R0,#?V0
-   \   0000F1   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   0000F4   7C10         MOV       R4,#0x10
-   \   0000F6   7D00         MOV       R5,#0x0
-   \   0000F8   7A62         MOV       R2,#0x62
-   \   0000FA   7B00         MOV       R3,#0x0
-   \   0000FC   12....       LCALL     `??osal_nv_item_init::?relay`; Banked call to: osal_nv_item_init
-   \   0000FF   7402         MOV       A,#0x2
-   \   000101   12....       LCALL     ?DEALLOC_XSTACK8
-   \   000104   E9           MOV       A,R1
-   \   000105   7025         JNZ       ??zgInit_3
-   \   000107   EE           MOV       A,R6
-   \   000108   A2E0         MOV       C,0xE0 /* A   */.0
-   \   00010A   5020         JNC       ??zgInit_3
-   \   00010C                ; Setup parameters for call to function osal_nv_write
-   \   00010C   78..         MOV       R0,#?V0
-   \   00010E   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   000111   75..10       MOV       ?V0,#0x10
-   \   000114   75..00       MOV       ?V1,#0x0
-   \   000117   78..         MOV       R0,#?V0
-   \   000119   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   00011C   7C00         MOV       R4,#0x0
-   \   00011E   7D00         MOV       R5,#0x0
-   \   000120   7A62         MOV       R2,#0x62
-   \   000122   7B00         MOV       R3,#0x0
-   \   000124   12....       LCALL     `??osal_nv_write::?relay`; Banked call to: osal_nv_write
-   \   000127   7404         MOV       A,#0x4
-   \   000129   12....       LCALL     ?DEALLOC_XSTACK8
-   \                     ??zgInit_3:
-   \   00012C                ; Setup parameters for call to function osal_memset
-   \   00012C   7C10         MOV       R4,#0x10
-   \   00012E   7D00         MOV       R5,#0x0
-   \   000130   7900         MOV       R1,#0x0
-   \   000132   7402         MOV       A,#0x2
-   \   000134   12....       LCALL     ?XSTACK_DISP101_8
-   \   000137   12....       LCALL     `??osal_memset::?relay`; Banked call to: osal_memset
+   \   0000C8                ; Setup parameters for call to function osal_memset
+   \   0000C8   7C10         MOV       R4,#0x10
+   \   0000CA   7D00         MOV       R5,#0x0
+   \   0000CC   7900         MOV       R1,#0x0
+   \   0000CE   7402         MOV       A,#0x2
+   \   0000D0   12....       LCALL     ?XSTACK_DISP101_8
+   \   0000D3   12....       LCALL     `??osal_memset::?relay`; Banked call to: osal_memset
+   \   0000D6                ; Setup parameters for call to function osal_nv_item_init
+   \   0000D6   7402         MOV       A,#0x2
+   \   0000D8   12....       LCALL     ?XSTACK_DISP100_8
+   \   0000DB   88..         MOV       ?V0,R0
+   \   0000DD   89..         MOV       ?V1,R1
+   \   0000DF   78..         MOV       R0,#?V0
+   \   0000E1   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000E4   7C10         MOV       R4,#0x10
+   \   0000E6   7D00         MOV       R5,#0x0
+   \   0000E8   7A62         MOV       R2,#0x62
+   \   0000EA   7B00         MOV       R3,#0x0
+   \   0000EC   12....       LCALL     `??osal_nv_item_init::?relay`; Banked call to: osal_nv_item_init
+   \   0000EF   7402         MOV       A,#0x2
+   \   0000F1   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0000F4   E9           MOV       A,R1
+   \   0000F5   7020         JNZ       ??zgInit_2
+   \   0000F7                ; Setup parameters for call to function osal_nv_write
+   \   0000F7   78..         MOV       R0,#?V0
+   \   0000F9   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000FC   75..10       MOV       ?V0,#0x10
+   \   0000FF   75..00       MOV       ?V1,#0x0
+   \   000102   78..         MOV       R0,#?V0
+   \   000104   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000107   7C00         MOV       R4,#0x0
+   \   000109   7D00         MOV       R5,#0x0
+   \   00010B   7A62         MOV       R2,#0x62
+   \   00010D   7B00         MOV       R3,#0x0
+   \   00010F   12....       LCALL     `??osal_nv_write::?relay`; Banked call to: osal_nv_write
+   \   000112   7404         MOV       A,#0x4
+   \   000114   12....       LCALL     ?DEALLOC_XSTACK8
+   \                     ??zgInit_2:
+   \   000117                ; Setup parameters for call to function osal_memset
+   \   000117   7C10         MOV       R4,#0x10
+   \   000119   7D00         MOV       R5,#0x0
+   \   00011B   7900         MOV       R1,#0x0
+   \   00011D   7402         MOV       A,#0x2
+   \   00011F   12....       LCALL     ?XSTACK_DISP101_8
+   \   000122   12....       LCALL     `??osal_memset::?relay`; Banked call to: osal_memset
     660          
     661              // Initialize NV items for all Keys: NWK, APS, TCLK and Master
     662              ZDSecMgrInitNVKeyTables( setDefault );
-   \   00013A                ; Setup parameters for call to function ZDSecMgrInitNVKeyTables
-   \   00013A   EE           MOV       A,R6
-   \   00013B   F9           MOV       R1,A
-   \   00013C   12....       LCALL     `??ZDSecMgrInitNVKeyTables::?relay`; Banked call to: ZDSecMgrInitNVKeyTables
+   \   000125                ; Setup parameters for call to function ZDSecMgrInitNVKeyTables
+   \   000125   7901         MOV       R1,#0x1
+   \   000127   12....       LCALL     `??ZDSecMgrInitNVKeyTables::?relay`; Banked call to: ZDSecMgrInitNVKeyTables
     663            }
     664          #endif // NONWK
     665          
@@ -1509,25 +1325,25 @@ C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components
     669            
     670            // Clear the Config State default
     671            if ( setDefault )
-   \   00013F   EE           MOV       A,R6
-   \   000140   A2E0         MOV       C,0xE0 /* A   */.0
-   \   000142   5007         JNC       ??zgInit_4
     672            {
     673              zgWriteStartupOptions( ZG_STARTUP_CLEAR, ZCD_STARTOPT_DEFAULT_CONFIG_STATE );
-   \   000144                ; Setup parameters for call to function zgWriteStartupOptions
-   \   000144   7A01         MOV       R2,#0x1
-   \   000146   7900         MOV       R1,#0x0
-   \   000148   12....       LCALL     `??zgWriteStartupOptions::?relay`; Banked call to: zgWriteStartupOptions
+   \   00012A                ; Setup parameters for call to function zgWriteStartupOptions
+   \   00012A   7A01         MOV       R2,#0x1
+   \   00012C   7900         MOV       R1,#0x0
+   \   00012E   12....       LCALL     `??zgWriteStartupOptions::?relay`; Banked call to: zgWriteStartupOptions
     674            }
     675            
     676            return ( ZSUCCESS );
-   \                     ??zgInit_4:
-   \   00014B   7900         MOV       R1,#0x0
-   \   00014D   7412         MOV       A,#0x12
-   \   00014F   12....       LCALL     ?DEALLOC_XSTACK8
-   \   000152   7F04         MOV       R7,#0x4
-   \   000154   02....       LJMP      ?BANKED_LEAVE_XDATA
+   \   000131   7900         MOV       R1,#0x0
+   \   000133   7412         MOV       A,#0x12
+   \   000135   02....       LJMP      ??Subroutine2_0 & 0xFFFF
     677          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine2_0:
+   \   000000   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000003   7F02         MOV       R7,#0x2
+   \   000005   02....       LJMP      ?BANKED_LEAVE_XDATA
     678          
     679          /*********************************************************************
     680           * @fn          zgInitItems
@@ -1765,20 +1581,19 @@ C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components
    \                                 In  segment BANKED_CODE, align 1, keep-with-next
    \                     ?Subroutine0:
    \   000000   7401         MOV       A,#0x1
-   \   000002   12....       LCALL     ?DEALLOC_XSTACK8
-   \   000005   7F02         MOV       R7,#0x2
-   \   000007   02....       LJMP      ?BANKED_LEAVE_XDATA
+   \   000002                REQUIRE ??Subroutine2_0
+   \   000002                ; // Fall through to label ??Subroutine2_0
 
    \                                 In  segment BANKED_CODE, align 1, keep-with-next
    \                     ?Subroutine1:
    \   000000   85..82       MOV       DPL,?XSP + 0
    \   000003   85..83       MOV       DPH,?XSP + 1
    \   000006   E4           CLR       A
-   \   000007                REQUIRE ??Subroutine2_0
-   \   000007                ; // Fall through to label ??Subroutine2_0
+   \   000007                REQUIRE ??Subroutine3_0
+   \   000007                ; // Fall through to label ??Subroutine3_0
 
    \                                 In  segment BANKED_CODE, align 1, keep-with-next
-   \                     ??Subroutine2_0:
+   \                     ??Subroutine3_0:
    \   000000   F0           MOVX      @DPTR,A
    \   000001                ; Setup parameters for call to function osal_nv_item_init
    \   000001                ; Setup parameters for call to function osal_nv_read
@@ -1883,7 +1698,7 @@ C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components
     784                           &startupOptions );
     785            }
    \                     ??zgWriteStartupOptions_2:
-   \   00004E   12....       LCALL     ??Subroutine2_0 & 0xFFFF
+   \   00004E   12....       LCALL     ??Subroutine3_0 & 0xFFFF
    \                     ??CrossCallReturnLabel_2:
    \   000051   12....       LCALL     ?PUSH_XSTACK_I_TWO
    \   000054   75..01       MOV       ?V0,#0x1
@@ -2080,7 +1895,7 @@ C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components
 
    \                                 In  segment XDATA_ID, align 1, keep-with-next
    \                     `?<Initializer for zgSecurityMode>`:
-   \   000000   04           DB 4
+   \   000000   01           DB 1
 
    \                                 In  segment XDATA_ID, align 1, keep-with-next
    \                     `?<Initializer for zgSecurePermitJoin>`:
@@ -2420,29 +2235,28 @@ C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components
 
    XSTACK Function
    ------ --------
-     34   zgInit
-       30   -> ZDSecMgrInitNVKeyTables
-       30   -> ZMacGetReq
-       30   -> bdb_setNodeIsOnANetwork
-       30   -> osal_memset
-       30   -> osal_nv_delete
-       32   -> osal_nv_item_init
-       30   -> osal_nv_item_len
-       34   -> osal_nv_read
-       34   -> osal_nv_write
-       30   -> zgInitItems
-       30   -> zgReadStartupOptions
-       30   -> zgWriteStartupOptions
-     48   zgInitItems
+     32   zgInit
+       28   -> ZDSecMgrInitNVKeyTables
+       28   -> ZMacGetReq
+       28   -> bdb_setNodeIsOnANetwork
+       28   -> osal_memset
+       28   -> osal_nv_delete
+       30   -> osal_nv_item_init
+       28   -> osal_nv_item_len
+       32   -> osal_nv_read
+       32   -> osal_nv_write
+       28   -> zgInitItems
+       28   -> zgWriteStartupOptions
+     46   zgInitItems
        16   -> osal_nv_item_init
        18   -> osal_nv_read
        18   -> osal_nv_write
-     45   zgReadStartupOptions
+     15   zgReadStartupOptions
        13   -> osal_nv_item_init
        15   -> osal_nv_read
      16   zgSetItem
        14   -> osal_memcpy
-     45   zgWriteStartupOptions
+     43   zgWriteStartupOptions
        15   -> osal_nv_read
        15   -> osal_nv_write
 
@@ -2498,8 +2312,9 @@ C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components
        1  ?<Initializer for zgStackProfile>
        1  ?<Initializer for zgStartDelay>
        1  ?<Initializer for zgZdoDirectCB>
-      12  ??Subroutine2_0
-      10  ?Subroutine0
+       8  ??Subroutine2_0
+      12  ??Subroutine3_0
+       2  ?Subroutine0
        7  ?Subroutine1
        1  zTouchLinkNwkStartRtr
        1  zgAllowInstallCodes
@@ -2534,11 +2349,11 @@ C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components
        1  zgEndDeviceTimeoutValue
        8  zgExtendedPANID
        1  zgIndirectMsgTimeout
-     343  zgInit
+     312  zgInit
        6  zgInit::?relay
      191  zgInitItems
        6  zgInitItems::?relay
-     330  zgItemTable
+       6  zgItemTable
        1  zgMaxBcastRetires
        1  zgMaxDataRetries
        1  zgMaxPollFailureRetries
@@ -2579,15 +2394,15 @@ C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components
        1  zgZdoDirectCB
 
  
- 887 bytes in segment BANKED_CODE
+ 856 bytes in segment BANKED_CODE
   30 bytes in segment BANK_RELAYS
- 330 bytes in segment CODE_C
+   6 bytes in segment CODE_C
   68 bytes in segment XDATA_I
   68 bytes in segment XDATA_ID
   42 bytes in segment XDATA_Z
  
- 428 bytes of CODE     memory
- 887 bytes of HUGECODE memory
+ 104 bytes of CODE     memory
+ 856 bytes of HUGECODE memory
  110 bytes of XDATA    memory
 
 Errors: none

@@ -53,6 +53,8 @@ int main( void )
   HalDriverInit();
 
   // Initialize NV System
+//   NV_INIT
+//  NV_RESTORE
   osal_nv_init( NULL );
 
   // Initialize the MAC

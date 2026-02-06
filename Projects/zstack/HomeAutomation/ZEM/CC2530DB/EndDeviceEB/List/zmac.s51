@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //
-// IAR C/C++ Compiler V10.10.1.4655 for 8051              03/Feb/2026  00:00:32
+// IAR C/C++ Compiler V10.10.1.4655 for 8051              05/Feb/2026  17:28:20
 // Copyright 2004-2017 IAR Systems AB.
 // Standalone license - IAR Embedded Workbench for 8051
 //
@@ -11,37 +11,31 @@
 //    Constant location  =  data_rom
 //    Dptr setup         =  1,16
 //                          
-//    Source file        =  
-//        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
-//        3.0.2\Components\zmac\f8w\zmac.c
+//    Source file        =  D:\project\Z-Stack 3.0.2\Components\zmac\f8w\zmac.c
 //    Command line       =  
-//        -f C:\Users\ASUS\AppData\Local\Temp\EWD11D.tmp
-//        ("C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
-//        3.0.2\Components\zmac\f8w\zmac.c" -D BDB_REPORTING -D SECURE=1 -D
-//        TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D xPOWER_SAVING -D
-//        NWK_AUTO_POLL -D xZTOOL_P1 -D xMT_TASK -D xMT_APP_FUNC -D
+//        -f C:\Users\KLF\AppData\Local\Temp\EW6537.tmp ("D:\project\Z-Stack
+//        3.0.2\Components\zmac\f8w\zmac.c" -D BDB_REPORTING -D xPOWER_SAVING
+//        -D NWK_AUTO_POLL -D xZTOOL_P1 -D xMT_TASK -D xMT_APP_FUNC -D
 //        xMT_SYS_FUNC -D xMT_ZDO_FUNC -D xMT_APP_CNF_FUNC -D
 //        LCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
 //        ZCL_DISCOVER -D ZCL_WRITE -D ZCL_BASIC -D ZCL_IDENTIFY -D
-//        ZCL_TEMPERATURE_MEASUREMENT -D ZCL_GROUPS -lC
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        ZCL_TEMPERATURE_MEASUREMENT -D ZCL_GROUPS -D HAL_UART=TRUE -D
+//        INT_HEAP_LEN=2048 -lC "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List"
-//        -lA "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -lA "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List"
-//        --diag_suppress Pe001,Pa010 -o
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        --diag_suppress Pe001,Pa010 -o "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\Obj" -e
 //        --debug --core=plain --dptr=16,1 --data_model=large
 //        --code_model=banked --calling_convention=xdata_reentrant
 //        --place_constants=data_rom --nr_virtual_regs 16 -f
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"
 //        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
-//        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
 //        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
-//        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0x1234
+//        -DDEFAULT_CHANLIST=0x00100000 -DZDAPP_CONFIG_PAN_ID=0x1234
 //        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
 //        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
 //        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
@@ -54,63 +48,62 @@
 //        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
 //        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
 //        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
-//        -DENABLE_LED4_DISABLE_S1) -f "C:\Users\ASUS\Desktop\work\graduration
-//        project\software\Z-Stack
+//        -DENABLE_LED4_DISABLE_S1) -f "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\" -I
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\Source\" -I
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\Source\" -I
-//        "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\ZMain\TI2530DB\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\include\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\include\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\mt\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\osal\include\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\saddr\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\services\sdata\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\af\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\bdb\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\gp\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sec\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\sys\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac\"
-//        -I "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        -I "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
 //        -Ohz --require_prototypes)
 //    Locale             =  Chinese (Simplified)_China.936
 //    List file          =  
-//        C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack
+//        D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\EndDeviceEB\List\zmac.s51
 //
 ///////////////////////////////////////////////////////////////////////////////
@@ -874,7 +867,7 @@ ZMac_PwrMode        SYMBOL "ZMac_PwrMode"
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
 
-// C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Components\zmac\f8w\zmac.c
+// D:\project\Z-Stack 3.0.2\Components\zmac\f8w\zmac.c
 //    1 /**************************************************************************************************
 //    2   Filename:       zmac.c
 //    3   Revised:        $Date: 2014-06-20 15:25:38 -0700 (Fri, 20 Jun 2014) $

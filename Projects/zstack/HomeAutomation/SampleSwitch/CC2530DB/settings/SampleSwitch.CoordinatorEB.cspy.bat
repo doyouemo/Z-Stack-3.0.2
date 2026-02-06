@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"D:\IAR10.10.1\common\bin\cspybat" -f "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\settings\SampleSwitch.CoordinatorEB.general.xcl" --backend -f "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\settings\SampleSwitch.CoordinatorEB.driver.xcl" 
+"D:\software\IAR\IAR\common\bin\cspybat" -f "D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\settings\SampleSwitch.CoordinatorEB.general.xcl" --backend -f "D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\settings\SampleSwitch.CoordinatorEB.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"D:\IAR10.10.1\common\bin\cspybat" -f "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\settings\SampleSwitch.CoordinatorEB.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\ASUS\Desktop\work\graduration project\software\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\settings\SampleSwitch.CoordinatorEB.driver.xcl" 
+"D:\software\IAR\IAR\common\bin\cspybat" -f "D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\settings\SampleSwitch.CoordinatorEB.general.xcl" "--debug_file=%~1" --backend -f "D:\project\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\settings\SampleSwitch.CoordinatorEB.driver.xcl" 
 
 @echo off 
 :end

@@ -29,31 +29,31 @@ extern "C"
 #define ZEM_PERIODIC_EVT               0x0040  
 #define ZEMAPP_EVT                     0x0080  
 
+// Communication events and periods (从小到大排序)
+#define ZEM_REJOIN_EVT                 0x0100  // 终端设备重新加入事件
+#define ZEM_P2P_EVT                    0x0200  // 点对点事件
+#define ZEM_RETRY_FORMATION_EVT        0x0400  // 协调器网络形成重试事件
+#define ZEM_GROUPCAST_EVT              0x0800  // 组播事件
+#define ZEM_BROADCAST_EVT              0x1000  // 广播事件
+
+// Event periods
+#define ZEM_REJOIN_PERIOD              1000    // 重新加入间隔：1000ms(1秒)
+#define ZEM_P2P_PERIOD                 1000    // 点对点间隔：1000ms(2秒)
+#define ZEM_RETRY_FORMATION_PERIOD     5000    // 重试间隔：5000ms(5秒)
+#define ZEM_GROUPCAST_PERIOD           1000    // 组播间隔：1000ms(3秒)
+#define ZEM_BROADCAST_PERIOD           1000    // 广播间隔：1000ms(5秒)
+
 /* 协调器 */
 #ifdef ZDO_COORDINATOR
-  // 重试网络形成事件
-  #define ZEM_RETRY_FORMATION_EVT     0x0400
-  // 重试间隔：5000ms(5秒)
-  #define ZEM_RETRY_FORMATION_PERIOD  5000
+  // 协调器专用事件定义
 /* 路由器或者终端 */
 #else
-  // 重新加入事件
-  #define ZEM_REJOIN_EVT          0x0100
-  // 时间间隔：1000ms(1秒)
-  #define ZEM_REJOIN_PERIOD       1000
+  // 终端设备专用事件定义
 #endif
 
 // Device version and flags
 #define ZEM_DEVICE_VERSION            0
 #define ZEM_FLAGS                     0
-
-// Communication events and periods
-#define ZEM_BROADCAST_EVT             0x0080
-#define ZEM_BROADCAST_PERIOD          1000  // 5 seconds
-#define ZEM_GROUPCAST_EVT             0x0100
-#define ZEM_GROUPCAST_PERIOD          1000  // 3 seconds
-#define ZEM_P2P_EVT                   0x0200
-#define ZEM_P2P_PERIOD                1000  // 2 seconds
 #define GROUP_ID                       21  // Default group ID
 #define CLUSTER_P2P             0
 #define CLUSTER_BROADCAST       1

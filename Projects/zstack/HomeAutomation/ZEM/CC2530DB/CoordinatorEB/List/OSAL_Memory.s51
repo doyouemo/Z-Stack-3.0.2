@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //
-// IAR C/C++ Compiler V10.10.1.4655 for 8051              04/Feb/2026  17:09:07
+// IAR C/C++ Compiler V10.10.1.4655 for 8051              06/Feb/2026  14:07:52
 // Copyright 2004-2017 IAR Systems AB.
 // Standalone license - IAR Embedded Workbench for 8051
 //
@@ -14,13 +14,12 @@
 //    Source file        =  
 //        D:\project\Z-Stack 3.0.2\Components\osal\common\OSAL_Memory.c
 //    Command line       =  
-//        -f C:\Users\KLF\AppData\Local\Temp\EW621B.tmp ("D:\project\Z-Stack
+//        -f C:\Users\KLF\AppData\Local\Temp\EW314D.tmp ("D:\project\Z-Stack
 //        3.0.2\Components\osal\common\OSAL_Memory.c" -D BDB_REPORTING -D
-//        SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D NV_RESTORE -D xZTOOL_P1 -D
-//        xMT_TASK -D xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D
-//        xMT_APP_CNF_FUNC -D LCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D
-//        ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D ZCL_BASIC -D ZCL_IDENTIFY -D
-//        ZCL_TEMPERATURE_MEASUREMENT -D ZCL_GROUPS -D HAL_LED=TRUE -D
+//        xZTOOL_P1 -D xMT_TASK -D xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC
+//        -D xMT_APP_CNF_FUNC -D LCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE
+//        -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D ZCL_BASIC -D ZCL_IDENTIFY
+//        -D ZCL_TEMPERATURE_MEASUREMENT -D ZCL_GROUPS -D HAL_LED=TRUE -D
 //        HAL_UART=TRUE -D INT_HEAP_LEN=2048 -lC "D:\project\Z-Stack
 //        3.0.2\Projects\zstack\HomeAutomation\ZEM\CC2530DB\CoordinatorEB\List"
 //        -lA "D:\project\Z-Stack
@@ -581,7 +580,7 @@ osal_mem_init:
         MOVX      @DPTR,A
 //  249   ff1->val = OSALMEM_SMALLBLK_BUCKET;                   // Set 'len' & clear 'inUse' field.
         MOV       DPTR,#theHeap
-        MOV       A,#0x70
+        MOV       A,#0x48
         MOVX      @DPTR,A
         INC       DPTR
         MOV       A,#0x2
@@ -589,7 +588,7 @@ osal_mem_init:
 //  250   // Set 'len' & 'inUse' fields - this is a 'zero data bytes' lifetime allocation to block the
 //  251   // small-block bucket from ever being coalesced with the wilderness.
 //  252   theHeap[OSALMEM_SMALLBLK_HDRCNT].val = (OSALMEM_HDRSZ | OSALMEM_IN_USE);
-        MOV       DPTR,#theHeap + 624
+        MOV       DPTR,#theHeap + 584
         MOVX      @DPTR,A
         INC       DPTR
         MOV       A,#-0x80
@@ -598,7 +597,7 @@ osal_mem_init:
 //  254   // Setup the wilderness.
 //  255   theHeap[OSALMEM_BIGBLK_IDX].val = OSALMEM_BIGBLK_SZ;  // Set 'len' & clear 'inUse' field.
         INC       DPTR
-        MOV       A,#-0x74
+        MOV       A,#-0x4c
         MOVX      @DPTR,A
         INC       DPTR
         MOV       A,#0x5
@@ -875,8 +874,8 @@ osal_mem_alloc:
 //  354   {
 //  355     hdr = (theHeap + OSALMEM_BIGBLK_IDX);
 ??osal_mem_alloc_1:
-        MOV       R0,#(theHeap + 114) & 0xff
-        MOV       R1,#((theHeap + 626) >> 8) & 0xff
+        MOV       R0,#(theHeap + 74) & 0xff
+        MOV       R1,#((theHeap + 586) >> 8) & 0xff
 //  356   }
 //  357 
 //  358   do

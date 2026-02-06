@@ -306,10 +306,6 @@
                 <option>
                     <name>CCDefines</name>
                     <state>BDB_REPORTING</state>
-                    <state>SECURE=1</state>
-                    <state>TC_LINKKEY_JOIN</state>
-                    <state>NV_INIT</state>
-                    <state>NV_RESTORE</state>
                     <state>xZTOOL_P1</state>
                     <state>xMT_TASK</state>
                     <state>xMT_APP_FUNC</state>
@@ -2625,10 +2621,6 @@
                 <option>
                     <name>CCDefines</name>
                     <state>BDB_REPORTING</state>
-                    <state>SECURE=1</state>
-                    <state>TC_LINKKEY_JOIN</state>
-                    <state>NV_INIT</state>
-                    <state>NV_RESTORE</state>
                     <state>xPOWER_SAVING</state>
                     <state>NWK_AUTO_POLL</state>
                     <state>xZTOOL_P1</state>
@@ -2646,6 +2638,8 @@
                     <state>ZCL_IDENTIFY</state>
                     <state>ZCL_TEMPERATURE_MEASUREMENT</state>
                     <state>ZCL_GROUPS</state>
+                    <state>HAL_UART=TRUE</state>
+                    <state>INT_HEAP_LEN=2048</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -3525,7 +3519,7 @@
             <name>$PROJ_DIR$\..\..\..\..\..\Components\stack\bdb\bdb_touchlink.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\Components\stack\bdb\bdb_touchlink.h</name>
+            <name>$PROJ_DIR$\..\..\..\..\..\Components\stack\bdb\bdb_touchLink.h</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\..\..\Components\stack\bdb\bdb_touchlink_initiator.c</name>
